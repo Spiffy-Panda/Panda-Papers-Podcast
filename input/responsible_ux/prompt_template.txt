@@ -1,0 +1,43 @@
+You are writing Parts {batch_start}–{batch_end} of {total_planned_parts} of a two-person podcast discussing the paper "{paper_title}" by {paper_authors}.
+
+PAPER OVERVIEW:
+{paper_overview}
+
+{continuity_block}
+
+You must produce 6 consecutive podcast parts in a single response. Each part is a separate JSON object. Output all 6 as a JSON array.
+
+{batch_parts_block}
+
+RULES:
+- Output ONLY a valid JSON array of 6 objects matching the schema below. No markdown fences, no commentary.
+- Each dialog line MUST include "source_paragraphs" — an array of paragraph ID(s) it discusses.
+- Cover ALL listed paragraphs in each part. Do not skip any.
+- Target {target_line_count} dialog lines per part. If you need more to avoid losing detail, go up to 1.5x that number.
+- Speaker A ({speaker_a_voice}) is the "explainer" — they have read the paper and present the ideas clearly and conversationally.
+- Speaker B ({speaker_b_voice}) is the "curious learner" — they ask smart questions, request clarifications, draw analogies, and react naturally.
+- Avoid reading the paper verbatim. Rephrase in conversational, accessible language.
+- When a paragraph contains a list or taxonomy, have the speakers discuss 2-3 items in detail and briefly acknowledge the rest.
+- Part {batch_start} (the first part in this batch): if it is Part 1 of the podcast, start with a natural podcast intro (greet the listener, introduce the paper topic). If it is Part 2+, start with a brief recap transition ("Last time we talked about..." / "Welcome back...").
+- Each subsequent part should open with a brief transition from the previous part's content.
+- End each part with a natural handoff hinting at what is coming next, or wrap up if it is the final part of the podcast.
+- Keep the tone friendly and educational, like a well-produced academic podcast.
+- Maintain continuity across all 6 parts — they should feel like one continuous conversation, not 6 isolated segments.
+
+OUTPUT SCHEMA (array of 6 objects):
+[
+  {
+    "pause_between_ms": {pause_between_ms},
+    "rate": {rate},
+    "part_number": <part number>,
+    "paper_source": "{paper_source}",
+    "lines": [
+      {
+        "voice": "{speaker_a_voice}" or "{speaker_b_voice}",
+        "text": "...",
+        "source_paragraphs": [<paragraph IDs as integers>]
+      }
+    ]
+  },
+  ...
+]

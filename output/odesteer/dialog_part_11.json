@@ -1,0 +1,103 @@
+{
+  "pause_between_ms": 600,
+  "rate": 0,
+  "part_number": 11,
+  "paper_source": "input/ODESteer_paper.json",
+  "lines": [
+    {
+      "voice": "Microsoft David",
+      "text": "Now for the experiments. The paper tests ODESteer on three core alignment tasks: helpfulness, truthfulness, and detoxification.",
+      "source_paragraphs": [74]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Those cover a lot of ground. What models do they use?",
+      "source_paragraphs": [75]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "They test on four popular open-source models: Falcon 7B, Mistral 7B version 0.3, LLaMA 3.1 8B, and Qwen 2.5 7B. So the results aren't just for one architecture.",
+      "source_paragraphs": [75]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Good range. And the baselines?",
+      "source_paragraphs": [76]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "They compare against eight representative methods. On the input reading side there's RepE, CAA, MiMiC, and Linear-AcT. For probing there's ITI. And for more complex approaches there's HPR, RE-Control, and TruthFlow. It's a thorough comparison that covers simple fixed vectors all the way up to neural network methods.",
+      "source_paragraphs": [76]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "What benchmarks do they use for each task?",
+      "source_paragraphs": [79]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "For helpfulness they use UltraFeedback, measuring how often the steered model wins against the original model's responses. For truthfulness it's TruthfulQA, with truthfulness times informativeness as the primary metric. And for detoxification they use RealToxicityPrompts, measuring how toxic the generated text is.",
+      "source_paragraphs": [79]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "I like that they have different metrics for different goals. So what are the headline results?",
+      "source_paragraphs": [79, 80]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "ODESteer consistently outperforms every baseline across all models and tasks on the primary metrics. The improvements are substantial: 5.7 percentage points better than the best baseline on TruthfulQA, 2.5 points on UltraFeedback, and 2.4 points on RealToxicityPrompts.",
+      "source_paragraphs": [80]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Consistently outperforming everything is impressive, but are these differences statistically meaningful?",
+      "source_paragraphs": [80]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "They report all results averaged over three runs with standard deviations. The improvements are generally well outside the error bars. What's particularly notable is the consistency. ODESteer doesn't just win on one model or one task. It's the top performer everywhere.",
+      "source_paragraphs": [80]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "What about generation quality? Sometimes steering methods improve alignment but make the model's outputs worse in other ways.",
+      "source_paragraphs": [80]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Great question. They check this carefully. On TruthfulQA, the informativeness scores remain high, showing the model doesn't just become more cautious and refuse to answer. On RealToxicityPrompts, perplexity stays reasonable and diversity scores are maintained. So ODESteer isn't sacrificing quality for alignment.",
+      "source_paragraphs": [80]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "How do the neural network methods like HPR and RE-Control compare?",
+      "source_paragraphs": [80]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "They're inconsistent. HPR does well on detoxification but poorly on helpfulness in some cases. RE-Control can actually hurt performance on some models. TruthFlow is decent on truthfulness but struggles elsewhere. These methods need complex architectures and careful tuning for each task.",
+      "source_paragraphs": [80]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Whereas ODESteer just works across the board with its polynomial features and logistic regression.",
+      "source_paragraphs": [80]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "That's what makes it compelling. It's both simpler to implement and more robust. The paper attributes this to the combination of nonlinear features for fine-grained control and the multi-step ODE solving for accurate trajectory following.",
+      "source_paragraphs": [80]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So the theoretical advantages we discussed actually translate directly into empirical gains.",
+      "source_paragraphs": [74, 80]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "They do. And to really nail down which components matter, the paper includes an ablation study that teases apart the individual contributions. We'll look at that along with the conclusion next.",
+      "source_paragraphs": [80]
+    }
+  ]
+}

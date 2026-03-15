@@ -1,0 +1,230 @@
+{
+  "source": "C:\\Users\\Brian\\Documents\\UW Winter 26\\ProductivityAndReadingHelper\\input\\roadmap_to_pluralistic_alignment\\part_01.json",
+  "audio_file": "part_01_20260308_165619.wav",
+  "tag": "part_01",
+  "generated": "2026-03-08T16:56:21.752310",
+  "total_duration_ms": 318372.7,
+  "total_duration_formatted": "5:18.372",
+  "lines": [
+    {
+      "index": 0,
+      "voice": "Microsoft David",
+      "text": "Hey everyone, welcome back to the show. Today we're diving into a really fascinating paper called A Roadmap to Pluralistic Alignment. It comes from a big team of researchers including Taylor Sorensen, Jared Moore, Yejin Choi, and several others, and it was published at ICML in 2024.",
+      "start_ms": 0.0,
+      "end_ms": 19941.1,
+      "duration_ms": 19941.1,
+      "source_paragraphs": [
+        1
+      ]
+    },
+    {
+      "index": 1,
+      "voice": "Microsoft Zira",
+      "text": "I'm really excited about this one. So the big idea here is about how we align AI systems, right? But not just aligning them to one set of values.",
+      "start_ms": 20541.1,
+      "end_ms": 31478.6,
+      "duration_ms": 10937.5,
+      "source_paragraphs": [
+        1
+      ]
+    },
+    {
+      "index": 2,
+      "voice": "Microsoft David",
+      "text": "Exactly. The core argument is that as AI systems become more powerful and more widely used, they need to be designed to serve people with genuinely diverse values and perspectives. And right now, that's still a wide open research question.",
+      "start_ms": 32078.6,
+      "end_ms": 48170.0,
+      "duration_ms": 16091.4,
+      "source_paragraphs": [
+        1
+      ]
+    },
+    {
+      "index": 3,
+      "voice": "Microsoft Zira",
+      "text": "So when they say pluralistic alignment, what do they actually mean by that? Like, how do you make a model pluralistic?",
+      "start_ms": 48770.0,
+      "end_ms": 57418.0,
+      "duration_ms": 8648.0,
+      "source_paragraphs": [
+        1
+      ]
+    },
+    {
+      "index": 4,
+      "voice": "Microsoft David",
+      "text": "Great question. They propose three concrete ways to think about it. First, there's what they call Overton pluralism, where the model presents a whole spectrum of reasonable responses rather than just one answer. Second, steerable pluralism, where the model can be guided to reflect specific perspectives or values. And third, distributional pluralism, where the model's outputs are well-calibrated to match the distribution of views in a given population.",
+      "start_ms": 58018.0,
+      "end_ms": 88857.1,
+      "duration_ms": 30839.1,
+      "source_paragraphs": [
+        1
+      ]
+    },
+    {
+      "index": 5,
+      "voice": "Microsoft Zira",
+      "text": "Oh, so it's not just one definition of pluralism. They're actually breaking it down into three distinct types. That's really helpful for making it concrete.",
+      "start_ms": 89457.1,
+      "end_ms": 100619.7,
+      "duration_ms": 11162.6,
+      "source_paragraphs": [
+        1
+      ]
+    },
+    {
+      "index": 6,
+      "voice": "Microsoft David",
+      "text": "Right. And on top of that, they also propose three types of benchmarks for measuring pluralism. Multi-objective benchmarks that track performance across multiple goals, trade-off steerable benchmarks that test whether models can be pushed toward different trade-offs, and jury-pluralistic benchmarks that explicitly incorporate diverse human ratings.",
+      "start_ms": 101219.7,
+      "end_ms": 123624.9,
+      "duration_ms": 22405.2,
+      "source_paragraphs": [
+        1
+      ]
+    },
+    {
+      "index": 7,
+      "voice": "Microsoft Zira",
+      "text": "That's a really comprehensive framework. But what's the punchline? Does current alignment actually do well on pluralism?",
+      "start_ms": 124224.9,
+      "end_ms": 133038.0,
+      "duration_ms": 8813.0,
+      "source_paragraphs": [
+        1
+      ]
+    },
+    {
+      "index": 8,
+      "voice": "Microsoft David",
+      "text": "That's where it gets sobering. They present empirical evidence suggesting that standard alignment procedures, things like RLHF, may actually reduce distributional pluralism in models. So the very process meant to make models better might be narrowing their perspective.",
+      "start_ms": 133638.0,
+      "end_ms": 151328.9,
+      "duration_ms": 17691.0,
+      "source_paragraphs": [
+        1
+      ]
+    },
+    {
+      "index": 9,
+      "voice": "Microsoft Zira",
+      "text": "Wow. So let's get into the introduction and understand why they think this is such a pressing issue.",
+      "start_ms": 151928.9,
+      "end_ms": 158512.1,
+      "duration_ms": 6583.1,
+      "source_paragraphs": [
+        2
+      ]
+    },
+    {
+      "index": 10,
+      "voice": "Microsoft David",
+      "text": "The authors start by pointing out something that seems obvious but is easy to overlook. AI alignment aims to make systems work with human intentions and values. But even within a single task or prompt, different people have very different goals and values. As more people use and rely on AI, we need systems that can genuinely represent that diversity.",
+      "start_ms": 159112.1,
+      "end_ms": 182397.1,
+      "duration_ms": 23285.0,
+      "source_paragraphs": [
+        2
+      ]
+    },
+    {
+      "index": 11,
+      "voice": "Microsoft Zira",
+      "text": "Right. It's one thing to align a model to what the average person wants. But the average person doesn't really exist, does it? Everyone has their own unique combination of values.",
+      "start_ms": 182997.1,
+      "end_ms": 196029.3,
+      "duration_ms": 13032.2,
+      "source_paragraphs": [
+        2
+      ]
+    },
+    {
+      "index": 12,
+      "voice": "Microsoft David",
+      "text": "Exactly. And they raise two key questions. First, how concretely can a system be pluralistic? And second, how do you design benchmarks to actually measure that pluralism? These are the questions the whole paper is organized around.",
+      "start_ms": 196629.3,
+      "end_ms": 214390.6,
+      "duration_ms": 17761.3,
+      "source_paragraphs": [
+        2
+      ]
+    },
+    {
+      "index": 13,
+      "voice": "Microsoft Zira",
+      "text": "So their framework with the three types of pluralism, that's their answer to the first question?",
+      "start_ms": 214990.6,
+      "end_ms": 220948.9,
+      "duration_ms": 5958.4,
+      "source_paragraphs": [
+        3
+      ]
+    },
+    {
+      "index": 14,
+      "voice": "Microsoft David",
+      "text": "Yes. They use large language models as a testbed and formally define those three types. Overton pluralism gives you comprehensive, high-coverage responses. Steerable pluralism lets you faithfully steer the model to represent particular attributes. And distributional pluralism means the model's distribution over answers matches that of a target population.",
+      "start_ms": 221548.9,
+      "end_ms": 245973.6,
+      "duration_ms": 24424.6,
+      "source_paragraphs": [
+        3
+      ]
+    },
+    {
+      "index": 15,
+      "voice": "Microsoft Zira",
+      "text": "And the benchmarks map onto these in a nice way. Multi-objective benchmarks for measuring across goals, trade-off steerable benchmarks for measuring steerability, and jury-pluralistic benchmarks for modeling real individuals' preferences.",
+      "start_ms": 246573.6,
+      "end_ms": 261635.1,
+      "duration_ms": 15061.6,
+      "source_paragraphs": [
+        3
+      ]
+    },
+    {
+      "index": 16,
+      "voice": "Microsoft David",
+      "text": "That's right. And there's a really important finding they highlight. Current alignment techniques, the ones most labs are using today, seem to actually reduce distributional pluralism. They present initial evidence for this and advocate for a whole new direction of future work toward pluralistic evaluations and alignment.",
+      "start_ms": 262235.1,
+      "end_ms": 282855.5,
+      "duration_ms": 20620.4,
+      "source_paragraphs": [
+        4
+      ]
+    },
+    {
+      "index": 17,
+      "voice": "Microsoft Zira",
+      "text": "That's a bold claim. If alignment is making models less pluralistic, that has huge implications for how we're building AI systems right now.",
+      "start_ms": 283455.5,
+      "end_ms": 293123.1,
+      "duration_ms": 9667.6,
+      "source_paragraphs": [
+        4
+      ]
+    },
+    {
+      "index": 18,
+      "voice": "Microsoft David",
+      "text": "It really does. And in our next segment, we'll dig into their arguments for why pluralism should be a priority. They lay out several compelling reasons, from customization needs to technical benefits to the philosophical case that pluralism is simply valuable in itself.",
+      "start_ms": 293723.1,
+      "end_ms": 311409.1,
+      "duration_ms": 17686.0,
+      "source_paragraphs": [
+        4
+      ]
+    },
+    {
+      "index": 19,
+      "voice": "Microsoft Zira",
+      "text": "Can't wait. This is going to be a great deep dive. Stay tuned everyone.",
+      "start_ms": 312009.1,
+      "end_ms": 318372.7,
+      "duration_ms": 6363.5,
+      "source_paragraphs": [
+        4
+      ]
+    }
+  ]
+}

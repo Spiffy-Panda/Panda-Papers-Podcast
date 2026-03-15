@@ -1,0 +1,270 @@
+{
+  "source": "C:\\Users\\Brian\\Documents\\UW Winter 26\\ProductivityAndReadingHelper\\output\\identifiability\\dialog_part_01.json",
+  "audio_file": "part_01_20260308_133533.wav",
+  "tag": "part_01",
+  "generated": "2026-03-08T13:35:36.422607",
+  "total_duration_ms": 322612.1,
+  "total_duration_formatted": "5:22.612",
+  "lines": [
+    {
+      "index": 0,
+      "voice": "Microsoft David",
+      "text": "Welcome to the show, everyone. Today we're diving into a really fascinating paper that asks a surprisingly fundamental question about how we understand neural networks from the inside out.",
+      "start_ms": 0.0,
+      "end_ms": 12132.2,
+      "duration_ms": 12132.2,
+      "source_paragraphs": [
+        1
+      ]
+    },
+    {
+      "index": 1,
+      "voice": "Microsoft Zira",
+      "text": "Yeah, I've been looking forward to this one. The paper is called Everything, Everywhere, All at Once: Is Mechanistic Interpretability Identifiable? That's quite a title.",
+      "start_ms": 12732.2,
+      "end_ms": 25594.4,
+      "duration_ms": 12862.3,
+      "source_paragraphs": [
+        1
+      ]
+    },
+    {
+      "index": 2,
+      "voice": "Microsoft David",
+      "text": "It really is. So the core idea here is about mechanistic interpretability, or MI for short. This is the field that tries to reverse-engineer neural networks to figure out what simple algorithms they've learned to run internally.",
+      "start_ms": 26194.4,
+      "end_ms": 41116.1,
+      "duration_ms": 14921.7,
+      "source_paragraphs": [
+        1
+      ]
+    },
+    {
+      "index": 3,
+      "voice": "Microsoft Zira",
+      "text": "Okay, so when we say reverse-engineer, we mean looking inside the network and trying to find a human-readable explanation for how it does what it does?",
+      "start_ms": 41716.1,
+      "end_ms": 51128.8,
+      "duration_ms": 9412.7,
+      "source_paragraphs": [
+        1,
+        2
+      ]
+    },
+    {
+      "index": 4,
+      "voice": "Microsoft David",
+      "text": "Exactly. And the key question this paper raises is: when you go looking for that explanation, are you guaranteed to find just one? Or could there be many different, equally valid explanations that all satisfy the criteria researchers use?",
+      "start_ms": 51728.8,
+      "end_ms": 68420.6,
+      "duration_ms": 16691.7,
+      "source_paragraphs": [
+        1,
+        3
+      ]
+    },
+    {
+      "index": 5,
+      "voice": "Microsoft Zira",
+      "text": "That's a really important question. Because if there's more than one valid explanation, how do you know which one is the right one?",
+      "start_ms": 69020.6,
+      "end_ms": 77488.7,
+      "duration_ms": 8468.1,
+      "source_paragraphs": [
+        3
+      ]
+    },
+    {
+      "index": 6,
+      "voice": "Microsoft David",
+      "text": "Right. The authors borrow this concept called identifiability from statistics. In statistics, a model is identifiable if you can uniquely determine its parameters from the data. They apply the same idea here: is the explanation you find uniquely determined by the criteria you're using?",
+      "start_ms": 78088.7,
+      "end_ms": 97899.3,
+      "duration_ms": 19810.6,
+      "source_paragraphs": [
+        1,
+        3
+      ]
+    },
+    {
+      "index": 7,
+      "voice": "Microsoft Zira",
+      "text": "That's a clever analogy. So how do researchers actually go about finding these explanations in practice?",
+      "start_ms": 98499.3,
+      "end_ms": 106122.4,
+      "duration_ms": 7623.1,
+      "source_paragraphs": [
+        2
+      ]
+    },
+    {
+      "index": 8,
+      "voice": "Microsoft David",
+      "text": "The paper identifies two main strategies. The first is called where-then-what. You start by finding a circuit, which is a subset of the network that captures the important computation, and then you interpret what algorithm that circuit is implementing.",
+      "start_ms": 106722.4,
+      "end_ms": 123208.9,
+      "duration_ms": 16486.6,
+      "source_paragraphs": [
+        2
+      ]
+    },
+    {
+      "index": 9,
+      "voice": "Microsoft Zira",
+      "text": "So you find the relevant piece of the network first, and then figure out what it's doing?",
+      "start_ms": 123808.9,
+      "end_ms": 129507.4,
+      "duration_ms": 5698.5,
+      "source_paragraphs": [
+        2
+      ]
+    },
+    {
+      "index": 10,
+      "voice": "Microsoft David",
+      "text": "Exactly. The second strategy flips it around. It's called what-then-where. You start with a candidate algorithm, something you think the network might be computing, and then you search through the network's internal activations to find where that algorithm is actually being implemented.",
+      "start_ms": 130107.4,
+      "end_ms": 148948.3,
+      "duration_ms": 18841.0,
+      "source_paragraphs": [
+        2
+      ]
+    },
+    {
+      "index": 11,
+      "voice": "Microsoft Zira",
+      "text": "And each of these strategies has its own way of measuring whether the explanation is good, right?",
+      "start_ms": 149548.3,
+      "end_ms": 155496.7,
+      "duration_ms": 5948.4,
+      "source_paragraphs": [
+        2
+      ]
+    },
+    {
+      "index": 12,
+      "voice": "Microsoft David",
+      "text": "Yes. For the circuit-first approach, the main metric is circuit error, basically how well the circuit reproduces the full model's behavior. For the algorithm-first approach, they use something called Intervention Interchange Accuracy, or IIA, which measures causal alignment between the algorithm and the network's internal states.",
+      "start_ms": 156096.7,
+      "end_ms": 178127.3,
+      "duration_ms": 22030.6,
+      "source_paragraphs": [
+        2
+      ]
+    },
+    {
+      "index": 13,
+      "voice": "Microsoft Zira",
+      "text": "Okay, so those are the tools. Now what did they actually find when they tested whether these methods give unique answers?",
+      "start_ms": 178727.3,
+      "end_ms": 186975.5,
+      "duration_ms": 8248.2,
+      "source_paragraphs": [
+        3,
+        4
+      ]
+    },
+    {
+      "index": 14,
+      "voice": "Microsoft David",
+      "text": "This is where it gets really striking. They set up experiments with simple tasks like Boolean functions and small multi-layer perceptrons, deliberately small enough that they could exhaustively enumerate every possible explanation.",
+      "start_ms": 187575.5,
+      "end_ms": 201992.2,
+      "duration_ms": 14416.7,
+      "source_paragraphs": [
+        4
+      ]
+    },
+    {
+      "index": 15,
+      "voice": "Microsoft Zira",
+      "text": "So they checked every single possibility? That's thorough.",
+      "start_ms": 202592.2,
+      "end_ms": 207086.0,
+      "duration_ms": 4493.8,
+      "source_paragraphs": [
+        4
+      ]
+    },
+    {
+      "index": 16,
+      "voice": "Microsoft David",
+      "text": "Very thorough. And the result was overwhelming non-identifiability at every stage. Multiple circuits can perfectly replicate the model's behavior. For any given circuit, there are multiple valid interpretations. Several algorithms can achieve perfect causal alignment. And for a single algorithm, there are multiple subspaces in the network that align equally well.",
+      "start_ms": 207686.0,
+      "end_ms": 233175.9,
+      "duration_ms": 25489.9,
+      "source_paragraphs": [
+        4
+      ]
+    },
+    {
+      "index": 17,
+      "voice": "Microsoft Zira",
+      "text": "Wow, so it's not just a little bit ambiguous. It's ambiguous everywhere you look.",
+      "start_ms": 233775.9,
+      "end_ms": 240394.4,
+      "duration_ms": 6618.5,
+      "source_paragraphs": [
+        4
+      ]
+    },
+    {
+      "index": 18,
+      "voice": "Microsoft David",
+      "text": "Exactly. The paper asks four specific questions: Is the circuit unique? Is the interpretation of a circuit unique? Is the causally aligned algorithm unique? And is the subspace alignment unique? The answer to all four is no.",
+      "start_ms": 240994.4,
+      "end_ms": 258795.9,
+      "duration_ms": 17801.5,
+      "source_paragraphs": [
+        3,
+        4
+      ]
+    },
+    {
+      "index": 19,
+      "voice": "Microsoft Zira",
+      "text": "That's a pretty stark set of findings. Does that mean the whole enterprise of mechanistic interpretability is in trouble?",
+      "start_ms": 259395.9,
+      "end_ms": 267173.7,
+      "duration_ms": 7777.7,
+      "source_paragraphs": [
+        4
+      ]
+    },
+    {
+      "index": 20,
+      "voice": "Microsoft David",
+      "text": "Not necessarily. The authors discuss several perspectives. Maybe uniqueness isn't actually required. Maybe what matters is whether explanations are useful for prediction and control. They also look at stricter criteria from causal abstraction theory, and a framework called inner interpretability that requires explanations to be validated by multiple complementary tests.",
+      "start_ms": 267773.7,
+      "end_ms": 293128.4,
+      "duration_ms": 25354.7,
+      "source_paragraphs": [
+        1,
+        4
+      ]
+    },
+    {
+      "index": 21,
+      "voice": "Microsoft Zira",
+      "text": "So there might be ways to deal with this even if you can't narrow it down to one explanation.",
+      "start_ms": 293728.4,
+      "end_ms": 299106.7,
+      "duration_ms": 5378.3,
+      "source_paragraphs": [
+        4
+      ]
+    },
+    {
+      "index": 22,
+      "voice": "Microsoft David",
+      "text": "Exactly. And that's what makes this paper so interesting. It doesn't just identify the problem; it maps out the landscape of possible responses. In the next segment, we'll dig into the technical foundations, what circuits actually are, how these mappings work formally, and why the assumptions underlying MI matter so much.",
+      "start_ms": 299706.7,
+      "end_ms": 322612.1,
+      "duration_ms": 22905.4,
+      "source_paragraphs": [
+        1,
+        4
+      ]
+    }
+  ]
+}

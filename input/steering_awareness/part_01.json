@@ -1,0 +1,135 @@
+{
+  "pause_between_ms": 600,
+  "rate": 0,
+  "part_number": 1,
+  "paper_source": "input/steering_awareness_paper.json",
+  "speaker_a": "Microsoft David - Systems and signal processing background, methodical thinker who likes to understand precise experimental setups and mathematical framing",
+  "speaker_b": "Microsoft Zira - AI safety and alignment theory background, draws quick connections to broader implications, makes creative analogies, strong conceptual thinker",
+  "lines": [
+    {
+      "voice": "Microsoft Zira",
+      "text": "Hey everyone, welcome back! Today we're covering a paper that honestly made me rethink some pretty fundamental assumptions in AI safety research. It's called Steering Awareness: Models Can Be Trained to Detect Activation Steering, by Joshua Fonseca Rivera and David Demitri Africa.",
+      "source_paragraphs": [1]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Yeah, this one really caught my attention too. So for anyone unfamiliar, activation steering is this technique where you add a vector to a model's internal representations to change its behavior. Researchers use it all the time for safety evaluations, for studying model behaviors.",
+      "source_paragraphs": [1, 4]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Right, and here's the thing that makes this paper so important. There's been this implicit assumption in the field that when you inject a steering vector, the model just doesn't know it's happening. Like you're secretly nudging it.",
+      "source_paragraphs": [4]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "And these researchers asked the obvious question nobody was really testing directly: what if the model can actually tell?",
+      "source_paragraphs": [4]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Spoiler alert: it absolutely can. Their best model hits 95.5 percent detection accuracy on concepts it's never seen before, with zero false positives on clean inputs. That's remarkable.",
+      "source_paragraphs": [1]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "And not just detection. The model can actually identify which concept was injected about 71 percent of the time. So it's not just saying hey something is off, it's saying oh you're trying to steer me toward sycophancy or whatever the concept is.",
+      "source_paragraphs": [1]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Now the really wild part, and this is what keeps me up at night from a safety perspective. Detection doesn't help the model resist the steering. The models that are best at detecting they're being steered are actually more susceptible to it.",
+      "source_paragraphs": [2]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "That is genuinely counterintuitive. You'd think knowing you're being manipulated would help you fight it. But no, it's like knowing someone spiked your drink doesn't make you less drunk.",
+      "source_paragraphs": [2]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "That's a great analogy! The paper also has a really elegant mechanistic explanation for how detection works. It turns out the model progressively rotates all these different injected vectors into one shared detection direction as information flows through the layers.",
+      "source_paragraphs": [3]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Yeah, it's a distributed transformation. Not one magic layer that does the detection, but a gradual rotation through the network. Really beautiful result from a signal processing standpoint.",
+      "source_paragraphs": [3]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So let's get into the setup. The authors define this concept they call steering awareness. Operationally, a model is steering-aware if it can report two things: whether an injection occurred, and what concept was injected.",
+      "source_paragraphs": [5]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "What I find interesting about their framing is they call it a targeted form of privileged self-access. It's not just the model knowing its own internal states, it's specifically about detecting external intervention. There's a distinction there that matters.",
+      "source_paragraphs": [5]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Right, it's introspection about manipulation rather than just ordinary self-monitoring. That connects to some deep questions about what kinds of self-knowledge these systems can develop.",
+      "source_paragraphs": [5]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "The paper lays out four clean contributions. First, language models can be fine-tuned to detect steering with high accuracy even on held-out concepts they weren't trained on.",
+      "source_paragraphs": [6]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Second, and this is where the transfer story gets interesting, detection generalizes to new vector extraction methods, but only when those methods produce vectors that point in similar directions to what the model was trained on.",
+      "source_paragraphs": [6]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Third is the resistance finding we mentioned. Detection and resistance are dissociated. Models that know they're being steered are actually more steerable, not less.",
+      "source_paragraphs": [6]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "And fourth, they crack open the mechanism. It's this distributed transport into a shared direction in the final layer. Not a single layer doing the work, but a progressive rotation.",
+      "source_paragraphs": [6]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "I appreciate how systematically they lay it out. Each contribution builds on the previous one, from can we detect to does it transfer to does it help to how does it work.",
+      "source_paragraphs": [6]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "What strikes me is how this paper touches on a fundamental tension in AI safety. We want to use steering as an evaluation tool, right? To probe model behavior. But if models can detect they're being evaluated, the whole paradigm might need rethinking.",
+      "source_paragraphs": [4, 6]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "It's a bit like Heisenberg's uncertainty principle applied to AI evaluation. The act of probing changes what you're observing.",
+      "source_paragraphs": [4]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Oh I love that comparison. And I'd add, it's not just that they change because they notice, it's that they could potentially strategize around it. A model that knows it's being safety-tested could behave differently than one that doesn't.",
+      "source_paragraphs": [4, 6]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Right. Though we should note, this paper is about what's possible through deliberate fine-tuning. They're not claiming models spontaneously develop this awareness.",
+      "source_paragraphs": [4, 5]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "True, but the fact that it's learnable at all is the key takeaway. The capability exists in the architecture.",
+      "source_paragraphs": [1, 6]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Absolutely. Coming up next, we'll dig into the related work and the really clever methodology they used, including a signal detection theory framework that predicts exactly when detection should kick in. It's some elegant math.",
+      "source_paragraphs": [6]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "And the experimental setup across seven different models. Stick around!",
+      "source_paragraphs": [6]
+    }
+  ]
+}

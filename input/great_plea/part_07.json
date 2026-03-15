@@ -1,0 +1,113 @@
+{
+  "pause_between_ms": 600,
+  "rate": 0,
+  "part_number": 7,
+  "paper_source": "input/great_plea_paper.json",
+  "lines": [
+    {
+      "voice": "Microsoft David",
+      "text": "Welcome back. Last time we explored the ethical concerns across military and healthcare AI, including rapid decision-making, data privacy, trust calibration, and accountability gaps. Now the authors continue unpacking some remaining concerns before introducing their framework.",
+      "source_paragraphs": [32]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Right, they were making the case for why we need a structured ethical framework. What concerns are still on the table?",
+      "source_paragraphs": [32]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "They dig deeper into the accountability problem. A fully autonomous system that makes its own decisions creates a dangerous gap. It distances the military operator or clinician from responsibility for the system's actions. The authors argue this could entirely negate the value of AI if accountability breaks down completely.",
+      "source_paragraphs": [32]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So if nobody is responsible for what the AI does, that's worse than not having the AI at all. Because at least without it, you know who made the decision.",
+      "source_paragraphs": [32]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Exactly. Then there are equity concerns. Biased algorithms or biased practices can lead to certain patient groups receiving lower levels of care. The sources of bias are varied: it could be the algorithm itself, poor data collection, or simply a lack of diversity in the datasets and development teams.",
+      "source_paragraphs": [33]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "And in healthcare, equity isn't just a nice-to-have. If your AI system recommends different treatments based on race or socioeconomic status because of training data bias, that's a direct harm to patients.",
+      "source_paragraphs": [33]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Absolutely. The authors also flag autonomy as a concern. Both patient autonomy and clinician autonomy need to be respected. The patient should have a say in their care, and the clinician should be able to exercise their professional judgment without the AI system overriding them.",
+      "source_paragraphs": [34]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "That's a subtle but important point. It's not just about patients trusting the system. It's also about making sure doctors don't feel pressured to follow the AI's recommendation against their better judgment.",
+      "source_paragraphs": [34]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Right. So with all these concerns laid out, the authors now turn to building their solution. They surveyed existing ethical frameworks from a really impressive range of organizations.",
+      "source_paragraphs": [35]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Who did they look at?",
+      "source_paragraphs": [35]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "The U.S. Department of Defense, NATO, the American Medical Association, the World Health Organization, the Coalition for Health AI, and even the U.S. Office of Science and Technology Policy's Blueprint for an AI Bill of Rights. So they cast a really wide net across both military and healthcare governance.",
+      "source_paragraphs": [35]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "That's comprehensive. And what common themes did they find across all those frameworks?",
+      "source_paragraphs": [36]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Two themes kept coming up consistently: accountability and the importance of maintaining human presence alongside AI systems. There was also a strong emphasis across frameworks on transparency and explainability.",
+      "source_paragraphs": [36]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So regardless of whether you're coming from a military perspective or a healthcare perspective, everyone agrees humans need to stay involved and the AI's reasoning needs to be understandable.",
+      "source_paragraphs": [36]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Exactly. And from this analysis, the authors developed nine interconnected principles. Their approach was two-pronged: they identified shared concerns between military and healthcare where existing principles could be adopted directly, and they also identified unique healthcare circumstances that required expanding beyond what the military frameworks covered.",
+      "source_paragraphs": [37]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So some principles carry over from the military context and some are new for healthcare. How did they divide them?",
+      "source_paragraphs": [38]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Principles like traceability, reliability, lawfulness, accountability, governability, and equity apply to both domains. They're universal concerns for any high-stakes AI deployment. But principles like empathy, autonomy, and privacy require specific healthcare emphasis because of the unique relationship between patients, clinicians, and care delivery.",
+      "source_paragraphs": [38]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "That makes a lot of sense. The military needs reliable and traceable AI, but they're not worried about bedside manner. Healthcare has all those same needs plus the human element of caring for patients.",
+      "source_paragraphs": [38]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "That's a perfect way to frame it. And together, these nine principles spell out GREAT PLEA: Governability, Reliability, Equity, Accountability, Traceability, Privacy, Lawfulness, Empathy, and Autonomy.",
+      "source_paragraphs": [37, 38]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "GREAT PLEA. I love that they made it into an acronym. It makes it memorable and signals that this is meant to be actionable, not just theoretical. So are we going to go through each principle?",
+      "source_paragraphs": [37, 38]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "We are! Starting next time with the first letter: G for Governability. The authors define what it means, explain why it matters for healthcare AI specifically, and lay out concrete requirements for implementation. It's where the framework really comes to life. Stay with us!",
+      "source_paragraphs": [38]
+    }
+  ]
+}

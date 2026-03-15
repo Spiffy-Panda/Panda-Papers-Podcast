@@ -1,0 +1,267 @@
+{
+  "source": "C:\\Users\\Brian\\Documents\\UW Winter 26\\ProductivityAndReadingHelper\\input\\great_plea\\part_17.json",
+  "audio_file": "part_17_20260306_194909.wav",
+  "tag": "part_17",
+  "generated": "2026-03-06T19:49:11.559755",
+  "total_duration_ms": 322649.5,
+  "total_duration_formatted": "5:22.649",
+  "lines": [
+    {
+      "index": 0,
+      "voice": "Microsoft David",
+      "text": "Welcome back to our final episode. Over the last sixteen parts, we've walked through every principle in the GREAT PLEA framework. Today we're wrapping up with the authors' conclusion.",
+      "start_ms": 0.0,
+      "end_ms": 12107.3,
+      "duration_ms": 12107.3,
+      "source_paragraphs": [
+        77
+      ]
+    },
+    {
+      "index": 1,
+      "voice": "Microsoft Zira",
+      "text": "It's been quite a journey. So how do the authors begin their conclusion?",
+      "start_ms": 12707.3,
+      "end_ms": 17886.0,
+      "duration_ms": 5178.7,
+      "source_paragraphs": [
+        77
+      ]
+    },
+    {
+      "index": 2,
+      "voice": "Microsoft David",
+      "text": "They start on an optimistic note. Generative AI has great potential to enhance healthcare and make high-quality care more accessible to all. They see it as potentially leading to a fundamental transformation in how healthcare is delivered.",
+      "start_ms": 18486.0,
+      "end_ms": 33487.3,
+      "duration_ms": 15001.3,
+      "source_paragraphs": [
+        77
+      ]
+    },
+    {
+      "index": 3,
+      "voice": "Microsoft Zira",
+      "text": "That's a strong statement. Not just an improvement, but a fundamental transformation.",
+      "start_ms": 34087.3,
+      "end_ms": 40635.6,
+      "duration_ms": 6548.3,
+      "source_paragraphs": [
+        77
+      ]
+    },
+    {
+      "index": 4,
+      "voice": "Microsoft David",
+      "text": "It is. But they balance that optimism with realism. They note that the challenges posed by AI in healthcare often mirror those encountered in the military, which justifies the cross-sector approach they've taken throughout the paper.",
+      "start_ms": 41235.6,
+      "end_ms": 55957.2,
+      "duration_ms": 14721.6,
+      "source_paragraphs": [
+        78
+      ]
+    },
+    {
+      "index": 5,
+      "voice": "Microsoft Zira",
+      "text": "That was really the central insight of the whole paper, wasn't it? That the military has been grappling with these ethical questions longer, and healthcare can learn from that experience.",
+      "start_ms": 56557.2,
+      "end_ms": 68109.6,
+      "duration_ms": 11552.3,
+      "source_paragraphs": [
+        78
+      ]
+    },
+    {
+      "index": 6,
+      "voice": "Microsoft David",
+      "text": "Exactly. And they emphasize what makes their framework specific to generative AI as opposed to AI in general. The GREAT PLEA principles address the elevated risks that come with generative AI specifically, including its potential for spreading misinformation, the ramifications of bias in its massive training datasets, and the difficulties of evaluating systems that produce free-form outputs.",
+      "start_ms": 68709.6,
+      "end_ms": 93604.6,
+      "duration_ms": 24895.0,
+      "source_paragraphs": [
+        79
+      ]
+    },
+    {
+      "index": 7,
+      "voice": "Microsoft Zira",
+      "text": "Those are the challenges that make generative AI different from, say, a traditional diagnostic algorithm. The outputs are less predictable and harder to validate.",
+      "start_ms": 94204.6,
+      "end_ms": 105137.0,
+      "duration_ms": 10932.4,
+      "source_paragraphs": [
+        79
+      ]
+    },
+    {
+      "index": 8,
+      "voice": "Microsoft David",
+      "text": "Right. And the authors argue that given how widespread generative AI has become and its inherent risks, these ethical principles can protect both patients and clinicians from unforeseen consequences. That's the protective function of the framework.",
+      "start_ms": 105737.0,
+      "end_ms": 121658.1,
+      "duration_ms": 15921.2,
+      "source_paragraphs": [
+        80
+      ]
+    },
+    {
+      "index": 9,
+      "voice": "Microsoft Zira",
+      "text": "It's like a safety net. You deploy the technology but with guardrails in place.",
+      "start_ms": 122258.1,
+      "end_ms": 128226.6,
+      "duration_ms": 5968.4,
+      "source_paragraphs": [
+        80
+      ]
+    },
+    {
+      "index": 10,
+      "voice": "Microsoft David",
+      "text": "And they describe what following these principles would look like in practice. Generative AI can be continuously evaluated for errors, bias, and other concerns that patients or caregivers may have about their relationship with AI in their field. It's an ongoing process, not a one-time certification.",
+      "start_ms": 128826.6,
+      "end_ms": 147862.4,
+      "duration_ms": 19035.9,
+      "source_paragraphs": [
+        81
+      ]
+    },
+    {
+      "index": 11,
+      "voice": "Microsoft Zira",
+      "text": "Continuous evaluation. That connects back to several of the individual principles, like Reliability and Governability, which both emphasized ongoing monitoring.",
+      "start_ms": 148462.4,
+      "end_ms": 159444.9,
+      "duration_ms": 10982.4,
+      "source_paragraphs": [
+        81
+      ]
+    },
+    {
+      "index": 12,
+      "voice": "Microsoft David",
+      "text": "It does. And the authors issue something of a call to action. They urge us to embrace these principles, foster closer collaboration between humans and technology, and work toward a radical enhancement in the healthcare system. It's ambitious but grounded in the framework they've built.",
+      "start_ms": 160044.9,
+      "end_ms": 178955.7,
+      "duration_ms": 18910.8,
+      "source_paragraphs": [
+        82
+      ]
+    },
+    {
+      "index": 13,
+      "voice": "Microsoft Zira",
+      "text": "Now, a framework is only as good as its enforcement. Do the authors address how these principles would actually be enforced?",
+      "start_ms": 179555.7,
+      "end_ms": 187928.3,
+      "duration_ms": 8372.7,
+      "source_paragraphs": [
+        83
+      ]
+    },
+    {
+      "index": 14,
+      "voice": "Microsoft David",
+      "text": "They do, and they're honest about the challenges. They say enforcement mechanisms will require cooperation with lawmakers and the establishment of standards for both developers and users. They also call for partnerships with recognized governing bodies in healthcare, like the World Health Organization and the American Medical Association.",
+      "start_ms": 188528.3,
+      "end_ms": 209808.6,
+      "duration_ms": 21280.2,
+      "source_paragraphs": [
+        83
+      ]
+    },
+    {
+      "index": 15,
+      "voice": "Microsoft Zira",
+      "text": "So they're acknowledging that ethical principles need institutional backing to have real teeth.",
+      "start_ms": 210408.6,
+      "end_ms": 215852.0,
+      "duration_ms": 5443.4,
+      "source_paragraphs": [
+        83
+      ]
+    },
+    {
+      "index": 16,
+      "voice": "Microsoft David",
+      "text": "Exactly. And to their credit, the authors are transparent about what they haven't solved. They acknowledge that detailed enforcement procedures are a limitation of this work. They explicitly call out the lack of specific enforcement mechanisms and identify implementing AI metrics or enforcement methods for the GREAT PLEA principles as a key area for future research.",
+      "start_ms": 216452.0,
+      "end_ms": 239606.9,
+      "duration_ms": 23154.9,
+      "source_paragraphs": [
+        84
+      ]
+    },
+    {
+      "index": 17,
+      "voice": "Microsoft Zira",
+      "text": "I appreciate that honesty. They're not claiming to have solved everything. They've built the ethical framework, and now the next step is figuring out how to make it actionable and enforceable.",
+      "start_ms": 240206.9,
+      "end_ms": 252453.8,
+      "duration_ms": 12246.9,
+      "source_paragraphs": [
+        84
+      ]
+    },
+    {
+      "index": 18,
+      "voice": "Microsoft David",
+      "text": "Right. And I think that's what makes this paper valuable. The GREAT PLEA framework gives us a comprehensive vocabulary for discussing the ethics of generative AI in healthcare: Governability, Reliability, Equity, Accountability, Traceability, Privacy, Lawfulness, Empathy, and Autonomy. Nine interconnected principles that cover the full spectrum of ethical concerns.",
+      "start_ms": 253053.8,
+      "end_ms": 277953.5,
+      "duration_ms": 24899.7,
+      "source_paragraphs": [
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84
+      ]
+    },
+    {
+      "index": 19,
+      "voice": "Microsoft Zira",
+      "text": "And the military-to-healthcare bridge they built is genuinely novel. By drawing on decades of military experience with AI ethics, they've given the healthcare community a head start on these critical questions.",
+      "start_ms": 278553.5,
+      "end_ms": 291170.1,
+      "duration_ms": 12616.6,
+      "source_paragraphs": [
+        77,
+        78
+      ]
+    },
+    {
+      "index": 20,
+      "voice": "Microsoft David",
+      "text": "Well said. That wraps up our deep dive into the paper by Oniani, Hilsman, Peng, Poropatich, Pamplin, Legault, and Wang. Thank you all for joining us across these seventeen episodes. As generative AI continues to evolve in healthcare, frameworks like GREAT PLEA will only become more important. Until next time!",
+      "start_ms": 291770.1,
+      "end_ms": 314826.0,
+      "duration_ms": 23055.9,
+      "source_paragraphs": [
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84
+      ]
+    },
+    {
+      "index": 21,
+      "voice": "Microsoft Zira",
+      "text": "Thanks for listening, everyone. Stay curious, stay informed, and stay tuned!",
+      "start_ms": 315426.0,
+      "end_ms": 322649.5,
+      "duration_ms": 7223.5,
+      "source_paragraphs": [
+        84
+      ]
+    }
+  ]
+}

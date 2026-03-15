@@ -1,0 +1,103 @@
+{
+  "pause_between_ms": 600,
+  "rate": 0,
+  "part_number": 10,
+  "paper_source": "input/great_plea_paper.json",
+  "lines": [
+    {
+      "voice": "Microsoft David",
+      "text": "Welcome back, everyone. Last time we covered Reliability, the R in GREAT PLEA, and talked about the five requirements for trustworthy AI in healthcare. Now we're moving to the E: Equity.",
+      "source_paragraphs": [48]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Equity. That's a big word in healthcare right now. How do the authors define it?",
+      "source_paragraphs": [48]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "They define equity as the state in which everyone has a fair and just opportunity to attain their highest level of health. Notice it's not saying everyone gets the same treatment. It's saying everyone gets a fair shot at the best health outcomes possible for them.",
+      "source_paragraphs": [48]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "That's an important distinction. Equal treatment isn't always equitable treatment because people start from different places.",
+      "source_paragraphs": [48]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Exactly. And the authors make a really honest point here. They acknowledge that inequity already exists in healthcare. This isn't a problem AI is creating from scratch. But the concern is that generative AI could make it worse.",
+      "source_paragraphs": [49]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "How so? What's the mechanism for AI worsening existing disparities?",
+      "source_paragraphs": [49]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "It comes down to data bias. Generative AI models are pre-trained on massive datasets, and the authors point out that these models naturally have elevated data bias risks. If the training data underrepresents certain populations, the AI learns a skewed picture of the world.",
+      "source_paragraphs": [49]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "And the groups most likely to be underrepresented are the ones already facing disparities.",
+      "source_paragraphs": [49]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Right. The authors specifically call out marginalized, underrepresented, socioeconomically disadvantaged, low-education, and low health-literacy groups. These are the populations that generative AI should not be exacerbating inequity for.",
+      "source_paragraphs": [49]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So it's a double-edged sword. AI has the potential to democratize healthcare access, but if the underlying data is biased, it could actually widen the gap.",
+      "source_paragraphs": [49, 50]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "And the authors take it a step further. They say rather than just accepting that bias exists and trying to minimize it, models must actively incorporate the unique social situations of different patient populations. Without that consideration, generative AI systems could erroneously recommend treatments that don't account for a patient's actual circumstances.",
+      "source_paragraphs": [50]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Can you give an example of what that might look like in practice?",
+      "source_paragraphs": [50]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Sure. Imagine a system recommending a medication regimen that requires refrigeration to a patient who doesn't have stable housing, or suggesting follow-up visits that a patient can't afford. If the AI doesn't account for those social factors, the recommendation looks good on paper but fails the patient in reality.",
+      "source_paragraphs": [50]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "That's a powerful example. So what do the authors propose for implementation?",
+      "source_paragraphs": [51]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "They call for standards for evaluation metrics of algorithmic fairness. Essentially, before you deploy an AI system in healthcare, you need measurable criteria to verify that it's not reinforcing existing healthcare disparities.",
+      "source_paragraphs": [51]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So not just testing whether the system is accurate overall, but testing whether it's accurate across different patient demographics.",
+      "source_paragraphs": [51]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Exactly. A system might have 95 percent accuracy overall but perform significantly worse for certain racial or socioeconomic groups. Equity means that gap needs to be identified and addressed before deployment.",
+      "source_paragraphs": [51]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "This connects nicely to what we discussed in the Reliability section. You need those well-defined use cases and patient criteria, and part of that criteria has to include equitable performance across populations. So what's next?",
+      "source_paragraphs": [48, 49, 50, 51]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Next is the A in GREAT PLEA: Accountability. The authors will dig into who is responsible when an AI system is involved in patient care decisions, how accountability affects patient trust, and what it means to keep humans meaningfully in the loop. Stay tuned!",
+      "source_paragraphs": [51]
+    }
+  ]
+}

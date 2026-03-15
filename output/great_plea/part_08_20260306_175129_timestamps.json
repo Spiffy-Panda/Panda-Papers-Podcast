@@ -1,0 +1,247 @@
+{
+  "source": "C:\\Users\\Brian\\Documents\\UW Winter 26\\ProductivityAndReadingHelper\\input\\great_plea\\part_08.json",
+  "audio_file": "part_08_20260306_175129.wav",
+  "tag": "part_08",
+  "generated": "2026-03-06T17:51:31.667497",
+  "total_duration_ms": 278576.8,
+  "total_duration_formatted": "4:38.576",
+  "lines": [
+    {
+      "index": 0,
+      "voice": "Microsoft David",
+      "text": "Welcome back, everyone. Last time we saw how the authors surveyed frameworks from the DOD, NATO, the WHO, and others to develop the GREAT PLEA principles. Now we're diving into the first principle: Governability, the G in GREAT PLEA.",
+      "start_ms": 0.0,
+      "end_ms": 17401.6,
+      "duration_ms": 17401.6,
+      "source_paragraphs": [
+        39
+      ]
+    },
+    {
+      "index": 1,
+      "voice": "Microsoft Zira",
+      "text": "Governability. So how do the authors define this principle?",
+      "start_ms": 18001.6,
+      "end_ms": 22860.3,
+      "duration_ms": 4858.7,
+      "source_paragraphs": [
+        39
+      ]
+    },
+    {
+      "index": 2,
+      "voice": "Microsoft David",
+      "text": "They define governability as the ability of a system to integrate processes and tools which promote and maintain its capability and, critically, ensure meaningful human control. That last part is really the key: meaningful human control.",
+      "start_ms": 23460.3,
+      "end_ms": 39096.9,
+      "duration_ms": 15636.6,
+      "source_paragraphs": [
+        39
+      ]
+    },
+    {
+      "index": 3,
+      "voice": "Microsoft Zira",
+      "text": "So it's not just about the AI working properly. It's about humans being able to stay in charge of it.",
+      "start_ms": 39696.9,
+      "end_ms": 46864.9,
+      "duration_ms": 7168.0,
+      "source_paragraphs": [
+        39
+      ]
+    },
+    {
+      "index": 4,
+      "voice": "Microsoft David",
+      "text": "Exactly. And the implementation side spells out what that looks like in practice. Humans must retain the ability to identify and prevent unintended consequences. And when unintended behavior does occur, because it will eventually, human intervention to disengage or deactivate the deployed AI system should always be possible.",
+      "start_ms": 47464.9,
+      "end_ms": 69665.1,
+      "duration_ms": 22200.2,
+      "source_paragraphs": [
+        40
+      ]
+    },
+    {
+      "index": 5,
+      "voice": "Microsoft Zira",
+      "text": "So essentially there needs to be an off switch that actually works. You can't have a situation where the AI is doing something harmful and nobody can stop it.",
+      "start_ms": 70265.1,
+      "end_ms": 80027.5,
+      "duration_ms": 9762.4,
+      "source_paragraphs": [
+        40
+      ]
+    },
+    {
+      "index": 6,
+      "voice": "Microsoft David",
+      "text": "Right. And the authors add an important nuance here for healthcare specifically. Think about widespread deployment scenarios where numerous hospitals may be using the same AI systems. Governance becomes critical at that scale.",
+      "start_ms": 80627.5,
+      "end_ms": 95964.1,
+      "duration_ms": 15336.6,
+      "source_paragraphs": [
+        41
+      ]
+    },
+    {
+      "index": 7,
+      "voice": "Microsoft Zira",
+      "text": "Because if something goes wrong, it's not just one hospital affected. It could be hundreds simultaneously.",
+      "start_ms": 96564.1,
+      "end_ms": 104337.2,
+      "duration_ms": 7773.1,
+      "source_paragraphs": [
+        41
+      ]
+    },
+    {
+      "index": 8,
+      "voice": "Microsoft David",
+      "text": "Exactly. And here's a practical requirement the authors emphasize: humans, whether they develop or implement the system, should possess the capability to deactivate it without disrupting the regular patient care activities in the clinics. You can't just pull the plug and leave the hospital unable to function.",
+      "start_ms": 104937.2,
+      "end_ms": 124578.0,
+      "duration_ms": 19640.8,
+      "source_paragraphs": [
+        41
+      ]
+    },
+    {
+      "index": 9,
+      "voice": "Microsoft Zira",
+      "text": "That's a really thoughtful point. If hospitals become dependent on an AI system and then you have to shut it down, there needs to be a graceful way to do that without patients falling through the cracks.",
+      "start_ms": 125178.0,
+      "end_ms": 137025.3,
+      "duration_ms": 11847.2,
+      "source_paragraphs": [
+        41
+      ]
+    },
+    {
+      "index": 10,
+      "voice": "Microsoft David",
+      "text": "Precisely. So the authors lay out four concrete requirements for governability. First, there need to be explicit guidelines for monitoring generative AI systems for potential errors. You need to be actively watching for problems, not waiting until patients are harmed.",
+      "start_ms": 137625.3,
+      "end_ms": 156431.5,
+      "duration_ms": 18806.3,
+      "source_paragraphs": [
+        42
+      ]
+    },
+    {
+      "index": 11,
+      "voice": "Microsoft Zira",
+      "text": "Proactive monitoring rather than reactive damage control. What's the second requirement?",
+      "start_ms": 157031.5,
+      "end_ms": 163139.9,
+      "duration_ms": 6108.4,
+      "source_paragraphs": [
+        42
+      ]
+    },
+    {
+      "index": 12,
+      "voice": "Microsoft David",
+      "text": "Deactivation capability. When an error is detected, you need the ability to shut the system down to prevent further damage. That ties back to the off switch we discussed.",
+      "start_ms": 163739.9,
+      "end_ms": 175702.4,
+      "duration_ms": 11962.4,
+      "source_paragraphs": [
+        42
+      ]
+    },
+    {
+      "index": 13,
+      "voice": "Microsoft Zira",
+      "text": "Makes sense. And the third?",
+      "start_ms": 176302.4,
+      "end_ms": 179396.5,
+      "duration_ms": 3094.1,
+      "source_paragraphs": [
+        42
+      ]
+    },
+    {
+      "index": 14,
+      "voice": "Microsoft David",
+      "text": "Remedying errors. It's not enough to just stop the system. You need processes for actually fixing the problems that were identified, whether that's retraining the model, updating its data, or adjusting its parameters.",
+      "start_ms": 179996.5,
+      "end_ms": 195038.3,
+      "duration_ms": 15041.8,
+      "source_paragraphs": [
+        42
+      ]
+    },
+    {
+      "index": 15,
+      "voice": "Microsoft Zira",
+      "text": "So monitor, deactivate, fix. What's the fourth requirement?",
+      "start_ms": 195638.3,
+      "end_ms": 201602.1,
+      "duration_ms": 5963.8,
+      "source_paragraphs": [
+        42
+      ]
+    },
+    {
+      "index": 16,
+      "voice": "Microsoft David",
+      "text": "Interaction design to reduce operator errors. The system should be designed in a way that minimizes the chance of human users making mistakes when working with it. That could mean clear interfaces, good warnings, or intuitive controls.",
+      "start_ms": 202202.1,
+      "end_ms": 217428.9,
+      "duration_ms": 15226.8,
+      "source_paragraphs": [
+        42
+      ]
+    },
+    {
+      "index": 17,
+      "voice": "Microsoft Zira",
+      "text": "So it's a full lifecycle approach: watch the system, be ready to shut it down, know how to fix it, and design it so humans interact with it safely. That's a really solid foundation for keeping AI under control.",
+      "start_ms": 218028.9,
+      "end_ms": 232465.8,
+      "duration_ms": 14436.9,
+      "source_paragraphs": [
+        39,
+        40,
+        41,
+        42
+      ]
+    },
+    {
+      "index": 18,
+      "voice": "Microsoft David",
+      "text": "It is. And what I appreciate about the authors' approach is that they're not saying don't use AI. They're saying use it, but make sure you can govern it. Keep humans in control at every stage.",
+      "start_ms": 233065.8,
+      "end_ms": 246558.3,
+      "duration_ms": 13492.5,
+      "source_paragraphs": [
+        39,
+        40,
+        41,
+        42
+      ]
+    },
+    {
+      "index": 19,
+      "voice": "Microsoft Zira",
+      "text": "Which sets the stage perfectly for the next principle. If governability is about maintaining control, what comes next?",
+      "start_ms": 247158.3,
+      "end_ms": 255516.1,
+      "duration_ms": 8357.9,
+      "source_paragraphs": [
+        42
+      ]
+    },
+    {
+      "index": 20,
+      "voice": "Microsoft David",
+      "text": "Next up is the R in GREAT PLEA: Reliability. The authors will define what it means for an AI system to be reliable in a healthcare context, discuss the challenges that hallucination and output variation pose to reliability, and lay out what rigorous evaluation should look like. It's another crucial piece of the puzzle. Stay tuned!",
+      "start_ms": 256116.1,
+      "end_ms": 278576.8,
+      "duration_ms": 22460.6,
+      "source_paragraphs": [
+        42
+      ]
+    }
+  ]
+}

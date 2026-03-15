@@ -1,0 +1,213 @@
+{
+  "source": "C:\\Users\\Brian\\Documents\\UW Winter 26\\ProductivityAndReadingHelper\\input\\responsible_ux\\part_18.json",
+  "audio_file": "part_18_20260306_213628.wav",
+  "tag": "part_18",
+  "generated": "2026-03-06T21:36:30.585132",
+  "total_duration_ms": 358857.9,
+  "total_duration_formatted": "5:58.857",
+  "lines": [
+    {
+      "index": 0,
+      "voice": "Microsoft David",
+      "text": "Alright, welcome to the final part of our series on this paper. Last time we discussed the challenges of designing responsibly with large language models. Now let's cover the last discussion section: reconfiguring the role of the user in responsible AI. This is section five-three.",
+      "start_ms": 0.0,
+      "end_ms": 19096.4,
+      "duration_ms": 19096.4,
+      "source_paragraphs": [
+        107
+      ]
+    },
+    {
+      "index": 1,
+      "voice": "Microsoft Zira",
+      "text": "We've seen throughout this paper that users play a critical role. What are the authors arguing about how that role needs to change?",
+      "start_ms": 19696.4,
+      "end_ms": 27769.4,
+      "duration_ms": 8073.0,
+      "source_paragraphs": [
+        107
+      ]
+    },
+    {
+      "index": 2,
+      "voice": "Microsoft David",
+      "text": "The authors start by acknowledging that researchers and practitioners have limited perspectives, which is why there are increasing calls for more user-centered or participatory approaches to responsible AI. They found that UX practitioners do involve members of the public, potentially impacted user groups, and domain experts in design and evaluation. But this involvement poses new challenges, including when and how people should participate, and how to protect them from potential harms of participating.",
+      "start_ms": 28369.4,
+      "end_ms": 59792.8,
+      "duration_ms": 31423.4,
+      "source_paragraphs": [
+        107
+      ]
+    },
+    {
+      "index": 3,
+      "voice": "Microsoft Zira",
+      "text": "So it's not just about involving users more, but about doing it thoughtfully and safely?",
+      "start_ms": 60392.8,
+      "end_ms": 66341.0,
+      "duration_ms": 5948.2,
+      "source_paragraphs": [
+        107,
+        108
+      ]
+    },
+    {
+      "index": 4,
+      "voice": "Microsoft David",
+      "text": "Exactly. And the authors raise an interesting point about mental models. Prior work on folk theories of algorithms suggests that how accurate people's understanding of AI is may matter less than what those mental models reveal about people's orientations toward algorithmic systems. When UX practitioners worry about users anthropomorphizing language models, the authors suggest this could actually be an opportunity, perhaps for more seamful design that deliberately reveals the capabilities and limitations of AI applications.",
+      "start_ms": 66941.0,
+      "end_ms": 99783.8,
+      "duration_ms": 32842.8,
+      "source_paragraphs": [
+        108
+      ]
+    },
+    {
+      "index": 5,
+      "voice": "Microsoft Zira",
+      "text": "Seamful design, showing the seams rather than hiding them. So instead of making AI seem magical, you'd want users to understand where the boundaries are?",
+      "start_ms": 100383.8,
+      "end_ms": 110946.3,
+      "duration_ms": 10562.5,
+      "source_paragraphs": [
+        108,
+        109
+      ]
+    },
+    {
+      "index": 6,
+      "voice": "Microsoft David",
+      "text": "Right. The authors also raise a deeper concern about how users get involved in identifying RAI issues. We saw earlier that UX practitioners use testing sessions as a form of adversarial testing. The literature has suggested approaches like crowdsourcing, bias bounties, and crowd audits to identify harmful outputs. But these approaches are still very new, and UX education hasn't yet developed robust methods or frameworks for practitioners to lead such efforts or incorporate the results into design.",
+      "start_ms": 111546.3,
+      "end_ms": 145189.6,
+      "duration_ms": 33643.3,
+      "source_paragraphs": [
+        109
+      ]
+    },
+    {
+      "index": 7,
+      "voice": "Microsoft Zira",
+      "text": "And there's the risk of exposing participants to harm in the process, right?",
+      "start_ms": 145789.6,
+      "end_ms": 150848.0,
+      "duration_ms": 5058.4,
+      "source_paragraphs": [
+        109
+      ]
+    },
+    {
+      "index": 8,
+      "voice": "Microsoft David",
+      "text": "That's a critical concern. Participants might have to generate offensive content themselves or be exposed to toxic language from prompts that practitioners or other participants create. The authors call for future research to explore ways to protect participants from these toxic externalities of RAI work.",
+      "start_ms": 151448.0,
+      "end_ms": 170398.5,
+      "duration_ms": 18950.5,
+      "source_paragraphs": [
+        109,
+        110
+      ]
+    },
+    {
+      "index": 9,
+      "voice": "Microsoft Zira",
+      "text": "What about the participatory design angle? Is simply involving users enough to make AI responsible?",
+      "start_ms": 170998.5,
+      "end_ms": 178121.4,
+      "duration_ms": 7122.9,
+      "source_paragraphs": [
+        110
+      ]
+    },
+    {
+      "index": 10,
+      "voice": "Microsoft David",
+      "text": "The authors argue it might not be. Despite calls for broader participation, current modes of engaging people in responsible AI evaluation may fall short of the empowering goals of true participatory approaches. Relying on users to identify harms could relegate them to a consultative or extractive mode of engagement rather than giving them genuine creative input. The paper argues for approaches inspired by participatory design, aspirations-based design, and community-collaborative design that would give participants meaningful control over AI application design.",
+      "start_ms": 178721.4,
+      "end_ms": 213903.5,
+      "duration_ms": 35182.1,
+      "source_paragraphs": [
+        110
+      ]
+    },
+    {
+      "index": 11,
+      "voice": "Microsoft Zira",
+      "text": "So it's not enough to just ask users to find problems. You need to empower them to shape solutions. Are there limitations the authors acknowledge?",
+      "start_ms": 214503.5,
+      "end_ms": 224901.1,
+      "duration_ms": 10397.6,
+      "source_paragraphs": [
+        110,
+        111
+      ]
+    },
+    {
+      "index": 12,
+      "voice": "Microsoft David",
+      "text": "Yes, the paper is quite transparent about its limitations. All participants were from one large technology company, so their perspectives may be shaped by that specific organization's culture around RAI. The participants mostly worked with computer vision and language-based models, so other types of models could present different challenges. And the study focused on a model-first design trajectory, where the ML model exists before the product is designed around it. Other approaches like product-first design might face different issues.",
+      "start_ms": 225501.1,
+      "end_ms": 259864.2,
+      "duration_ms": 34363.0,
+      "source_paragraphs": [
+        111
+      ]
+    },
+    {
+      "index": 13,
+      "voice": "Microsoft Zira",
+      "text": "Those are fair limitations. So what's the takeaway in the conclusion?",
+      "start_ms": 260464.2,
+      "end_ms": 265742.9,
+      "duration_ms": 5278.7,
+      "source_paragraphs": [
+        111,
+        112
+      ]
+    },
+    {
+      "index": 14,
+      "voice": "Microsoft David",
+      "text": "The conclusion brings it all together. Based on interviews with fifteen UX practitioners and eight RAI experts, the paper identifies three emerging RAI practices in AI application design: building and reinforcing an RAI lens, responsible prototyping, and responsible evaluation. The authors highlight the hidden work UX practitioners do, outline research opportunities for the HCI community, and call for better practitioner support and more meaningful participatory involvement of impacted stakeholders in RAI processes.",
+      "start_ms": 266342.9,
+      "end_ms": 299990.9,
+      "duration_ms": 33648.0,
+      "source_paragraphs": [
+        112
+      ]
+    },
+    {
+      "index": 15,
+      "voice": "Microsoft Zira",
+      "text": "This has been a fascinating deep dive. If I had to sum up the paper in one thought, it would be that UX practitioners are doing critical but underappreciated work to make AI more responsible, and the field needs to catch up with better tools, methods, education, and organizational recognition to support them.",
+      "start_ms": 300590.9,
+      "end_ms": 319541.5,
+      "duration_ms": 18950.5,
+      "source_paragraphs": [
+        112
+      ]
+    },
+    {
+      "index": 16,
+      "voice": "Microsoft David",
+      "text": "That's a perfect summary. And I'd add that the paper makes a compelling case that responsible AI isn't just a technical challenge. It's fundamentally a human-centered challenge, one that requires the kind of empathy, user focus, and ethical sensitivity that UX practitioners bring to the table. Thanks for joining us for this entire series. We hope it's given you a deeper appreciation for the intersection of UX practice and responsible AI.",
+      "start_ms": 320141.5,
+      "end_ms": 348620.2,
+      "duration_ms": 28478.7,
+      "source_paragraphs": [
+        112
+      ]
+    },
+    {
+      "index": 17,
+      "voice": "Microsoft Zira",
+      "text": "Thanks everyone for listening. If this paper has piqued your interest, we highly recommend reading the full study. Until next time!",
+      "start_ms": 349220.2,
+      "end_ms": 358857.9,
+      "duration_ms": 9637.7,
+      "source_paragraphs": [
+        112
+      ]
+    }
+  ]
+}

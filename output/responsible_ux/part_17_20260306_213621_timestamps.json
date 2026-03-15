@@ -1,0 +1,224 @@
+{
+  "source": "C:\\Users\\Brian\\Documents\\UW Winter 26\\ProductivityAndReadingHelper\\input\\responsible_ux\\part_17.json",
+  "audio_file": "part_17_20260306_213621.wav",
+  "tag": "part_17",
+  "generated": "2026-03-06T21:36:23.283733",
+  "total_duration_ms": 313840.8,
+  "total_duration_formatted": "5:13.840",
+  "lines": [
+    {
+      "index": 0,
+      "voice": "Microsoft David",
+      "text": "Welcome back. Last time, we discussed the hidden work of RAI in UX practice, how it's invisible, undervalued, and takes a toll on practitioners. Before we move to the next discussion subsection, there's one more important finding about that hidden work we need to cover.",
+      "start_ms": 0.0,
+      "end_ms": 18961.0,
+      "duration_ms": 18961.0,
+      "source_paragraphs": [
+        100
+      ]
+    },
+    {
+      "index": 1,
+      "voice": "Microsoft Zira",
+      "text": "What's that?",
+      "start_ms": 19561.0,
+      "end_ms": 21075.4,
+      "duration_ms": 1514.3,
+      "source_paragraphs": [
+        100
+      ]
+    },
+    {
+      "index": 2,
+      "voice": "Microsoft David",
+      "text": "The authors found that in order to surface potential RAI issues, UX practitioners intentionally and repeatedly generate and witness harmful and toxic outputs through model prompting. They also have to prepare study participants to view toxic content. The paper draws a parallel to content moderation, noting that the burden of viewing harmful content often falls to those who are least likely to be protected from or appropriately compensated for handling the toxic byproducts of large-scale sociotechnical systems.",
+      "start_ms": 21675.4,
+      "end_ms": 53293.4,
+      "duration_ms": 31618.0,
+      "source_paragraphs": [
+        100
+      ]
+    },
+    {
+      "index": 3,
+      "voice": "Microsoft Zira",
+      "text": "That's a really sobering comparison. Content moderators are known to suffer significant psychological harm from that work. And UX practitioners are essentially doing a version of the same thing, but without the formal recognition or support structures.",
+      "start_ms": 53893.4,
+      "end_ms": 69819.5,
+      "duration_ms": 15926.1,
+      "source_paragraphs": [
+        100
+      ]
+    },
+    {
+      "index": 4,
+      "voice": "Microsoft David",
+      "text": "Exactly. Now, let's move into section five-two, which looks at challenges and opportunities for responsibly designing with large language models. The authors point out that existing ethics-focused design methods and frameworks like value-sensitive design largely don't focus on AI or language models specifically. Meanwhile, existing AI ethics toolkits are designed mainly for technical work, not UX practices.",
+      "start_ms": 70419.5,
+      "end_ms": 98443.8,
+      "duration_ms": 28024.4,
+      "source_paragraphs": [
+        101
+      ]
+    },
+    {
+      "index": 5,
+      "voice": "Microsoft Zira",
+      "text": "So there's a gap in the tooling. Neither the design ethics tools nor the AI ethics tools really fit what UX practitioners need?",
+      "start_ms": 99043.8,
+      "end_ms": 107556.7,
+      "duration_ms": 8512.9,
+      "source_paragraphs": [
+        101
+      ]
+    },
+    {
+      "index": 6,
+      "voice": "Microsoft David",
+      "text": "Right. And notably, despite value-sensitive design being prominent in academic literature, none of the practitioners in this study mentioned using it. The authors also found that traditional HCI methods like Wizard-of-Oz studies aren't just insufficient for ideation and design with language models. They're also insufficient for helping practitioners identify and evaluate RAI issues through real use cases.",
+      "start_ms": 108156.7,
+      "end_ms": 134436.0,
+      "duration_ms": 26279.2,
+      "source_paragraphs": [
+        101,
+        102
+      ]
+    },
+    {
+      "index": 7,
+      "voice": "Microsoft Zira",
+      "text": "What about prompt programming? We talked earlier about how it was useful but also risky.",
+      "start_ms": 135036.0,
+      "end_ms": 141449.2,
+      "duration_ms": 6413.2,
+      "source_paragraphs": [
+        102
+      ]
+    },
+    {
+      "index": 8,
+      "voice": "Microsoft David",
+      "text": "The authors acknowledge that prompt programming tools brought many advantages, like the ability to test-drive models directly and reduce reliance on engineers and data scientists. But they also highlight that it's not yet a mature tool for responsible AI design.",
+      "start_ms": 142049.2,
+      "end_ms": 158225.9,
+      "duration_ms": 16176.7,
+      "source_paragraphs": [
+        102,
+        103
+      ]
+    },
+    {
+      "index": 9,
+      "voice": "Microsoft Zira",
+      "text": "Because of the bias issue we discussed, where designers' belief systems can get embedded in the prompts?",
+      "start_ms": 158825.9,
+      "end_ms": 165464.1,
+      "duration_ms": 6638.2,
+      "source_paragraphs": [
+        103
+      ]
+    },
+    {
+      "index": 10,
+      "voice": "Microsoft David",
+      "text": "That's one of the key risks, yes. The paper warns about the danger of practitioners embedding their own belief systems into users' experience of the AI system through prompting. Similar concerns apply to creating behavioral tests for models, which may be limited by the positionality of whoever creates those tests.",
+      "start_ms": 166064.1,
+      "end_ms": 186144.6,
+      "duration_ms": 20080.5,
+      "source_paragraphs": [
+        103
+      ]
+    },
+    {
+      "index": 11,
+      "voice": "Microsoft Zira",
+      "text": "Did anyone try to mitigate this?",
+      "start_ms": 186744.6,
+      "end_ms": 189348.6,
+      "duration_ms": 2604.0,
+      "source_paragraphs": [
+        103,
+        104
+      ]
+    },
+    {
+      "index": 12,
+      "voice": "Microsoft David",
+      "text": "Some practitioners tried crowdsourcing prompts, but the authors note this strategy has its own limitations. You might not have truly representative groups of participants, and there can be a disconnect between the abstract model being tested and its actual downstream application in a particular sociocultural context. The paper calls for new tools and methods that can ground the speculative work of anticipating potential harms in specific contexts of use, rather than abstracting social context away.",
+      "start_ms": 189948.6,
+      "end_ms": 221501.5,
+      "duration_ms": 31552.9,
+      "source_paragraphs": [
+        104
+      ]
+    },
+    {
+      "index": 13,
+      "voice": "Microsoft Zira",
+      "text": "So we need tools that are context-aware, not just one-size-fits-all approaches to responsible prompting.",
+      "start_ms": 222101.5,
+      "end_ms": 229094.6,
+      "duration_ms": 6993.1,
+      "source_paragraphs": [
+        104,
+        105
+      ]
+    },
+    {
+      "index": 14,
+      "voice": "Microsoft David",
+      "text": "Exactly. The authors also discuss how constraint-based suppression techniques like blocklists are commonly used to prevent toxic output during user testing and after deployment. But as prior work has identified, blocklists are crude instruments that can lead to harms of erasure if they fail to account for the social context of language use.",
+      "start_ms": 229694.6,
+      "end_ms": 251304.4,
+      "duration_ms": 21609.9,
+      "source_paragraphs": [
+        105,
+        106
+      ]
+    },
+    {
+      "index": 15,
+      "voice": "Microsoft Zira",
+      "text": "So blocking certain words might inadvertently suppress legitimate conversations that use those words in completely appropriate contexts.",
+      "start_ms": 251904.4,
+      "end_ms": 260192.1,
+      "duration_ms": 8287.7,
+      "source_paragraphs": [
+        106
+      ]
+    },
+    {
+      "index": 16,
+      "voice": "Microsoft David",
+      "text": "Right. But the practical reality is that product teams often deal with cascading RAI issues from upstream models they can't control. A blocklist at the code level is sometimes genuinely the most feasible option. The authors call for more research to understand how RAI issues get propagated from model development all the way through to application design, and how constraint-based approaches are being developed, used, and by whom.",
+      "start_ms": 260792.1,
+      "end_ms": 287576.6,
+      "duration_ms": 26784.5,
+      "source_paragraphs": [
+        106
+      ]
+    },
+    {
+      "index": 17,
+      "voice": "Microsoft Zira",
+      "text": "It's a systemic problem that needs systemic solutions. Individual teams can only do so much when the models they build on already carry potential issues.",
+      "start_ms": 288176.6,
+      "end_ms": 298073.9,
+      "duration_ms": 9897.3,
+      "source_paragraphs": [
+        106
+      ]
+    },
+    {
+      "index": 18,
+      "voice": "Microsoft David",
+      "text": "Precisely. In the next part, we'll wrap up the discussion by looking at how the role of the user needs to be reconfigured in responsible AI, and then we'll cover the paper's limitations and conclusions. We're in the home stretch.",
+      "start_ms": 298673.9,
+      "end_ms": 313840.8,
+      "duration_ms": 15166.9,
+      "source_paragraphs": [
+        106
+      ]
+    }
+  ]
+}

@@ -1,0 +1,178 @@
+{
+  "source": "C:\\Users\\Brian\\Documents\\UW Winter 26\\ProductivityAndReadingHelper\\input\\great_plea\\part_11.json",
+  "audio_file": "part_11_20260306_193919.wav",
+  "tag": "part_11",
+  "generated": "2026-03-06T19:39:20.811976",
+  "total_duration_ms": 237449.8,
+  "total_duration_formatted": "3:57.449",
+  "lines": [
+    {
+      "index": 0,
+      "voice": "Microsoft David",
+      "text": "Welcome back. Last time we explored Equity, the E in GREAT PLEA, and how AI must not widen existing health disparities. Now we're on to the A: Accountability.",
+      "start_ms": 0.0,
+      "end_ms": 12562.8,
+      "duration_ms": 12562.8,
+      "source_paragraphs": [
+        52
+      ]
+    },
+    {
+      "index": 1,
+      "voice": "Microsoft Zira",
+      "text": "Accountability. This feels like one of the trickiest principles to get right with AI. When a machine is involved in a decision, who's actually responsible?",
+      "start_ms": 13162.8,
+      "end_ms": 23855.1,
+      "duration_ms": 10692.4,
+      "source_paragraphs": [
+        52
+      ]
+    },
+    {
+      "index": 2,
+      "voice": "Microsoft David",
+      "text": "That's exactly the question the authors tackle. They define accountability as the property of being able to trace activities on a system to individuals who may then be held responsible for their actions. So it's about connecting outcomes back to people, not machines.",
+      "start_ms": 24455.1,
+      "end_ms": 41481.3,
+      "duration_ms": 17026.1,
+      "source_paragraphs": [
+        52
+      ]
+    },
+    {
+      "index": 3,
+      "voice": "Microsoft Zira",
+      "text": "To individuals. So even when AI is involved, a human being needs to be identifiable as the responsible party.",
+      "start_ms": 42081.3,
+      "end_ms": 50519.3,
+      "duration_ms": 8438.0,
+      "source_paragraphs": [
+        52
+      ]
+    },
+    {
+      "index": 4,
+      "voice": "Microsoft David",
+      "text": "Exactly. And the authors draw on NATO's principle here. NATO's principle of Responsibility and Accountability states that organizations should develop AI applications mindfully and integrate human responsibility to establish human accountability for actions taken by or with the application.",
+      "start_ms": 51119.3,
+      "end_ms": 70114.9,
+      "duration_ms": 18995.6,
+      "source_paragraphs": [
+        53
+      ]
+    },
+    {
+      "index": 5,
+      "voice": "Microsoft Zira",
+      "text": "I like that phrasing: actions taken by or with the application. It covers both cases where AI acts autonomously and where it's assisting a human.",
+      "start_ms": 70714.9,
+      "end_ms": 80647.5,
+      "duration_ms": 9932.6,
+      "source_paragraphs": [
+        53
+      ]
+    },
+    {
+      "index": 6,
+      "voice": "Microsoft David",
+      "text": "Right. And in healthcare, the stakes of accountability become very personal. The authors cite patient research that showed how important accountability is for gaining patient trust. Think about it from a patient's perspective: if you know a clinician is using AI to help decide your treatment, you want to feel that the clinician is still personally invested in your care.",
+      "start_ms": 81247.5,
+      "end_ms": 104713.0,
+      "duration_ms": 23465.4,
+      "source_paragraphs": [
+        54
+      ]
+    },
+    {
+      "index": 7,
+      "voice": "Microsoft Zira",
+      "text": "That makes sense. If I'm a patient and my doctor just says, well the computer said to do this, that's not reassuring. I want to know my doctor thought about it, evaluated the recommendation, and stands behind the decision.",
+      "start_ms": 105313.0,
+      "end_ms": 120819.9,
+      "duration_ms": 15506.9,
+      "source_paragraphs": [
+        54
+      ]
+    },
+    {
+      "index": 8,
+      "voice": "Microsoft David",
+      "text": "Precisely. The authors put it clearly: without proper measures for human accountability, the patient may feel that the clinician is not invested in the care they are delivering. And that erosion of trust can undermine the entire treatment relationship.",
+      "start_ms": 121419.9,
+      "end_ms": 137671.2,
+      "duration_ms": 16251.3,
+      "source_paragraphs": [
+        54
+      ]
+    },
+    {
+      "index": 9,
+      "voice": "Microsoft Zira",
+      "text": "So it's not just a legal question of who's liable if something goes wrong. It's about the day-to-day trust between doctor and patient.",
+      "start_ms": 138271.2,
+      "end_ms": 146553.9,
+      "duration_ms": 8282.8,
+      "source_paragraphs": [
+        54
+      ]
+    },
+    {
+      "index": 10,
+      "voice": "Microsoft David",
+      "text": "Exactly. It's both. And the authors' implementation approach focuses on ensuring that human involvement is maintained even as AI systems become more powerful. Whether it's ChatGPT being used for clinical queries or a specialized generative AI clinical decision support system, the human clinician needs to remain meaningfully in the loop.",
+      "start_ms": 147153.9,
+      "end_ms": 169344.0,
+      "duration_ms": 22190.1,
+      "source_paragraphs": [
+        55
+      ]
+    },
+    {
+      "index": 11,
+      "voice": "Microsoft Zira",
+      "text": "Meaningfully in the loop. Not just rubber-stamping whatever the AI recommends, but actually exercising clinical judgment.",
+      "start_ms": 169944.0,
+      "end_ms": 178651.7,
+      "duration_ms": 8707.8,
+      "source_paragraphs": [
+        55
+      ]
+    },
+    {
+      "index": 12,
+      "voice": "Microsoft David",
+      "text": "Right. And this becomes increasingly important as these systems get better. The temptation to just defer to the AI grows as it becomes more capable. But that's exactly when accountability structures matter most, to ensure someone is still taking ownership of every clinical decision.",
+      "start_ms": 179251.7,
+      "end_ms": 198132.8,
+      "duration_ms": 18881.1,
+      "source_paragraphs": [
+        55
+      ]
+    },
+    {
+      "index": 13,
+      "voice": "Microsoft Zira",
+      "text": "It also connects back to governability, doesn't it? You need the governance structures so that when something goes wrong, there's a clear chain of accountability. These principles really build on each other.",
+      "start_ms": 198732.8,
+      "end_ms": 211724.7,
+      "duration_ms": 12991.8,
+      "source_paragraphs": [
+        52,
+        53,
+        54,
+        55
+      ]
+    },
+    {
+      "index": 14,
+      "voice": "Microsoft David",
+      "text": "They absolutely do. And that interconnection becomes even more apparent with our next principle. The T in GREAT PLEA stands for Traceability. If accountability is about who is responsible, traceability is about being able to see how the AI reached its conclusions. We'll explore why transparency in AI decision-making is essential for healthcare. See you next time!",
+      "start_ms": 212324.7,
+      "end_ms": 237449.8,
+      "duration_ms": 25125.2,
+      "source_paragraphs": [
+        55
+      ]
+    }
+  ]
+}

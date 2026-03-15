@@ -1,0 +1,175 @@
+{
+  "source": "C:\\Users\\Brian\\Documents\\UW Winter 26\\ProductivityAndReadingHelper\\output\\odesteer\\dialog_part_06.json",
+  "audio_file": "part_06_20260307_131221.wav",
+  "tag": "part_06",
+  "generated": "2026-03-07T13:12:23.074829",
+  "total_duration_ms": 205050.3,
+  "total_duration_formatted": "3:25.050",
+  "lines": [
+    {
+      "index": 0,
+      "voice": "Microsoft David",
+      "text": "So now we get to one of the most satisfying parts of the paper, where the authors show how existing methods for finding steering directions are actually defining barrier functions without realizing it. They focus on two main categories: input reading and output optimization.",
+      "start_ms": 0.0,
+      "end_ms": 17206.2,
+      "duration_ms": 17206.2,
+      "source_paragraphs": [
+        33
+      ]
+    },
+    {
+      "index": 1,
+      "voice": "Microsoft Zira",
+      "text": "Let's start with input reading. What does that category include?",
+      "start_ms": 17806.2,
+      "end_ms": 22889.9,
+      "duration_ms": 5083.7,
+      "source_paragraphs": [
+        38
+      ]
+    },
+    {
+      "index": 2,
+      "voice": "Microsoft David",
+      "text": "Input reading methods work by comparing activations from contrastive examples. So you run the model on positive examples, like helpful responses, and negative examples, like harmful ones, and then compare the resulting activations to figure out which direction to steer. The two main approaches are called Difference in Means and Probes.",
+      "start_ms": 23489.9,
+      "end_ms": 45770.0,
+      "duration_ms": 22280.1,
+      "source_paragraphs": [
+        38
+      ]
+    },
+    {
+      "index": 3,
+      "voice": "Microsoft Zira",
+      "text": "And both of these can be seen as barrier functions?",
+      "start_ms": 46370.0,
+      "end_ms": 49808.8,
+      "duration_ms": 3438.8,
+      "source_paragraphs": [
+        38
+      ]
+    },
+    {
+      "index": 4,
+      "voice": "Microsoft David",
+      "text": "Yes! The paper shows that both are implicitly defining a barrier function as the log-density ratio between positive and negative activation distributions. In other words, they're computing the log of the probability that an activation comes from the positive class divided by the probability it comes from the negative class.",
+      "start_ms": 50408.8,
+      "end_ms": 70439.0,
+      "duration_ms": 20030.2,
+      "source_paragraphs": [
+        38
+      ]
+    },
+    {
+      "index": 5,
+      "voice": "Microsoft Zira",
+      "text": "OK, so how does Difference in Means work specifically?",
+      "start_ms": 71039.0,
+      "end_ms": 75347.8,
+      "duration_ms": 4308.8,
+      "source_paragraphs": [
+        41
+      ]
+    },
+    {
+      "index": 6,
+      "voice": "Microsoft David",
+      "text": "It's actually beautifully simple. You compute the average activation for positive examples and the average for negative examples, then subtract. The steering vector is literally the difference between the two means. Contrastive Activation Addition, or CAA, is the best known example of this.",
+      "start_ms": 75947.8,
+      "end_ms": 96028.7,
+      "duration_ms": 20080.9,
+      "source_paragraphs": [
+        41
+      ]
+    },
+    {
+      "index": 7,
+      "voice": "Microsoft Zira",
+      "text": "That seems almost too simple. Where's the barrier function hiding?",
+      "start_ms": 96628.7,
+      "end_ms": 101732.4,
+      "duration_ms": 5103.7,
+      "source_paragraphs": [
+        41
+      ]
+    },
+    {
+      "index": 8,
+      "voice": "Microsoft David",
+      "text": "Here's the beautiful part. If you assume the positive and negative activation distributions are both Gaussian with the same covariance, then the gradient of the log-density ratio, our barrier function, works out to be exactly the difference in means. So CAA is secretly computing the gradient of a barrier function under Gaussian assumptions.",
+      "start_ms": 102332.4,
+      "end_ms": 124482.7,
+      "duration_ms": 22150.3,
+      "source_paragraphs": [
+        41
+      ]
+    },
+    {
+      "index": 9,
+      "voice": "Microsoft Zira",
+      "text": "That's a really cool connection. But the Gaussian assumption seems pretty strong. What if the actual distributions are more complex?",
+      "start_ms": 125082.7,
+      "end_ms": 134400.6,
+      "duration_ms": 9317.9,
+      "source_paragraphs": [
+        45
+      ]
+    },
+    {
+      "index": 10,
+      "voice": "Microsoft David",
+      "text": "That's exactly the limitation. These methods reduce rich information to coarse summary statistics. Some variants have tried using PCA to find high-variance directions, or incorporating covariance information, or even using flow-based models. But fundamentally, they're all trying to approximate this same barrier function, just with varying degrees of sophistication.",
+      "start_ms": 135000.6,
+      "end_ms": 160400.3,
+      "duration_ms": 25399.7,
+      "source_paragraphs": [
+        45
+      ]
+    },
+    {
+      "index": 11,
+      "voice": "Microsoft Zira",
+      "text": "So the barrier function framework reveals that they're all aiming at the same target, just with different levels of accuracy?",
+      "start_ms": 161000.3,
+      "end_ms": 168328.1,
+      "duration_ms": 7327.8,
+      "source_paragraphs": [
+        45
+      ]
+    },
+    {
+      "index": 12,
+      "voice": "Microsoft David",
+      "text": "Exactly. And because they rely on strong distributional assumptions, they may overlook subtle but important patterns that drive nuanced model behavior. That's a key motivation for ODESteer, which we'll see uses a more flexible representation.",
+      "start_ms": 168928.1,
+      "end_ms": 185489.4,
+      "duration_ms": 16561.3,
+      "source_paragraphs": [
+        45
+      ]
+    },
+    {
+      "index": 13,
+      "voice": "Microsoft Zira",
+      "text": "This unification is really satisfying. It gives you a principled way to compare methods.",
+      "start_ms": 186089.4,
+      "end_ms": 192418.0,
+      "duration_ms": 6328.6,
+      "source_paragraphs": [
+        45
+      ]
+    },
+    {
+      "index": 14,
+      "voice": "Microsoft David",
+      "text": "It does. And next, we'll look at probing methods and output optimization through the same lens, which will complete the picture before we dive into how ODESteer improves on all of them.",
+      "start_ms": 193018.0,
+      "end_ms": 205050.3,
+      "duration_ms": 12032.3,
+      "source_paragraphs": [
+        45
+      ]
+    }
+  ]
+}

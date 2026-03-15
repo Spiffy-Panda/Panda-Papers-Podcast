@@ -1,0 +1,98 @@
+{
+  "pause_between_ms": 600,
+  "rate": 0,
+  "part_number": 9,
+  "paper_source": "input/responsible_ux_paper.json",
+  "lines": [
+    {
+      "voice": "Microsoft David",
+      "text": "So we've seen how practitioners sensitize themselves to RAI concerns. Now let's talk about the organizational challenges they face when trying to communicate about responsible AI with their teams. This is where things get really complicated.",
+      "source_paragraphs": [51]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "I can only imagine. Bringing up potential problems is never the most popular thing to do, especially in a fast-moving tech environment.",
+      "source_paragraphs": [51]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Exactly. And there's a structural challenge right from the start. Since RAI is still an emerging discipline, the people with expertise are limited. Many of the RAI experts and UX practitioners in this study were on centralized teams, which means they applied their RAI expertise horizontally across different projects. Both groups described dropping in to specific teams to conduct RAI work during particular phases, and then dropping out again.",
+      "source_paragraphs": [51]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "That drop-in model sounds like it could create some real friction. You're essentially an outsider coming in to raise concerns about someone else's project.",
+      "source_paragraphs": [51, 52]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "That's a huge part of the challenge. Because of this centralized structure, rather than having embedded RAI roles on each team, practitioners had to invest significant time just sensitizing new team members to RAI considerations every time they dropped in. And often, they were joining projects that were already underway, which made it harder to reverse decisions that had already been made or to fundamentally shape the design direction. They also had to navigate the power dynamics of the existing team.",
+      "source_paragraphs": [52]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So they're fighting an uphill battle on multiple fronts. Late entry, organizational politics, and I'm guessing pressure to ship fast?",
+      "source_paragraphs": [52, 53]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "You nailed it. Both groups talked about how the larger organizational culture incentivized moving fast and emphasizing the positive outcomes of AI systems. This was a challenge even for RAI experts who had formal positions as reviewers or ethics consultants and sometimes had blocking power over product releases.",
+      "source_paragraphs": [53]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Even with blocking power, it was hard? How did they handle that?",
+      "source_paragraphs": [53, 54]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Interestingly, most RAI experts said they primarily worked with teams that voluntarily reached out to them for consultations and reviews. Those teams tended to be more open to suggestions and critiques. One RAI expert described the process as very conversation-based, saying the interest has to come from the product teams themselves. They emphasized that culture change is always better when it comes from within rather than being imposed from outside.",
+      "source_paragraphs": [53, 54]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "That makes sense, but it also means teams that don't volunteer for RAI review might be the ones that need it most. What about the UX practitioners? They don't have that same formal authority.",
+      "source_paragraphs": [54, 55]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Right, and that's where it gets really interesting. UX practitioners had less power to sway project directions when it came to RAI concerns. They were also working day-to-day alongside the product teams, facing the same time constraints. So they had to get creative. They developed a combination of communication techniques and team activities to reconcile the pressure for speed with the need for more intentional RAI processes that encourage reflection.",
+      "source_paragraphs": [55]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "What kind of communication techniques? Like, how do you tell a team their product might be harmful without making them defensive?",
+      "source_paragraphs": [55, 56]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "That's the art of it. UX practitioners emphasized presenting themselves in a supportive role rather than being seen as a blocker. One practitioner described the approach perfectly. They said making it as blameless as possible is key. They're not trying to tell anyone they're bad or freak anyone out. Instead, they highlight what could go wrong, how people and the business could be affected, and then leave the team to decide how to act, while strongly advising them to address it.",
+      "source_paragraphs": [56]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So it's about framing RAI as risk management for the business rather than moral judgment. That's smart.",
+      "source_paragraphs": [56]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Very smart. And here's what the paper calls out as really important. In the face of organizational pressures to ship rapidly, UX practitioners took on additional hidden work to sensitize their teams and leadership to potential harms. This was crucial labor that wasn't always recognized as core to their work by the organization.",
+      "source_paragraphs": [57]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Hidden work. That's such a poignant term. They're doing this essential work on top of their regular responsibilities, and it's not even formally recognized.",
+      "source_paragraphs": [57]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "It's a really important observation. And the paper is going to return to this theme of hidden work later in the discussion section. For now though, we're going to transition into the second major practice area: responsible prototyping. This is where UX practitioners start applying their RAI lens directly to the process of designing and building with machine learning models.",
+      "source_paragraphs": [57]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "I'm really looking forward to that. Seeing how responsibility intersects with the actual hands-on design work should be fascinating.",
+      "source_paragraphs": [57]
+    }
+  ]
+}

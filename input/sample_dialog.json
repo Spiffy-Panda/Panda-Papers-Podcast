@@ -1,0 +1,12 @@
+{
+  "pause_between_ms": 600,
+  "rate": 0,
+  "lines": [
+    {"voice": "Microsoft David", "text": "Good morning! Did you finish reading that chapter on productivity systems?"},
+    {"voice": "Microsoft Zira", "text": "I did, actually. The section on time blocking was really interesting."},
+    {"voice": "Microsoft David", "text": "Right? I've been trying to implement it this week. It's harder than it sounds."},
+    {"voice": "Microsoft Zira", "text": "The trick is to start with just two or three blocks per day. Don't try to schedule everything at once."},
+    {"voice": "Microsoft David", "text": "That makes sense. I kept overloading my calendar and then ignoring it completely."},
+    {"voice": "Microsoft Zira", "text": "Exactly. Small consistent habits beat ambitious plans every time."}
+  ]
+}

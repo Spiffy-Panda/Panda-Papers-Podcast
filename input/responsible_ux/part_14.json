@@ -1,0 +1,93 @@
+{
+  "pause_between_ms": 600,
+  "rate": 0,
+  "part_number": 14,
+  "paper_source": "input/responsible_ux_paper.json",
+  "lines": [
+    {
+      "voice": "Microsoft David",
+      "text": "Alright, picking up from where we left off. We talked about the importance of involving users in responsible evaluation. Now let's get into the first major challenge: preventing harmful model output before users are even brought in. This is section four-three-one.",
+      "source_paragraphs": [81]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Right, the prep work. What were practitioners seeing that made this so critical?",
+      "source_paragraphs": [81]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Because generative language models are inherently stochastic, UX practitioners frequently witnessed outputs they considered toxic when testing ideas through direct model interaction. Many practitioners wanted to get users involved as early as possible to surface potential harms, but they were genuinely concerned about exposing users to these kinds of outputs. One practitioner summed it up by saying his primary concern was figuring out what he could do before the model's output gets to someone who's not on the team.",
+      "source_paragraphs": [81]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So there's this gatekeeping role they're taking on. How did they actually try to control the outputs?",
+      "source_paragraphs": [81, 82]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Teams developed a range of constraint-based input and output suppression techniques, often relying on classifiers and filters. One practitioner described a multi-pronged approach: detecting when users themselves initiate something inequitable, catching when the model generates inequitable output, reducing the scope of what the model can produce, and limiting the types of input users can send. Another practitioner talked about implementing filters to ensure outputs stay on topic, aren't offensive, and don't use specifically banned words or phrases.",
+      "source_paragraphs": [82]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "That's a lot of defensive layers. But I imagine you can't catch everything?",
+      "source_paragraphs": [82, 83]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Exactly. It wasn't always possible to prevent harmful output entirely, and when that happened, practitioners had to come up with other safeguards. One practitioner described a particularly intense experience during an AI application design sprint, where the team was ideating, designing, prototyping, and user testing all within a matter of days.",
+      "source_paragraphs": [83, 84]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "A design sprint with a live AI model? That sounds stressful. What happened?",
+      "source_paragraphs": [84]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "They had just two and a half days before testing in front of external prospective users. The speed was one of the advantages of the sprint format, but if something went wrong, if the model generated bad suggestions or went off the rails, they couldn't just shut it down. Their fallback plan was literally to make the screen go blank and hope the user didn't see the output in that brief moment.",
+      "source_paragraphs": [84]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Making the screen go blank? That's essentially a panic button. It really shows how few safety nets they had in those rapid prototyping situations.",
+      "source_paragraphs": [84, 85]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "It does. And the paper raises an important point about the broader strategy of guardrails and constraints. While developing these guardrails is a common approach to mitigating RAI issues with large models, some practitioners warned that over-relying on suppression could reproduce existing structural inequities. One RAI expert argued they need to figure out how to teach models to respond more appropriately through controlled generation, rather than always taking what they called the sledgehammer approach of just suppressing results.",
+      "source_paragraphs": [85]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "That's a great metaphor. A sledgehammer versus a scalpel. So the concern is that by blocking too aggressively, you might end up silencing legitimate conversations or erasing important topics?",
+      "source_paragraphs": [85, 86]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Precisely. But there's also a practical reality that pushes teams toward the sledgehammer. Another RAI expert explained that many AI products actually involve many models working together at once, not just a single model. For product application teams, a blocklist at the code level is often the most feasible option because they can't go back and retrain the upstream models they're building on.",
+      "source_paragraphs": [86]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So they're stuck in this bind. They know blocklists aren't ideal, but when you're working with complex multi-model systems and you don't control the underlying models, it's the best tool you have.",
+      "source_paragraphs": [86]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "That's the tension exactly. And it reflects a broader structural challenge in how AI products are built today, where application teams are often downstream consumers of pre-trained models they have no ability to modify.",
+      "source_paragraphs": [86]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "It raises the question of who should be responsible for making models safe, the teams that build the foundational models, or the teams that build products on top of them?",
+      "source_paragraphs": [86]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "And the answer is probably both, but the paper shows that the burden often falls disproportionately on the downstream teams. In the next part, we'll look at what happens when users actually start interacting with these AI prototypes. The challenges of user evaluation sessions add another whole layer of complexity. See you there.",
+      "source_paragraphs": [86]
+    }
+  ]
+}

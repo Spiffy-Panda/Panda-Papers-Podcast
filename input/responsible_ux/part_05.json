@@ -1,0 +1,123 @@
+{
+  "pause_between_ms": 600,
+  "rate": 0,
+  "part_number": 5,
+  "paper_source": "input/responsible_ux_paper.json",
+  "lines": [
+    {
+      "voice": "Microsoft David",
+      "text": "Welcome back. Now that we've covered the background and motivation, let's get into how the authors actually conducted this study. They used a qualitative interview approach, and the design choices they made are quite thoughtful.",
+      "source_paragraphs": [24]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "I always appreciate when researchers are transparent about their methods. Who did they talk to?",
+      "source_paragraphs": [24]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "They interviewed two groups. First, fifteen UX practitioners, including UX designers, interaction designers, UX researchers, and a UX engineer. Second, eight subject matter experts in designated responsible AI roles, like ethics advisors, responsible AI researchers, and ethics specialists. All were recruited through snowball sampling at a single large technology company with a major AI function.",
+      "source_paragraphs": [24]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Interesting that they focused on one company. Does that limit the generalizability?",
+      "source_paragraphs": [24]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "It's a tradeoff. Focusing on one company allowed deeper access to participants' work practices and team dynamics. Since the researchers were also employees there, participants could share more details about their AI projects while respecting confidentiality. But the authors didn't limit discussions to that company alone. Many participants had experience at multiple companies and were encouraged to reflect broadly on their careers.",
+      "source_paragraphs": [24, 27]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "That's a good approach. What about the participants themselves? What kind of experience did they have?",
+      "source_paragraphs": [25]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "The UX participants had an average of about twelve years working in UX and nearly eight years working with AI. So these are experienced professionals who've been thinking about these issues for a while. The responsible AI experts were relatively newer to their roles, averaging about two and a half years in their RAI positions, though they had about six years of experience working with AI more broadly.",
+      "source_paragraphs": [25]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "That experience gap is interesting. The RAI expert role is relatively new compared to UX, which makes sense since responsible AI as a formal discipline is still emerging.",
+      "source_paragraphs": [25]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Good observation. In terms of diversity, the UX group had seven women, eight men, and one non-binary person. The RAI expert group had five women, two men, and one non-binary person. They had a range of backgrounds too. The RAI experts came from fields like machine learning, ethics, philosophy, law, and science and technology studies.",
+      "source_paragraphs": [25, 26]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So the RAI experts weren't all engineers. They had diverse disciplinary backgrounds.",
+      "source_paragraphs": [26]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Exactly. And the UX practitioners worked across different AI product areas, including language translation, generative language models, conversational AI, medical imaging, speech recognition, and more. So they had exposure to a variety of responsible AI challenges.",
+      "source_paragraphs": [26]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "How did they actually collect the data? What did the interviews look like?",
+      "source_paragraphs": [27]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "The study ran from June through July 2022. All interviews were virtual since participants were in hybrid or fully remote roles. Most interviews lasted about an hour, with a couple shorter ones and one longer ninety-minute session. All participants gave written consent beforehand.",
+      "source_paragraphs": [27]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "And given the sensitive nature of responsible AI topics, I imagine building trust with participants was important.",
+      "source_paragraphs": [28]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "It really was. The researchers made a deliberate effort to foster transparency and trust. They held pre-interview calls, shared research briefs, and even shared their interpretations and findings back with each participant before publication, noting their specific quotes and asking for feedback.",
+      "source_paragraphs": [28]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "That's a really respectful approach to participant engagement. Did they do anything else to prepare for the interviews?",
+      "source_paragraphs": [28, 29]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Yes. Before the formal interviews, they observed a conversational AI design sprint. They didn't use those observations as research data directly, but it helped them understand the context, and they followed up with four of the sprint participants to enroll them in the interview study. They also reviewed artifacts that participants provided, like design sprint materials and framework documents.",
+      "source_paragraphs": [29]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Smart. Getting that contextual understanding first must have helped them ask better questions. What did they actually ask the UX practitioners?",
+      "source_paragraphs": [29, 30]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "In the UX practitioner interviews, they started by asking participants to broadly describe their AI-related UX work, and then they dove deeper by having them walk through one or two specific projects. They focused specifically on how responsible AI issues surfaced in their work, what mitigation strategies they used, and how those issues influenced project direction.",
+      "source_paragraphs": [30]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So they were really getting at the lived experience of doing this work, not just abstract opinions about responsible AI.",
+      "source_paragraphs": [30]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Exactly. And at the end of each interview, they asked UX practitioners about their aspirations for improvement. How could responsible AI processes for early-stage design be made better? That forward-looking question is important because it surfaces unmet needs.",
+      "source_paragraphs": [30]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "I like that. It's not just diagnosing the current state but also imagining a better future.",
+      "source_paragraphs": [30]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Next, we'll look at how they interviewed the RAI experts, and we'll talk about a really clever methodological choice they made: using a prompt programming tool called PromptMaker as a probe during interviews. It adds a fascinating hands-on dimension to the study.",
+      "source_paragraphs": [30]
+    }
+  ]
+}

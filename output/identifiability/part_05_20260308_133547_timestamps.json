@@ -1,0 +1,263 @@
+{
+  "source": "C:\\Users\\Brian\\Documents\\UW Winter 26\\ProductivityAndReadingHelper\\output\\identifiability\\dialog_part_05.json",
+  "audio_file": "part_05_20260308_133547.wav",
+  "tag": "part_05",
+  "generated": "2026-03-08T13:35:49.995670",
+  "total_duration_ms": 280300.1,
+  "total_duration_formatted": "4:40.300",
+  "lines": [
+    {
+      "index": 0,
+      "voice": "Microsoft David",
+      "text": "Welcome back. We just saw how a tiny XOR network produced tens of thousands of equally valid explanations. Now the authors scale things up to see whether the problem gets better or worse.",
+      "start_ms": 0.0,
+      "end_ms": 12942.3,
+      "duration_ms": 12942.3,
+      "source_paragraphs": [
+        17
+      ]
+    },
+    {
+      "index": 1,
+      "voice": "Microsoft Zira",
+      "text": "I'm guessing worse?",
+      "start_ms": 13542.3,
+      "end_ms": 15471.5,
+      "duration_ms": 1929.3,
+      "source_paragraphs": [
+        17
+      ]
+    },
+    {
+      "index": 2,
+      "voice": "Microsoft David",
+      "text": "You guessed right. They ran experiments with different random seeds, varying both the architecture size and the complexity of the task. The basic setup picks some number of two-input logic gates, builds an MLP, and trains it until the loss is very low.",
+      "start_ms": 16071.5,
+      "end_ms": 33383.0,
+      "duration_ms": 17311.5,
+      "source_paragraphs": [
+        17
+      ]
+    },
+    {
+      "index": 3,
+      "voice": "Microsoft Zira",
+      "text": "And because of combinatorial explosion, they had to put some limits on the search, right?",
+      "start_ms": 33983.0,
+      "end_ms": 40321.4,
+      "duration_ms": 6338.4,
+      "source_paragraphs": [
+        17
+      ]
+    },
+    {
+      "index": 4,
+      "voice": "Microsoft David",
+      "text": "Yes, they restricted circuit search to circuits with sparsity above 0.3, meaning they only looked at circuits that used less than 70 percent of the network's components. So the numbers they report are actually lower bounds. The true counts could be even higher.",
+      "start_ms": 40921.4,
+      "end_ms": 58672.5,
+      "duration_ms": 17751.2,
+      "source_paragraphs": [
+        17
+      ]
+    },
+    {
+      "index": 5,
+      "voice": "Microsoft Zira",
+      "text": "That's sobering. So what happens as you make the network bigger?",
+      "start_ms": 59272.5,
+      "end_ms": 64101.2,
+      "duration_ms": 4828.7,
+      "source_paragraphs": [
+        18
+      ]
+    },
+    {
+      "index": 6,
+      "voice": "Microsoft David",
+      "text": "When they varied the hidden layer size from two to five neurons, the number of valid computational abstractions exploded. Median values grew from 38 to over 910,000 in the circuit-first method, and from 8 to 3,700 in the algorithm-first approach.",
+      "start_ms": 64701.2,
+      "end_ms": 83172.0,
+      "duration_ms": 18470.8,
+      "source_paragraphs": [
+        18
+      ]
+    },
+    {
+      "index": 7,
+      "voice": "Microsoft Zira",
+      "text": "Nine hundred thousand valid explanations for a network with five hidden neurons? And were there any cases with a unique answer?",
+      "start_ms": 83772.0,
+      "end_ms": 91979.9,
+      "duration_ms": 8207.9,
+      "source_paragraphs": [
+        18
+      ]
+    },
+    {
+      "index": 8,
+      "voice": "Microsoft David",
+      "text": "Barely. Less than two percent of trained networks had exactly one valid minimal mapping, and not a single network had exactly one circuit interpretation. Uniqueness is essentially never achieved.",
+      "start_ms": 92579.9,
+      "end_ms": 106241.9,
+      "duration_ms": 13662.0,
+      "source_paragraphs": [
+        18
+      ]
+    },
+    {
+      "index": 9,
+      "voice": "Microsoft Zira",
+      "text": "What about making the task more complex? Does that help constrain things?",
+      "start_ms": 106841.9,
+      "end_ms": 112620.5,
+      "duration_ms": 5778.6,
+      "source_paragraphs": [
+        19
+      ]
+    },
+    {
+      "index": 10,
+      "voice": "Microsoft David",
+      "text": "Actually, yes, to some degree. They fixed the hidden layer size at three and trained the network to compute multiple logic gates simultaneously, sharing the same input neurons. As they increased from one to four tasks, the number of valid interpretations dropped significantly.",
+      "start_ms": 113220.5,
+      "end_ms": 132191.6,
+      "duration_ms": 18971.1,
+      "source_paragraphs": [
+        19
+      ]
+    },
+    {
+      "index": 11,
+      "voice": "Microsoft Zira",
+      "text": "That makes intuitive sense. If the network has to do more things at once, there are fewer ways to rearrange the explanation without breaking something.",
+      "start_ms": 132791.6,
+      "end_ms": 142524.0,
+      "duration_ms": 9732.4,
+      "source_paragraphs": [
+        19
+      ]
+    },
+    {
+      "index": 12,
+      "voice": "Microsoft David",
+      "text": "Exactly. But the improvement plateaus. Beyond four tasks, adding more complexity didn't significantly reduce the ambiguity further. So multi-task training helps, but doesn't solve the problem.",
+      "start_ms": 143124.0,
+      "end_ms": 158281.2,
+      "duration_ms": 15157.1,
+      "source_paragraphs": [
+        19
+      ]
+    },
+    {
+      "index": 13,
+      "voice": "Microsoft Zira",
+      "text": "What about training dynamics? Maybe if you train the network more carefully, you get cleaner explanations?",
+      "start_ms": 158881.2,
+      "end_ms": 166594.2,
+      "duration_ms": 7713.1,
+      "source_paragraphs": [
+        20
+      ]
+    },
+    {
+      "index": 14,
+      "voice": "Microsoft David",
+      "text": "They explored this by varying the loss cutoff and adding noise to the training data. Adding noise during training had no significant effect on the algorithm-first method. It did decrease the number of valid circuits, but interestingly increased the overall number of interpretations per circuit.",
+      "start_ms": 167194.2,
+      "end_ms": 185360.1,
+      "duration_ms": 18165.9,
+      "source_paragraphs": [
+        20
+      ]
+    },
+    {
+      "index": 15,
+      "voice": "Microsoft Zira",
+      "text": "So training dynamics might thin out the circuit space a bit, but don't really solve the fundamental problem.",
+      "start_ms": 185960.1,
+      "end_ms": 192713.5,
+      "duration_ms": 6753.4,
+      "source_paragraphs": [
+        20
+      ]
+    },
+    {
+      "index": 16,
+      "voice": "Microsoft David",
+      "text": "That's the authors' conclusion. Training and generalization might reduce the number of valid abstractions somewhat, but it's not enough to resolve the identifiability issue on its own.",
+      "start_ms": 193313.5,
+      "end_ms": 204765.9,
+      "duration_ms": 11452.3,
+      "source_paragraphs": [
+        20
+      ]
+    },
+    {
+      "index": 17,
+      "voice": "Microsoft Zira",
+      "text": "Now, all of these experiments are on tiny networks. Did they look at anything bigger?",
+      "start_ms": 205365.9,
+      "end_ms": 211704.3,
+      "duration_ms": 6338.4,
+      "source_paragraphs": [
+        21
+      ]
+    },
+    {
+      "index": 18,
+      "voice": "Microsoft David",
+      "text": "They did. They trained a larger MLP on a subset of MNIST, classifying digits zero and one. The network had layer sizes starting at 784 inputs and going through several layers down to a single output. They extracted the last few layers to form small sub-networks.",
+      "start_ms": 212304.3,
+      "end_ms": 232250.2,
+      "duration_ms": 19945.9,
+      "source_paragraphs": [
+        21
+      ]
+    },
+    {
+      "index": 19,
+      "voice": "Microsoft Zira",
+      "text": "And they could still find the identifiability problem?",
+      "start_ms": 232850.2,
+      "end_ms": 236563.9,
+      "duration_ms": 3713.7,
+      "source_paragraphs": [
+        21
+      ]
+    },
+    {
+      "index": 20,
+      "voice": "Microsoft David",
+      "text": "Yes. Even though exhaustive enumeration was impossible for the full network, they found over 3,200 valid circuits just in the smaller sub-network at the end. Since any valid circuit in the first part of the network can connect to any of these, that gives a minimum of 3,200 valid circuits in the full network.",
+      "start_ms": 237163.9,
+      "end_ms": 258494.2,
+      "duration_ms": 21330.4,
+      "source_paragraphs": [
+        21
+      ]
+    },
+    {
+      "index": 21,
+      "voice": "Microsoft Zira",
+      "text": "So the problem doesn't disappear at scale. If anything, it seems like it would get worse with bigger, more complex models.",
+      "start_ms": 259094.2,
+      "end_ms": 267897.1,
+      "duration_ms": 8802.9,
+      "source_paragraphs": [
+        21
+      ]
+    },
+    {
+      "index": 22,
+      "voice": "Microsoft David",
+      "text": "That's the implication. Coming up next, we'll discuss what all of this means. Does uniqueness even matter? And if it does, how might we fix it?",
+      "start_ms": 268497.1,
+      "end_ms": 280300.1,
+      "duration_ms": 11802.9,
+      "source_paragraphs": [
+        21
+      ]
+    }
+  ]
+}

@@ -1,0 +1,133 @@
+{
+  "pause_between_ms": 600,
+  "rate": 0,
+  "part_number": 7,
+  "paper_source": "input/ODESteer_paper.json",
+  "lines": [
+    {
+      "voice": "Microsoft David",
+      "text": "Welcome back. Last time we saw how input reading methods like Difference in Means and CAA all secretly construct barrier functions under Gaussian assumptions. Now let's complete the picture by looking at probing methods and output optimization.",
+      "source_paragraphs": [46]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Right, so we've covered one whole category. Probing is the next one. How does that fit into the barrier function story?",
+      "source_paragraphs": [46]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Probing methods learn steering directions by training classifiers to separate positive and negative activations. The classic example is Inference-Time Intervention, or ITI. It uses logistic regression to predict whether an activation belongs to the positive or negative class.",
+      "source_paragraphs": [46]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Logistic regression? That sounds much simpler than I expected for steering a large language model.",
+      "source_paragraphs": [46, 48]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "It is simple, and that's part of its appeal. You train a logistic regression on your contrastive activations, and the learned weight vector theta becomes your steering direction. You just add that vector to the activations at inference time.",
+      "source_paragraphs": [48]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Okay, but how does logistic regression connect to barrier functions?",
+      "source_paragraphs": [48]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "This is the elegant part. Logistic regression is actually a classic way to estimate the log-density ratio between two classes. So the barrier function here is just theta transpose a plus a constant bias term. The steering direction is the gradient of that barrier function, which simplifies to just the weight vector theta itself.",
+      "source_paragraphs": [48]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So the gradient is constant. That means the steering direction doesn't change based on where you are in activation space.",
+      "source_paragraphs": [48, 52]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Exactly. And that's both the strength and the weakness. From the barrier function perspective, probing is more flexible than Difference in Means because it estimates density ratios without needing strong distributional assumptions like Gaussianity.",
+      "source_paragraphs": [52]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "But the fixed direction is a problem?",
+      "source_paragraphs": [52]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Yes. Because most methods use linear probes, the steering vector can't adapt to the specific activation it's modifying. Every activation gets nudged in the same direction regardless of where it sits. That limits effectiveness in complex scenarios where different activations might need different adjustments.",
+      "source_paragraphs": [52]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Got it. So input reading and probing both end up with fixed directions. What about output optimization? That sounded different when you mentioned it earlier.",
+      "source_paragraphs": [53]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "It is quite different in spirit. Output optimization methods define a scoring function that measures how well activations align with desirable behaviors. Then you optimize your steering direction to increase that score.",
+      "source_paragraphs": [53]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So instead of contrasting positive and negative examples, you're directly scoring how good an activation is?",
+      "source_paragraphs": [53]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Precisely. A concrete example is RE-Control, which trains a three-layer neural network as a value function. It scores activations based on reward models, and then the steering direction is the gradient of that score, pushing activations toward higher-valued regions.",
+      "source_paragraphs": [53]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "And the barrier function connection?",
+      "source_paragraphs": [53, 55]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "These scoring functions can be viewed directly as barrier functions. You just define the barrier as the score minus some threshold epsilon. Regions where the score exceeds the threshold are desirable, and the steering direction works to keep activations there.",
+      "source_paragraphs": [55]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "That's neat. So output optimization is more flexible since you can use any scoring function you want?",
+      "source_paragraphs": [55]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "More flexible, yes, and it doesn't need contrastive pairs. But there are trade-offs. It's typically more computationally expensive because you need to train an additional scoring model. And if that score isn't accurate, you can actually get harmful steering rather than helpful steering.",
+      "source_paragraphs": [55]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So you're only as good as your scorer.",
+      "source_paragraphs": [55]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Exactly. And the neural network approaches like RE-Control require complex architectures and careful hyperparameter tuning. Their performance can vary a lot across tasks.",
+      "source_paragraphs": [55]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So to summarize, we now have the full picture. Input reading, probing, and output optimization all define barrier functions. Input reading uses distributional assumptions, probing uses classifiers, and output optimization uses learned scorers.",
+      "source_paragraphs": [46, 52, 53, 55]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "That's a great summary. And each one has limitations. Input reading is too coarse, probing gives fixed directions, and output optimization is expensive and fragile. This is exactly the gap that ODESteer is designed to fill.",
+      "source_paragraphs": [52, 55]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "I've been waiting for us to get to the actual method. How does ODESteer overcome all of these limitations?",
+      "source_paragraphs": [55]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "That's exactly what we'll cover next. We'll look at how ODESteer designs its own barrier function using nonlinear features and the log-density ratio, getting the flexibility of output optimization with the simplicity of input reading methods.",
+      "source_paragraphs": [55]
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "pause_between_ms": 600,
+  "rate": 0,
+  "part_number": 9,
+  "paper_source": "input/ODESteer_paper.json",
+  "lines": [
+    {
+      "voice": "Microsoft David",
+      "text": "Alright, so we have our nonlinear barrier function from the polynomial features and logistic regression. Now we need to turn that into an ODE we can actually solve to steer activations.",
+      "source_paragraphs": [63, 64]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Right, the barrier function tells us which regions of activation space are good and which are bad. But how do you get a steering direction from it?",
+      "source_paragraphs": [64]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "The natural choice is the gradient. The gradient of the barrier function always points in the direction of steepest increase, meaning it points toward the most desirable direction from wherever you currently are.",
+      "source_paragraphs": [64]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Like gradient ascent on the barrier function.",
+      "source_paragraphs": [64]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Exactly. But there's a practical detail. In some regions the gradient can be very large, which would cause overly big steps and numerical instability. So they normalize the gradient to have unit length before using it.",
+      "source_paragraphs": [64]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So the direction matters but not the magnitude.",
+      "source_paragraphs": [64]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Right. The resulting ODE says that the time derivative of the activation equals the normalized gradient. And because the barrier function uses nonlinear polynomial features, computing this gradient involves the Jacobian of the feature map phi with respect to the activation.",
+      "source_paragraphs": [64, 66]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "The Jacobian. That sounds computationally intense for high-dimensional activations.",
+      "source_paragraphs": [66]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "It can be, but the Polynomial Count Sketch structure makes it manageable. The key theoretical result is that this ODE consistently satisfies the barrier function condition from Proposition 1, meaning the barrier value keeps increasing along the trajectory.",
+      "source_paragraphs": [66]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So the activations are guaranteed to move toward the desirable region and stay there.",
+      "source_paragraphs": [66]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "That's the theoretical guarantee, yes. And in practice, they solve this ODE using standard numerical solvers. You give the solver three things: the vector field, which is the normalized gradient; the initial activation; and the integration interval from zero to T.",
+      "source_paragraphs": [66, 68]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "And T controls how strong the steering is, just like in the one-step case.",
+      "source_paragraphs": [68]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Yes, T plays the same role as the scaling factor in activation addition. But now, instead of jumping directly to time T in one big step, the solver takes many small steps, recomputing the direction at each one.",
+      "source_paragraphs": [68]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "That's the multi-step nature of ODESteer. Each little step uses the current activation to figure out where to go next.",
+      "source_paragraphs": [64, 68]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Precisely. And because the feature map is nonlinear, the gradient is different at every point in activation space. So the steering direction truly adapts as the activation evolves through the solving process.",
+      "source_paragraphs": [64, 66]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "It's like the difference between being told 'walk north for a mile' versus having a GPS that recalculates your route every few steps.",
+      "source_paragraphs": [64]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "That's a great analogy. The one-step methods give you a fixed direction. ODESteer gives you a continuously adapting path. The solver traces out a smooth trajectory through activation space that respects the geometry of the barrier function.",
+      "source_paragraphs": [64, 66]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So how do they choose T for each model? Is there a general rule?",
+      "source_paragraphs": [68]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "The paper provides specific settings in their appendix for each model. The general principle is that larger T means stronger steering, but too much steering can degrade generation quality. It's a hyperparameter you tune, but it's the only major one.",
+      "source_paragraphs": [68]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "One hyperparameter is a lot better than tuning a whole neural network.",
+      "source_paragraphs": [68]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Agreed. And that brings us to a systematic discussion of why this ODE approach has concrete advantages over everything that came before. We'll walk through that next.",
+      "source_paragraphs": [68]
+    }
+  ]
+}

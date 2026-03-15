@@ -1,0 +1,103 @@
+{
+  "pause_between_ms": 600,
+  "rate": 0,
+  "part_number": 8,
+  "paper_source": "input/responsible_ux_paper.json",
+  "lines": [
+    {
+      "voice": "Microsoft David",
+      "text": "Alright, so we just talked about what the responsible AI lens is in concept. Now let's look at how practitioners actually sensitize themselves to RAI concerns. This is section four-one-one of the paper, and it's packed with really concrete examples.",
+      "source_paragraphs": [44]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Yeah, I'm curious how this works in practice. Both UX practitioners and RAI experts get called on to address these issues, but they come from pretty different starting points, right?",
+      "source_paragraphs": [44]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Exactly. UX practitioners get called on because of their expertise in understanding how technology impacts users. RAI experts get called on because of their formal positions and specialized expertise in ethics and responsibility. But here's the key insight. Even though RAI isn't part of UX practitioners' formal training, many of them had already integrated it into their daily practices. One practitioner put it beautifully, saying that with her lens, she makes RAI issues surface. She said she wasn't sure those issues would naturally bubble up otherwise, but that her research ethos is to look for gaps and red flags.",
+      "source_paragraphs": [44]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So they've developed this almost intuitive ability to spot potential problems. What about the RAI experts? How do they go about sensitizing teams?",
+      "source_paragraphs": [44, 45]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "For RAI experts, a huge part of their job is offering RAI resources and support across the company. We're talking about RAI reviews, office hours, consultations, and workshops. Many of them develop and use frameworks and guidelines to help teams think about responsibility. One expert and their colleagues were creating an AI harms framework that outlines domain-specific considerations and best practices.",
+      "source_paragraphs": [45]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "And those frameworks aren't just for the teams they work with? They use them personally too?",
+      "source_paragraphs": [45, 46]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "That's right. One RAI expert said the harms framework is helpful even for someone who does this work all the time, because you can still forget about a possible negative implication. But the framework is also great for teams who are new to these ideas because it gives them a digestible overview of the landscape of things that could go wrong.",
+      "source_paragraphs": [46]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So it's like a structured checklist that helps even the experts stay comprehensive. How did UX practitioners interact with these resources?",
+      "source_paragraphs": [46, 47]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "The UX practitioners commonly referenced these frameworks and guidelines from the RAI experts during their interviews. Since RAI wasn't part of their formal training or job requirements, they actively and explicitly sought out internal RAI resources as well as external literature to educate themselves and integrate responsible thinking into their work.",
+      "source_paragraphs": [47]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So they're essentially self-educating. That takes a lot of initiative.",
+      "source_paragraphs": [47, 48]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "It really does. And some went even further. A few UX practitioners built their own frameworks from scratch to meet the specific needs of their application domain. Many of them compiled their RAI knowledge and experience into actionable guidelines and best practices. Some even integrated RAI into their standard design pipeline. One practitioner described how their team created standardized practices around fair data collection, building out a rigid pipeline that became just part of how they do things.",
+      "source_paragraphs": [48]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "That's impressive. Going from self-education to actually institutionalizing RAI practices within their own workflows. Were there other creative approaches?",
+      "source_paragraphs": [48, 49]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Definitely. One really interesting approach was what practitioners called responsibility lifts. These are a series of activities at the beginning of the design process that reinforce RAI as a lens to inspect and filter design ideas. For example, one practitioner talked about a design sprint focused on ideating AI products powered by large language models, where responsibility was explicitly called out in the brief as something everyone should think about for every idea they come up with.",
+      "source_paragraphs": [49]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Responsibility lifts. I love that term. It's like warming up your responsibility muscles before you start the creative work.",
+      "source_paragraphs": [49]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "That's a wonderful analogy. And another practitioner organized a conversational AI design sprint and invited internal guest speakers to give an RAI lightning talk right at the beginning. The rationale was that by making space for someone to present on responsibility at the start, you put those ideas in the brains of the designers, prototypers, and engineers so it's top of mind when they're in the thick of creative work.",
+      "source_paragraphs": [49, 50]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So it's about creating intentional moments that prime the team to think responsibly, rather than expecting it to happen organically.",
+      "source_paragraphs": [50]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Exactly. The practitioner said you make space for responsible design and thinking when you're in the thick of it. It's a proactive approach to making sure responsibility doesn't get lost in the excitement of building something new.",
+      "source_paragraphs": [50]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "This all sounds great at the individual and team level. But I imagine it's not always smooth sailing when you try to bring these ideas into a larger organization?",
+      "source_paragraphs": [50]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "You're absolutely right, and that's exactly what we're going to tackle next. The paper goes into the organizational challenges that come with trying to communicate about RAI across teams. It's a really honest look at the tensions between moving fast and being responsible, and the creative strategies practitioners use to navigate those tensions.",
+      "source_paragraphs": [50]
+    }
+  ]
+}

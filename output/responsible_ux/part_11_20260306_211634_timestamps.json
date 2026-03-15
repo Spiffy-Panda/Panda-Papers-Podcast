@@ -1,0 +1,201 @@
+{
+  "source": "C:\\Users\\Brian\\Documents\\UW Winter 26\\ProductivityAndReadingHelper\\input\\responsible_ux\\part_11.json",
+  "audio_file": "part_11_20260306_211634.wav",
+  "tag": "part_11",
+  "generated": "2026-03-06T21:16:36.612476",
+  "total_duration_ms": 302029.9,
+  "total_duration_formatted": "5:02.029",
+  "lines": [
+    {
+      "index": 0,
+      "voice": "Microsoft David",
+      "text": "Okay, so let's dig into one of the most fascinating sub-themes in the paper: how UX practitioners think about users' mental models of AI and why that matters for responsible design.",
+      "start_ms": 0.0,
+      "end_ms": 11702.5,
+      "duration_ms": 11702.5,
+      "source_paragraphs": [
+        63
+      ]
+    },
+    {
+      "index": 1,
+      "voice": "Microsoft Zira",
+      "text": "Right, we set this up at the end of the last segment. What were practitioners most worried about when it comes to how users perceive AI?",
+      "start_ms": 12302.5,
+      "end_ms": 21250.2,
+      "duration_ms": 8947.7,
+      "source_paragraphs": [
+        63
+      ]
+    },
+    {
+      "index": 2,
+      "voice": "Microsoft David",
+      "text": "UX practitioners told the researchers that because the ML models they work with, especially generative language models, include some randomness to produce variety in outputs, they were often concerned about how users would perceive the applications built on these models. A major worry was that users might overestimate the model's capabilities or treat it as if it were human-like, essentially anthropomorphizing it. One practitioner pointed out that a lot of people see large language model technology as a general-purpose chatbot, and then realize it can do other stuff, but that initial perception creates problems.",
+      "start_ms": 21850.2,
+      "end_ms": 59802.0,
+      "duration_ms": 37951.8,
+      "source_paragraphs": [
+        63
+      ]
+    },
+    {
+      "index": 3,
+      "voice": "Microsoft Zira",
+      "text": "That's such a real concern. When something talks to you like a person, it's hard not to think of it as one. So what strategies did they use to address this?",
+      "start_ms": 60402.0,
+      "end_ms": 71209.6,
+      "duration_ms": 10807.6,
+      "source_paragraphs": [
+        63,
+        64
+      ]
+    },
+    {
+      "index": 4,
+      "voice": "Microsoft David",
+      "text": "They had several creative approaches. Some put constraints on user input and model output to limit model behavior, like preventing it from answering off-topic questions. Others deliberately designed LLM-driven applications that weren't chatbots, specifically to expand people's understanding of what language models can do beyond just chat.",
+      "start_ms": 71809.6,
+      "end_ms": 93789.7,
+      "duration_ms": 21980.0,
+      "source_paragraphs": [
+        64
+      ]
+    },
+    {
+      "index": 5,
+      "voice": "Microsoft Zira",
+      "text": "Oh, that's interesting. So by not making it look like a chatbot, they're already steering users toward a more accurate mental model.",
+      "start_ms": 94389.7,
+      "end_ms": 103537.3,
+      "duration_ms": 9147.7,
+      "source_paragraphs": [
+        64
+      ]
+    },
+    {
+      "index": 6,
+      "voice": "Microsoft David",
+      "text": "Exactly. And there's a great example of one team that actually had to change their prototype's visual design mid-course. They discovered that users' expectations of an LLM-based chatbot didn't match the actual interaction. So they changed the interface from looking like a polished product to looking more like a simple, old-school, low-fidelity terminal chatbot. That visual shift helped reset user expectations.",
+      "start_ms": 104137.3,
+      "end_ms": 131546.3,
+      "duration_ms": 27409.0,
+      "source_paragraphs": [
+        64
+      ]
+    },
+    {
+      "index": 7,
+      "voice": "Microsoft Zira",
+      "text": "That's so counterintuitive! Making your product look less polished to be more responsible. Most companies would push for the opposite.",
+      "start_ms": 132146.3,
+      "end_ms": 141479.0,
+      "duration_ms": 9332.7,
+      "source_paragraphs": [
+        64
+      ]
+    },
+    {
+      "index": 8,
+      "voice": "Microsoft David",
+      "text": "It really challenges the typical design instinct. But some practitioners took a different approach entirely. Rather than limiting what users see, they argued for building features that allow users to dig deeper into the AI's capabilities. One practitioner said providing insight about what features and capabilities are possible helps expand the user's mental model of how they can interact with the system, and that builds trust based on knowing what's actually possible.",
+      "start_ms": 142079.0,
+      "end_ms": 170698.0,
+      "duration_ms": 28618.9,
+      "source_paragraphs": [
+        65
+      ]
+    },
+    {
+      "index": 9,
+      "voice": "Microsoft Zira",
+      "text": "So some practitioners restrict to prevent misconceptions, while others open things up to build informed understanding. Both are valid strategies.",
+      "start_ms": 171298.0,
+      "end_ms": 181200.3,
+      "duration_ms": 9902.4,
+      "source_paragraphs": [
+        64,
+        65
+      ]
+    },
+    {
+      "index": 10,
+      "voice": "Microsoft David",
+      "text": "Right, it's not one-size-fits-all. And the paper surfaces a really thought-provoking reflection from a UX researcher about the deeper ethical questions here. She pointed out that many users don't even know what AI or machine learning is. During interviews, when she asked people how they thought the system worked, some literally said they thought there was a person looking at their requests and getting back to them quickly.",
+      "start_ms": 181800.3,
+      "end_ms": 207435.1,
+      "duration_ms": 25634.8,
+      "source_paragraphs": [
+        66,
+        67
+      ]
+    },
+    {
+      "index": 11,
+      "voice": "Microsoft Zira",
+      "text": "Wow. They thought it was a human behind the scenes? That's a massive misconception.",
+      "start_ms": 208035.1,
+      "end_ms": 214593.7,
+      "duration_ms": 6558.5,
+      "source_paragraphs": [
+        67
+      ]
+    },
+    {
+      "index": 12,
+      "voice": "Microsoft David",
+      "text": "It really is. And she raised this powerful open question: what obligation, if any, do we have to correct that misconception? What potential downstream harm could having that misconception lead to? And what might onboarding to a system like this look like for people who have lower tech literacy? How do you help people understand that this is an AI system and what that means?",
+      "start_ms": 215193.7,
+      "end_ms": 239868.7,
+      "duration_ms": 24675.0,
+      "source_paragraphs": [
+        67
+      ]
+    },
+    {
+      "index": 13,
+      "voice": "Microsoft Zira",
+      "text": "Those are profound questions. It goes beyond just usability into something much more fundamental about informed consent and understanding.",
+      "start_ms": 240468.7,
+      "end_ms": 249686.4,
+      "duration_ms": 9217.8,
+      "source_paragraphs": [
+        67
+      ]
+    },
+    {
+      "index": 14,
+      "voice": "Microsoft David",
+      "text": "Absolutely. And it highlights one of the unique contributions that UX practitioners bring to responsible AI. They're the ones interacting with users and seeing firsthand how people actually understand these systems, which is often very different from how designers and engineers assume they'll understand them.",
+      "start_ms": 250286.4,
+      "end_ms": 269192.4,
+      "duration_ms": 18905.9,
+      "source_paragraphs": [
+        66,
+        67
+      ]
+    },
+    {
+      "index": 15,
+      "voice": "Microsoft Zira",
+      "text": "This section has really opened my eyes to how much design decisions shape not just usability but users' fundamental understanding of what they're interacting with. What's next?",
+      "start_ms": 269792.4,
+      "end_ms": 280679.7,
+      "duration_ms": 10887.3,
+      "source_paragraphs": [
+        67
+      ]
+    },
+    {
+      "index": 16,
+      "voice": "Microsoft David",
+      "text": "Next, we're going to look at how UX practitioners go beyond mental models and actually get their hands dirty with the ML models themselves through a practice called test-driving. It's about directly probing the models to understand their capabilities and limitations, and it raises some really interesting questions about bias and prompt design.",
+      "start_ms": 281279.7,
+      "end_ms": 302029.9,
+      "duration_ms": 20750.2,
+      "source_paragraphs": [
+        67
+      ]
+    }
+  ]
+}

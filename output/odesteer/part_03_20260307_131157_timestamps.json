@@ -1,0 +1,197 @@
+{
+  "source": "C:\\Users\\Brian\\Documents\\UW Winter 26\\ProductivityAndReadingHelper\\output\\odesteer\\dialog_part_03.json",
+  "audio_file": "part_03_20260307_131157.wav",
+  "tag": "part_03",
+  "generated": "2026-03-07T13:11:59.032205",
+  "total_duration_ms": 229365.3,
+  "total_duration_formatted": "3:49.365",
+  "lines": [
+    {
+      "index": 0,
+      "voice": "Microsoft David",
+      "text": "Alright, so we've established the theoretical motivation. Now let's talk about what ODESteer actually does and how it relates to existing work.",
+      "start_ms": 0.0,
+      "end_ms": 9802.9,
+      "duration_ms": 9802.9,
+      "source_paragraphs": [
+        9
+      ]
+    },
+    {
+      "index": 1,
+      "voice": "Microsoft Zira",
+      "text": "Yeah, I want to understand the concrete method. How does it use all these ODE and barrier function ideas in practice?",
+      "start_ms": 10402.9,
+      "end_ms": 18686.0,
+      "duration_ms": 8283.1,
+      "source_paragraphs": [
+        9
+      ]
+    },
+    {
+      "index": 2,
+      "voice": "Microsoft David",
+      "text": "So the core idea is this: ODESteer defines its barrier function as the log-density ratio between positive and negative activations. In plain English, it estimates the likelihood that an activation belongs to the good category versus the bad category, and uses the log of that ratio.",
+      "start_ms": 19286.0,
+      "end_ms": 37817.3,
+      "duration_ms": 18531.3,
+      "source_paragraphs": [
+        9
+      ]
+    },
+    {
+      "index": 3,
+      "voice": "Microsoft Zira",
+      "text": "And this is different from previous approaches because...?",
+      "start_ms": 38417.3,
+      "end_ms": 42066.1,
+      "duration_ms": 3648.8,
+      "source_paragraphs": [
+        9
+      ]
+    },
+    {
+      "index": 4,
+      "voice": "Microsoft David",
+      "text": "Because it uses nonlinear features to represent this ratio, rather than simple linear comparisons. Then it constructs an ODE from the gradient of this barrier function and solves it to perform multi-step adaptive steering. Instead of one big push, the activation gets gently guided along a smooth trajectory.",
+      "start_ms": 42666.1,
+      "end_ms": 62532.0,
+      "duration_ms": 19865.9,
+      "source_paragraphs": [
+        9
+      ]
+    },
+    {
+      "index": 5,
+      "voice": "Microsoft Zira",
+      "text": "And at each step along this trajectory, the direction adjusts based on where the activation currently is?",
+      "start_ms": 63132.0,
+      "end_ms": 69790.1,
+      "duration_ms": 6658.1,
+      "source_paragraphs": [
+        9
+      ]
+    },
+    {
+      "index": 6,
+      "voice": "Microsoft David",
+      "text": "Exactly. The steering direction depends on the current activation through this nonlinear barrier function, so it adapts dynamically. And importantly, it doesn't need neural networks for this. It uses classical machine learning techniques.",
+      "start_ms": 70390.1,
+      "end_ms": 87396.4,
+      "duration_ms": 17006.3,
+      "source_paragraphs": [
+        9
+      ]
+    },
+    {
+      "index": 7,
+      "voice": "Microsoft Zira",
+      "text": "That's really appealing from a practical standpoint. So what are the main contributions of the paper?",
+      "start_ms": 87996.4,
+      "end_ms": 94664.4,
+      "duration_ms": 6668.1,
+      "source_paragraphs": [
+        10
+      ]
+    },
+    {
+      "index": 8,
+      "voice": "Microsoft David",
+      "text": "The authors list three. First, the unified theoretical framework itself, showing that activation addition equals solving an ODE and that finding steering directions equals defining barrier functions. Second, the ODESteer method that performs multi-step adaptive updates by solving the barrier-function-guided ODE. And third, extensive experiments across multiple language models and benchmarks showing strong results.",
+      "start_ms": 95264.4,
+      "end_ms": 122958.7,
+      "duration_ms": 27694.3,
+      "source_paragraphs": [
+        10
+      ]
+    },
+    {
+      "index": 9,
+      "voice": "Microsoft Zira",
+      "text": "How does this fit into the landscape of existing activation steering methods?",
+      "start_ms": 123558.7,
+      "end_ms": 128447.2,
+      "duration_ms": 4888.4,
+      "source_paragraphs": [
+        11
+      ]
+    },
+    {
+      "index": 10,
+      "voice": "Microsoft David",
+      "text": "There's a rich body of work here. Fixed-vector methods like RepE, ITI, and CAA apply the same update to all activations, so they lack adaptability. Linear extensions like MiMiC and Linear-AcT incorporate optimal transport but still make restrictive assumptions. Neural network-based methods offer more flexibility but need extra training and don't generalize well.",
+      "start_ms": 129047.2,
+      "end_ms": 154197.1,
+      "duration_ms": 25149.9,
+      "source_paragraphs": [
+        11
+      ]
+    },
+    {
+      "index": 11,
+      "voice": "Microsoft Zira",
+      "text": "And ODESteer is trying to sit in a sweet spot between these?",
+      "start_ms": 154797.1,
+      "end_ms": 158885.8,
+      "duration_ms": 4088.8,
+      "source_paragraphs": [
+        11
+      ]
+    },
+    {
+      "index": 12,
+      "voice": "Microsoft David",
+      "text": "Yes. It's adaptive and nonlinear like the neural network approaches, but it's grounded in classical techniques, so it's simpler and more efficient. The multi-step ODE solving gives it the flexibility to capture complex activation patterns without the downsides of neural network training.",
+      "start_ms": 159485.8,
+      "end_ms": 177686.6,
+      "duration_ms": 18200.8,
+      "source_paragraphs": [
+        11
+      ]
+    },
+    {
+      "index": 13,
+      "voice": "Microsoft Zira",
+      "text": "What about the theoretical understanding side? Have others tried to build a unified theory before?",
+      "start_ms": 178286.6,
+      "end_ms": 185020.0,
+      "duration_ms": 6733.3,
+      "source_paragraphs": [
+        12
+      ]
+    },
+    {
+      "index": 14,
+      "voice": "Microsoft David",
+      "text": "There have been limited attempts. One analysis looked at three major methods but assumed fixed steering vectors, so it couldn't handle nonlinear approaches. Another proposed a unifying view using linear maps but couldn't explain how steering directions are actually identified. The ODE framework in this paper goes further because it reveals deeper connections and actually leads to a practical new method.",
+      "start_ms": 185620.0,
+      "end_ms": 210474.4,
+      "duration_ms": 24854.5,
+      "source_paragraphs": [
+        12
+      ]
+    },
+    {
+      "index": 15,
+      "voice": "Microsoft Zira",
+      "text": "So it's both a theoretical contribution and a practical one. That's pretty rare.",
+      "start_ms": 211074.4,
+      "end_ms": 217022.9,
+      "duration_ms": 5948.4,
+      "source_paragraphs": [
+        12
+      ]
+    },
+    {
+      "index": 16,
+      "voice": "Microsoft David",
+      "text": "It is. And next, we need to go a bit deeper into what barrier functions actually are from a control theory perspective, because that's the foundation of everything that follows.",
+      "start_ms": 217622.9,
+      "end_ms": 229365.3,
+      "duration_ms": 11742.4,
+      "source_paragraphs": [
+        12
+      ]
+    }
+  ]
+}

@@ -1,0 +1,224 @@
+{
+  "source": "C:\\Users\\Brian\\Documents\\UW Winter 26\\ProductivityAndReadingHelper\\input\\great_plea\\part_13.json",
+  "audio_file": "part_13_20260306_194227.wav",
+  "tag": "part_13",
+  "generated": "2026-03-06T19:42:29.471687",
+  "total_duration_ms": 251970.6,
+  "total_duration_formatted": "4:11.970",
+  "lines": [
+    {
+      "index": 0,
+      "voice": "Microsoft David",
+      "text": "Welcome back. We just finished Traceability and the importance of transparency in AI decision-making. Now we're into the PLEA portion of GREAT PLEA, starting with P: Privacy.",
+      "start_ms": 0.0,
+      "end_ms": 12952.5,
+      "duration_ms": 12952.5,
+      "source_paragraphs": [
+        60
+      ]
+    },
+    {
+      "index": 1,
+      "voice": "Microsoft Zira",
+      "text": "Privacy feels like it should be obvious in healthcare. Patient data is already heavily protected. But I'm guessing generative AI introduces some new wrinkles?",
+      "start_ms": 13552.5,
+      "end_ms": 24480.1,
+      "duration_ms": 10927.6,
+      "source_paragraphs": [
+        60
+      ]
+    },
+    {
+      "index": 2,
+      "voice": "Microsoft David",
+      "text": "It does. The authors define privacy as an assurance that the confidentiality of, and access to, certain information about an entity is protected. Pretty standard definition, but the application to generative AI gets complicated quickly.",
+      "start_ms": 25080.1,
+      "end_ms": 42151.4,
+      "duration_ms": 17071.3,
+      "source_paragraphs": [
+        60
+      ]
+    },
+    {
+      "index": 3,
+      "voice": "Microsoft Zira",
+      "text": "Why is privacy especially challenging with generative AI compared to other types of AI?",
+      "start_ms": 42751.4,
+      "end_ms": 48354.8,
+      "duration_ms": 5603.4,
+      "source_paragraphs": [
+        61
+      ]
+    },
+    {
+      "index": 4,
+      "voice": "Microsoft David",
+      "text": "Well, the authors note that privacy is necessary in most military and medical applications due to their confidential nature. Both sectors deal with information that could cause serious harm if it got into the wrong hands. But generative AI adds layers because of how these models are trained and how they interact with users.",
+      "start_ms": 48954.8,
+      "end_ms": 69050.7,
+      "duration_ms": 20095.9,
+      "source_paragraphs": [
+        61
+      ]
+    },
+    {
+      "index": 5,
+      "voice": "Microsoft Zira",
+      "text": "Because these models learn from massive datasets that could include sensitive information.",
+      "start_ms": 69650.7,
+      "end_ms": 75188.9,
+      "duration_ms": 5538.1,
+      "source_paragraphs": [
+        61,
+        62
+      ]
+    },
+    {
+      "index": 6,
+      "voice": "Microsoft David",
+      "text": "Exactly. So the authors' implementation requirements start with the basics: HIPAA compliance for any data disclosures and security measures against breaches. But they go further. They call for developer guidance on how to properly train systems with healthcare data, and regular risk assessments to determine where patient data might be vulnerable.",
+      "start_ms": 75788.9,
+      "end_ms": 99098.9,
+      "duration_ms": 23310.0,
+      "source_paragraphs": [
+        62
+      ]
+    },
+    {
+      "index": 7,
+      "voice": "Microsoft Zira",
+      "text": "So it's not just about protecting data at rest or in transit. It's about the entire pipeline, from training data through to outputs.",
+      "start_ms": 99698.9,
+      "end_ms": 109056.7,
+      "duration_ms": 9357.9,
+      "source_paragraphs": [
+        62
+      ]
+    },
+    {
+      "index": 8,
+      "voice": "Microsoft David",
+      "text": "Right. And here's where it gets really interesting. The authors identify two specific threats that are unique to generative AI. The first is prompt injection.",
+      "start_ms": 109656.7,
+      "end_ms": 121134.4,
+      "duration_ms": 11477.6,
+      "source_paragraphs": [
+        63
+      ]
+    },
+    {
+      "index": 9,
+      "voice": "Microsoft Zira",
+      "text": "Prompt injection. What is that exactly?",
+      "start_ms": 121734.4,
+      "end_ms": 125523.3,
+      "duration_ms": 3788.9,
+      "source_paragraphs": [
+        63
+      ]
+    },
+    {
+      "index": 10,
+      "voice": "Microsoft David",
+      "text": "Prompt injection is when someone crafts malicious inputs that override the AI system's original instructions. Essentially, an attacker tricks the system into doing something it wasn't designed to do, potentially exposing protected information or performing unauthorized actions.",
+      "start_ms": 126123.3,
+      "end_ms": 143684.0,
+      "duration_ms": 17560.7,
+      "source_paragraphs": [
+        63
+      ]
+    },
+    {
+      "index": 11,
+      "voice": "Microsoft Zira",
+      "text": "That's scary in a healthcare context. Imagine someone manipulating a clinical AI to disclose patient records. What's the second threat?",
+      "start_ms": 144284.0,
+      "end_ms": 154186.8,
+      "duration_ms": 9902.9,
+      "source_paragraphs": [
+        63
+      ]
+    },
+    {
+      "index": 12,
+      "voice": "Microsoft David",
+      "text": "The second is jailbreaking. This is where someone uses clever prompting to get the AI to divulge information from its training data. If a model was trained on healthcare data, a jailbreak attack could potentially extract actual patient information that was in the training set.",
+      "start_ms": 154786.8,
+      "end_ms": 172208.1,
+      "duration_ms": 17421.3,
+      "source_paragraphs": [
+        63
+      ]
+    },
+    {
+      "index": 13,
+      "voice": "Microsoft Zira",
+      "text": "So the training data itself becomes a privacy vulnerability. That's a problem traditional healthcare IT systems don't really face.",
+      "start_ms": 172808.1,
+      "end_ms": 181675.7,
+      "duration_ms": 8867.6,
+      "source_paragraphs": [
+        63
+      ]
+    },
+    {
+      "index": 14,
+      "voice": "Microsoft David",
+      "text": "Exactly. It's a fundamentally new attack surface. And the authors emphasize that developing these systems with data privacy and security in mind from the start is essential. You can't bolt privacy on after the fact.",
+      "start_ms": 182275.7,
+      "end_ms": 197367.4,
+      "duration_ms": 15091.7,
+      "source_paragraphs": [
+        64
+      ]
+    },
+    {
+      "index": 15,
+      "voice": "Microsoft Zira",
+      "text": "Privacy by design rather than privacy as an afterthought.",
+      "start_ms": 197967.4,
+      "end_ms": 201931.2,
+      "duration_ms": 3963.7,
+      "source_paragraphs": [
+        64
+      ]
+    },
+    {
+      "index": 16,
+      "voice": "Microsoft David",
+      "text": "Precisely. Having robust measures in place to maintain the privacy of sensitive data collected and generated by AI systems is crucial for two things: the well-being of patients and building trust with patients. If patients don't trust that their data is safe, they won't be open with their healthcare providers, and that undermines the whole system.",
+      "start_ms": 202531.2,
+      "end_ms": 224581.2,
+      "duration_ms": 22050.1,
+      "source_paragraphs": [
+        64
+      ]
+    },
+    {
+      "index": 17,
+      "voice": "Microsoft Zira",
+      "text": "Privacy really is foundational. Without it, all the other principles start to crumble. What comes next in the framework?",
+      "start_ms": 225181.2,
+      "end_ms": 234254.0,
+      "duration_ms": 9072.8,
+      "source_paragraphs": [
+        60,
+        61,
+        62,
+        63,
+        64
+      ]
+    },
+    {
+      "index": 18,
+      "voice": "Microsoft David",
+      "text": "The L in PLEA: Lawfulness. The authors will look at the legal landscape for generative AI in healthcare, from varying state laws to thorny questions about liability and intellectual property. It's where ethics meets the legal system. Stay tuned!",
+      "start_ms": 234854.0,
+      "end_ms": 251970.6,
+      "duration_ms": 17116.6,
+      "source_paragraphs": [
+        64
+      ]
+    }
+  ]
+}

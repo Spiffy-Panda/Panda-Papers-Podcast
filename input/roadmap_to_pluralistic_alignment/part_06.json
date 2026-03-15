@@ -1,0 +1,118 @@
+{
+  "pause_between_ms": 600,
+  "rate": 0,
+  "part_number": 6,
+  "paper_source": "input/roadmap_to_pluralistic_alignment.json",
+  "lines": [
+    {
+      "voice": "Microsoft David",
+      "text": "Welcome back. Last time we wrapped up the three types of pluralistic models and introduced the idea of pluralistic benchmarks. Now let's get into the details, starting with multi-objective benchmarks.",
+      "source_paragraphs": [27]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So a multi-objective benchmark tracks performance across multiple goals instead of just one?",
+      "source_paragraphs": [27]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Right. They define a set of objectives where each one maps a model to a scalar score. A key concept here is Pareto improvement. Model A is a Pareto improvement over Model B if it's at least as good on every objective and strictly better on at least one. The top of the leaderboard becomes the set of Pareto-optimal solutions, models where you can't improve on one objective without sacrificing another.",
+      "source_paragraphs": [27]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "And then there's the commensurating function that combines multiple objectives into a single number?",
+      "source_paragraphs": [27]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Yes. A multi-objective benchmark reports the full spectrum of model performance across all objectives and can be adapted to different commensurating functions. The crucial feature is that when objectives get combined, the combination is done explicitly and all individual scores are still reported. This makes it possible to propose alternative trade-offs.",
+      "source_paragraphs": [28]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "That's important. Right now a lot of trade-offs in AI are implicit and hidden. Like the tension between helpfulness and harmlessness that often gets blended through data mixtures without anyone really choosing the balance explicitly.",
+      "source_paragraphs": [28]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Exactly. The authors point out that these implicit trade-offs are pervasive. By making them explicit through multi-objective benchmarks, you let the community reason about them openly. Objectives can be operationalized through test set evaluation, reward model outputs, preference scores, model properties, or adherence to specific rules or principles.",
+      "source_paragraphs": [28]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Are there downsides to this approach?",
+      "source_paragraphs": [29]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "A few. If you have a very large set of metrics, comparing models across all those dimensions becomes costly, and choosing the right number and level of abstraction for objectives is tricky. Most current alignment techniques optimize a single objective, so you'd need a commensurating function to use them, which somewhat defeats the purpose. Multi-objective reinforcement learning techniques can help here.",
+      "source_paragraphs": [29]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "But the benefit is that single-value benchmarks can lead to reward hacking, right? Multiple objectives are harder to game.",
+      "source_paragraphs": [29]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Exactly. Multiple objectives allow for more diverse model strengths and help mitigate over-optimization on any one dimension. Now let's move to trade-off steerable benchmarks, which take things a step further.",
+      "source_paragraphs": [29, 30]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "How are they different from multi-objective benchmarks?",
+      "source_paragraphs": [30]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Multi-objective benchmarks assume a static model. Trade-off steerable benchmarks go further by measuring whether a model can actually be steered to trade off objectives differently at inference time. A model is steerable to a set of commensurating functions if, for each function, the model steered to that function maximizes it compared to any other steering target.",
+      "source_paragraphs": [30]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So instead of having different models optimized for different trade-offs, you want one model that can shift its behavior depending on what you prioritize.",
+      "source_paragraphs": [31]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Exactly. It measures both a model's raw ability to maximize objectives and its steerability across them. The benchmark reward is the sum over all commensurating functions of how well the model performs when steered to each one. This means success requires both high performance and flexible steering.",
+      "source_paragraphs": [31]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "That's ambitious. Are there any concerns with this framework?",
+      "source_paragraphs": [32]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Yes. It assumes values can be commensured, meaning traded off against each other. But many philosophers who subscribe to value pluralism believe some values are genuinely incommensurable, you simply can't trade them off. As for making it work in practice, promising techniques include controllable decoding, prefix tokens, custom instructions, and model soups.",
+      "source_paragraphs": [32]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "And do any standard trade-off steerable benchmarks exist for language models right now?",
+      "source_paragraphs": [32]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "To the authors' knowledge, no. They're calling for the development of these benchmarks to drive progress toward more steerable AI systems. It's a wide open space.",
+      "source_paragraphs": [32]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So there's a real gap between the theoretical framework and what exists in practice. That's a strong call to action for the research community.",
+      "source_paragraphs": [32]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "It really is. In our next segment, we'll cover the third type of benchmark, jury-pluralistic benchmarks, which bring in ideas from democratic theory. And we'll also look at how current alignment approaches stack up against all of this.",
+      "source_paragraphs": [32]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "I'm really curious about the jury approach. The idea of modeling individual annotators rather than averaging them sounds like it could change how we think about evaluation entirely. See you next time.",
+      "source_paragraphs": [32]
+    }
+  ]
+}

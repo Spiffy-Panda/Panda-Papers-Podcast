@@ -1,0 +1,108 @@
+{
+  "pause_between_ms": 600,
+  "rate": 0,
+  "part_number": 4,
+  "paper_source": "input/roadmap_to_pluralistic_alignment.json",
+  "lines": [
+    {
+      "voice": "Microsoft David",
+      "text": "Welcome back. We just covered Overton pluralism and the idea of models presenting a full spectrum of reasonable answers. Now let's move to the second type: steerable pluralism.",
+      "source_paragraphs": [16]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So steerable pluralism is about being able to guide the model to reflect specific perspectives or values, right?",
+      "source_paragraphs": [16]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Right. The authors define steering attributes as properties, perspectives, or attributes you want the model to faithfully reflect. These could be cultural groups, philosophical schools of thought, political perspectives, or particular values. A model is steerably pluralistic if, when you condition it on a specific attribute, it produces responses that are genuinely consistent with that attribute.",
+      "source_paragraphs": [16]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "And I imagine faithfully is the key word there. It's not enough to just superficially mimic a perspective. The model needs to actually reflect it in a meaningful way.",
+      "source_paragraphs": [16]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Exactly. And they make a really important observation: models that are heavily aligned toward a single attribute become unable to steer to other attributes, making them unusable for people who don't share that dominant value. And many current language models show a clear Silicon Valley and WEIRD bias. That stands for Western, Educated, Industrialized, Rich, Democratic. They tend to skew male, White, American, liberal, and wealthy in perspective.",
+      "source_paragraphs": [17]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "That's a really significant bias. So if most of the alignment data comes from a narrow demographic, the model ends up reflecting that demographic's values as if they were universal.",
+      "source_paragraphs": [17]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Precisely. To implement steerable pluralism, you need a mechanism for conditioning the model on attributes at inference time. And you need ways to measure faithfulness, whether through human annotations or attribute-specific reward models.",
+      "source_paragraphs": [17]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Where do they see this being most useful in practice?",
+      "source_paragraphs": [18]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "The primary application is customization. People want to personalize models for writing assistance, creative production, and ideation. But it goes further. Steering toward therapeutic values can help mental health applications. Steerably pluralistic models are also valuable for simulating social systems through agent-based models, deliberative discourse, hate speech detection, and even reframing negative thought patterns.",
+      "source_paragraphs": [18]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Wow, that's a broad range. So it's not just about giving users what they want. It's about enabling whole categories of research and applications that require modeling diverse perspectives.",
+      "source_paragraphs": [18]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Right. They even suggest that steerability toward different cognitive architectures could be important for building more generally intelligent systems.",
+      "source_paragraphs": [18]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "But there must be limits, right? You wouldn't want to steer a model toward hateful perspectives.",
+      "source_paragraphs": [19]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Absolutely. They address that directly. Some attributes, like hate speech, should be disallowed as steering targets. Deciding which attributes are acceptable mirrors the same challenge in Overton pluralism about which answers count as reasonable. And if you define attributes too broadly, you risk stereotyping or flattening complex perspectives into simple caricatures.",
+      "source_paragraphs": [19]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "That's a really nuanced challenge. You want the model to represent different perspectives faithfully without reducing them to stereotypes.",
+      "source_paragraphs": [19]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Right. And they note that in some cases you might need intersectional evaluation, considering attributes in combination rather than independently. A person's perspective is shaped by many factors together, not just one at a time.",
+      "source_paragraphs": [19]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So what techniques exist for actually making this work?",
+      "source_paragraphs": [20]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "They describe several approaches. You can condition on demographic groups and study which conditions yield the best agreement. You can learn user embeddings to induce values from the model. You can add modules to base models that predict group responses in a few-shot manner. You can predict annotator ratings for specific groups. Or you can rewrite responses for specific audiences. The authors emphasize that steerability research will only grow more important as users demand more customization.",
+      "source_paragraphs": [20]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "That makes sense. People are already trying to customize these models for their specific needs. Having a principled framework for it seems really valuable.",
+      "source_paragraphs": [20]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "And they advocate for systems that can be aligned to many attributes within an acceptable range, rather than being locked into one perspective. Coming up next, we'll look at the third type: distributional pluralism, which takes a statistical approach to matching human populations.",
+      "source_paragraphs": [20]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Looking forward to it. That one sounds like it connects most directly to their empirical findings about alignment reducing pluralism.",
+      "source_paragraphs": [20]
+    }
+  ]
+}

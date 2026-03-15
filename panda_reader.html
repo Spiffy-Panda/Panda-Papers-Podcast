@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panda Reader</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="dyslexia.css">
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <h1 class="logo">Panda Reader</h1>
+      <p class="subtitle">Your cutest update companion~</p>
+    </header>
+
+    <main class="main">
+      <!-- Text Display Area -->
+      <section class="reader-panel">
+        <div class="reader-header">
+          <h2>Reading</h2>
+          <span class="status-badge" id="statusBadge">Ready</span>
+        </div>
+        <div class="reader-content" id="readerContent">
+          <p class="placeholder-text">Paste text, enter a prompt, or load a source to get started!</p>
+        </div>
+        <div class="highlight-tracker" id="highlightTracker"></div>
+      </section>
+
+      <!-- Audio Controls -->
+      <section class="audio-controls">
+        <button class="btn btn-skip" id="btnPrev" title="Previous sentence">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg>
+        </button>
+        <button class="btn btn-play" id="btnPlayPause" title="Play / Pause">
+          <svg class="icon-play" width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          <svg class="icon-pause hidden" width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+        </button>
+        <button class="btn btn-skip" id="btnNext" title="Next sentence">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg>
+        </button>
+        <div class="speed-control">
+          <label for="speedRange">Speed</label>
+          <input type="range" id="speedRange" min="0.5" max="2" step="0.1" value="1">
+          <span id="speedValue">1.0x</span>
+        </div>
+        <div class="voice-select-wrapper">
+          <label for="voiceSelect">Voice</label>
+          <select id="voiceSelect"></select>
+        </div>
+      </section>
+
+      <!-- Progress Bar -->
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+
+      <!-- Input / Source Area -->
+      <section class="input-panel">
+        <div class="input-tabs">
+          <button class="tab active" data-tab="text">Paste Text</button>
+          <button class="tab" data-tab="prompt">AI Prompt</button>
+          <button class="tab" data-tab="url">From URL</button>
+        </div>
+
+        <div class="tab-content active" id="tab-text">
+          <textarea id="textInput" placeholder="Paste or type text here to read aloud..."></textarea>
+          <button class="btn btn-primary" id="btnLoadText">Load Text</button>
+        </div>
+
+        <div class="tab-content" id="tab-prompt">
+          <textarea id="promptInput" placeholder="Enter an AI prompt (e.g. 'Summarize my emails in a cute panda style')..."></textarea>
+          <button class="btn btn-primary" id="btnSendPrompt">Generate</button>
+          <p class="hint">Connects to your AI backend or API endpoint.</p>
+        </div>
+
+        <div class="tab-content" id="tab-url">
+          <input type="url" id="urlInput" placeholder="https://example.com/article">
+          <button class="btn btn-primary" id="btnFetchUrl">Fetch & Read</button>
+          <p class="hint">Fetches text content from a URL.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Panda Reader v0.1</p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+  <script src="dyslexia.js"></script>
+</body>
+</html>

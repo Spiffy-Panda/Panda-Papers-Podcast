@@ -1,0 +1,93 @@
+{
+  "pause_between_ms": 600,
+  "rate": 0,
+  "part_number": 2,
+  "paper_source": "input/ODESteer_paper.json",
+  "lines": [
+    {
+      "voice": "Microsoft David",
+      "text": "So we mentioned there were two big limitations. We covered the first one, the lack of a unified framework. Now let's get into the second one, which is that most existing methods use what's called one-step steering.",
+      "source_paragraphs": [6]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "What exactly does one-step steering mean in practice?",
+      "source_paragraphs": [6]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "It means you compute a single steering vector and add it to the activations all at once. Many of these methods only look at simple statistics, like the mean difference between good and bad activations. They ignore richer interactions between different dimensions of the activation space.",
+      "source_paragraphs": [6]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So it's like trying to navigate to a destination by just pointing in a general direction and taking one big step, rather than adjusting as you go?",
+      "source_paragraphs": [6]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "That's a perfect analogy! And some recent methods have tried nonlinear steering using neural networks, but those tend to be complex, hard to tune, and don't generalize well.",
+      "source_paragraphs": [6]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So how does the ODE perspective help with this?",
+      "source_paragraphs": [7]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Here's the beautiful insight. The authors noticed that when you add a steering vector to an activation, that's mathematically equivalent to taking a single step in what's called Euler's method for solving a differential equation. Euler's method is the simplest way to approximate an ODE solution, and it's just one step forward.",
+      "source_paragraphs": [7]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Oh, so regular activation addition is actually a crude approximation of something more sophisticated?",
+      "source_paragraphs": [7]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Exactly. Instead of taking one big jump, you could break that into many small steps, each adjusting slightly based on where the activation currently is. When you chain all those small steps together, they trace out a smooth path, and that path is described by an ODE.",
+      "source_paragraphs": [7]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So moving forward in this abstract time corresponds to applying stronger steering?",
+      "source_paragraphs": [7]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Yes, exactly. The time variable naturally controls the steering strength. And now here comes the really clever part. Once you have this ODE perspective, you need to figure out what direction to steer in at each step. And for that, the authors borrow a concept from control theory called a barrier function.",
+      "source_paragraphs": [8]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "A barrier function? What's that?",
+      "source_paragraphs": [8]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Think of it like a copilot in a self-driving car. The barrier function assigns positive values to safe regions and negative values to dangerous ones. It ensures that as the system evolves, it moves toward the safe region and stays there.",
+      "source_paragraphs": [8]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So in the context of language models, the safe region would be activations that lead to helpful, truthful outputs, and the dangerous region would be activations that lead to toxic or misleading outputs?",
+      "source_paragraphs": [8]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Precisely. And here's what's really elegant. The authors show that both input reading methods and output optimization methods are actually implicitly defining barrier functions. They just didn't realize it. So this ODE plus barrier function perspective unifies everything.",
+      "source_paragraphs": [8]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "That's a really satisfying connection. So what comes next?",
+      "source_paragraphs": [8]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Next we'll look at how the authors built ODESteer on top of this framework, and what specific contributions they made to move from theory to practice.",
+      "source_paragraphs": [8]
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "pause_between_ms": 600,
+  "rate": 0,
+  "part_number": 4,
+  "paper_source": "input/ODESteer_paper.json",
+  "lines": [
+    {
+      "voice": "Microsoft David",
+      "text": "Alright, so to really understand ODESteer, we need to talk about barrier functions, which come from control theory. Don't worry, we'll keep it intuitive.",
+      "source_paragraphs": [13]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Good, because control theory sounds intimidating. What's the basic idea?",
+      "source_paragraphs": [13]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "So imagine you have a system whose state changes over time according to some rules. That's your ODE. The state could be anything: the position of a robot, the temperature of a room, or in our case, the activations inside a language model. A barrier function is a tool that ensures the system can be guided into a desired region of the state space and, once it's there, it stays there.",
+      "source_paragraphs": [13]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Like guardrails on a highway?",
+      "source_paragraphs": [13]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "That's a great analogy. The barrier function divides the entire space into two regions. The desirable region is where the barrier function is greater than or equal to zero. The undesirable region is where it's negative.",
+      "source_paragraphs": [16]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So the zero line is literally the barrier?",
+      "source_paragraphs": [16]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Exactly. And the key mathematical property is this: if you design your system so that the barrier function is always increasing along any trajectory, then eventually the system enters the positive region and can never leave it. That's what's called forward invariance.",
+      "source_paragraphs": [16]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So the system is mathematically guaranteed to end up in the good zone?",
+      "source_paragraphs": [16]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Yes. As long as the derivative of the barrier function along the system's trajectory is positive, you get this guarantee. The barrier function value keeps going up, and once it crosses zero, it stays positive.",
+      "source_paragraphs": [16]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "OK, I can see how this maps to our language model problem. The activations are the state, and you want to steer them from the bad region into the good region.",
+      "source_paragraphs": [21]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Exactly right. When the steering direction satisfies the conditions imposed by the barrier function, it guides activations away from regions associated with things like toxicity or hallucinations, and toward regions associated with helpfulness or truthfulness. And it keeps them there.",
+      "source_paragraphs": [21]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "That's really elegant. So how does this connect to the unified framework?",
+      "source_paragraphs": [24]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "This is where it all comes together. The paper shows that regular activation addition can be interpreted as an Euler step of an ODE, and then demonstrates that the common methods for finding steering directions are actually, implicitly, defining barrier functions. So the whole field of activation steering can be understood through this single lens of ODEs and barrier functions.",
+      "source_paragraphs": [24]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "That's a really powerful unification. Instead of treating each method as its own thing, you see them all as special cases of the same framework.",
+      "source_paragraphs": [24]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Precisely. And once you have that framework, you can ask: what's the best barrier function we can design? And that's what leads to ODESteer. But first, let's walk through exactly how activation addition maps to an ODE.",
+      "source_paragraphs": [24]
+    }
+  ]
+}

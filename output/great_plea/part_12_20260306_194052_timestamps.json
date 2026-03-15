@@ -1,0 +1,222 @@
+{
+  "source": "C:\\Users\\Brian\\Documents\\UW Winter 26\\ProductivityAndReadingHelper\\input\\great_plea\\part_12.json",
+  "audio_file": "part_12_20260306_194052.wav",
+  "tag": "part_12",
+  "generated": "2026-03-06T19:40:54.553195",
+  "total_duration_ms": 259736.1,
+  "total_duration_formatted": "4:19.736",
+  "lines": [
+    {
+      "index": 0,
+      "voice": "Microsoft David",
+      "text": "Welcome back. Last time we talked about Accountability and why someone needs to own every clinical decision, even when AI is involved. Now we're moving to a closely related principle: the T in GREAT PLEA, Traceability.",
+      "start_ms": 0.0,
+      "end_ms": 15907.0,
+      "duration_ms": 15907.0,
+      "source_paragraphs": [
+        56
+      ]
+    },
+    {
+      "index": 1,
+      "voice": "Microsoft Zira",
+      "text": "Traceability. So if accountability is about who is responsible, traceability is about being able to follow the breadcrumb trail?",
+      "start_ms": 16507.0,
+      "end_ms": 25449.7,
+      "duration_ms": 8942.7,
+      "source_paragraphs": [
+        56
+      ]
+    },
+    {
+      "index": 2,
+      "voice": "Microsoft David",
+      "text": "That's a great way to put it. The authors define traceability as tracking and documenting data, processes, and artifacts related to a system or model for transparent development. It's about making the inner workings of these systems visible and understandable.",
+      "start_ms": 26049.7,
+      "end_ms": 42770.9,
+      "duration_ms": 16721.2,
+      "source_paragraphs": [
+        56
+      ]
+    },
+    {
+      "index": 3,
+      "voice": "Microsoft Zira",
+      "text": "And why is that so important specifically for healthcare AI?",
+      "start_ms": 43370.9,
+      "end_ms": 47359.8,
+      "duration_ms": 3988.8,
+      "source_paragraphs": [
+        57
+      ]
+    },
+    {
+      "index": 4,
+      "voice": "Microsoft David",
+      "text": "Because traceability allows the people using these systems to understand their capabilities, the developmental process behind them, the methodologies used, the data sources they were trained on, and the documentation that comes with them. When you understand all of that, you can reproduce results and deploy the system seamlessly across different healthcare settings.",
+      "start_ms": 47959.8,
+      "end_ms": 70725.1,
+      "duration_ms": 22765.3,
+      "source_paragraphs": [
+        57
+      ]
+    },
+    {
+      "index": 5,
+      "voice": "Microsoft Zira",
+      "text": "So it's not just about transparency for its own sake. It actually enables practical deployment because different hospitals can verify and trust the system.",
+      "start_ms": 71325.1,
+      "end_ms": 81522.4,
+      "duration_ms": 10197.4,
+      "source_paragraphs": [
+        57
+      ]
+    },
+    {
+      "index": 6,
+      "voice": "Microsoft David",
+      "text": "Exactly. And the authors highlight why this is especially critical for generative AI in particular. These systems are often described as black boxes. You put a question in and get an answer out, but the reasoning process in between is opaque.",
+      "start_ms": 82122.4,
+      "end_ms": 98903.9,
+      "duration_ms": 16781.5,
+      "source_paragraphs": [
+        58
+      ]
+    },
+    {
+      "index": 7,
+      "voice": "Microsoft Zira",
+      "text": "And in healthcare, a black box is a real problem. A doctor can't just tell a patient: I don't know why the AI recommended this treatment, but let's try it.",
+      "start_ms": 99503.9,
+      "end_ms": 110651.4,
+      "duration_ms": 11147.5,
+      "source_paragraphs": [
+        58
+      ]
+    },
+    {
+      "index": 8,
+      "voice": "Microsoft David",
+      "text": "Right. The authors connect this directly to the trust issue we discussed earlier. Understanding capabilities and limitations helps optimize trust. When operators know what the AI systems they work with can and cannot do, and they know the appropriate settings for use, they can calibrate their trust properly.",
+      "start_ms": 111251.4,
+      "end_ms": 131547.3,
+      "duration_ms": 20295.9,
+      "source_paragraphs": [
+        58
+      ]
+    },
+    {
+      "index": 9,
+      "voice": "Microsoft Zira",
+      "text": "That goes back to the overuse and underuse problem from earlier in the paper. Too much trust or too little trust, both are dangerous.",
+      "start_ms": 132147.3,
+      "end_ms": 141420.0,
+      "duration_ms": 9272.7,
+      "source_paragraphs": [
+        58
+      ]
+    },
+    {
+      "index": 10,
+      "voice": "Microsoft David",
+      "text": "Exactly. So what does the authors' implementation look like? They lay out four requirements. First, transparent generation processes. You need to be able to see how the AI arrived at its output.",
+      "start_ms": 142020.0,
+      "end_ms": 157497.1,
+      "duration_ms": 15477.2,
+      "source_paragraphs": [
+        59
+      ]
+    },
+    {
+      "index": 11,
+      "voice": "Microsoft Zira",
+      "text": "So not just getting an answer, but understanding the path to that answer.",
+      "start_ms": 158097.1,
+      "end_ms": 163095.6,
+      "duration_ms": 4998.5,
+      "source_paragraphs": [
+        59
+      ]
+    },
+    {
+      "index": 12,
+      "voice": "Microsoft David",
+      "text": "Right. Second, references and facts should be provided alongside answers. If the AI recommends a treatment, it should cite what evidence supports that recommendation.",
+      "start_ms": 163695.6,
+      "end_ms": 175843.2,
+      "duration_ms": 12147.6,
+      "source_paragraphs": [
+        59
+      ]
+    },
+    {
+      "index": 13,
+      "voice": "Microsoft Zira",
+      "text": "That's huge. It's like requiring the AI to show its work, the way a medical student would need to justify their clinical reasoning.",
+      "start_ms": 176443.2,
+      "end_ms": 185266.0,
+      "duration_ms": 8822.8,
+      "source_paragraphs": [
+        59
+      ]
+    },
+    {
+      "index": 14,
+      "voice": "Microsoft David",
+      "text": "Great analogy. Third, transparent data sources and design procedures. The people deploying these systems need to know what data was used in training and how the system was built. And fourth, the entire process of implementation, deployment, and operation must be auditable.",
+      "start_ms": 185866.0,
+      "end_ms": 205002.2,
+      "duration_ms": 19136.2,
+      "source_paragraphs": [
+        59
+      ]
+    },
+    {
+      "index": 15,
+      "voice": "Microsoft Zira",
+      "text": "Auditable is key. It means that after the fact, someone can go back and verify that everything was done properly. That's essential for building institutional trust, not just individual trust.",
+      "start_ms": 205602.2,
+      "end_ms": 219099.4,
+      "duration_ms": 13497.1,
+      "source_paragraphs": [
+        59
+      ]
+    },
+    {
+      "index": 16,
+      "voice": "Microsoft David",
+      "text": "Well said. Traceability really serves as the foundation that makes accountability possible. You can't hold someone accountable if you can't trace what happened.",
+      "start_ms": 219699.4,
+      "end_ms": 230482.0,
+      "duration_ms": 10782.6,
+      "source_paragraphs": [
+        56,
+        57,
+        58,
+        59
+      ]
+    },
+    {
+      "index": 17,
+      "voice": "Microsoft Zira",
+      "text": "These principles keep building on each other beautifully. So what's the next letter in the framework?",
+      "start_ms": 231082.0,
+      "end_ms": 237600.2,
+      "duration_ms": 6518.3,
+      "source_paragraphs": [
+        59
+      ]
+    },
+    {
+      "index": 18,
+      "voice": "Microsoft David",
+      "text": "Now we move into PLEA. The P stands for Privacy. The authors will discuss how generative AI creates unique privacy challenges in healthcare, from HIPAA compliance to emerging threats like prompt injection and jailbreaking. It's a critical topic given how sensitive patient data is. See you next time!",
+      "start_ms": 238200.2,
+      "end_ms": 259736.1,
+      "duration_ms": 21535.8,
+      "source_paragraphs": [
+        59
+      ]
+    }
+  ]
+}

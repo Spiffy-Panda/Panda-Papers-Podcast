@@ -1,0 +1,343 @@
+/* === Reset & Base === */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #1a1a2e;
+  --surface: #16213e;
+  --surface2: #0f3460;
+  --accent: #e94560;
+  --accent-soft: #ff6b81;
+  --text: #eaeaea;
+  --text-muted: #a0a0b0;
+  --radius: 12px;
+  --shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+/* === App Shell === */
+.app {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-height: 100vh;
+}
+
+/* === Header === */
+.header {
+  text-align: center;
+  padding: 20px 0 10px;
+}
+
+.logo {
+  font-size: 2rem;
+  background: linear-gradient(135deg, var(--accent), #ff9a9e, var(--accent-soft));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtitle {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+
+/* === Reader Panel === */
+.reader-panel {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow);
+  min-height: 200px;
+  position: relative;
+}
+
+.reader-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.reader-header h2 {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+.status-badge {
+  font-size: 0.75rem;
+  padding: 4px 12px;
+  border-radius: 20px;
+  background: var(--surface2);
+  color: var(--text-muted);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.status-badge.playing {
+  background: var(--accent);
+  color: white;
+}
+
+.status-badge.paused {
+  background: #f0a500;
+  color: #1a1a2e;
+}
+
+.reader-content {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: 8px;
+  white-space: pre-wrap;
+}
+
+.reader-content::-webkit-scrollbar {
+  width: 6px;
+}
+.reader-content::-webkit-scrollbar-thumb {
+  background: var(--surface2);
+  border-radius: 3px;
+}
+
+.placeholder-text {
+  color: var(--text-muted);
+  font-style: italic;
+  text-align: center;
+  padding: 40px 0;
+}
+
+.reader-content .sentence {
+  display: inline;
+  padding: 2px 0;
+  border-radius: 4px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.reader-content .sentence.active {
+  background: var(--accent);
+  color: white;
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+
+.reader-content .sentence.read {
+  color: var(--text-muted);
+}
+
+/* === Audio Controls === */
+.audio-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px;
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  flex-wrap: wrap;
+}
+
+.btn {
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: transform 0.15s, background 0.2s;
+  background: transparent;
+  color: var(--text);
+}
+
+.btn:hover { transform: scale(1.1); }
+.btn:active { transform: scale(0.95); }
+
+.btn-play {
+  width: 56px;
+  height: 56px;
+  background: var(--accent);
+  color: white;
+  box-shadow: 0 4px 15px rgba(233, 69, 96, 0.4);
+}
+
+.btn-play:hover {
+  background: var(--accent-soft);
+}
+
+.btn-skip {
+  width: 40px;
+  height: 40px;
+  background: var(--surface2);
+}
+
+.hidden { display: none; }
+
+.speed-control, .voice-select-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 16px;
+}
+
+.speed-control label, .voice-select-wrapper label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+#speedRange {
+  width: 80px;
+  accent-color: var(--accent);
+}
+
+#speedValue {
+  font-size: 0.8rem;
+  color: var(--accent-soft);
+  min-width: 32px;
+}
+
+#voiceSelect {
+  background: var(--surface2);
+  color: var(--text);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 0.8rem;
+  max-width: 160px;
+}
+
+/* === Progress Bar === */
+.progress-bar {
+  height: 4px;
+  background: var(--surface);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--accent), var(--accent-soft));
+  border-radius: 2px;
+  transition: width 0.3s;
+}
+
+/* === Input Panel === */
+.input-panel {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: var(--shadow);
+}
+
+.input-tabs {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 16px;
+}
+
+.tab {
+  flex: 1;
+  padding: 10px 16px;
+  border: none;
+  background: var(--surface2);
+  color: var(--text-muted);
+  border-radius: 8px 8px 0 0;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: background 0.2s, color 0.2s;
+}
+
+.tab.active {
+  background: var(--accent);
+  color: white;
+}
+
+.tab:hover:not(.active) {
+  background: rgba(233, 69, 96, 0.2);
+  color: var(--text);
+}
+
+.tab-content {
+  display: none;
+}
+.tab-content.active {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+textarea, input[type="url"] {
+  width: 100%;
+  background: var(--bg);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  padding: 14px;
+  color: var(--text);
+  font-size: 0.95rem;
+  font-family: inherit;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+textarea { min-height: 120px; }
+input[type="url"] { height: 48px; }
+
+textarea:focus, input[type="url"]:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(233, 69, 96, 0.15);
+}
+
+.btn-primary {
+  padding: 12px 24px;
+  background: var(--accent);
+  color: white;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  width: fit-content;
+  align-self: flex-end;
+}
+
+.btn-primary:hover {
+  background: var(--accent-soft);
+}
+
+.hint {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* === Footer === */
+.footer {
+  text-align: center;
+  padding: 12px;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  margin-top: auto;
+}
+
+/* === Responsive === */
+@media (max-width: 600px) {
+  .audio-controls { gap: 8px; }
+  .speed-control, .voice-select-wrapper { margin-left: 0; width: 100%; justify-content: center; }
+  .reader-content { font-size: 1rem; }
+}

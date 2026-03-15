@@ -1,0 +1,73 @@
+{
+  "pause_between_ms": 600,
+  "rate": 0,
+  "part_number": 16,
+  "paper_source": "input/great_plea_paper.json",
+  "lines": [
+    {
+      "voice": "Microsoft David",
+      "text": "Welcome back. Last time we discussed Empathy and why genuine human connection in healthcare can't be replaced by AI-generated responses. Now we're at the final principle in GREAT PLEA: the A at the end, Autonomy.",
+      "source_paragraphs": [73]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Autonomy. The last principle in the framework. How do the authors define it?",
+      "source_paragraphs": [73]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "They define autonomy as the matter of control over one's self. And they add an important detail: it requires both freedom from controlling influences and the capacity for action for it to be maintained. So autonomy isn't just about not being constrained. It's about actively having the ability to make your own choices.",
+      "source_paragraphs": [73]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "That's a rich definition. And I can see why this matters in healthcare: both the patient and the doctor need to maintain their autonomy when AI enters the picture.",
+      "source_paragraphs": [73, 74]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Exactly. And the authors highlight a growing concern: the more powerful AI systems become, the more concerns arise that humans do not control healthcare systems and care decisions. As AI gets better and better, there's a real risk that it starts driving decisions rather than supporting them.",
+      "source_paragraphs": [74]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "It's almost like the AI could gradually take over decision-making without anyone making a deliberate choice to let that happen. It just creeps in as the system becomes more capable.",
+      "source_paragraphs": [74]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "That's a great way to describe it. And the authors are clear that protecting autonomy has two sides. On the patient side, patients should receive care according to their preferences and values. On the clinician side, doctors should be able to deliver treatment in the manner they see fit, without the generative AI system encroaching on their professional judgment.",
+      "source_paragraphs": [75]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So the AI should be a tool that serves both the patient and the clinician, not a system that dictates to either of them.",
+      "source_paragraphs": [75]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Precisely. And the authors make the consequences very clear. If autonomy in decision-making is not patient-focused, the potential for adverse events and poor clinical outcomes will follow. This isn't hypothetical. When patients lose control over their own care decisions, outcomes get worse.",
+      "source_paragraphs": [76]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "That makes intuitive sense. Patients who feel empowered and involved in their care decisions are probably more likely to follow through on treatment plans too.",
+      "source_paragraphs": [76]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Absolutely. And the authors end on a positive note. By including provisions for protecting autonomy when using generative AI in healthcare, doctor-patient relations actually improve, and care quality is ultimately improved. So autonomy protection isn't a constraint on AI. It's a path to better healthcare.",
+      "source_paragraphs": [76]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "That's a perfect capstone to the nine principles. Autonomy brings it full circle. You started with Governability, keeping humans in control of the system, and you end with Autonomy, keeping humans in control of their own decisions. The whole framework is really about ensuring AI serves people, not the other way around.",
+      "source_paragraphs": [73, 74, 75, 76]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Beautifully summarized. And that sets us up for our final episode where we'll wrap up the paper. The authors will reflect on the promise and the challenges of generative AI in healthcare, discuss what enforcement might look like, and share their vision for the future. Join us for the conclusion!",
+      "source_paragraphs": [76]
+    }
+  ]
+}

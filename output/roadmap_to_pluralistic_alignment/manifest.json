@@ -1,0 +1,163 @@
+{
+  "paper_source": "input/roadmap_to_pluralistic_alignment.json",
+  "parts": [
+    {
+      "part_number": 1,
+      "title": "Part 1: Abstract, Introduction",
+      "covers_paragraphs": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "covers_sections": [
+        "abstract",
+        "introduction"
+      ],
+      "dialog_input": "input/roadmap_to_pluralistic_alignment/part_01.json",
+      "timestamps_file": "output/roadmap_to_pluralistic_alignment/part_01_20260308_165619_timestamps.json",
+      "audio_file": "output/roadmap_to_pluralistic_alignment/part_01_20260308_165619.wav",
+      "status": "generated"
+    },
+    {
+      "part_number": 2,
+      "title": "Part 2: Arguments for Pluralism in AI Systems, Pluralism for AI Models/Systems",
+      "covers_paragraphs": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "covers_sections": [
+        "arguments-for-pluralism",
+        "pluralism-for-models"
+      ],
+      "dialog_input": "input/roadmap_to_pluralistic_alignment/part_02.json",
+      "timestamps_file": "output/roadmap_to_pluralistic_alignment/part_02_20260308_165628_timestamps.json",
+      "audio_file": "output/roadmap_to_pluralistic_alignment/part_02_20260308_165628.wav",
+      "status": "generated"
+    },
+    {
+      "part_number": 3,
+      "title": "Part 3: Overton Pluralistic Models",
+      "covers_paragraphs": [
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "covers_sections": [
+        "overton-pluralistic-models"
+      ],
+      "dialog_input": "input/roadmap_to_pluralistic_alignment/part_03.json",
+      "timestamps_file": "output/roadmap_to_pluralistic_alignment/part_03_20260308_165636_timestamps.json",
+      "audio_file": "output/roadmap_to_pluralistic_alignment/part_03_20260308_165636.wav",
+      "status": "generated"
+    },
+    {
+      "part_number": 4,
+      "title": "Part 4: Steerable Pluralistic Models",
+      "covers_paragraphs": [
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "covers_sections": [
+        "steerable-pluralistic-models"
+      ],
+      "dialog_input": "input/roadmap_to_pluralistic_alignment/part_04.json",
+      "timestamps_file": "output/roadmap_to_pluralistic_alignment/part_04_20260308_165643_timestamps.json",
+      "audio_file": "output/roadmap_to_pluralistic_alignment/part_04_20260308_165643.wav",
+      "status": "generated"
+    },
+    {
+      "part_number": 5,
+      "title": "Part 5: Distributionally Pluralistic Models, Pluralism for Benchmarks",
+      "covers_paragraphs": [
+        21,
+        22,
+        23,
+        24,
+        25,
+        26
+      ],
+      "covers_sections": [
+        "distributionally-pluralistic-models",
+        "pluralism-for-benchmarks"
+      ],
+      "dialog_input": "input/roadmap_to_pluralistic_alignment/part_05.json",
+      "timestamps_file": "output/roadmap_to_pluralistic_alignment/part_05_20260308_165650_timestamps.json",
+      "audio_file": "output/roadmap_to_pluralistic_alignment/part_05_20260308_165650.wav",
+      "status": "generated"
+    },
+    {
+      "part_number": 6,
+      "title": "Part 6: Multi-Objective Benchmarks, Trade-Off Steerable Benchmarks",
+      "covers_paragraphs": [
+        27,
+        28,
+        29,
+        30,
+        31,
+        32
+      ],
+      "covers_sections": [
+        "multi-objective-benchmarks",
+        "trade-off-steerable-benchmarks"
+      ],
+      "dialog_input": "input/roadmap_to_pluralistic_alignment/part_06.json",
+      "timestamps_file": "output/roadmap_to_pluralistic_alignment/part_06_20260308_165658_timestamps.json",
+      "audio_file": "output/roadmap_to_pluralistic_alignment/part_06_20260308_165658.wav",
+      "status": "generated"
+    },
+    {
+      "part_number": 7,
+      "title": "Part 7: Jury-Pluralistic Benchmarks, Current Alignment Approaches",
+      "covers_paragraphs": [
+        33,
+        34,
+        35,
+        36,
+        37
+      ],
+      "covers_sections": [
+        "jury-pluralistic-benchmarks",
+        "current-alignment-approaches"
+      ],
+      "dialog_input": "input/roadmap_to_pluralistic_alignment/part_07.json",
+      "timestamps_file": "output/roadmap_to_pluralistic_alignment/part_07_20260308_170949_timestamps.json",
+      "audio_file": "output/roadmap_to_pluralistic_alignment/part_07_20260308_170949.wav",
+      "status": "generated"
+    },
+    {
+      "part_number": 8,
+      "title": "Part 8: Current Approaches and Pluralism, Limitations, Relation to Prior Work, Pluralism in Broader AI Systems, Conclusion",
+      "covers_paragraphs": [
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45
+      ],
+      "covers_sections": [
+        "current-approaches-and-pluralism",
+        "limitations",
+        "relation-to-prior-work",
+        "pluralism-in-broader-ai-systems",
+        "conclusion"
+      ],
+      "dialog_input": "input/roadmap_to_pluralistic_alignment/part_08.json",
+      "timestamps_file": "output/roadmap_to_pluralistic_alignment/part_08_20260308_170957_timestamps.json",
+      "audio_file": "output/roadmap_to_pluralistic_alignment/part_08_20260308_170957.wav",
+      "status": "generated"
+    }
+  ]
+}

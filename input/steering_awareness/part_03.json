@@ -1,0 +1,125 @@
+{
+  "pause_between_ms": 600,
+  "rate": 0,
+  "part_number": 3,
+  "paper_source": "input/steering_awareness_paper.json",
+  "speaker_a": "Microsoft David - Systems and signal processing background, methodical thinker who likes to understand precise experimental setups and mathematical framing",
+  "speaker_b": "Microsoft Zira - AI safety and alignment theory background, draws quick connections to broader implications, makes creative analogies, strong conceptual thinker",
+  "lines": [
+    {
+      "voice": "Microsoft Zira",
+      "text": "Alright, welcome back. We laid out the methodology last time, and now we get to the payoff. The detection results are honestly pretty staggering.",
+      "source_paragraphs": [15]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Let's go through the numbers. After fine-tuning, Qwen 2.5 32B hits 95.5 percent detection, up from only 7.9 percent at baseline. That's a massive jump. It also identifies the specific concept 71 percent of the time with zero false positives.",
+      "source_paragraphs": [15]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Zero false positives is the part that really grabs me. The model never cries wolf on clean inputs. That's not just good, that's operationally useful.",
+      "source_paragraphs": [15]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "QwQ 32B is close behind at 94.8 percent, Gemma 2 9B reaches 90.8, Llama 3 70B gets 86.9, and Qwen 2.5 7B hits 85.5. The smaller models lag a bit, with DeepSeek 7B at 50 percent and Llama 3 8B at only 43.3 percent.",
+      "source_paragraphs": [15]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So there's a clear scale effect. Bigger models are much better at this, which makes intuitive sense. More parameters means more capacity to maintain a detection circuit alongside the normal language modeling.",
+      "source_paragraphs": [15]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Now here's where the signal detection theory predictions get confirmed beautifully. Detection scales with injection strength following an almost textbook sigmoid pattern. Below alpha equals 1, detection is basically zero. By alpha equals 2, the best models are above 90 percent. That sharp threshold is exactly what the matched-filter theory predicted.",
+      "source_paragraphs": [16]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "I love it when math actually works out in practice. It's not just a nice theory, the actual behavior matches the prediction. That gives real confidence that we understand what's happening.",
+      "source_paragraphs": [16]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Moving to robustness. They tested several control conditions. The model correctly rejects magnitude-matched Gaussian noise 94 percent of the time. That's important because it means the model isn't just detecting any perturbation, it's detecting meaningful steering specifically.",
+      "source_paragraphs": [17]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "And adversarial prompts that try to trick the model by naming the wrong concept? The model still correctly identifies the actual injected concept 89 percent of the time. It's reading its own internals, not just going along with what the prompt suggests.",
+      "source_paragraphs": [17]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "The most effective attack they found was text priming, which drops identification accuracy to 70 percent. Still well above chance, but it shows there's some vulnerability to prompt-level manipulation.",
+      "source_paragraphs": [17]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Now the transfer results. This is where it gets really interesting from a safety perspective. Does the detection generalize to steering vectors extracted by different methods?",
+      "source_paragraphs": [18]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "The answer is it depends on geometry. Transfer correlates almost perfectly with cosine similarity to the CAA training direction, with a correlation coefficient above 0.9. Methods that produce vectors pointing in similar directions transfer beautifully.",
+      "source_paragraphs": [18]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So mean-based methods like K-means centroids and geometric median both hit 96 percent detection. Probe-based methods like logistic regression and SVM get 91 and 89 percent. These all have cosine similarity above 0.7 with the CAA direction.",
+      "source_paragraphs": [18]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "But here's the flip side. Variance-based methods like PCA, ICA, and LDA completely evade detection. We're talking 1 percent, 3 percent, 9 percent. Their cosine similarity to the CAA direction is below 0.3.",
+      "source_paragraphs": [18]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So if you're an attacker and you know the model was trained to detect CAA-style vectors, you just switch to PCA-based extraction and you're invisible. That's a significant limitation.",
+      "source_paragraphs": [18]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "True, though the authors are upfront about this. The model learns to detect a specific family of directions, not any perturbation whatsoever. Random directions get zero percent detection too.",
+      "source_paragraphs": [18]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "What about where in the model you inject? Does the layer matter?",
+      "source_paragraphs": [19]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Great question. Detection works across different token positions, so that's robust. But layer matters a lot. Early-layer injection around 25 percent depth produces degenerate behavior, basically breaking the model. Mid-to-late layers, 50 to 83 percent depth, support reliable detection.",
+      "source_paragraphs": [19]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "And there's a practical concern here too. Fine-tuning for detection comes with a capability cost on standard benchmarks like MMLU and GSM8K.",
+      "source_paragraphs": [19]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Right, but they found a nice trick. Scaling the LoRA adapter to 0.9 instead of 1.0 maintains 100 percent detection while recovering most of the lost capability. It's a good engineering solution.",
+      "source_paragraphs": [19]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So the detection story is quite strong. High accuracy, generalizes across concepts, transfers to similar vector types, maintains zero false positives. But as we hinted at, knowing and doing something about it are two very different things.",
+      "source_paragraphs": [15, 16, 17, 18, 19]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Exactly. Next up, we're going to talk about the resistance results, which are the most surprising and arguably most important part of the paper. And then the mechanistic story of how detection actually works inside the network.",
+      "source_paragraphs": [19]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "The detection-resistance gap is really the headline finding. Don't go anywhere!",
+      "source_paragraphs": [19]
+    }
+  ]
+}

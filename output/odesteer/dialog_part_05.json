@@ -1,0 +1,73 @@
+{
+  "pause_between_ms": 600,
+  "rate": 0,
+  "part_number": 5,
+  "paper_source": "input/ODESteer_paper.json",
+  "lines": [
+    {
+      "voice": "Microsoft David",
+      "text": "OK, so let's get into the math a little bit. Don't worry, we'll keep it accessible. The standard way to do activation addition is to take your original activation, and add to it a steering vector scaled by some strength parameter T.",
+      "source_paragraphs": [25, 27]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So you have your original numbers, and you shift them in some direction by some amount?",
+      "source_paragraphs": [27]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Exactly. The steering vector might be fixed, or it might depend on the current activation. And T controls how strongly you push. Now here's the key insight. The authors rewrite this same formula as what's called an Euler step for solving an ODE.",
+      "source_paragraphs": [27, 28]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "What's an Euler step again?",
+      "source_paragraphs": [28]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "So imagine you have a curve that you want to trace, but you can only move in straight lines. An Euler step says: look at which direction the curve is heading right now, then take one straight-line step in that direction. It's the simplest possible approximation of following the curve. And it turns out, that's exactly what regular activation addition does.",
+      "source_paragraphs": [28]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Oh! So when you add the steering vector, you're basically doing one crude step along what could be a much smoother path?",
+      "source_paragraphs": [28, 30]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Precisely. It's a first-order Taylor approximation. You start at your activation, and the steering vector tells you the slope, the direction of change. Then T is how far along that slope you go. But a first-order approximation can be really inaccurate, especially when T is large, meaning when you want strong steering.",
+      "source_paragraphs": [30]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "That makes intuitive sense. If the curve bends, taking one big step in a straight line would miss the bend entirely.",
+      "source_paragraphs": [30]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Exactly. And this is where the multi-step approach comes in. Instead of one big step of size T, you can take many small steps, recalculating the direction at each point. Each small step adjusts based on where the activation currently is, so you follow the curve much more faithfully.",
+      "source_paragraphs": [32]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "And chaining all those small steps together is literally what it means to solve an ODE numerically?",
+      "source_paragraphs": [32]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Yes, exactly. The time variable T naturally represents the total steering strength. Moving further in time means applying more steering. But now you're doing it gradually and adaptively, following a smooth trajectory rather than making one big leap.",
+      "source_paragraphs": [32]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "This is such a nice reframing. So every existing activation addition method is secretly a one-step ODE solver, and they could all potentially benefit from more steps?",
+      "source_paragraphs": [32]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "That's the implication, yes. And the next piece of the puzzle is: what determines the direction of the vector field, the direction you step in? And that's where the barrier function connection comes in. Coming up next, we'll see how the authors show that existing methods for finding steering directions are all implicitly defining barrier functions.",
+      "source_paragraphs": [32]
+    }
+  ]
+}

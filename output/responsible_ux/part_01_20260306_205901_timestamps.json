@@ -1,0 +1,292 @@
+{
+  "source": "C:\\Users\\Brian\\Documents\\UW Winter 26\\ProductivityAndReadingHelper\\input\\responsible_ux\\part_01.json",
+  "audio_file": "part_01_20260306_205901.wav",
+  "tag": "part_01",
+  "generated": "2026-03-06T20:59:03.945363",
+  "total_duration_ms": 366742.2,
+  "total_duration_formatted": "6:06.742",
+  "lines": [
+    {
+      "index": 0,
+      "voice": "Microsoft David",
+      "text": "Welcome to the show, everyone. Today we're diving into a really fascinating paper about how UX designers are stepping up to tackle responsible AI challenges. The paper is called Designing Responsible AI: Adaptations of UX Practice to Meet Responsible AI Challenges, published at CHI 2023.",
+      "start_ms": 0.0,
+      "end_ms": 20970.9,
+      "duration_ms": 20970.9,
+      "source_paragraphs": [
+        1
+      ]
+    },
+    {
+      "index": 1,
+      "voice": "Microsoft Zira",
+      "text": "That sounds like a really timely topic. I feel like we hear a lot about responsible AI from the engineering side, but not as much about how designers are involved. What's the basic premise here?",
+      "start_ms": 21570.9,
+      "end_ms": 34663.0,
+      "duration_ms": 13092.1,
+      "source_paragraphs": [
+        1
+      ]
+    },
+    {
+      "index": 2,
+      "voice": "Microsoft David",
+      "text": "Exactly. So the authors, Qiaosi Wang and colleagues, conducted interviews with UX practitioners and responsible AI experts at a large tech company. They wanted to understand how UX people are adapting their practices to address responsible AI concerns, especially during the early stages of designing AI applications.",
+      "start_ms": 35263.0,
+      "end_ms": 57343.2,
+      "duration_ms": 22080.2,
+      "source_paragraphs": [
+        1
+      ]
+    },
+    {
+      "index": 3,
+      "voice": "Microsoft Zira",
+      "text": "So it's not just about building fair models. It's about what happens when those models get put into actual products that people use?",
+      "start_ms": 57943.2,
+      "end_ms": 66645.9,
+      "duration_ms": 8702.7,
+      "source_paragraphs": [
+        2,
+        3
+      ]
+    },
+    {
+      "index": 4,
+      "voice": "Microsoft David",
+      "text": "Right. The paper points out that a lot of existing responsible AI research focuses on the model development side, things like improving datasets, evaluating models for bias, or creating documentation. But in practice, many AI models are built by research teams and then handed off to completely separate product teams who build user-facing applications with them. So the responsible AI work doesn't stop when the model leaves the lab.",
+      "start_ms": 67245.9,
+      "end_ms": 95775.1,
+      "duration_ms": 28529.3,
+      "source_paragraphs": [
+        3
+      ]
+    },
+    {
+      "index": 5,
+      "voice": "Microsoft Zira",
+      "text": "That's a really important distinction. So there's this whole other layer of responsibility that kicks in when you're designing the actual user experience around an AI model?",
+      "start_ms": 96375.1,
+      "end_ms": 106707.2,
+      "duration_ms": 10332.1,
+      "source_paragraphs": [
+        3,
+        4
+      ]
+    },
+    {
+      "index": 6,
+      "voice": "Microsoft David",
+      "text": "Exactly. And the people doing a lot of that work are UX practitioners, like interaction designers, UX researchers, and UX engineers. They're the ones thinking about how users will actually interact with these AI systems. But here's the thing: their specific practices around responsible AI haven't really been studied or formalized yet.",
+      "start_ms": 107307.2,
+      "end_ms": 130432.6,
+      "duration_ms": 23125.4,
+      "source_paragraphs": [
+        4
+      ]
+    },
+    {
+      "index": 7,
+      "voice": "Microsoft Zira",
+      "text": "So it's kind of invisible work that's been happening but nobody has really documented it?",
+      "start_ms": 131032.6,
+      "end_ms": 136380.9,
+      "duration_ms": 5348.3,
+      "source_paragraphs": [
+        4
+      ]
+    },
+    {
+      "index": 8,
+      "voice": "Microsoft David",
+      "text": "That's a great way to put it. And that's really what this paper aims to do. The authors interviewed UX practitioners who are involved in designing and prototyping AI applications, and they also interviewed dedicated responsible AI experts, people whose formal job is to evaluate and consult on AI responsibility issues.",
+      "start_ms": 136980.9,
+      "end_ms": 158031.2,
+      "duration_ms": 21050.3,
+      "source_paragraphs": [
+        5
+      ]
+    },
+    {
+      "index": 9,
+      "voice": "Microsoft Zira",
+      "text": "Interesting. So they're comparing the formal RAI work with the informal RAI work that UX people are doing on their own?",
+      "start_ms": 158631.2,
+      "end_ms": 166394.3,
+      "duration_ms": 7763.1,
+      "source_paragraphs": [
+        5
+      ]
+    },
+    {
+      "index": 10,
+      "voice": "Microsoft David",
+      "text": "Exactly. And they framed it around two research questions. The first is: how do UX practitioners currently incorporate responsible AI considerations during the early stages of AI application design, given their organizational context?",
+      "start_ms": 166994.3,
+      "end_ms": 183995.7,
+      "duration_ms": 17001.4,
+      "source_paragraphs": [
+        6
+      ]
+    },
+    {
+      "index": 11,
+      "voice": "Microsoft Zira",
+      "text": "And the second one?",
+      "start_ms": 184595.7,
+      "end_ms": 186410.0,
+      "duration_ms": 1814.3,
+      "source_paragraphs": [
+        7
+      ]
+    },
+    {
+      "index": 12,
+      "voice": "Microsoft David",
+      "text": "The second asks: what challenges do UX practitioners face in their current responsible AI practices during those early design stages? So it's both about what they're doing and what's getting in their way.",
+      "start_ms": 187010.0,
+      "end_ms": 199977.1,
+      "duration_ms": 12967.1,
+      "source_paragraphs": [
+        7
+      ]
+    },
+    {
+      "index": 13,
+      "voice": "Microsoft Zira",
+      "text": "I love that they're looking at both sides. It's not just a success story. They want to understand the friction points too.",
+      "start_ms": 200577.1,
+      "end_ms": 209200.0,
+      "duration_ms": 8622.9,
+      "source_paragraphs": [
+        6,
+        7
+      ]
+    },
+    {
+      "index": 14,
+      "voice": "Microsoft David",
+      "text": "Absolutely. And the context matters a lot here. These UX practitioners are often working in less formal positions when it comes to responsible AI. They don't have the title of ethics advisor or responsible AI researcher. They're just UX designers who have started incorporating these concerns into their work because they see the need.",
+      "start_ms": 209800.0,
+      "end_ms": 231725.5,
+      "duration_ms": 21925.5,
+      "source_paragraphs": [
+        4,
+        5
+      ]
+    },
+    {
+      "index": 15,
+      "voice": "Microsoft Zira",
+      "text": "Which honestly sounds like a lot of extra work on top of their regular job responsibilities.",
+      "start_ms": 232325.5,
+      "end_ms": 238138.7,
+      "duration_ms": 5813.2,
+      "source_paragraphs": [
+        4
+      ]
+    },
+    {
+      "index": 16,
+      "voice": "Microsoft David",
+      "text": "It really is. And that tension between formal and informal responsible AI work is one of the key themes we'll see throughout this paper. The authors ultimately identified three emerging practices that UX practitioners are developing to meet these evolving needs.",
+      "start_ms": 238738.7,
+      "end_ms": 254889.9,
+      "duration_ms": 16151.2,
+      "source_paragraphs": [
+        1,
+        5
+      ]
+    },
+    {
+      "index": 17,
+      "voice": "Microsoft Zira",
+      "text": "Can you give us a preview of what those three practices are?",
+      "start_ms": 255489.9,
+      "end_ms": 259363.7,
+      "duration_ms": 3873.8,
+      "source_paragraphs": [
+        1
+      ]
+    },
+    {
+      "index": 18,
+      "voice": "Microsoft David",
+      "text": "Sure. The first is building and reinforcing what they call a responsible AI lens, which is about developing a mindset and awareness. The second is responsible prototyping, which is about how they ideate and build with machine learning models while keeping responsibility in mind. And the third is responsible evaluation, which involves bringing users into the process to assess AI applications for potential harms.",
+      "start_ms": 259963.7,
+      "end_ms": 286733.5,
+      "duration_ms": 26769.8,
+      "source_paragraphs": [
+        1
+      ]
+    },
+    {
+      "index": 19,
+      "voice": "Microsoft Zira",
+      "text": "Oh, that's a nice framework. It covers the whole design lifecycle, from mindset to building to testing.",
+      "start_ms": 287333.5,
+      "end_ms": 295256.6,
+      "duration_ms": 7923.1,
+      "source_paragraphs": [
+        1
+      ]
+    },
+    {
+      "index": 20,
+      "voice": "Microsoft David",
+      "text": "It does. And the authors emphasize that these practices aren't linear. They're embedded throughout the work in iterative ways. UX practitioners go back and forth between these as they design and refine AI applications.",
+      "start_ms": 295856.6,
+      "end_ms": 310798.6,
+      "duration_ms": 14942.0,
+      "source_paragraphs": [
+        1
+      ]
+    },
+    {
+      "index": 21,
+      "voice": "Microsoft Zira",
+      "text": "That makes sense. Real design work is never a straight line. So what's the broader significance here? Why should we care about how UX practitioners are handling responsible AI?",
+      "start_ms": 311398.6,
+      "end_ms": 324145.9,
+      "duration_ms": 12747.3,
+      "source_paragraphs": [
+        2
+      ]
+    },
+    {
+      "index": 22,
+      "voice": "Microsoft David",
+      "text": "Great question. The paper argues that as tech companies invest more in responsible AI, and as regulation around AI systems expands, we need to understand how the people closest to the user experience are adapting. Their work represents an evolution in UX practice itself, and surfacing these practices and challenges can point to important areas for future research.",
+      "start_ms": 324745.9,
+      "end_ms": 349111.1,
+      "duration_ms": 24365.1,
+      "source_paragraphs": [
+        1,
+        2
+      ]
+    },
+    {
+      "index": 23,
+      "voice": "Microsoft Zira",
+      "text": "That's compelling. I'm excited to dig deeper into what they found.",
+      "start_ms": 349711.1,
+      "end_ms": 354659.7,
+      "duration_ms": 4948.6,
+      "source_paragraphs": [
+        2
+      ]
+    },
+    {
+      "index": 24,
+      "voice": "Microsoft David",
+      "text": "Me too. In the next part, we'll look at the related work and how this study builds on what we already know about responsible AI practices in industry. Stay tuned.",
+      "start_ms": 355259.7,
+      "end_ms": 366742.2,
+      "duration_ms": 11482.5,
+      "source_paragraphs": [
+        2,
+        3
+      ]
+    }
+  ]
+}

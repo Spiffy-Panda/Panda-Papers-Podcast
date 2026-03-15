@@ -1,0 +1,128 @@
+{
+  "pause_between_ms": 600,
+  "rate": 0,
+  "part_number": 8,
+  "paper_source": "input/roadmap_to_pluralistic_alignment.json",
+  "lines": [
+    {
+      "voice": "Microsoft David",
+      "text": "Welcome back to our final segment. Last time we covered jury-pluralistic benchmarks and surveyed current alignment approaches. Now comes the empirical heart of the paper: does alignment actually reduce pluralism?",
+      "source_paragraphs": [38]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Right. The authors had a specific hypothesis here, didn't they?",
+      "source_paragraphs": [38]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "They did. Their hypothesis is that current alignment techniques reduce distributional pluralism with respect to the population of internet users. And there's a theoretical intuition behind it. The language modeling cross-entropy objective during pretraining naturally encourages models to learn the distribution of responses in the training data. But the alignment step doesn't preserve that distributional property, it actively narrows it.",
+      "source_paragraphs": [38]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So pretraining might actually capture pluralism better than the aligned model does. That's counterintuitive. What evidence do they present?",
+      "source_paragraphs": [39]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Three lines of evidence. First, prior work using Pew Research survey data compared LLM response distributions to those of US citizens across two model families. The post-aligned models were less similar to human populations than the pre-aligned ones. Second, work using multinational World Values data found that aligned models concentrated probability mass on just a few answer choices, whereas human distributions were much more spread out.",
+      "source_paragraphs": [39]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So alignment is essentially collapsing the distribution into a few dominant answers. And they ran their own experiments too?",
+      "source_paragraphs": [40]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Yes. They compared pretrained models to their aligned counterparts across three model families: LLaMA, Gemma, and GPT-3. They used two datasets: GlobalOpinionQA with multinational survey data, and the Machine Personality Inventory with 120 personality assessment questions. They measured Jensen-Shannon distance between human and model distributions.",
+      "source_paragraphs": [40]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "And what did they find?",
+      "source_paragraphs": [40]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Almost universally, pretrained models were closer to human distributions than aligned models. For example, on GlobalOpinionQA targeting Japan, LLaMA pretraining scored 0.40 in Jensen-Shannon distance versus 0.45 for Alpaca and 0.54 for Tulu. Gemma 7B showed 0.33 pre-alignment versus 0.51 post. The only exception was GPT-3 on the personality inventory, but the authors note uncertainty about which GPT-3 model is truly the base. They also observed a reduction in entropy after alignment.",
+      "source_paragraphs": [40]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So the pattern is remarkably consistent. Alignment makes models less distributionally diverse. What do they conclude from all this?",
+      "source_paragraphs": [41]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "They say the evidence reveals a consistent pattern of reduced distributional variance following alignment. When the target distribution is diverse, current techniques limit pluralism. They note that Overton pluralism might emerge if users prefer balanced responses, but people's preference bias toward assertiveness works against that. And while models may have some steerable pluralism through prompting, it needs much more systematic evaluation.",
+      "source_paragraphs": [41]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So all three forms of pluralism face challenges under current methods. What about the limitations of their own framework?",
+      "source_paragraphs": [42]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "They're refreshingly honest about this. The paper doesn't prescribe exactly who to align models to, it advocates for clearer and more pluralistic approaches. They acknowledge that several of their definitions are hard to operationalize, like describing the Overton window or selecting a target population. And importantly, not all forms of pluralism are desirable in every context. Distributional pluralism might be great for studying culture but inappropriate where tight control is needed.",
+      "source_paragraphs": [42]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "And the different types can even conflict with each other, right?",
+      "source_paragraphs": [42]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Exactly. Overton pluralism, presenting all reasonable views in one response, may be at odds with distributional pluralism, matching population frequencies across many responses. Each definition applies in different domains.",
+      "source_paragraphs": [42]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "How does this relate to other work in the field?",
+      "source_paragraphs": [43]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "The authors argue they advance the conversation in three ways. First, they unify disparate approaches under concrete definitions. Second, they propose previously unexplored types of pluralism like the Overton model. And third, they argue that pluralism measures should be goals to increase, not just diagnostic probes. Prior work mostly used pluralism for analysis rather than as a design target.",
+      "source_paragraphs": [43]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "And does this framework extend beyond just language models?",
+      "source_paragraphs": [44]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "They argue it does. The query-response framework can apply to any inputs and outputs, whether actions, images, audio, or other modalities. Steerable pluralism could be valuable for agents customizing to individual users. Distributional pluralism could model how populations of agents behave, like drivers on a road. There's a broad set of subjective tasks where pluralism is a valuable consideration.",
+      "source_paragraphs": [44]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So this isn't just an LLM paper. It's a framework for thinking about pluralism across all of AI. How do they wrap things up?",
+      "source_paragraphs": [45]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "They close with three broad recommendations. First, more research into fine-grained pluralistic evaluations to better characterize current models. Second, continued normative discussions about what to align to and what the desirable bounds of customization should be. And third, development of new alignment techniques to create more pluralistic models. It's really a call to action for the entire field.",
+      "source_paragraphs": [45]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "I think the strongest takeaway for me is that alignment as currently practiced is implicitly choosing whose values matter, and we should be making those choices explicitly and with much more care. This paper gives us the vocabulary and framework to start doing that.",
+      "source_paragraphs": [45]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Really well said. Thanks for joining us for this deep dive into pluralistic alignment, everyone. If you found this interesting, check out the full paper by Sorensen and colleagues. Until next time.",
+      "source_paragraphs": [45]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Thanks for listening, and see you next time!",
+      "source_paragraphs": [45]
+    }
+  ]
+}

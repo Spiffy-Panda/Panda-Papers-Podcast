@@ -1,0 +1,270 @@
+{
+  "source": "C:\\Users\\Brian\\Documents\\UW Winter 26\\ProductivityAndReadingHelper\\input\\great_plea\\part_02.json",
+  "audio_file": "part_02_20260306_165516.wav",
+  "tag": "part_02",
+  "generated": "2026-03-06T16:55:18.275638",
+  "total_duration_ms": 356431.0,
+  "total_duration_formatted": "5:56.431",
+  "lines": [
+    {
+      "index": 0,
+      "voice": "Microsoft David",
+      "text": "Welcome back, everyone. Last time we introduced the paper and walked through the abstract, where we got our first taste of the GREAT PLEA framework and why the authors think military AI ethics can inform healthcare.",
+      "start_ms": 0.0,
+      "end_ms": 13807.3,
+      "duration_ms": 13807.3,
+      "source_paragraphs": [
+        5
+      ]
+    },
+    {
+      "index": 1,
+      "voice": "Microsoft Zira",
+      "text": "Right, and I was really eager to get into the meat of the paper. So today we're diving into the introduction, where the authors set the stage for why this conversation is so urgent right now.",
+      "start_ms": 14407.3,
+      "end_ms": 25934.7,
+      "duration_ms": 11527.4,
+      "source_paragraphs": [
+        5
+      ]
+    },
+    {
+      "index": 2,
+      "voice": "Microsoft David",
+      "text": "Exactly. And they open with a pretty striking observation. AI has been expanding its role across all sorts of sectors, but in the military space, things have escalated dramatically. With the AI arms race playing out in conflicts like the Russia-Ukraine War, the authors point out that AI-powered weapon systems are expected to become commonplace in warfare.",
+      "start_ms": 26534.7,
+      "end_ms": 50409.8,
+      "duration_ms": 23875.1,
+      "source_paragraphs": [
+        5
+      ]
+    },
+    {
+      "index": 3,
+      "voice": "Microsoft Zira",
+      "text": "That's a sobering way to start. It really drives home the point that this isn't some far-off hypothetical. AI is already being deployed in life-and-death situations on the battlefield.",
+      "start_ms": 51009.8,
+      "end_ms": 62967.3,
+      "duration_ms": 11957.5,
+      "source_paragraphs": [
+        5
+      ]
+    },
+    {
+      "index": 4,
+      "voice": "Microsoft David",
+      "text": "Absolutely. And that reality is exactly what pushed the U.S. Department of Defense to publish its ethical principles back in 2020. Those principles focused on making military AI responsible, equitable, traceable, reliable, and governable.",
+      "start_ms": 63567.3,
+      "end_ms": 80248.4,
+      "duration_ms": 16681.1,
+      "source_paragraphs": [
+        6
+      ]
+    },
+    {
+      "index": 5,
+      "voice": "Microsoft Zira",
+      "text": "Five big pillars for the military side. And it wasn't just the U.S., right? Other organizations got involved too?",
+      "start_ms": 80848.4,
+      "end_ms": 90001.5,
+      "duration_ms": 9153.1,
+      "source_paragraphs": [
+        6
+      ]
+    },
+    {
+      "index": 6,
+      "voice": "Microsoft David",
+      "text": "That's right. NATO followed up in 2021 with its own complementary set of principles. They covered similar ground, things like lawfulness, responsibility and accountability, explainability, traceability, reliability, governability, and bias mitigation. So there was a real international momentum building around getting AI ethics right in the defense world.",
+      "start_ms": 90601.5,
+      "end_ms": 116796.5,
+      "duration_ms": 26194.9,
+      "source_paragraphs": [
+        6
+      ]
+    },
+    {
+      "index": 7,
+      "voice": "Microsoft Zira",
+      "text": "Okay, so the military side had a head start on thinking through AI ethics. But what about healthcare? Were similar conversations happening there?",
+      "start_ms": 117396.5,
+      "end_ms": 127954.1,
+      "duration_ms": 10557.7,
+      "source_paragraphs": [
+        7
+      ]
+    },
+    {
+      "index": 8,
+      "voice": "Microsoft David",
+      "text": "They were, but at a different pace. The World Health Organization released its own guidance on the ethics and governance of AI for health. And the broader discussions in healthcare are fascinating because they span a huge range, from using AI as clinical assistants that help doctors, all the way to some people speculating that AI could eventually replace entire hospital departments.",
+      "start_ms": 128554.1,
+      "end_ms": 152139.1,
+      "duration_ms": 23584.9,
+      "source_paragraphs": [
+        7
+      ]
+    },
+    {
+      "index": 9,
+      "voice": "Microsoft Zira",
+      "text": "Replace entire departments? That's quite a leap. I imagine that kind of talk raises a lot of eyebrows and a lot of ethical questions.",
+      "start_ms": 152739.1,
+      "end_ms": 162571.8,
+      "duration_ms": 9832.7,
+      "source_paragraphs": [
+        7
+      ]
+    },
+    {
+      "index": 10,
+      "voice": "Microsoft David",
+      "text": "It really does. And that brings us to the key technology driving a lot of this excitement and concern: generative AI. The authors take a moment to define what they mean by that term.",
+      "start_ms": 163171.8,
+      "end_ms": 175444.3,
+      "duration_ms": 12272.5,
+      "source_paragraphs": [
+        8
+      ]
+    },
+    {
+      "index": 11,
+      "voice": "Microsoft Zira",
+      "text": "Good, because AI gets thrown around a lot these days. What exactly are they referring to?",
+      "start_ms": 176044.3,
+      "end_ms": 183002.5,
+      "duration_ms": 6958.2,
+      "source_paragraphs": [
+        8
+      ]
+    },
+    {
+      "index": 12,
+      "voice": "Microsoft David",
+      "text": "So generative AI refers to AI techniques that can create or produce entirely new content. We're talking text, images, audio, even video. And the development pace has been remarkable. These tools have been popping up across all kinds of fields, from finance to writing to email communication to cyber threat analysis.",
+      "start_ms": 183602.5,
+      "end_ms": 206268.2,
+      "duration_ms": 22665.7,
+      "source_paragraphs": [
+        8
+      ]
+    },
+    {
+      "index": 13,
+      "voice": "Microsoft Zira",
+      "text": "It really is everywhere, isn't it? I mean, even people who don't follow tech closely have probably heard of tools that can write essays or generate images from a text prompt.",
+      "start_ms": 206868.2,
+      "end_ms": 218520.6,
+      "duration_ms": 11652.4,
+      "source_paragraphs": [
+        8
+      ]
+    },
+    {
+      "index": 14,
+      "voice": "Microsoft David",
+      "text": "Exactly. And that's part of what makes this moment so important for healthcare. When a technology spreads that quickly and that widely, the pressure to adopt it in clinical settings grows fast.",
+      "start_ms": 219120.6,
+      "end_ms": 232202.7,
+      "duration_ms": 13082.1,
+      "source_paragraphs": [
+        9
+      ]
+    },
+    {
+      "index": 15,
+      "voice": "Microsoft Zira",
+      "text": "So you have hospitals and clinics seeing all these potential applications, maybe for helping with diagnoses or generating patient summaries, and there's this rush to get on board.",
+      "start_ms": 232802.7,
+      "end_ms": 243700.0,
+      "duration_ms": 10897.3,
+      "source_paragraphs": [
+        9
+      ]
+    },
+    {
+      "index": 16,
+      "voice": "Microsoft David",
+      "text": "Right. And that's exactly the concern the authors raise. They argue that given how recently generative AI models have emerged and how much initial enthusiasm there is in healthcare, the medical community really needs to pump the brakes a bit and seriously consider ethical principles before integrating these tools into actual patient care.",
+      "start_ms": 244300.0,
+      "end_ms": 264970.1,
+      "duration_ms": 20670.1,
+      "source_paragraphs": [
+        9
+      ]
+    },
+    {
+      "index": 17,
+      "voice": "Microsoft Zira",
+      "text": "That makes so much sense. It's like the technology is running ahead and the ethical guardrails haven't caught up yet. You don't want to figure out the rules after something goes wrong with a patient.",
+      "start_ms": 265570.1,
+      "end_ms": 277837.1,
+      "duration_ms": 12267.0,
+      "source_paragraphs": [
+        9
+      ]
+    },
+    {
+      "index": 18,
+      "voice": "Microsoft David",
+      "text": "Precisely. And what's clever about this paper's approach is that the authors are saying, look, the military has already been wrestling with these exact kinds of questions for years. They've thought about accountability, bias, transparency, all of it, in high-stakes environments. Healthcare can learn from that experience.",
+      "start_ms": 278437.1,
+      "end_ms": 301037.8,
+      "duration_ms": 22600.8,
+      "source_paragraphs": [
+        5,
+        6,
+        9
+      ]
+    },
+    {
+      "index": 19,
+      "voice": "Microsoft Zira",
+      "text": "Instead of starting from scratch, borrow from a playbook that's already been tested under pressure. I like that.",
+      "start_ms": 301637.8,
+      "end_ms": 309380.8,
+      "duration_ms": 7743.0,
+      "source_paragraphs": [
+        6,
+        9
+      ]
+    },
+    {
+      "index": 20,
+      "voice": "Microsoft David",
+      "text": "Exactly. So that's the landscape the authors are painting in this introduction. Military AI ethics got a head start, healthcare AI is booming with enthusiasm, and generative AI in particular raises the stakes because of how fast it's developing and how widely it's being adopted.",
+      "start_ms": 309980.8,
+      "end_ms": 328171.9,
+      "duration_ms": 18191.1,
+      "source_paragraphs": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "index": 21,
+      "voice": "Microsoft Zira",
+      "text": "It's a compelling setup. So where does the paper go from here?",
+      "start_ms": 328771.9,
+      "end_ms": 333675.6,
+      "duration_ms": 4903.7,
+      "source_paragraphs": [
+        9
+      ]
+    },
+    {
+      "index": 22,
+      "voice": "Microsoft David",
+      "text": "Next up, the authors dig into what generative AI actually is from a technical standpoint. They'll talk about transformer models, specific systems like GPT and image generators, and how prompting works. It's a really helpful primer for anyone who wants to understand the technology underneath all the hype. Stay with us!",
+      "start_ms": 334275.6,
+      "end_ms": 356431.0,
+      "duration_ms": 22155.4,
+      "source_paragraphs": [
+        9
+      ]
+    }
+  ]
+}

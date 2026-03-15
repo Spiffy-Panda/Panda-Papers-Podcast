@@ -1,0 +1,288 @@
+{
+  "source": "C:\\Users\\Brian\\Documents\\UW Winter 26\\ProductivityAndReadingHelper\\input\\responsible_ux\\part_06.json",
+  "audio_file": "part_06_20260306_205939.wav",
+  "tag": "part_06",
+  "generated": "2026-03-06T20:59:42.103305",
+  "total_duration_ms": 364333.1,
+  "total_duration_formatted": "6:04.333",
+  "lines": [
+    {
+      "index": 0,
+      "voice": "Microsoft David",
+      "text": "Welcome back. We were just talking about the UX practitioner interview protocol. Now let's look at how the authors interviewed the responsible AI experts and talk about their use of PromptMaker as a research probe.",
+      "start_ms": 0.0,
+      "end_ms": 14001.8,
+      "duration_ms": 14001.8,
+      "source_paragraphs": [
+        31
+      ]
+    },
+    {
+      "index": 1,
+      "voice": "Microsoft Zira",
+      "text": "Right. The RAI experts have a different perspective since responsible AI is their actual formal job. What did the researchers ask them?",
+      "start_ms": 14601.8,
+      "end_ms": 24359.6,
+      "duration_ms": 9757.8,
+      "source_paragraphs": [
+        31
+      ]
+    },
+    {
+      "index": 2,
+      "voice": "Microsoft David",
+      "text": "With the RAI experts, the questions focused on their experiences reviewing, analyzing, evaluating, and consulting on AI technologies as part of organizational responsible AI practice. They also asked them to walk through a specific AI project they'd been involved with, describing the responsible AI issues they encountered and how they worked with the product teams to address those concerns.",
+      "start_ms": 24959.6,
+      "end_ms": 48904.5,
+      "duration_ms": 23944.9,
+      "source_paragraphs": [
+        31
+      ]
+    },
+    {
+      "index": 3,
+      "voice": "Microsoft Zira",
+      "text": "So it's a parallel structure to the UX interviews, but from the formal responsible AI side. That must make for great comparisons.",
+      "start_ms": 49504.5,
+      "end_ms": 58677.3,
+      "duration_ms": 9172.7,
+      "source_paragraphs": [
+        31
+      ]
+    },
+    {
+      "index": 4,
+      "voice": "Microsoft David",
+      "text": "It does. And just like with the UX practitioners, they ended by asking the RAI experts to envision improvements. What processes or tools could better support responsible AI in early-stage design? It's the same forward-looking question, but from a different vantage point.",
+      "start_ms": 59277.3,
+      "end_ms": 77953.7,
+      "duration_ms": 18676.4,
+      "source_paragraphs": [
+        31
+      ]
+    },
+    {
+      "index": 5,
+      "voice": "Microsoft Zira",
+      "text": "Now, tell me about this PromptMaker tool. How did they use it in the interviews?",
+      "start_ms": 78553.7,
+      "end_ms": 84782.2,
+      "duration_ms": 6228.5,
+      "source_paragraphs": [
+        32
+      ]
+    },
+    {
+      "index": 6,
+      "voice": "Microsoft David",
+      "text": "This is one of the most creative parts of the methodology. PromptMaker is a web-based tool that lets users interactively write and test prompts with large language models. You can write a prompt, see how the model responds, refine it, and even embed that prompt within a prototype to test out a new AI feature. It enables rapid prototyping without requiring deep machine learning expertise.",
+      "start_ms": 85382.2,
+      "end_ms": 111007.0,
+      "duration_ms": 25624.8,
+      "source_paragraphs": [
+        32
+      ]
+    },
+    {
+      "index": 7,
+      "voice": "Microsoft Zira",
+      "text": "And they showed this to all the interview participants?",
+      "start_ms": 111607.0,
+      "end_ms": 115050.7,
+      "duration_ms": 3443.7,
+      "source_paragraphs": [
+        32,
+        33
+      ]
+    },
+    {
+      "index": 8,
+      "voice": "Microsoft David",
+      "text": "Yes, they introduced PromptMaker during interviews with both groups. Many participants were already familiar with it, and seven UX participants said they actively use it in their daily work for early-stage AI application design. Using it as a probe let the researchers ground the conversation in a concrete tool that represents the emerging practice of prompt programming.",
+      "start_ms": 115650.7,
+      "end_ms": 138760.4,
+      "duration_ms": 23109.7,
+      "source_paragraphs": [
+        33
+      ]
+    },
+    {
+      "index": 9,
+      "voice": "Microsoft Zira",
+      "text": "That's clever. Instead of talking about prompt programming in the abstract, they had a real tool to point to and discuss. It probably elicited much richer responses.",
+      "start_ms": 139360.4,
+      "end_ms": 151047.8,
+      "duration_ms": 11687.3,
+      "source_paragraphs": [
+        33
+      ]
+    },
+    {
+      "index": 10,
+      "voice": "Microsoft David",
+      "text": "Exactly. It helped them understand how these emerging AI design tools are shaping responsible AI practices in practice, and what opportunities and challenges they present. It's a much more grounded way to have that conversation.",
+      "start_ms": 151647.8,
+      "end_ms": 166874.2,
+      "duration_ms": 15226.4,
+      "source_paragraphs": [
+        33
+      ]
+    },
+    {
+      "index": 11,
+      "voice": "Microsoft Zira",
+      "text": "Makes sense. Now, with all this interview data, how did they analyze it? Twenty-three interviews is a lot of material to work through.",
+      "start_ms": 167474.2,
+      "end_ms": 177537.1,
+      "duration_ms": 10062.9,
+      "source_paragraphs": [
+        34
+      ]
+    },
+    {
+      "index": 12,
+      "voice": "Microsoft David",
+      "text": "They used reflexive thematic analysis, which is an approach developed by Braun and Clarke. It's a qualitative method that emphasizes the researcher's active role in knowledge production. Unlike some approaches that try to achieve inter-rater reliability through codebooks, reflexive thematic analysis encourages researchers to collaborate and discuss their interpretations throughout the process.",
+      "start_ms": 178137.1,
+      "end_ms": 202006.8,
+      "duration_ms": 23869.8,
+      "source_paragraphs": [
+        34
+      ]
+    },
+    {
+      "index": 13,
+      "voice": "Microsoft Zira",
+      "text": "So it's less about rigid coding rules and more about thoughtful interpretation?",
+      "start_ms": 202606.8,
+      "end_ms": 207505.5,
+      "duration_ms": 4898.6,
+      "source_paragraphs": [
+        34
+      ]
+    },
+    {
+      "index": 14,
+      "voice": "Microsoft David",
+      "text": "Right. It's a post-positivist approach that values the philosophical stance and theoretical assumptions researchers bring to their analysis. Five of the authors participated in the data analysis, and they continuously discussed codes and themes throughout the process.",
+      "start_ms": 208105.5,
+      "end_ms": 225106.7,
+      "duration_ms": 17001.2,
+      "source_paragraphs": [
+        34,
+        35
+      ]
+    },
+    {
+      "index": 15,
+      "voice": "Microsoft Zira",
+      "text": "Five researchers analyzing the same data. That must generate a lot of different perspectives.",
+      "start_ms": 225706.7,
+      "end_ms": 232329.8,
+      "duration_ms": 6623.2,
+      "source_paragraphs": [
+        35
+      ]
+    },
+    {
+      "index": 16,
+      "voice": "Microsoft David",
+      "text": "It did. Each interview transcript was read and coded by at least two researchers, and each researcher reviewed nine to eleven transcripts. They generated hundreds of open codes individually, then came together frequently to search for, review, discuss, and define themes.",
+      "start_ms": 232929.8,
+      "end_ms": 252121.1,
+      "duration_ms": 19191.2,
+      "source_paragraphs": [
+        35
+      ]
+    },
+    {
+      "index": 17,
+      "voice": "Microsoft Zira",
+      "text": "Hundreds of codes from each researcher? That's an enormous amount of data to synthesize.",
+      "start_ms": 252721.1,
+      "end_ms": 259129.3,
+      "duration_ms": 6408.2,
+      "source_paragraphs": [
+        35
+      ]
+    },
+    {
+      "index": 18,
+      "voice": "Microsoft David",
+      "text": "It is. In the early stages, they organized everything into four domain categories: early-stage responsible AI challenges, responsible AI conceptualizations, responsible AI strategies and practices, and aspirational improvements. From there, they generated fifty-three preliminary themes through continuous discussion and iteration.",
+      "start_ms": 259729.3,
+      "end_ms": 283504.7,
+      "duration_ms": 23775.4,
+      "source_paragraphs": [
+        35
+      ]
+    },
+    {
+      "index": 19,
+      "voice": "Microsoft Zira",
+      "text": "Fifty-three themes! That's a lot. How did they get from fifty-three down to something manageable?",
+      "start_ms": 284104.7,
+      "end_ms": 291533.2,
+      "duration_ms": 7428.5,
+      "source_paragraphs": [
+        35,
+        36
+      ]
+    },
+    {
+      "index": 20,
+      "voice": "Microsoft David",
+      "text": "Through further review and discussion, they distilled everything down to three emergent responsible AI practices, each with two high-level themes. Those three practices are the ones we previewed at the beginning: building and reinforcing an RAI lens, responsible prototyping, and responsible evaluation of AI applications.",
+      "start_ms": 292133.2,
+      "end_ms": 312429.0,
+      "duration_ms": 20295.8,
+      "source_paragraphs": [
+        36
+      ]
+    },
+    {
+      "index": 21,
+      "voice": "Microsoft Zira",
+      "text": "That's quite a journey from hundreds of codes to three clean practices. It shows how much synthesis goes into good qualitative research.",
+      "start_ms": 313029.0,
+      "end_ms": 321891.7,
+      "duration_ms": 8862.7,
+      "source_paragraphs": [
+        36
+      ]
+    },
+    {
+      "index": 22,
+      "voice": "Microsoft David",
+      "text": "It really does. They also had two authors review artifacts from the participants, like design sprint materials and framework documents, to add more context to the interview findings. The rigor of their process gives me a lot of confidence in the results.",
+      "start_ms": 322491.7,
+      "end_ms": 339638.0,
+      "duration_ms": 17146.3,
+      "source_paragraphs": [
+        35
+      ]
+    },
+    {
+      "index": 23,
+      "voice": "Microsoft Zira",
+      "text": "Me too. I'm really eager to hear about those findings now.",
+      "start_ms": 340238.0,
+      "end_ms": 344881.8,
+      "duration_ms": 4643.9,
+      "source_paragraphs": [
+        36
+      ]
+    },
+    {
+      "index": 24,
+      "voice": "Microsoft David",
+      "text": "And that's exactly where we're headed next. In the upcoming part, we'll start exploring the actual findings, beginning with the authors' positionality statement and then diving into the first major practice: building and reinforcing a responsible AI lens. It's going to be rich stuff.",
+      "start_ms": 345481.8,
+      "end_ms": 364333.1,
+      "duration_ms": 18851.2,
+      "source_paragraphs": [
+        36
+      ]
+    }
+  ]
+}

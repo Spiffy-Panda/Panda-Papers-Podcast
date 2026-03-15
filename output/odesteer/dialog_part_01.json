@@ -1,0 +1,83 @@
+{
+  "pause_between_ms": 600,
+  "rate": 0,
+  "part_number": 1,
+  "paper_source": "input/ODESteer_paper.json",
+  "lines": [
+    {
+      "voice": "Microsoft David",
+      "text": "Welcome everyone to another episode. Today we're diving into a really fascinating paper called ODESteer, which proposes a unified framework for steering large language models using ordinary differential equations. This is from a team at UIUC, Northwestern, William and Mary, UW, and Stanford.",
+      "source_paragraphs": [2]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Oh, that sounds really technical. Can we start with the basics? What does activation steering actually mean?",
+      "source_paragraphs": [3]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Great question. So when you have a large language model, it processes text through many layers, and at each layer the text is represented as a bunch of numbers called activations. Activation steering is a technique where you modify those internal numbers while the model is running to change its behavior.",
+      "source_paragraphs": [3]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So instead of retraining the whole model, you're just nudging its internal representations?",
+      "source_paragraphs": [3]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Exactly. It's a lightweight approach. You don't need to change the model's weights at all. You just add a vector, a steering direction, to the activations at inference time, and that can push the model toward being more helpful, more truthful, or less toxic.",
+      "source_paragraphs": [3]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "That's a really elegant idea. But I'm guessing there are some problems with how this has been done so far?",
+      "source_paragraphs": [4]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Yes, there are two major limitations that this paper addresses. The first one is that there's no unified theoretical framework. Right now, there are different families of approaches, like input reading methods that compare activations from good versus bad examples, and output optimization methods that define a score and optimize toward it. But these approaches are based on fundamentally different principles.",
+      "source_paragraphs": [4]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So researchers have been developing these techniques in isolation, and there's no overarching theory that connects them?",
+      "source_paragraphs": [4]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Right. Someone recently tried to unify them by framing everything as linear maps, but that formulation didn't really tell you how to actually find good steering directions. It was more descriptive than prescriptive.",
+      "source_paragraphs": [4]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Got it. So the first problem is theoretical fragmentation. What's the second limitation?",
+      "source_paragraphs": [4]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "We'll get into that next. It has to do with how current methods apply their steering in a single step, which turns out to be a pretty big constraint. But first, let me say that the key breakthrough in this paper is connecting all of this to ordinary differential equations, which is a concept from calculus that describes how things change over time.",
+      "source_paragraphs": [2, 4]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Now I'm really curious about that connection. ODEs and language models, those seem like very different worlds.",
+      "source_paragraphs": [2]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "They really do, but the connection is surprisingly natural. And on top of the theoretical framework, the authors also introduce a concrete method called ODESteer that achieves some impressive results. We're talking about a five point seven percent improvement on TruthfulQA, two point five percent on UltraFeedback, and two point four percent on RealToxicityPrompts compared to state of the art baselines.",
+      "source_paragraphs": [2]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Those are solid improvements for what sounds like a principled approach. I'm excited to dig into how it all works.",
+      "source_paragraphs": [2]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Same here. So next up, let's talk about that second limitation, the one-step steering problem, and how the ODE perspective completely changes the game.",
+      "source_paragraphs": [2]
+    }
+  ]
+}

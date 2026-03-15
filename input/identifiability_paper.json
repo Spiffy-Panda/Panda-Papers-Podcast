@@ -1,0 +1,211 @@
+{
+  "meta": {
+    "title": "Everything, Everywhere, All at Once: Is Mechanistic Interpretability Identifiable?",
+    "authors": ["Maxime Méloux", "François Portet", "Silviu Maniu", "Maxime Peyrard"],
+    "journal": "arXiv preprint",
+    "year": 2025,
+    "doi": "10.48550/arXiv.2502.20914",
+    "source_url": "https://arxiv.org/abs/2502.20914",
+    "license": "CC BY 4.0"
+  },
+  "sections": [
+    {
+      "id": "abstract",
+      "title": "Abstract",
+      "paragraphs": [
+        {
+          "id": 1,
+          "text": "The authors systematically examine a fundamental question in Mechanistic Interpretability (MI): for a fixed behavior to explain, and under the criteria that MI sets for itself, are we guaranteed a unique explanation? Drawing an analogy with identifiability in statistics, which ensures the uniqueness of parameters inferred from data, the paper defines the identifiability of MI explanations. The authors identify two broad strategies: (i) \"where-then-what\", which first detects a circuit (a subset of the network) that replicates the model's behavior before deriving its interpretation, and (ii) \"what-then-where\", which begins with candidate explanatory algorithms and searches in the activation subspaces of the neural model for causal alignment. The authors systematically test identifiability of both strategies using simple tasks (Boolean functions) and multi-layer perceptrons small enough for complete enumeration of candidate explanations. The experiments reveal overwhelming evidence of non-identifiability in all cases: multiple circuits can replicate model behavior, multiple interpretations can exist for a circuit, several algorithms can be causally aligned with the neural network, and a single algorithm can be aligned with different subspaces. The paper discusses whether unicity is necessary, pragmatic stances emphasizing predictive and manipulability standards, less permissive criteria, and the inner interpretability framework that demands explanations be validated by multiple complementary criteria."
+        }
+      ]
+    },
+    {
+      "id": "introduction",
+      "title": "Introduction",
+      "paragraphs": [
+        {
+          "id": 2,
+          "text": "Mechanistic interpretability (MI) aims to reverse-engineer models to reveal simple, human-interpretable algorithms embedded in neural network structure. MI focuses on generating computational abstractions, where complex neural networks' behaviors are explained by simpler algorithms that track internal computations. A computational abstraction has two components: (a) what is the explanatory algorithm, and (b) where in the computational structure is this algorithm embedded. The authors categorize methods into two strategies. The \"where-then-what\" strategy focuses on finding a circuit that captures most of the information flow from inputs to outputs, then interprets its components to derive the explanatory algorithm. The \"what-then-where\" strategy starts by identifying candidate algorithms and then searches subspaces in the neural network where the algorithm may be implemented, using causal alignment between the algorithm's states and the network's internal states. Each strategy relies on specific evaluation criteria, such as circuit error for circuits and Intervention Interchange Accuracy (IIA) for causal alignment."
+        },
+        {
+          "id": 3,
+          "text": "The paper questions whether MI criteria guarantee a unique explanation of a fixed behavior. Borrowing the concept of identifiability from statistics, where a model is identifiable if its parameters can be uniquely inferred from data, the authors define identifiability of explanation as the property where a unique explanatory algorithm satisfies the criteria under fixed assumptions of validity. Specifically, they ask four questions: In the where-then-what strategy, (i) is the circuit unique? (ii) Is a given circuit's interpretation unique? In the what-then-where strategy, (iii) is the causally-aligned algorithm unique? (iv) For a given algorithm, is there a unique subspace of the neural network that is causally aligned?"
+        },
+        {
+          "id": 4,
+          "text": "The authors stress-test identifiability by conducting experiments in a controlled, small-scale setting using simple tasks like Boolean functions and very small MLPs, allowing exhaustive enumeration of incompatible candidate explanations. The experiments reveal non-identifiability at every stage: (i) multiple circuits can perfectly replicate the model's behavior with zero circuit error, (ii) for a given circuit multiple valid interpretations exist, (iii) several algorithms can achieve perfect causal alignment with IIA of one, and (iv) for a given algorithm multiple subspaces can be equally aligned. The discussion revisits whether unicity is necessary, considers alternative criteria like predictive and manipulability standards, less permissive criteria based on causal abstraction, and the inner interpretability framework requiring validation by multiple complementary criteria."
+        }
+      ]
+    },
+    {
+      "id": "background-mechanistic-interpretability",
+      "title": "Mechanistic Interpretability",
+      "paragraphs": [
+        {
+          "id": 5,
+          "text": "Mechanistic interpretability rests on the key assumptions that a neural network's behavior can be explained by a simpler algorithm than the full network, and that a sparse subset of the network executes this algorithm. Pruning studies and the lottery ticket hypothesis suggest that networks are often overparameterized, with only a fraction of neurons and connections critical to final performance. Training sub-networks to approximate the full model, similar to dropout, supports the idea that sub-networks can approximate full network behavior well."
+        },
+        {
+          "id": 6,
+          "text": "The search for interpretable circuits is inspired by neuroscience, which has long sought to uncover neural circuits that explain observed behaviors. Research in computer vision has shown that some nodes within neural networks compute interpretable features, and connections between such features (circuits) can serve as compact explanations of model behavior. Recent work has applied MI to LLMs and transformer models; for example, a circuit responsible for Indirect Object Identification (IOI) has been identified in transformers, highlighting the potential for mechanistic explanations of complex LLM behaviors."
+        }
+      ]
+    },
+    {
+      "id": "background-definitions",
+      "title": "Definitions",
+      "paragraphs": [
+        {
+          "id": 7,
+          "text": "A mechanistic explanation consists of two components: the \"what\" (a high-level algorithm that closely approximates the model's behavior and tracks its internal computation) and the \"where\" (specifying how and where this algorithm is embedded in the model's low-level neural computation). The authors define a computational abstraction as the combination of an explanatory algorithm and the mapping between high- and low-level states. Formally, a computational abstraction A is a tuple (S, τ), where S is the circuit (the subset of the computational graph responsible for the behavior of interest) and τ is the mapping between the states of the circuit and the states of the algorithm's variables."
+        },
+        {
+          "id": 8,
+          "text": "A circuit S = (V_S, E_S) is defined as a subgraph of the neural network's computational graph G = (V, E) that contains at least one path from input nodes to output nodes. A mapping τ consists of K surjective maps, one for each high-level variable, associating neural network activations with the values of the corresponding high-level variable. Each mapping must be surjective with a non-empty pre-image, ensuring that all high-level values can be realized by some set of low-level activations."
+        },
+        {
+          "id": 9,
+          "text": "The authors define a consistent mapping as one where computations in the neural network and the high-level algorithm align: performing computation using the neural network and then applying the mapping yields the same result as applying the mapping first and then performing the high-level computation. This is formalized as a commutative diagram between low-level neural network computations and high-level algorithm computations. The paper focuses on explanatory algorithms represented as Boolean circuits, where high-level features are binary (0 or 1) and mappings specify which activations correspond to each value. Boolean circuits are computationally universal and thus sufficient to demonstrate identifiability issues."
+        }
+      ]
+    },
+    {
+      "id": "background-circuit-discovery",
+      "title": "Approaches to Circuit Discovery",
+      "paragraphs": [
+        {
+          "id": 10,
+          "text": "The where-then-what strategy first identifies a circuit that replicates the full model's behavior, then interprets its components to uncover the high-level algorithm. The evaluation criterion is circuit error, defined as one minus the fraction of inputs for which the circuit's output matches the full model's output. In practice, circuit search relies on causal mediation analysis, computing mediation formulas for individual components to decide their inclusion. Interpretation of candidate circuits typically combines data analysis and human input, such as activation maximization to identify inputs that maximally activate a component. Polysemantic neurons, which encode multiple concepts simultaneously, complicate the interpretation of components."
+        },
+        {
+          "id": 11,
+          "text": "The what-then-where strategy first hypothesizes a candidate high-level algorithm and then searches for mappings between its states and subspaces of the neural activations where high-level and low-level states are causally aligned. Intervention Interchange Accuracy (IIA) measures the similarity of outputs after counterfactual interventions on inner variables; a perfect IIA score of 1 indicates all possible interventions produce the same effect in both models. The Distributed Alignment Search (DAS) method addresses computational cost by using gradient descent to search for alignments efficiently, also allowing distributed representations where multiple neurons represent a single high-level variable. An underlying assumption of IIA is that neural activations for distinct high-level variables are disjoint, which may not hold in practice. Currently no systematic method exists for choosing which candidate algorithms to test."
+        }
+      ]
+    },
+    {
+      "id": "background-explanation-identifiability",
+      "title": "Explanation Identifiability",
+      "paragraphs": [
+        {
+          "id": 12,
+          "text": "The assumption of explanatory unicity is not only implicit in MI practice but also rooted in human cognitive and psychological tendencies. Humans demonstrate a cognitive preference for coherent explanations that integrate disparate observations into a unified narrative, aligning with the psychological need for cognitive closure. Multiple incompatible explanations disrupt coherence, leading to ambiguity and unresolved understanding. Conversely, explanatory pluralism in the philosophy of science acknowledges that the world may be too complex for a single comprehensive explanation, with multiple explanations often coexisting when they address different explanatory goals or employ different simplification strategies."
+        },
+        {
+          "id": 13,
+          "text": "The authors define identifiability of explanation as the property where a unique explanation is valid under fixed standards of validity. An MI strategy is not identifiable if its standards do not discriminate between two incompatible explanations. Two explanations are defined as incompatible if they share the same explanatory goal and simplification strategy but posit different computational abstractions. Incompatibility can occur if (1) the two explanations posit different algorithms for the same behavior, or (2) the same algorithm is embedded in different subspaces of the neural network. In this work, the explanatory goal is fixed (explaining a trained MLP's input-output behavior) and the simplification strategy is fixed (one of the two predefined strategies)."
+        }
+      ]
+    },
+    {
+      "id": "illustrating-identifiability-issues",
+      "title": "Illustrating Potential Identifiability Issues",
+      "paragraphs": [
+        {
+          "id": 14,
+          "text": "The authors illustrate identifiability counter-examples using a small MLP trained to compute the XOR function. Since an MLP requires at least two layers to compute XOR, the interpretability exercise asks: how is the XOR implemented? A mechanistic answer must identify both what algorithm is being used (which logic gates transform inputs into the XOR truth table) and where these gates are located within the MLP. The authors use an MLP with two hidden layers of size 3, small enough for exhaustive enumeration of all circuits and extensive search over mappings. Inputs are 0 or 1 with optional randomly sampled Gaussian noise."
+        },
+        {
+          "id": 15,
+          "text": "Four methods are used to test different criteria. Circuit search enumerates all possible circuits and tests each as a standalone network; circuits achieving zero error are labeled perfect circuits. Interpretation search, for each perfect circuit, recursively interprets neuron activations as logic gates, expanding a tree of candidate interpretations; to avoid trivial over-counting, value relabeling is ignored. Algorithm search enumerates all XOR-implementing algorithms by considering Boolean formula parse trees using AND, OR, and negation; for depth 3, this yields 56 XOR-equivalent algorithms. Mapping search explores all possible neuron subsets and mappings for a given candidate algorithm, measuring causal alignment with IIA; mappings achieving perfect IIA with no larger-image alternatives are called perfect minimal mappings."
+        },
+        {
+          "id": 16,
+          "text": "For the what-then-where strategy, testing only two candidate algorithms yielded 159 perfect minimal mappings with perfect mappings for both algorithms, showing that neither the algorithm nor its localization is unique. For the where-then-what strategy, 85 unique circuits with perfect accuracy were found, with an average of 535.8 logic gate interpretations per circuit, showing that neither the circuit nor the interpreted algorithm is unique. Overall, the example produced 159 + 45,543 computational abstractions, most of which are incompatible, constituting a serious identifiability problem with no clear criterion to decide among all these explanations."
+        }
+      ]
+    },
+    {
+      "id": "experiments-quantitative-analysis",
+      "title": "Quantitative Analysis",
+      "paragraphs": [
+        {
+          "id": 17,
+          "text": "The authors scale up the XOR experiment with different seeds while varying architecture size and behavioral complexity. The basic setup chooses n 2-input logic gates, generates an MLP with layer sizes (2, k, k, n), and trains it to implement the gates using binary samples with Gaussian noise until mean squared loss falls below n × 10^-3. The circuit-first search counts perfect circuits and valid interpretations per circuit, while the algorithm-first search counts perfectly aligned algorithms and perfect minimal mappings. Due to combinatorial explosion, circuit search is restricted to circuits with sparsity greater than 0.3, making reported numbers lower bounds."
+        },
+        {
+          "id": 18,
+          "text": "Varying architecture size k from 2 to 5, the number of computational abstractions increases significantly with network size. Median values grow from 38 to 910,000 in the circuit-first method and from 8 to 3,700 in the algorithm-first approach. Less than 2% of trained networks contain exactly one valid minimal mapping, and no network contains exactly one circuit interpretation."
+        },
+        {
+          "id": 19,
+          "text": "For the multi-task experiments, the authors fix k=3 and vary n from 1 to 6, sampling n logic gates (including negations: NOR, NAND, NIMP, XNOR) and training the network to implement them in parallel with shared input neurons. In both approaches, the number of interpretations significantly decreases with the number of training tasks (p=0.05) up to 4 tasks. Beyond that point, the variation is no longer statistically significant."
+        }
+      ]
+    },
+    {
+      "id": "experiments-training-dynamics",
+      "title": "Training Dynamics",
+      "paragraphs": [
+        {
+          "id": 20,
+          "text": "The authors explore whether the high number of computational abstractions results from imperfect training by varying the loss cutoff. They also investigate the influence of the training distribution on valid abstractions. Adding noise to binary samples during training has no significant effect on the algorithm-first method but decreases the number of circuits while increasing overall interpretations in the circuit-first method. The authors conclude that training dynamics and generalization abilities may reduce available abstractions, but this effect alone is unlikely to fully mitigate the identifiability issue."
+        }
+      ]
+    },
+    {
+      "id": "experiments-larger-models",
+      "title": "Towards Larger Models",
+      "paragraphs": [
+        {
+          "id": 21,
+          "text": "While enumerating circuits or mappings is infeasible in large networks, counterexamples can still be found. The authors trained a larger MLP on a subset of MNIST (digits 0 and 1) with layer sizes (784, 128, 128, 3, 3, 3, 1). They extracted the last layers to form two sub-networks and applied circuit search to the smaller sub-network, yielding 3,209 valid circuits. Since any valid circuit in the first half of the network can include one of these circuits as its continuation, a minimum of 3,209 valid circuits exist in the full network if valid circuits exist in the first half. This demonstrates that the identifiability problem does not disappear at significantly larger scale with more complex data distributions."
+        }
+      ]
+    },
+    {
+      "id": "discussion-unicity",
+      "title": "Does Lack of Unicity Matter?",
+      "paragraphs": [
+        {
+          "id": 22,
+          "text": "The findings challenge the strong intuition that a unique mechanistic explanation exists for a given behavior under fixed explanatory goals. Even under MI's strict causal requirements, many incompatible explanations coexist that are predictive of behavior and causally aligned but differ in algorithms or network embedding. From a pragmatic stance, unicity may not be essential if explanations meet functional goals such as predictivity, controllability, or utility in decision-making. Explicitly stating pragmatic goals can clarify what is expected. The authors note the recent debate about interpretability illusions, where explanations from the DAS method were defended on grounds of meeting pragmatic goals of predictivity and manipulability despite concerns about dormant pathway activation."
+        }
+      ]
+    },
+    {
+      "id": "discussion-resolving-non-identifiability",
+      "title": "Resolving Non-Identifiability",
+      "paragraphs": [
+        {
+          "id": 23,
+          "text": "If identifiability is considered important, the authors argue current MI criteria are insufficient to guarantee it. Heuristics like prioritizing the sparsest circuits are unlikely to solve the problem, as simplicity alone cannot single out one explanation. Ideas from causal abstraction can help: unlike current MI frameworks, causal abstraction requires that all lower-level model states are accounted for in higher-level representations, and excluded components must be causally justified. This intuition has been formalized through the concept of faithfulness, which evaluates how well a circuit replicates behavior and the lack of impact of excluded elements."
+        },
+        {
+          "id": 24,
+          "text": "The inner interpretability framework, drawing on lessons from cognitive neuroscience, emphasizes building multi-level mechanistic explanations and stress-testing them with proper hypothesis testing. An explanation validated by many criteria exhibiting different properties (e.g., invariances) becomes more trustworthy. The authors suggest this framework provides a promising path to establish MI as a natural science akin to neuroscience or biology."
+        }
+      ]
+    },
+    {
+      "id": "discussion-achievability",
+      "title": "Is Identifiability Even Achievable?",
+      "paragraphs": [
+        {
+          "id": 25,
+          "text": "In some domains of science, competing theories coexist despite being ontologically incompatible, such as the Lagrangian and Hamiltonian formulations of classical mechanics, which are examples of contrastive underdetermination. The intrinsic computational hardness of interpretability queries suggests that MI may have fundamental limits, leaving it possibly underdetermined. More broadly, the search for MI explanations can be seen as a type of causal representation learning, where identifiability may depend on strong constraints that might not be realistic."
+        }
+      ]
+    },
+    {
+      "id": "discussion-toy-to-real",
+      "title": "From Toy Models to Real Models",
+      "paragraphs": [
+        {
+          "id": 26,
+          "text": "The authors acknowledge that their experiments focus on toy MLPs trained on toy tasks, which differ drastically from large language models trained on vast, complex datasets using Transformer architectures. This raises the possibility that issues in small models may not apply to larger ones. However, the authors argue that if identifiability problems disappear at larger scales, this must be demonstrated, and understanding why current criteria function well in some regimes but not in others would lead to refined criteria and definitions."
+        }
+      ]
+    },
+    {
+      "id": "conclusion",
+      "title": "Conclusion",
+      "paragraphs": [
+        {
+          "id": 27,
+          "text": "The authors encourage the community to reflect on the role of unicity when searching for and communicating about mechanistic explanations in neural networks. They identify three promising directions: exploring stricter criteria based on causal abstraction, explicitly formulating pragmatic goals of explanations, and embracing broader frameworks such as the inner interpretability framework that requires validation by multiple complementary criteria."
+        }
+      ]
+    }
+  ]
+}

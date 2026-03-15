@@ -1,0 +1,241 @@
+{
+  "source": "C:\\Users\\Brian\\Documents\\UW Winter 26\\ProductivityAndReadingHelper\\input\\great_plea\\part_06.json",
+  "audio_file": "part_06_20260306_175103.wav",
+  "tag": "part_06",
+  "generated": "2026-03-06T17:51:05.393556",
+  "total_duration_ms": 317011.5,
+  "total_duration_formatted": "5:17.011",
+  "lines": [
+    {
+      "index": 0,
+      "voice": "Microsoft David",
+      "text": "Welcome back. Last time we explored how military and healthcare share surprising structural parallels, from high-stakes decision-making to the three convergent priorities of validity, implementation, and human-centeredness. Now the authors get into the specific ethical concerns and risks that have been documented across both domains.",
+      "start_ms": 0.0,
+      "end_ms": 21460.4,
+      "duration_ms": 21460.4,
+      "source_paragraphs": [
+        26
+      ]
+    },
+    {
+      "index": 1,
+      "voice": "Microsoft Zira",
+      "text": "This is where things get really concrete, right? Less theory, more real-world consequences.",
+      "start_ms": 22060.4,
+      "end_ms": 29408.7,
+      "duration_ms": 7348.3,
+      "source_paragraphs": [
+        26
+      ]
+    },
+    {
+      "index": 2,
+      "voice": "Microsoft David",
+      "text": "Exactly. They start by referencing a RAND Corporation study that categorized AI warfare concerns into three main buckets: increasing the risk of war, increased errors, and misplaced faith in AI. And what's interesting is that each of those categories has a direct healthcare parallel.",
+      "start_ms": 30008.7,
+      "end_ms": 48535.2,
+      "duration_ms": 18526.5,
+      "source_paragraphs": [
+        26
+      ]
+    },
+    {
+      "index": 3,
+      "voice": "Microsoft Zira",
+      "text": "So the same broad categories of concern apply in both domains? Let's walk through them.",
+      "start_ms": 49135.2,
+      "end_ms": 55573.6,
+      "duration_ms": 6438.4,
+      "source_paragraphs": [
+        27
+      ]
+    },
+    {
+      "index": 4,
+      "voice": "Microsoft David",
+      "text": "Starting with rapid decision-making. In the military context, experts caution that actions taken without proper consideration could have serious repercussions, like escalating a conflict. There are international standards like the Law of Armed Conflict and the Geneva Conventions that require distinguishing between combatants and civilians before taking action to minimize harm.",
+      "start_ms": 56173.6,
+      "end_ms": 79628.2,
+      "duration_ms": 23454.6,
+      "source_paragraphs": [
+        27
+      ]
+    },
+    {
+      "index": 5,
+      "voice": "Microsoft Zira",
+      "text": "And in healthcare, the equivalent would be an AI system making a treatment recommendation too quickly without fully considering the patient's individual circumstances?",
+      "start_ms": 80228.2,
+      "end_ms": 89980.5,
+      "duration_ms": 9752.3,
+      "source_paragraphs": [
+        27
+      ]
+    },
+    {
+      "index": 6,
+      "voice": "Microsoft David",
+      "text": "Precisely. The speed advantage of AI can become a liability if it skips the nuance that careful human judgment would catch. Moving on to data privacy, this is a concern in both sectors because both handle extremely sensitive information.",
+      "start_ms": 90580.5,
+      "end_ms": 106611.8,
+      "duration_ms": 16031.4,
+      "source_paragraphs": [
+        28
+      ]
+    },
+    {
+      "index": 7,
+      "voice": "Microsoft Zira",
+      "text": "Military secrets on one side, patient medical records on the other.",
+      "start_ms": 107211.8,
+      "end_ms": 112135.5,
+      "duration_ms": 4923.6,
+      "source_paragraphs": [
+        28
+      ]
+    },
+    {
+      "index": 8,
+      "voice": "Microsoft David",
+      "text": "Right. The authors specifically note that if an AI implementation collects Protected Health Information, it must be secure against breaches, and any disclosures need to comply with HIPAA guidelines. That's not optional. It's a legal requirement.",
+      "start_ms": 112735.5,
+      "end_ms": 130392.2,
+      "duration_ms": 17656.7,
+      "source_paragraphs": [
+        28
+      ]
+    },
+    {
+      "index": 9,
+      "voice": "Microsoft Zira",
+      "text": "And given that generative AI models are trained on massive datasets, there's always the question of what patient data might have been included in training and whether it could be extracted.",
+      "start_ms": 130992.2,
+      "end_ms": 141244.4,
+      "duration_ms": 10252.2,
+      "source_paragraphs": [
+        28
+      ]
+    },
+    {
+      "index": 10,
+      "voice": "Microsoft David",
+      "text": "Absolutely. Now, the paper also emphasizes that healthcare is a safety-critical domain where patient harm is simply unacceptable. And here's a point that really stood out to me: errors get amplified when numerous hospitals and clinics are all using the same AI systems and experiencing the same errors simultaneously.",
+      "start_ms": 141844.4,
+      "end_ms": 162490.2,
+      "duration_ms": 20645.9,
+      "source_paragraphs": [
+        29
+      ]
+    },
+    {
+      "index": 11,
+      "voice": "Microsoft Zira",
+      "text": "That's the scalability risk we talked about earlier. One bug in a widely deployed system becomes a systemic problem overnight.",
+      "start_ms": 163090.2,
+      "end_ms": 171428.2,
+      "duration_ms": 8337.9,
+      "source_paragraphs": [
+        29
+      ]
+    },
+    {
+      "index": 12,
+      "voice": "Microsoft David",
+      "text": "Exactly. Then there's the issue of trust calibration, which I think is one of the more nuanced points in the paper. The authors present a model of optimal trust in AI. Too much trust leads to overreliance, where people follow the AI's recommendations even when they shouldn't. Too little trust leads to underuse, where people ignore potentially helpful AI insights.",
+      "start_ms": 172028.2,
+      "end_ms": 196868.5,
+      "duration_ms": 24840.4,
+      "source_paragraphs": [
+        30
+      ]
+    },
+    {
+      "index": 13,
+      "voice": "Microsoft Zira",
+      "text": "So the sweet spot is somewhere in the middle. You want clinicians who trust the system enough to use it but remain critical enough to override it when something seems off.",
+      "start_ms": 197468.5,
+      "end_ms": 207296.0,
+      "duration_ms": 9827.4,
+      "source_paragraphs": [
+        30
+      ]
+    },
+    {
+      "index": 14,
+      "voice": "Microsoft David",
+      "text": "Exactly. And the root cause of trust miscalibration is operators not knowing the actual capabilities and limitations of the systems they're working with. That's a training and transparency problem as much as a technical one.",
+      "start_ms": 207896.0,
+      "end_ms": 222407.5,
+      "duration_ms": 14511.6,
+      "source_paragraphs": [
+        30
+      ]
+    },
+    {
+      "index": 15,
+      "voice": "Microsoft Zira",
+      "text": "That makes so much sense. If a doctor doesn't understand what the AI can and can't do, they can't make good judgments about when to listen to it.",
+      "start_ms": 223007.5,
+      "end_ms": 232355.4,
+      "duration_ms": 9347.9,
+      "source_paragraphs": [
+        30
+      ]
+    },
+    {
+      "index": 16,
+      "voice": "Microsoft David",
+      "text": "Right. The last major concern the authors address here is accountability gaps. They reference a RAND study showing that the general public views autonomous systems taking military action with human authorization favorably, but strongly disagrees with combat action taken without human authorization.",
+      "start_ms": 232955.4,
+      "end_ms": 252111.2,
+      "duration_ms": 19155.8,
+      "source_paragraphs": [
+        31
+      ]
+    },
+    {
+      "index": 17,
+      "voice": "Microsoft Zira",
+      "text": "And I imagine patients feel the same way about AI making medical decisions without a doctor in the loop?",
+      "start_ms": 252711.2,
+      "end_ms": 258949.5,
+      "duration_ms": 6238.3,
+      "source_paragraphs": [
+        31
+      ]
+    },
+    {
+      "index": 18,
+      "voice": "Microsoft David",
+      "text": "That's exactly what the authors found. Patients express significant concerns about AI being used for medical purposes without human involvement from a physician or nurse. People want to know that a human being is ultimately responsible for their care.",
+      "start_ms": 259549.5,
+      "end_ms": 275300.3,
+      "duration_ms": 15750.8,
+      "source_paragraphs": [
+        31
+      ]
+    },
+    {
+      "index": 19,
+      "voice": "Microsoft Zira",
+      "text": "It's about trust at the most fundamental level. You can accept a tool helping your doctor, but you don't want a tool replacing your doctor. So the authors have built this really thorough case for why ethical principles matter. Where do they go from here?",
+      "start_ms": 275900.3,
+      "end_ms": 292101.5,
+      "duration_ms": 16201.2,
+      "source_paragraphs": [
+        31
+      ]
+    },
+    {
+      "index": 20,
+      "voice": "Microsoft David",
+      "text": "Now comes the exciting part. They take all of these concerns and start building toward a solution. They'll discuss how accountability plays out in autonomous systems, address equity and autonomy concerns, and then reveal the GREAT PLEA framework itself, showing how they surveyed existing ethical frameworks and synthesized their nine principles. That's all coming up next!",
+      "start_ms": 292701.5,
+      "end_ms": 317011.5,
+      "duration_ms": 24309.9,
+      "source_paragraphs": [
+        31
+      ]
+    }
+  ]
+}

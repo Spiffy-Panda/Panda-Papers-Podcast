@@ -1,0 +1,176 @@
+{
+  "source": "C:\\Users\\Brian\\Documents\\UW Winter 26\\ProductivityAndReadingHelper\\output\\odesteer\\dialog_part_01.json",
+  "audio_file": "part_01_20260307_131005.wav",
+  "tag": "part_01",
+  "generated": "2026-03-07T13:10:06.951326",
+  "total_duration_ms": 218585.5,
+  "total_duration_formatted": "3:38.585",
+  "lines": [
+    {
+      "index": 0,
+      "voice": "Microsoft David",
+      "text": "Welcome everyone to another episode. Today we're diving into a really fascinating paper called ODESteer, which proposes a unified framework for steering large language models using ordinary differential equations. This is from a team at UIUC, Northwestern, William and Mary, UW, and Stanford.",
+      "start_ms": 0.0,
+      "end_ms": 21381.2,
+      "duration_ms": 21381.2,
+      "source_paragraphs": [
+        2
+      ]
+    },
+    {
+      "index": 1,
+      "voice": "Microsoft Zira",
+      "text": "Oh, that sounds really technical. Can we start with the basics? What does activation steering actually mean?",
+      "start_ms": 21981.2,
+      "end_ms": 30629.3,
+      "duration_ms": 8648.2,
+      "source_paragraphs": [
+        3
+      ]
+    },
+    {
+      "index": 2,
+      "voice": "Microsoft David",
+      "text": "Great question. So when you have a large language model, it processes text through many layers, and at each layer the text is represented as a bunch of numbers called activations. Activation steering is a technique where you modify those internal numbers while the model is running to change its behavior.",
+      "start_ms": 31229.3,
+      "end_ms": 50500.5,
+      "duration_ms": 19271.1,
+      "source_paragraphs": [
+        3
+      ]
+    },
+    {
+      "index": 3,
+      "voice": "Microsoft Zira",
+      "text": "So instead of retraining the whole model, you're just nudging its internal representations?",
+      "start_ms": 51100.5,
+      "end_ms": 57043.6,
+      "duration_ms": 5943.2,
+      "source_paragraphs": [
+        3
+      ]
+    },
+    {
+      "index": 4,
+      "voice": "Microsoft David",
+      "text": "Exactly. It's a lightweight approach. You don't need to change the model's weights at all. You just add a vector, a steering direction, to the activations at inference time, and that can push the model toward being more helpful, more truthful, or less toxic.",
+      "start_ms": 57643.6,
+      "end_ms": 75930.5,
+      "duration_ms": 18286.8,
+      "source_paragraphs": [
+        3
+      ]
+    },
+    {
+      "index": 5,
+      "voice": "Microsoft Zira",
+      "text": "That's a really elegant idea. But I'm guessing there are some problems with how this has been done so far?",
+      "start_ms": 76530.5,
+      "end_ms": 83273.8,
+      "duration_ms": 6743.3,
+      "source_paragraphs": [
+        4
+      ]
+    },
+    {
+      "index": 6,
+      "voice": "Microsoft David",
+      "text": "Yes, there are two major limitations that this paper addresses. The first one is that there's no unified theoretical framework. Right now, there are different families of approaches, like input reading methods that compare activations from good versus bad examples, and output optimization methods that define a score and optimize toward it. But these approaches are based on fundamentally different principles.",
+      "start_ms": 83873.8,
+      "end_ms": 110223.0,
+      "duration_ms": 26349.2,
+      "source_paragraphs": [
+        4
+      ]
+    },
+    {
+      "index": 7,
+      "voice": "Microsoft Zira",
+      "text": "So researchers have been developing these techniques in isolation, and there's no overarching theory that connects them?",
+      "start_ms": 110823.0,
+      "end_ms": 117861.1,
+      "duration_ms": 7038.1,
+      "source_paragraphs": [
+        4
+      ]
+    },
+    {
+      "index": 8,
+      "voice": "Microsoft David",
+      "text": "Right. Someone recently tried to unify them by framing everything as linear maps, but that formulation didn't really tell you how to actually find good steering directions. It was more descriptive than prescriptive.",
+      "start_ms": 118461.1,
+      "end_ms": 132983.0,
+      "duration_ms": 14522.0,
+      "source_paragraphs": [
+        4
+      ]
+    },
+    {
+      "index": 9,
+      "voice": "Microsoft Zira",
+      "text": "Got it. So the first problem is theoretical fragmentation. What's the second limitation?",
+      "start_ms": 133583.0,
+      "end_ms": 140971.3,
+      "duration_ms": 7388.3,
+      "source_paragraphs": [
+        4
+      ]
+    },
+    {
+      "index": 10,
+      "voice": "Microsoft David",
+      "text": "We'll get into that next. It has to do with how current methods apply their steering in a single step, which turns out to be a pretty big constraint. But first, let me say that the key breakthrough in this paper is connecting all of this to ordinary differential equations, which is a concept from calculus that describes how things change over time.",
+      "start_ms": 141571.3,
+      "end_ms": 163517.1,
+      "duration_ms": 21945.8,
+      "source_paragraphs": [
+        2,
+        4
+      ]
+    },
+    {
+      "index": 11,
+      "voice": "Microsoft Zira",
+      "text": "Now I'm really curious about that connection. ODEs and language models, those seem like very different worlds.",
+      "start_ms": 164117.1,
+      "end_ms": 171940.2,
+      "duration_ms": 7823.1,
+      "source_paragraphs": [
+        2
+      ]
+    },
+    {
+      "index": 12,
+      "voice": "Microsoft David",
+      "text": "They really do, but the connection is surprisingly natural. And on top of the theoretical framework, the authors also introduce a concrete method called ODESteer that achieves some impressive results. We're talking about a five point seven percent improvement on TruthfulQA, two point five percent on UltraFeedback, and two point four percent on RealToxicityPrompts compared to state of the art baselines.",
+      "start_ms": 172540.2,
+      "end_ms": 198904.9,
+      "duration_ms": 26364.8,
+      "source_paragraphs": [
+        2
+      ]
+    },
+    {
+      "index": 13,
+      "voice": "Microsoft Zira",
+      "text": "Those are solid improvements for what sounds like a principled approach. I'm excited to dig into how it all works.",
+      "start_ms": 199504.9,
+      "end_ms": 206927.7,
+      "duration_ms": 7422.8,
+      "source_paragraphs": [
+        2
+      ]
+    },
+    {
+      "index": 14,
+      "voice": "Microsoft David",
+      "text": "Same here. So next up, let's talk about that second limitation, the one-step steering problem, and how the ODE perspective completely changes the game.",
+      "start_ms": 207527.7,
+      "end_ms": 218585.5,
+      "duration_ms": 11057.8,
+      "source_paragraphs": [
+        2
+      ]
+    }
+  ]
+}

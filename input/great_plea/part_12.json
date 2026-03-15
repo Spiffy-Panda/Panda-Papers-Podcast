@@ -1,0 +1,103 @@
+{
+  "pause_between_ms": 600,
+  "rate": 0,
+  "part_number": 12,
+  "paper_source": "input/great_plea_paper.json",
+  "lines": [
+    {
+      "voice": "Microsoft David",
+      "text": "Welcome back. Last time we talked about Accountability and why someone needs to own every clinical decision, even when AI is involved. Now we're moving to a closely related principle: the T in GREAT PLEA, Traceability.",
+      "source_paragraphs": [56]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Traceability. So if accountability is about who is responsible, traceability is about being able to follow the breadcrumb trail?",
+      "source_paragraphs": [56]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "That's a great way to put it. The authors define traceability as tracking and documenting data, processes, and artifacts related to a system or model for transparent development. It's about making the inner workings of these systems visible and understandable.",
+      "source_paragraphs": [56]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "And why is that so important specifically for healthcare AI?",
+      "source_paragraphs": [57]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Because traceability allows the people using these systems to understand their capabilities, the developmental process behind them, the methodologies used, the data sources they were trained on, and the documentation that comes with them. When you understand all of that, you can reproduce results and deploy the system seamlessly across different healthcare settings.",
+      "source_paragraphs": [57]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So it's not just about transparency for its own sake. It actually enables practical deployment because different hospitals can verify and trust the system.",
+      "source_paragraphs": [57]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Exactly. And the authors highlight why this is especially critical for generative AI in particular. These systems are often described as black boxes. You put a question in and get an answer out, but the reasoning process in between is opaque.",
+      "source_paragraphs": [58]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "And in healthcare, a black box is a real problem. A doctor can't just tell a patient: I don't know why the AI recommended this treatment, but let's try it.",
+      "source_paragraphs": [58]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Right. The authors connect this directly to the trust issue we discussed earlier. Understanding capabilities and limitations helps optimize trust. When operators know what the AI systems they work with can and cannot do, and they know the appropriate settings for use, they can calibrate their trust properly.",
+      "source_paragraphs": [58]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "That goes back to the overuse and underuse problem from earlier in the paper. Too much trust or too little trust, both are dangerous.",
+      "source_paragraphs": [58]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Exactly. So what does the authors' implementation look like? They lay out four requirements. First, transparent generation processes. You need to be able to see how the AI arrived at its output.",
+      "source_paragraphs": [59]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So not just getting an answer, but understanding the path to that answer.",
+      "source_paragraphs": [59]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Right. Second, references and facts should be provided alongside answers. If the AI recommends a treatment, it should cite what evidence supports that recommendation.",
+      "source_paragraphs": [59]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "That's huge. It's like requiring the AI to show its work, the way a medical student would need to justify their clinical reasoning.",
+      "source_paragraphs": [59]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Great analogy. Third, transparent data sources and design procedures. The people deploying these systems need to know what data was used in training and how the system was built. And fourth, the entire process of implementation, deployment, and operation must be auditable.",
+      "source_paragraphs": [59]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Auditable is key. It means that after the fact, someone can go back and verify that everything was done properly. That's essential for building institutional trust, not just individual trust.",
+      "source_paragraphs": [59]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Well said. Traceability really serves as the foundation that makes accountability possible. You can't hold someone accountable if you can't trace what happened.",
+      "source_paragraphs": [56, 57, 58, 59]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "These principles keep building on each other beautifully. So what's the next letter in the framework?",
+      "source_paragraphs": [59]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Now we move into PLEA. The P stands for Privacy. The authors will discuss how generative AI creates unique privacy challenges in healthcare, from HIPAA compliance to emerging threats like prompt injection and jailbreaking. It's a critical topic given how sensitive patient data is. See you next time!",
+      "source_paragraphs": [59]
+    }
+  ]
+}

@@ -1,0 +1,133 @@
+{
+  "pause_between_ms": 600,
+  "rate": 0,
+  "part_number": 1,
+  "paper_source": "input/great_plea_paper.json",
+  "lines": [
+    {
+      "voice": "Microsoft David",
+      "text": "Hey everyone, welcome to the show! Today we're diving into a really fascinating paper that bridges two worlds you might not expect to have much in common: the military and healthcare.",
+      "source_paragraphs": [1]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Oh, that's an interesting combo. What's the paper about exactly?",
+      "source_paragraphs": [1]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "So the paper is called Adopting and Expanding Ethical Principles for Generative Artificial Intelligence from Military to Healthcare. It was published in 2023 in npj Digital Medicine by David Oniani and several co-authors.",
+      "source_paragraphs": [1]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Okay, so they're looking at AI ethics? And somehow the military is involved?",
+      "source_paragraphs": [1]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Exactly. Back in 2020, the U.S. Department of Defense put out a formal set of ethical principles for using AI on the battlefield. And the authors of this paper noticed something kind of surprising. Despite the obvious differences between the military and medicine, there are actually deep structural similarities.",
+      "source_paragraphs": [1]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Huh, like what? Those seem like totally different fields.",
+      "source_paragraphs": [1]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Well, think about it. Both domains deal with life-and-death situations. Both require making critical decisions under pressure and time constraints. A surgeon deciding how to handle a complication mid-operation isn't that different, structurally, from a military officer making a split-second tactical call.",
+      "source_paragraphs": [1]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "That's a great point. I never thought about it that way. So there's this common thread of high-stakes, fast decision-making.",
+      "source_paragraphs": [1]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Exactly. And that shared pressure is part of why the authors argue that ethical lessons from military AI can be adapted for healthcare.",
+      "source_paragraphs": [1]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Okay, so where does generative AI specifically come in? Like, why not just AI in general?",
+      "source_paragraphs": [2]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Great question. Recently, generative AI, things like large language models and image generators, has gotten enormous attention in the medical research community. People are excited about its potential, but there are also serious debates about whether it's ready for healthcare.",
+      "source_paragraphs": [2]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "What kinds of concerns are people raising?",
+      "source_paragraphs": [2]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Transparency is a big one. These models are often black boxes, so it's hard to know why they produce certain outputs. And then there's the bias problem. If the training data isn't representative, the models could actually make existing health disparities worse. Imagine a system that gives different quality recommendations depending on a patient's demographic background.",
+      "source_paragraphs": [2]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "That's really concerning. So not only could generative AI fail to help, it could actively make things less fair?",
+      "source_paragraphs": [2]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "That's exactly the worry. And here's the thing, the paper points out that despite all this excitement and concern, the ethical principles for generative AI in healthcare have actually been understudied.",
+      "source_paragraphs": [3]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Wait, really? With all the hype around this technology, people haven't worked out the ethics yet?",
+      "source_paragraphs": [3]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Not enough, according to the authors. Decision-makers are often jumping to implement generative AI in clinical practice without taking the time to seriously consider the ethical implications first. It's a bit of a cart-before-the-horse situation.",
+      "source_paragraphs": [3]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So what do the authors propose to fix that gap?",
+      "source_paragraphs": [4]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "This is the heart of the paper. They propose what they call the GREAT PLEA ethical principles. It's an acronym that stands for nine principles: Governability, Reliability, Equity, Accountability, Traceability, Privacy, Lawfulness, Empathy, and Autonomy.",
+      "source_paragraphs": [4]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "GREAT PLEA. That's a clever acronym. Nine principles is a lot though. Are they all equally important?",
+      "source_paragraphs": [4]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "They're all interconnected, but some are adapted from existing military AI ethics frameworks, while others, like empathy and autonomy, are specifically expanded for healthcare. The key contribution is that they've built a practical framework by learning from what's already worked in the military context and tailoring it for medicine.",
+      "source_paragraphs": [4]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So the military has been dealing with AI ethics longer, and healthcare can basically learn from their experience?",
+      "source_paragraphs": [4]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "That's exactly the idea. The military has had decades of experience integrating AI, so they've had to grapple with these ethical questions already. Healthcare is newer to this, especially with generative AI, so there's a real opportunity to learn from that history.",
+      "source_paragraphs": [4]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "I'm really curious to dig into each of those nine principles. This sounds like a comprehensive framework.",
+      "source_paragraphs": [4]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Absolutely. In the next part, we'll get into the paper's introduction, where the authors lay out the landscape of AI in both military and healthcare and make the case for why this cross-sector approach is so timely. Stay with us!",
+      "source_paragraphs": [4]
+    }
+  ]
+}

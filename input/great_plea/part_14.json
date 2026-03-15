@@ -1,0 +1,83 @@
+{
+  "pause_between_ms": 600,
+  "rate": 0,
+  "part_number": 14,
+  "paper_source": "input/great_plea_paper.json",
+  "lines": [
+    {
+      "voice": "Microsoft David",
+      "text": "Welcome back. Last time we dug into Privacy and the unique threats that generative AI poses to patient data. Now we're on to the L in PLEA: Lawfulness.",
+      "source_paragraphs": [65]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Lawfulness. So we're shifting from ethical principles to the legal framework. How do the authors define this one?",
+      "source_paragraphs": [65]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "They define lawfulness as adherence to national and international law, including international humanitarian law and human rights law, as applicable. It's a broad definition because the legal landscape is broad.",
+      "source_paragraphs": [65]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "And I'm guessing the legal landscape for AI in healthcare is complicated, especially in a country like the United States where laws can vary by state.",
+      "source_paragraphs": [66]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "That's exactly one of the key points the authors make. Unlike military applications, which primarily need to address laws of armed conflict at the federal and international level, healthcare has to contend with a patchwork of laws. Different states in the U.S. may establish different laws for AI systems, and any deployment has to comply with whatever jurisdiction it's operating in.",
+      "source_paragraphs": [66]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So an AI system approved for use in one state might not be legally compliant in another. That's a real barrier to widespread deployment.",
+      "source_paragraphs": [66]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "It is. And the authors identify several specific legal challenge areas that generative AI faces. These include questions around safety and effectiveness, liability, data privacy, cybersecurity, and intellectual property law.",
+      "source_paragraphs": [67]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "That's quite a list. Can we unpack a couple of those? Liability seems particularly thorny.",
+      "source_paragraphs": [67]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "It really is. Think about it: if a generative AI system recommends a treatment and the patient has a bad outcome, who is liable? Is it the doctor who followed the recommendation? The hospital that deployed the system? The company that built the AI? The team that trained it? Current law doesn't have clean answers for these questions.",
+      "source_paragraphs": [67, 68]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "And intellectual property is interesting too. If a generative AI produces a novel treatment protocol, who owns that? The AI company? The healthcare provider who prompted it?",
+      "source_paragraphs": [67]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Exactly. These are genuinely open legal questions. So the authors' implementation approach calls for establishing a legal foundation that addresses several things: the liability of actions taken and recommended by AI systems, and how these systems interact with existing cybersecurity and data privacy requirements that healthcare providers already face.",
+      "source_paragraphs": [68]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So they're not trying to write new laws themselves. They're saying the legal infrastructure needs to be built before we can responsibly deploy these systems at scale.",
+      "source_paragraphs": [68]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Right. And it ties back to Privacy and Accountability. If you don't have legal clarity on who is responsible and how data must be handled, those ethical principles don't have teeth. Lawfulness is what gives the rest of the framework enforceability.",
+      "source_paragraphs": [65, 66, 67, 68]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "That makes sense. Ethics without legal backing can become just suggestions. So we've covered GREAT PL so far. What's next?",
+      "source_paragraphs": [68]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "The E in PLEA: Empathy. This is one of the principles the authors expanded specifically for healthcare. They'll explore what empathy means when AI enters the provider-patient relationship, why artificial empathy from chatbots raises concerns, and what the benefits of empathetic care really look like. It's a fascinating topic. See you next time!",
+      "source_paragraphs": [68]
+    }
+  ]
+}

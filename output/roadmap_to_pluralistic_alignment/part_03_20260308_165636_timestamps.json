@@ -1,0 +1,219 @@
+{
+  "source": "C:\\Users\\Brian\\Documents\\UW Winter 26\\ProductivityAndReadingHelper\\input\\roadmap_to_pluralistic_alignment\\part_03.json",
+  "audio_file": "part_03_20260308_165636.wav",
+  "tag": "part_03",
+  "generated": "2026-03-08T16:56:38.311945",
+  "total_duration_ms": 301444.5,
+  "total_duration_formatted": "5:01.444",
+  "lines": [
+    {
+      "index": 0,
+      "voice": "Microsoft David",
+      "text": "Welcome back. In our last segment we covered the arguments for pluralism and introduced the three formal definitions. Now let's dive deep into the first type: Overton pluralistic models.",
+      "start_ms": 0.0,
+      "end_ms": 13092.1,
+      "duration_ms": 13092.1,
+      "source_paragraphs": [
+        11
+      ]
+    },
+    {
+      "index": 1,
+      "voice": "Microsoft Zira",
+      "text": "Right. So the name Overton comes from the political science concept of the Overton window, the range of ideas considered acceptable by the public at any given time?",
+      "start_ms": 13692.1,
+      "end_ms": 24184.3,
+      "duration_ms": 10492.2,
+      "source_paragraphs": [
+        11
+      ]
+    },
+    {
+      "index": 2,
+      "voice": "Microsoft David",
+      "text": "Exactly. The authors define a few key concepts here. A correct answer is one that can be conclusively verified or that the overwhelming majority would agree with. A reasonable answer is one with suggestive but inconclusive evidence, or one that significant portions of the population would agree with, subject to safety constraints. The Overton window is the set of all reasonable answers for a given query.",
+      "start_ms": 24784.3,
+      "end_ms": 51358.4,
+      "duration_ms": 26574.1,
+      "source_paragraphs": [
+        11
+      ]
+    },
+    {
+      "index": 3,
+      "voice": "Microsoft Zira",
+      "text": "So an Overton-pluralistic model is one that, for any given question, outputs all the potentially reasonable answers in that window? Not just one, but the full spectrum?",
+      "start_ms": 51958.4,
+      "end_ms": 63925.7,
+      "duration_ms": 11967.3,
+      "source_paragraphs": [
+        11
+      ]
+    },
+    {
+      "index": 4,
+      "voice": "Microsoft David",
+      "text": "That's the idea. And they outline two ways to actually operationalize this. One approach is to survey a population, identify clusters of reasonable answers using semantic similarity, and then narrow down the window through additional polling or by setting minimum thresholds of support. You can then check whether a model's response covers the window using metrics like precision and recall.",
+      "start_ms": 64525.7,
+      "end_ms": 89475.9,
+      "duration_ms": 24950.2,
+      "source_paragraphs": [
+        12
+      ]
+    },
+    {
+      "index": 5,
+      "voice": "Microsoft Zira",
+      "text": "And the second approach?",
+      "start_ms": 90075.9,
+      "end_ms": 92065.1,
+      "duration_ms": 1989.3,
+      "source_paragraphs": [
+        12
+      ]
+    },
+    {
+      "index": 6,
+      "voice": "Microsoft David",
+      "text": "The alternative is to enumerate unreasonable answers and then use an entailment model to detect which answers, reasonable or not, the model's response actually implies. Either way, you end up with quantifiable metrics to measure how well the model covers the Overton window.",
+      "start_ms": 92665.1,
+      "end_ms": 109906.3,
+      "duration_ms": 17241.2,
+      "source_paragraphs": [
+        12
+      ]
+    },
+    {
+      "index": 7,
+      "voice": "Microsoft Zira",
+      "text": "Interesting. So where would you actually want to use this kind of pluralism?",
+      "start_ms": 110506.3,
+      "end_ms": 116234.8,
+      "duration_ms": 5728.5,
+      "source_paragraphs": [
+        13
+      ]
+    },
+    {
+      "index": 8,
+      "voice": "Microsoft David",
+      "text": "The primary application is advice-giving. Current language models often give advice in a confident but inconsistent or opinionated way, and that can really influence people's downstream decisions. An Overton-pluralistic model would present multiple perspectives and encourage the user to deliberate rather than just accept a single confident answer. It could also help with scalable oversight, helping annotators evaluate model outputs, and in domains like mathematical proofs where multiple approaches are valuable.",
+      "start_ms": 116834.8,
+      "end_ms": 148878.0,
+      "duration_ms": 32043.2,
+      "source_paragraphs": [
+        13
+      ]
+    },
+    {
+      "index": 9,
+      "voice": "Microsoft Zira",
+      "text": "That resonates with me. I've definitely seen models give really confident advice that turns out to be just one perspective on a genuinely debatable topic. But defining this Overton window must be really hard in practice, right?",
+      "start_ms": 149478.0,
+      "end_ms": 164199.4,
+      "duration_ms": 14721.4,
+      "source_paragraphs": [
+        14
+      ]
+    },
+    {
+      "index": 10,
+      "voice": "Microsoft David",
+      "text": "It is. If you use expert annotators, it's hard to scale. If the window isn't properly defined, you risk contributing to false balance, where the model gives equal weight to well-supported and poorly-supported positions. One potential remedy is to present the level of support or certainty for each answer, though current models struggle with calibration like that.",
+      "start_ms": 164799.4,
+      "end_ms": 188954.4,
+      "duration_ms": 24155.0,
+      "source_paragraphs": [
+        14
+      ]
+    },
+    {
+      "index": 11,
+      "voice": "Microsoft Zira",
+      "text": "So it's not about saying every opinion is equally valid. It's about presenting the range of reasonable positions while being transparent about how much evidence or support each one has.",
+      "start_ms": 189554.4,
+      "end_ms": 200751.4,
+      "duration_ms": 11197.0,
+      "source_paragraphs": [
+        14
+      ]
+    },
+    {
+      "index": 12,
+      "voice": "Microsoft David",
+      "text": "Exactly. The authors also note that this framework is best suited for long-form responses that contain multiple answers. For short single-answer scenarios, you'd want distributional pluralism instead, where the model's probability distribution across answers matches the population.",
+      "start_ms": 201351.4,
+      "end_ms": 220462.1,
+      "duration_ms": 19110.7,
+      "source_paragraphs": [
+        14
+      ]
+    },
+    {
+      "index": 13,
+      "voice": "Microsoft Zira",
+      "text": "Got it. So how does alignment relate to Overton pluralism? Does RLHF help or hurt?",
+      "start_ms": 221062.1,
+      "end_ms": 228520.2,
+      "duration_ms": 7458.1,
+      "source_paragraphs": [
+        15
+      ]
+    },
+    {
+      "index": 14,
+      "voice": "Microsoft David",
+      "text": "They suggest RLHF might implicitly steer models toward some degree of Overton pluralism if users tend to prefer balanced responses. But it hasn't been systematically studied. For explicitly encouraging it, they suggest approaches like taking multiple samples from a model, possibly prompting for diverse outputs, to simulate the Overton window. Or you could manually create batches of reasonable responses and train the model to synthesize them.",
+      "start_ms": 229120.2,
+      "end_ms": 258334.1,
+      "duration_ms": 29213.8,
+      "source_paragraphs": [
+        15
+      ]
+    },
+    {
+      "index": 15,
+      "voice": "Microsoft Zira",
+      "text": "So they're calling for more research into how Overton-pluralistic current models already are and how to amplify that quality.",
+      "start_ms": 258934.1,
+      "end_ms": 266121.8,
+      "duration_ms": 7187.7,
+      "source_paragraphs": [
+        15
+      ]
+    },
+    {
+      "index": 16,
+      "voice": "Microsoft David",
+      "text": "Yes, and they point to existing datasets identifying human values as useful tools for evaluating this. It's a space with a lot of open questions.",
+      "start_ms": 266721.8,
+      "end_ms": 277234.6,
+      "duration_ms": 10512.8,
+      "source_paragraphs": [
+        15
+      ]
+    },
+    {
+      "index": 17,
+      "voice": "Microsoft Zira",
+      "text": "Fascinating. So coming up next, we'll tackle the second type of pluralism, steerable pluralism. That sounds like it gets into personalization and customization territory.",
+      "start_ms": 277834.6,
+      "end_ms": 290761.7,
+      "duration_ms": 12927.1,
+      "source_paragraphs": [
+        15
+      ]
+    },
+    {
+      "index": 18,
+      "voice": "Microsoft David",
+      "text": "It does, and it raises some really important questions about which perspectives a model should and shouldn't be steered toward. We'll get into all of that next.",
+      "start_ms": 291361.7,
+      "end_ms": 301444.5,
+      "duration_ms": 10082.8,
+      "source_paragraphs": [
+        15
+      ]
+    }
+  ]
+}

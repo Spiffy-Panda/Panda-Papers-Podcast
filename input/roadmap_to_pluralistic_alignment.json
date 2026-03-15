@@ -1,0 +1,308 @@
+{
+  "meta": {
+    "title": "Position: A Roadmap to Pluralistic Alignment",
+    "authors": [
+      "Taylor Sorensen",
+      "Jared Moore",
+      "Jillian Fisher",
+      "Mitchell Gordon",
+      "Niloofar Mireshghallah",
+      "Christopher Michael Rytting",
+      "Andre Ye",
+      "Liwei Jiang",
+      "Ximing Lu",
+      "Nouha Dziri",
+      "Tim Althoff",
+      "Yejin Choi"
+    ],
+    "journal": "Proceedings of the International Conference on Machine Learning (ICML)",
+    "year": 2024,
+    "doi": "10.48550/arXiv.2402.05070",
+    "source_url": "https://arxiv.org/abs/2402.05070v3",
+    "license": "CC BY 4.0"
+  },
+  "sections": [
+    {
+      "id": "abstract",
+      "title": "Abstract",
+      "paragraphs": [
+        {
+          "id": 1,
+          "text": "The authors argue that as AI systems grow in power and prevalence, they must be designed to serve people with diverse values and perspectives. However, aligning models to pluralistic human values remains an open research question. The paper proposes a roadmap to pluralistic alignment using large language models (LLMs) as a test bed. The authors identify and formalize three ways to define and operationalize pluralism in AI systems: (1) Overton pluralistic models that present a spectrum of reasonable responses, (2) steerably pluralistic models that can be steered to reflect certain perspectives, and (3) distributionally pluralistic models that are well-calibrated to a given population in distribution. Three classes of pluralistic benchmarks are also formalized: (1) multi-objective benchmarks, (2) trade-off steerable benchmarks that incentivize models to steer to arbitrary trade-offs, and (3) jury-pluralistic benchmarks that explicitly model diverse human ratings. The authors use this framework to argue that current alignment techniques may be fundamentally limited for pluralistic AI, highlighting empirical evidence that standard alignment procedures might reduce distributional pluralism in models."
+        }
+      ]
+    },
+    {
+      "id": "introduction",
+      "title": "Introduction",
+      "paragraphs": [
+        {
+          "id": 2,
+          "text": "The authors observe that AI alignment aims to ensure systems work with human intentions and values, but even within a single task or prompt, individual people vary widely in their goals, intentions, and values. As a broader set of people use and rely on AI systems, there is a need for systems that are pluralistic -- capable of representing a diverse set of human values and perspectives. The paper identifies two key open questions: how, concretely, can a system be pluralistic, and how might benchmarks be designed to measure pluralism?"
+        },
+        {
+          "id": 3,
+          "text": "The paper advocates for explicit pluralistic considerations in aligning AI systems. Using LLMs as a testbed, the authors formalize three distinct ways of operationalizing pluralism for AI models: (1) providing comprehensive, high-coverage responses (Overton pluralism), (2) an ability to be faithfully steered to represent particular attributes (steerable pluralism), and (3) distributional representation of a population (distributional pluralism). Three types of pluralistic benchmarks are also defined: multi-objective benchmarks, trade-off steerable benchmarks measuring models' steerability across objectives, and jury-pluralistic benchmarks that explicitly model individuals."
+        },
+        {
+          "id": 4,
+          "text": "The authors discuss the relationship between current alignment approaches and pluralism, providing initial findings that current alignment techniques reduce distributional pluralism. They advocate and lay out a plan for future work toward pluralistic evaluations and alignment."
+        }
+      ]
+    },
+    {
+      "id": "arguments-for-pluralism",
+      "title": "Arguments for Pluralism in AI Systems",
+      "paragraphs": [
+        {
+          "id": 5,
+          "text": "The authors present the argument that customization necessitates pluralism. Any guardrails placed on AI systems will require customization within those guardrails to serve diverse use cases and values. Pluralism can illuminate the set of values or attributes that users may customize to, and provide an understanding of how well a system can be steered."
+        },
+        {
+          "id": 6,
+          "text": "The authors argue that pluralistic systems have technical benefits. Current preference-based methods like RLHF implicitly assume models should fit to the average human preference, treating human variation as noise instead of signal. Pluralism recognizes this variation as signal. Modeling pluralism may also increase interpretability by enabling a clearer relationship between decisions and their source."
+        },
+        {
+          "id": 7,
+          "text": "Pluralistic evaluations enable generalist systems. The field has trended toward generalist foundation models used by diverse users for diverse tasks, yet current alignment optimizes these for a single objective -- averaged human preferences. To understand system strengths and weaknesses, the authors argue we must measure performance across a variety of objectives and users."
+        },
+        {
+          "id": 8,
+          "text": "The authors contend that pluralism is a value in itself. Many modern societies view accepting competing values and perspectives as a core value. Theorists have extolled the benefits of political pluralism, moral and value pluralism, and pluralist theories of truth. The authors' technical scaffolding for measurements and implementations can apply to various notions of pluralism, standing in contrast to current alignment procedures such as RLHF, which have been characterized as implementing preference-based utilitarianism."
+        },
+        {
+          "id": 9,
+          "text": "The authors argue that AI systems should reflect human diversity. They contend that AI systems should reflect and support diversity among humans and their values, as it is both a feature and a desired quality of human societies. Exposure to diverse ideas improves deliberation, and algorithmic monocultures lead to increased unfairness when applied by many decision makers."
+        }
+      ]
+    },
+    {
+      "id": "pluralism-for-models",
+      "title": "Pluralism for AI Models/Systems",
+      "paragraphs": [
+        {
+          "id": 10,
+          "text": "The authors formalize three definitions for how a single model or system can be pluralistic: Overton pluralism, wherein a model outputs the whole spectrum of reasonable responses; steerable pluralism, wherein a model is faithfully steered to reflect certain properties or perspectives; and distributional pluralism, wherein a model's distribution over answers matches that of a given target population. Throughout, the authors consider a model M, a query x, and a response y, focusing on natural language queries and responses with M being an LLM, while noting that the definitions can generalize to other inputs, outputs, and models."
+        }
+      ]
+    },
+    {
+      "id": "overton-pluralistic-models",
+      "title": "Overton Pluralistic Models",
+      "paragraphs": [
+        {
+          "id": 11,
+          "text": "The authors define key concepts for Overton pluralism. A correct answer (in set C) is one that can be conclusively verified or with which the overwhelming majority of people would agree. A reasonable answer (in set R) is one for which there is suggestive but inconclusive evidence, or one with which significant portions of the population would agree, subject to additional top-down restrictions such as safety. The Overton window W(x) is the set of all reasonable answers. A response set is Overton-pluralistic if it contains all potentially reasonable answers in the Overton window. A model M is Overton-pluralistic if its output for a given input x equals W(x). The terminology generalizes the political science concept of an Overton window -- the spectrum of ideas considered acceptable by the general public at a given time."
+        },
+        {
+          "id": 12,
+          "text": "The authors outline two ways to operationalize Overton pluralism. One approach surveys a population for responses, identifies clusters of candidate reasonable answers using semantic similarity, then narrows the window through additional polling for reasonableness or defining a minimum threshold of support. Answers extracted from a model response can be compared to the window. Alternatively, one could enumerate unreasonable answers and use an entailment model to detect which reasonable or unreasonable answers the response entails. With both methods, metrics like precision, recall, and accuracy can be calculated."
+        },
+        {
+          "id": 13,
+          "text": "The primary applications for Overton pluralism fall under advice-giving. Current LLMs often give advice confidently but inconsistently or in an opinionated manner, affecting users' downstream judgments. Overton-pluralism requires consideration of multiple heterogeneous judgments, encouraging deliberation over spontaneous judgment. It could also aid in scalable oversight to help users annotate model outputs, and is valuable in settings where multiple approaches are desirable, such as mathematical proof writing."
+        },
+        {
+          "id": 14,
+          "text": "Defining and operationalizing the Overton window presents challenges. If determined by expert annotators, it may be difficult to scale. If not properly defined, models may contribute to bothsidesism or false balance. One remedy may be presenting the support or certainty for each reasonable answer, although current LLMs struggle with this. While pluralism may never be completely neutral, it can be considered a fairer response to queries. This framework requires long-form responses with multiple answers; distributional pluralism may be needed for distributions over short answers."
+        },
+        {
+          "id": 15,
+          "text": "Regarding alignment procedures, RLHF may implicitly steer models to Overton pluralism to the extent that users prefer it, but further study is needed. To explicitly encourage Overton pluralism, one approach is taking multiple samples from a model, potentially prompting for diverse outputs, to simulate an Overton window. Alternatively, one could manually create the batch of reasonable responses and train a model to output a synthesis. Datasets identifying human values can be used to evaluate Overton-pluralism. The authors recommend further study into models' current degree of Overton-pluralism and how it can be amplified."
+        }
+      ]
+    },
+    {
+      "id": "steerable-pluralistic-models",
+      "title": "Steerable Pluralistic Models",
+      "paragraphs": [
+        {
+          "id": 16,
+          "text": "The authors define steerable pluralism. Steering attributes A are attributes, properties, or perspectives which one wishes a model to faithfully reflect, such as groups of people from a shared culture, philosophical or political schools of thought, or particular values. A response y faithfully reflects attribute a if it is consistent with or follows from a. A model M is steerably-pluralistic with respect to A if, given an input x and attribute a, the model conditioned on a produces a response that faithfully reflects a."
+        },
+        {
+          "id": 17,
+          "text": "The authors argue that models heavily aligned toward a single attribute become unable to be steered to other attributes, rendering them unusable for populations that do not share that value. Many LLMs exhibit a Silicon Valley and WEIRD (Western, Educated, Industrialized, Rich, Democratic) bias, often skewing male, White, American, liberal, and wealthy in perspective. To implement steerable pluralism, one needs a mechanism for conditioning the model on attributes at inference time. Faithfulness can be measured using human annotations or attribute-specific reward models. Different attributes may require different metrics depending on ambiguity level."
+        },
+        {
+          "id": 18,
+          "text": "The primary application of steerable pluralism is customization. Users frequently want to personalize models toward particular properties and perspectives for tasks such as writing assistance and ideation. Steering toward therapeutic values can aid mental health applications. Steerably pluralistic models are also valuable in creative production, psychological inquiry, simulating social systems via agent-based models, deliberative discourse, hate speech detection, and negative thought reframing. More broadly, steerability may enable varying cognitive architectures for more structured and generally intelligent systems."
+        },
+        {
+          "id": 19,
+          "text": "Steerable pluralism requires deciding which attributes are acceptable targets for steering; some attributes such as hate speech should be disallowed. The challenges in making this determination mirror those in Overton pluralism regarding which answers count as reasonable. If attributes are defined too broadly, there is a risk of stereotyping or flattening the nuances of complex perspectives. In some cases, an intersectional evaluation where attributes are considered in conjunction rather than independently may be necessary."
+        },
+        {
+          "id": 20,
+          "text": "Several techniques can induce particular values at inference time: conditioning on demographic groups and studying which conditions yield the best agreement, learning user embeddings to induce values from LLMs, adding modules to base LLMs that predict group responses in a few-shot manner, predicting annotator ratings for specific groups, and rewriting responses for specific audiences. The authors state that steerability research will grow increasingly important as users demand more customizability, and they advocate for systems aligned to many attributes within an acceptable range."
+        }
+      ]
+    },
+    {
+      "id": "distributionally-pluralistic-models",
+      "title": "Distributionally Pluralistic Models",
+      "paragraphs": [
+        {
+          "id": 21,
+          "text": "The authors define distributional pluralism by examining the distribution over answers compared to a given population. A population or group G is a set of people the model is intended to represent. A model M is distributionally-pluralistic with respect to G if, for a given prompt x, M is as likely to provide response y as the reference population G would be. In other words, M is well-calibrated with respect to the distribution over answers from G."
+        },
+        {
+          "id": 22,
+          "text": "To evaluate distributional pluralism, one takes a set of queries X to which population G gives a distribution Y, such as from a census survey or public opinion poll. The model's estimated distribution can then be compared to the population distribution using divergence metrics such as Jensen-Shannon divergence, KL-divergence, or Wasserstein distance, or hard measures such as accuracy or tetrachoric correlation."
+        },
+        {
+          "id": 23,
+          "text": "Distributional pluralism is crucial for any application where a model simulates, interfaces with, or models the views of a population. Specific use cases include simulating populations via agent-based modeling, piloting subject or user responses to surveys, survey design, and studying the internet as a cultural artifact."
+        },
+        {
+          "id": 24,
+          "text": "Distributional pluralism has several limitations. Its proportional nature means more frequently held opinions are output at higher frequency, even if harmful, though this could be mitigated by defining an Overton window of reasonableness. It requires a predetermined target distribution, and for a general-purpose LLM, it is unclear who the target population should be. For many open-ended queries, response frequency data from a population may simply not exist."
+        },
+        {
+          "id": 25,
+          "text": "No alignment procedures explicitly target distributional calibration, but two promising directions exist. The first is to pretrain a model on more data from the target population, since the cross-entropy training objective encourages learning the speech distributions of the training population. The second is training on survey data from a population. The authors advocate for comparing distributions rather than average responses, and call for more distributionally pluralistic evaluations with respect to clearly specified groups. They note that stochasticity inherent in distributional pluralism is not desirable in all settings, such as when model behavior needs to be tightly controlled."
+        }
+      ]
+    },
+    {
+      "id": "pluralism-for-benchmarks",
+      "title": "Pluralism for Benchmarks",
+      "paragraphs": [
+        {
+          "id": 26,
+          "text": "The authors transition from defining how models can be pluralistic to exploring how benchmarks can be pluralistic. Most current benchmarks are monistic, focused on a single objective. Pluralistic benchmarks have more than one objective to maximize, with each objective measured separately. Three kinds are identified: multi-objective, trade-off steerable, and jury-pluralistic."
+        }
+      ]
+    },
+    {
+      "id": "multi-objective-benchmarks",
+      "title": "Multi-Objective Benchmarks",
+      "paragraphs": [
+        {
+          "id": 27,
+          "text": "The authors define a set of objectives O = {o_1, ..., o_n}, each mapping from a model M to a scalar. A model M_1 is a Pareto improvement over M_2 if M_1 is at least as good on all objectives and strictly better on at least one. A commensurating function f combines multiple objectives into a single scalar meta-objective. A multi-objective benchmark reports the entire spectrum of model performances on all objectives and can be flexibly adapted to multiple commensurating functions. The top of the leaderboard is the set of Pareto-optimal solutions."
+        },
+        {
+          "id": 28,
+          "text": "The key feature of multi-objective benchmarks is that if objectives are combined, the combination is done explicitly and all objectives are reported for all solutions, making it possible to propose alternative trade-offs. The authors note that implicit trade-offs are pervasive -- for example, the tension between helpfulness and harmlessness in LLMs, which often get merged through data mixtures or vague human preferences. Objectives can be operationalized via test set evaluation, reward model outputs, preference or ELO scores, model properties, or adherence to individual rules or principles."
+        },
+        {
+          "id": 29,
+          "text": "If the set of metrics is very large, comparing models across many dimensions becomes costly, and selecting the correct number and level of abstraction for objectives can be difficult. Most alignment techniques optimize a single objective instead of a group, requiring a commensurating function. Multi-objective reinforcement learning techniques can help avoid this. The authors encourage continued development of multi-objective benchmarks, noting that single-value benchmarks can lead to reward-hacking, while multiple objectives allow for more diverse model strengths and mitigate over-optimization."
+        }
+      ]
+    },
+    {
+      "id": "trade-off-steerable-benchmarks",
+      "title": "Trade-Off Steerable Benchmarks",
+      "paragraphs": [
+        {
+          "id": 30,
+          "text": "While multi-objective benchmarks assume a static model, trade-off steerable benchmarks go further by encouraging models to be steerable -- able to trade off objectives in different ways at inference time. The authors define steering commensurating functions F as a set of commensurating functions to steer a model towards. A model M is steerable to F if, for each function f in F, the model steered to f maximizes f compared to any other steering target. A trade-off steerable benchmark measures both a model's ability to maximize objectives and its steerability to various commensurating functions."
+        },
+        {
+          "id": 31,
+          "text": "Trade-off steerable benchmarks measure whether a single model can represent solutions across a spectrum of objectives, allowing tuning to trade-off functions of choice at deployment time. Many commensurating functions are possible, including linear combinations and selection of a single objective. The authors propose a benchmark reward formulation as the sum over all f in F of f(M_f). Maximizing this requires the model to increase the overall value of each function and match the aligned model to the corresponding objective."
+        },
+        {
+          "id": 32,
+          "text": "The framework assumes values can be commensured, but many philosophers subscribing to value pluralism believe that values are incommensurable and cannot be traded off. Promising procedures for steering models include controllable decoding, prefix tokens or custom instructions, and model soups. To the authors' knowledge, no standard LLM trade-off steerable benchmarks exist, and they advocate for their development to spur more steerable AI systems."
+        }
+      ]
+    },
+    {
+      "id": "jury-pluralistic-benchmarks",
+      "title": "Jury-Pluralistic Benchmarks",
+      "paragraphs": [
+        {
+          "id": 33,
+          "text": "While multi-objective benchmarks deal with arbitrary objective types, jury-pluralistic benchmarks address the specific case where there is a population of annotators (a jury) to which one wishes to align. The authors define a jury J = {j_1, ..., j_n} as a population to be represented in evaluation, where each jury member maps from a query and response to a scalar reward or utility. A welfare function w combines jurors' utilities into a single scalar welfare objective. A benchmark is jury-pluralistic if it explicitly measures each juror to maximize a welfare function."
+        },
+        {
+          "id": 34,
+          "text": "Jury-pluralistic benchmarks serve as a concrete approach for democratic AI alignment. They allow explicit reasoning over which users or groups models are being aligned to and can obtain fairer outcomes by including diverse voices and selecting social welfare functions. Consensus-seeking applications benefit from this approach. DeepMind trained an LLM to find consensus statements that users preferred to any individual human-written statement, and Twitter's Community Notes has moderated misinformation by leveraging consensus between users who often disagree."
+        },
+        {
+          "id": 35,
+          "text": "To implement jury-pluralistic benchmarks, one could construct a representative jury using established social science methods, or a jury designed to amplify specific perspectives such as under-represented users. Jury member functions can be approximated by training separate preference or reward models per juror, or estimating preferences using entailment from user-written statements. The authors describe a class of social welfare functions parameterized by alpha, where sweeping alpha changes inequality aversion from a Utilitarian objective (alpha = 0) to a max-min Rawlsian objective (alpha = infinity). Alternatives include reducing to a MAX-SAT problem, or using equilibria and minimax solutions."
+        },
+        {
+          "id": 36,
+          "text": "Precisely estimating individual juror functions may require large amounts of data, though this could be mitigated by grouping jurors by salient characteristics or using sample-efficient methods. Majoritarian welfare functions could be susceptible to tyranny of the majority, and Utilitarian welfare functions to fanatical influence. The approach also assumes commensurability. Once a jury and welfare function are defined, the problem reduces to reward maximization. The authors recommend further research into who to represent on a jury, how to estimate juror functions, and establishing jury-pluralistic benchmarks."
+        }
+      ]
+    },
+    {
+      "id": "current-alignment-approaches",
+      "title": "Current Alignment Approaches",
+      "paragraphs": [
+        {
+          "id": 37,
+          "text": "The authors survey current AI alignment approaches. In supervised fine-tuning, models are trained to improve instruction following or express certain values. RLHF uses a reward model trained on human ratings of model-generated data to steer a model toward maximizing human preferences. Controllable decoding steers an LLM's output toward an objective at inference time but often falls short of learning-based methods and has not been explored with pluralism. The degree of pluralism depends on many factors including the representativeness of the people building the models and the richness of datasets, language models, or reward models. Monistic approaches to RLHF cannot meet certain democratic properties, and RLHF has been found to underweight outliers."
+        }
+      ]
+    },
+    {
+      "id": "current-approaches-and-pluralism",
+      "title": "Current Approaches and Pluralism",
+      "paragraphs": [
+        {
+          "id": 38,
+          "text": "The authors advance the hypothesis that current LLM alignment techniques can reduce distributional pluralism with respect to the population of internet users. Theoretically, the language modeling cross-entropy objective may help models learn distributional pluralism, as it encourages the model to output responses in proportion to their frequency in the training population. The authors postulate that current alignment techniques can reduce distributional pluralism because the alignment procedure does not preserve this property."
+        },
+        {
+          "id": 39,
+          "text": "The authors present three lines of empirical evidence. First, prior work using Pew Research's American Trends Panels survey data (OpinionQA) compared distributions of LLM responses to those of US citizens across two model classes (Jurassic and GPT-3), finding that post-aligned models exhibited less similarity to human populations than pre-aligned models. Second, work using GlobalOpinionQA (an aggregation of multinational World Values data) observed that post-aligned models tended to concentrate probability mass on a few answer choices, in contrast to dispersed human distributions."
+        },
+        {
+          "id": 40,
+          "text": "The authors conducted their own experiments comparing vanilla pretrained LLMs to their aligned counterparts (RLHFed, finetuned) from three model classes -- LLaMA(2), Gemma, and GPT-3 -- on two datasets: GlobalOpinionQA and the Machine Personality Inventory (MPI, 120 questions assessing personality traits). Jensen-Shannon distance between human and model distributions was calculated. Almost all pre-aligned models had lower Jensen-Shannon distance (greater similarity) to target human distributions than post-aligned models on both datasets. For example, on GlobalOpinionQA targeting Japan, LLaMA pre-training scored 0.40 versus 0.45 for Alpaca and 0.54 for Tulu; Gemma 7B showed 0.33 pre versus 0.51 post. The only exception was GPT-3 on MPI (0.60 pre versus 0.44 post), but the authors note uncertainty about which model is truly the base model. A post-alignment reduction in entropy was also observed."
+        },
+        {
+          "id": 41,
+          "text": "These studies reveal a consistent pattern of reduced distributional variance following alignment across various domains. When the target distribution is diverse, current alignment techniques may limit distributional pluralism, though a more comprehensive investigation requires large-scale experimentation. Regarding other forms of pluralism, Overton pluralism may emerge to the degree users prefer it, but people's preference bias for assertiveness may work against this. LLMs may have a degree of steerable pluralism via prompting, but this needs further evaluation."
+        }
+      ]
+    },
+    {
+      "id": "limitations",
+      "title": "Limitations",
+      "paragraphs": [
+        {
+          "id": 42,
+          "text": "The authors state two goals: arguing that current alignment approaches are unclear about to whom models are being aligned, and formalizing frameworks for more pluralistic alignment. The paper does not prescribe exactly to whom to align, but advocates for clearer and more pluralistic approaches. Several definitions are acknowledged to be difficult to operationalize, such as describing the Overton window or selecting a population for alignment. The authors view this difficulty as a necessary cost of being precise. Not all definitions of pluralism are desirable in every case -- distributional pluralism may be useful for studying culture but inappropriate in controlled environments. It may not be possible for a single model to satisfy all conditions simultaneously, as Overton pluralism may be at odds with distributional pluralism. Each definition applies in different domains."
+        }
+      ]
+    },
+    {
+      "id": "relation-to-prior-work",
+      "title": "Relation to Prior Work",
+      "paragraphs": [
+        {
+          "id": 43,
+          "text": "The authors note a growing recognition of the importance of measuring which values LLMs are aligned to and to whom. They argue their paper advances the conversation in three ways: (1) unifying disparate approaches under concrete definitions of pluralism such as distributional pluralism, (2) proposing previously unexplored kinds of pluralism such as Overton pluralism, and (3) arguing that in many cases it may be desirable to increase certain measures of pluralism rather than merely using them as diagnostic probes, in contrast to prior work that used pluralism measures primarily for analysis."
+        }
+      ]
+    },
+    {
+      "id": "pluralism-in-broader-ai-systems",
+      "title": "Pluralism in Broader AI Systems",
+      "paragraphs": [
+        {
+          "id": 44,
+          "text": "While the paper focuses primarily on LLMs, the authors argue that their definitions generalize broadly to other AI systems. The query/response framework can apply to any set of inputs and outputs, whether actions, images, audio, or other modalities. Steerable pluralism could be valuable for agents that need to customize to individual users' needs, and distributional pluralism could be useful for modeling potential agent actions such as drivers on a road. There may be less need for pluralism in domains with a single correct objective, but there is a broad set of subjective tasks where pluralism is a valuable consideration."
+        }
+      ]
+    },
+    {
+      "id": "conclusion",
+      "title": "Conclusion",
+      "paragraphs": [
+        {
+          "id": 45,
+          "text": "The authors conclude by reiterating their argument for increased and more precisely-directed attention to pluralism in AI alignment. They summarize their contribution as formalizing three definitions of pluralistic models and three forms of pluralistic benchmarks. While current alignment techniques have made remarkable progress, new methodologies for measuring and aligning are needed. The paper closes with three broad recommendations: (1) more research into fine-grained pluralistic evaluations to better characterize current models, (2) continued normative discussions about what to align to and desirable bounds of customization, and (3) development of additional alignment techniques to create more pluralistic models."
+        }
+      ]
+    }
+  ]
+}

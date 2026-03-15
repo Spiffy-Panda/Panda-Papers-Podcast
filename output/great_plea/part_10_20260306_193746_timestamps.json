@@ -1,0 +1,223 @@
+{
+  "source": "C:\\Users\\Brian\\Documents\\UW Winter 26\\ProductivityAndReadingHelper\\input\\great_plea\\part_10.json",
+  "audio_file": "part_10_20260306_193746.wav",
+  "tag": "part_10",
+  "generated": "2026-03-06T19:37:48.707282",
+  "total_duration_ms": 252590.2,
+  "total_duration_formatted": "4:12.590",
+  "lines": [
+    {
+      "index": 0,
+      "voice": "Microsoft David",
+      "text": "Welcome back, everyone. Last time we covered Reliability, the R in GREAT PLEA, and talked about the five requirements for trustworthy AI in healthcare. Now we're moving to the E: Equity.",
+      "start_ms": 0.0,
+      "end_ms": 14422.3,
+      "duration_ms": 14422.3,
+      "source_paragraphs": [
+        48
+      ]
+    },
+    {
+      "index": 1,
+      "voice": "Microsoft Zira",
+      "text": "Equity. That's a big word in healthcare right now. How do the authors define it?",
+      "start_ms": 15022.3,
+      "end_ms": 21495.8,
+      "duration_ms": 6473.5,
+      "source_paragraphs": [
+        48
+      ]
+    },
+    {
+      "index": 2,
+      "voice": "Microsoft David",
+      "text": "They define equity as the state in which everyone has a fair and just opportunity to attain their highest level of health. Notice it's not saying everyone gets the same treatment. It's saying everyone gets a fair shot at the best health outcomes possible for them.",
+      "start_ms": 22095.8,
+      "end_ms": 37842.2,
+      "duration_ms": 15746.4,
+      "source_paragraphs": [
+        48
+      ]
+    },
+    {
+      "index": 3,
+      "voice": "Microsoft Zira",
+      "text": "That's an important distinction. Equal treatment isn't always equitable treatment because people start from different places.",
+      "start_ms": 38442.2,
+      "end_ms": 46530.1,
+      "duration_ms": 8087.9,
+      "source_paragraphs": [
+        48
+      ]
+    },
+    {
+      "index": 4,
+      "voice": "Microsoft David",
+      "text": "Exactly. And the authors make a really honest point here. They acknowledge that inequity already exists in healthcare. This isn't a problem AI is creating from scratch. But the concern is that generative AI could make it worse.",
+      "start_ms": 47130.1,
+      "end_ms": 63276.8,
+      "duration_ms": 16146.7,
+      "source_paragraphs": [
+        49
+      ]
+    },
+    {
+      "index": 5,
+      "voice": "Microsoft Zira",
+      "text": "How so? What's the mechanism for AI worsening existing disparities?",
+      "start_ms": 63876.8,
+      "end_ms": 69325.4,
+      "duration_ms": 5448.6,
+      "source_paragraphs": [
+        49
+      ]
+    },
+    {
+      "index": 6,
+      "voice": "Microsoft David",
+      "text": "It comes down to data bias. Generative AI models are pre-trained on massive datasets, and the authors point out that these models naturally have elevated data bias risks. If the training data underrepresents certain populations, the AI learns a skewed picture of the world.",
+      "start_ms": 69925.4,
+      "end_ms": 88101.8,
+      "duration_ms": 18176.4,
+      "source_paragraphs": [
+        49
+      ]
+    },
+    {
+      "index": 7,
+      "voice": "Microsoft Zira",
+      "text": "And the groups most likely to be underrepresented are the ones already facing disparities.",
+      "start_ms": 88701.8,
+      "end_ms": 94185.0,
+      "duration_ms": 5483.3,
+      "source_paragraphs": [
+        49
+      ]
+    },
+    {
+      "index": 8,
+      "voice": "Microsoft David",
+      "text": "Right. The authors specifically call out marginalized, underrepresented, socioeconomically disadvantaged, low-education, and low health-literacy groups. These are the populations that generative AI should not be exacerbating inequity for.",
+      "start_ms": 94785.0,
+      "end_ms": 112286.6,
+      "duration_ms": 17501.6,
+      "source_paragraphs": [
+        49
+      ]
+    },
+    {
+      "index": 9,
+      "voice": "Microsoft Zira",
+      "text": "So it's a double-edged sword. AI has the potential to democratize healthcare access, but if the underlying data is biased, it could actually widen the gap.",
+      "start_ms": 112886.6,
+      "end_ms": 123639.1,
+      "duration_ms": 10752.5,
+      "source_paragraphs": [
+        49,
+        50
+      ]
+    },
+    {
+      "index": 10,
+      "voice": "Microsoft David",
+      "text": "And the authors take it a step further. They say rather than just accepting that bias exists and trying to minimize it, models must actively incorporate the unique social situations of different patient populations. Without that consideration, generative AI systems could erroneously recommend treatments that don't account for a patient's actual circumstances.",
+      "start_ms": 124239.1,
+      "end_ms": 146749.2,
+      "duration_ms": 22510.0,
+      "source_paragraphs": [
+        50
+      ]
+    },
+    {
+      "index": 11,
+      "voice": "Microsoft Zira",
+      "text": "Can you give an example of what that might look like in practice?",
+      "start_ms": 147349.2,
+      "end_ms": 151227.8,
+      "duration_ms": 3878.6,
+      "source_paragraphs": [
+        50
+      ]
+    },
+    {
+      "index": 12,
+      "voice": "Microsoft David",
+      "text": "Sure. Imagine a system recommending a medication regimen that requires refrigeration to a patient who doesn't have stable housing, or suggesting follow-up visits that a patient can't afford. If the AI doesn't account for those social factors, the recommendation looks good on paper but fails the patient in reality.",
+      "start_ms": 151827.8,
+      "end_ms": 171938.5,
+      "duration_ms": 20110.7,
+      "source_paragraphs": [
+        50
+      ]
+    },
+    {
+      "index": 13,
+      "voice": "Microsoft Zira",
+      "text": "That's a powerful example. So what do the authors propose for implementation?",
+      "start_ms": 172538.5,
+      "end_ms": 178431.8,
+      "duration_ms": 5893.3,
+      "source_paragraphs": [
+        51
+      ]
+    },
+    {
+      "index": 14,
+      "voice": "Microsoft David",
+      "text": "They call for standards for evaluation metrics of algorithmic fairness. Essentially, before you deploy an AI system in healthcare, you need measurable criteria to verify that it's not reinforcing existing healthcare disparities.",
+      "start_ms": 179031.8,
+      "end_ms": 194178.2,
+      "duration_ms": 15146.4,
+      "source_paragraphs": [
+        51
+      ]
+    },
+    {
+      "index": 15,
+      "voice": "Microsoft Zira",
+      "text": "So not just testing whether the system is accurate overall, but testing whether it's accurate across different patient demographics.",
+      "start_ms": 194778.2,
+      "end_ms": 202901.2,
+      "duration_ms": 8122.9,
+      "source_paragraphs": [
+        51
+      ]
+    },
+    {
+      "index": 16,
+      "voice": "Microsoft David",
+      "text": "Exactly. A system might have 95 percent accuracy overall but perform significantly worse for certain racial or socioeconomic groups. Equity means that gap needs to be identified and addressed before deployment.",
+      "start_ms": 203501.2,
+      "end_ms": 218407.4,
+      "duration_ms": 14906.2,
+      "source_paragraphs": [
+        51
+      ]
+    },
+    {
+      "index": 17,
+      "voice": "Microsoft Zira",
+      "text": "This connects nicely to what we discussed in the Reliability section. You need those well-defined use cases and patient criteria, and part of that criteria has to include equitable performance across populations. So what's next?",
+      "start_ms": 219007.4,
+      "end_ms": 234328.9,
+      "duration_ms": 15321.5,
+      "source_paragraphs": [
+        48,
+        49,
+        50,
+        51
+      ]
+    },
+    {
+      "index": 18,
+      "voice": "Microsoft David",
+      "text": "Next is the A in GREAT PLEA: Accountability. The authors will dig into who is responsible when an AI system is involved in patient care decisions, how accountability affects patient trust, and what it means to keep humans meaningfully in the loop. Stay tuned!",
+      "start_ms": 234928.9,
+      "end_ms": 252590.2,
+      "duration_ms": 17661.3,
+      "source_paragraphs": [
+        51
+      ]
+    }
+  ]
+}

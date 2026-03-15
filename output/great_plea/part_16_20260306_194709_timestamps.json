@@ -1,0 +1,157 @@
+{
+  "source": "C:\\Users\\Brian\\Documents\\UW Winter 26\\ProductivityAndReadingHelper\\input\\great_plea\\part_16.json",
+  "audio_file": "part_16_20260306_194709.wav",
+  "tag": "part_16",
+  "generated": "2026-03-06T19:47:11.297617",
+  "total_duration_ms": 212615.9,
+  "total_duration_formatted": "3:32.615",
+  "lines": [
+    {
+      "index": 0,
+      "voice": "Microsoft David",
+      "text": "Welcome back. Last time we discussed Empathy and why genuine human connection in healthcare can't be replaced by AI-generated responses. Now we're at the final principle in GREAT PLEA: the A at the end, Autonomy.",
+      "start_ms": 0.0,
+      "end_ms": 14992.0,
+      "duration_ms": 14992.0,
+      "source_paragraphs": [
+        73
+      ]
+    },
+    {
+      "index": 1,
+      "voice": "Microsoft Zira",
+      "text": "Autonomy. The last principle in the framework. How do the authors define it?",
+      "start_ms": 15592.0,
+      "end_ms": 22130.5,
+      "duration_ms": 6538.5,
+      "source_paragraphs": [
+        73
+      ]
+    },
+    {
+      "index": 2,
+      "voice": "Microsoft David",
+      "text": "They define autonomy as the matter of control over one's self. And they add an important detail: it requires both freedom from controlling influences and the capacity for action for it to be maintained. So autonomy isn't just about not being constrained. It's about actively having the ability to make your own choices.",
+      "start_ms": 22730.5,
+      "end_ms": 43476.1,
+      "duration_ms": 20745.6,
+      "source_paragraphs": [
+        73
+      ]
+    },
+    {
+      "index": 3,
+      "voice": "Microsoft Zira",
+      "text": "That's a rich definition. And I can see why this matters in healthcare: both the patient and the doctor need to maintain their autonomy when AI enters the picture.",
+      "start_ms": 44076.1,
+      "end_ms": 54178.6,
+      "duration_ms": 10102.5,
+      "source_paragraphs": [
+        73,
+        74
+      ]
+    },
+    {
+      "index": 4,
+      "voice": "Microsoft David",
+      "text": "Exactly. And the authors highlight a growing concern: the more powerful AI systems become, the more concerns arise that humans do not control healthcare systems and care decisions. As AI gets better and better, there's a real risk that it starts driving decisions rather than supporting them.",
+      "start_ms": 54778.6,
+      "end_ms": 74124.7,
+      "duration_ms": 19346.0,
+      "source_paragraphs": [
+        74
+      ]
+    },
+    {
+      "index": 5,
+      "voice": "Microsoft Zira",
+      "text": "It's almost like the AI could gradually take over decision-making without anyone making a deliberate choice to let that happen. It just creeps in as the system becomes more capable.",
+      "start_ms": 74724.7,
+      "end_ms": 85576.9,
+      "duration_ms": 10852.2,
+      "source_paragraphs": [
+        74
+      ]
+    },
+    {
+      "index": 6,
+      "voice": "Microsoft David",
+      "text": "That's a great way to describe it. And the authors are clear that protecting autonomy has two sides. On the patient side, patients should receive care according to their preferences and values. On the clinician side, doctors should be able to deliver treatment in the manner they see fit, without the generative AI system encroaching on their professional judgment.",
+      "start_ms": 86176.9,
+      "end_ms": 109042.1,
+      "duration_ms": 22865.2,
+      "source_paragraphs": [
+        75
+      ]
+    },
+    {
+      "index": 7,
+      "voice": "Microsoft Zira",
+      "text": "So the AI should be a tool that serves both the patient and the clinician, not a system that dictates to either of them.",
+      "start_ms": 109642.1,
+      "end_ms": 116765.3,
+      "duration_ms": 7123.1,
+      "source_paragraphs": [
+        75
+      ]
+    },
+    {
+      "index": 8,
+      "voice": "Microsoft David",
+      "text": "Precisely. And the authors make the consequences very clear. If autonomy in decision-making is not patient-focused, the potential for adverse events and poor clinical outcomes will follow. This isn't hypothetical. When patients lose control over their own care decisions, outcomes get worse.",
+      "start_ms": 117365.3,
+      "end_ms": 138216.0,
+      "duration_ms": 20850.7,
+      "source_paragraphs": [
+        76
+      ]
+    },
+    {
+      "index": 9,
+      "voice": "Microsoft Zira",
+      "text": "That makes intuitive sense. Patients who feel empowered and involved in their care decisions are probably more likely to follow through on treatment plans too.",
+      "start_ms": 138816.0,
+      "end_ms": 148533.5,
+      "duration_ms": 9717.5,
+      "source_paragraphs": [
+        76
+      ]
+    },
+    {
+      "index": 10,
+      "voice": "Microsoft David",
+      "text": "Absolutely. And the authors end on a positive note. By including provisions for protecting autonomy when using generative AI in healthcare, doctor-patient relations actually improve, and care quality is ultimately improved. So autonomy protection isn't a constraint on AI. It's a path to better healthcare.",
+      "start_ms": 149133.5,
+      "end_ms": 171039.3,
+      "duration_ms": 21905.9,
+      "source_paragraphs": [
+        76
+      ]
+    },
+    {
+      "index": 11,
+      "voice": "Microsoft Zira",
+      "text": "That's a perfect capstone to the nine principles. Autonomy brings it full circle. You started with Governability, keeping humans in control of the system, and you end with Autonomy, keeping humans in control of their own decisions. The whole framework is really about ensuring AI serves people, not the other way around.",
+      "start_ms": 171639.3,
+      "end_ms": 193124.8,
+      "duration_ms": 21485.4,
+      "source_paragraphs": [
+        73,
+        74,
+        75,
+        76
+      ]
+    },
+    {
+      "index": 12,
+      "voice": "Microsoft David",
+      "text": "Beautifully summarized. And that sets us up for our final episode where we'll wrap up the paper. The authors will reflect on the promise and the challenges of generative AI in healthcare, discuss what enforcement might look like, and share their vision for the future. Join us for the conclusion!",
+      "start_ms": 193724.8,
+      "end_ms": 212615.9,
+      "duration_ms": 18891.2,
+      "source_paragraphs": [
+        76
+      ]
+    }
+  ]
+}

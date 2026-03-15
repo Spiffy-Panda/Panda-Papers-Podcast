@@ -1,0 +1,88 @@
+{
+  "pause_between_ms": 600,
+  "rate": 0,
+  "part_number": 10,
+  "paper_source": "input/responsible_ux_paper.json",
+  "lines": [
+    {
+      "voice": "Microsoft David",
+      "text": "Before we dive into responsible prototyping, there's one more fascinating example from the organizational challenges section that I want to share. It perfectly illustrates how creative UX practitioners got when direct negotiation wasn't working.",
+      "source_paragraphs": [58]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Oh, you mean when they couldn't just talk their way through the concerns? What did they do instead?",
+      "source_paragraphs": [58]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "They created activities and documents designed to make potential harms tangible for their teams. One strategy was showing impacts through user testing that surfaced concerns, or by creating artifacts that illustrate what could go wrong. My favorite example is one practitioner who had difficulty getting their team to respond to potential concerns. So they ran a team activity where everyone created fake newspaper headlines about how the product could go wrong.",
+      "source_paragraphs": [58]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Fake newspaper headlines! That's brilliant. Nothing makes a risk feel real like imagining it as tomorrow's news story.",
+      "source_paragraphs": [58]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "And it worked! The practitioner said that at the time, it had a big effect. People backed off the idea, and they didn't have to go any further with it. These kinds of activities were part of the additional hidden work that UX practitioners took on to sensitize their AI teams and the broader company to potential harms.",
+      "source_paragraphs": [58]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So clever. Okay, now I'm really ready for responsible prototyping. How do the two groups think about responsibility when they're actually building things?",
+      "source_paragraphs": [58, 59]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Great transition. So during the interviews, both RAI experts and UX practitioners framed responsible AI in terms of anticipating and surfacing harms that AI technology could bring to end-users, society, and the public. They brought up similar categories of harm, including safety, misinformation, inequity, cultural and identity erasure, stereotyping, over-reliance on AI, anthropomorphism, toxicity, offensiveness, and privacy.",
+      "source_paragraphs": [59]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "That's quite a comprehensive list. But even though they agreed on the types of harms, I bet they approached them differently?",
+      "source_paragraphs": [59, 60]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "They absolutely did. RAI experts, given their expertise and formal roles, were typically invited by teams to explicitly and intentionally look for RAI issues, often through question-asking and adversarial testing. One RAI expert put it bluntly, saying the vast majority of people are not thinking adversarially, and that they were hired to think about the worst of the worst. Another said the job is mostly just knowing what questions to ask and helping teams think critically.",
+      "source_paragraphs": [60]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So RAI experts are almost like professional pessimists in the best way? They're paid to imagine the worst-case scenarios.",
+      "source_paragraphs": [60]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "That's a great way to describe it. In contrast, UX practitioners weren't trained or required to anticipate AI harms in their daily work. But the researchers found that UX practitioners were deeply committed to surfacing and anticipating harms from their unique human-focused perspective, using their own skills, methods, and tools during the design and prototyping process.",
+      "source_paragraphs": [61]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So the RAI experts approach it more formally through adversarial testing and questioning, while UX practitioners weave it into their existing human-centered design methods?",
+      "source_paragraphs": [61, 62]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Exactly. And the paper describes two key ways UX practitioners did this during prototyping. First, they anticipated potential harms by envisioning how user interface design decisions could influence users' mental models of AI. Second, they tried to surface harms by leveraging both traditional and new approaches to design and prototyping.",
+      "source_paragraphs": [62]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Mental models of AI. That sounds like a really important concept. How users understand what AI actually is and can do versus what they think it is.",
+      "source_paragraphs": [62]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "That's exactly right, and it's what we're going to explore in detail next. The paper has some really eye-opening examples of how UX practitioners grappled with the gap between what AI can actually do and what users believe it can do. It raises some fundamental questions about designer responsibility.",
+      "source_paragraphs": [62]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "I can already think of so many examples in everyday life where people misunderstand AI. Can't wait to hear what the practitioners found.",
+      "source_paragraphs": [62]
+    }
+  ]
+}

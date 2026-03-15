@@ -1,0 +1,313 @@
+{
+  "source": "C:\\Users\\Brian\\Documents\\UW Winter 26\\ProductivityAndReadingHelper\\input\\great_plea\\part_09.json",
+  "audio_file": "part_09_20260306_193402.wav",
+  "tag": "part_09",
+  "generated": "2026-03-06T19:34:05.332643",
+  "total_duration_ms": 370306.8,
+  "total_duration_formatted": "6:10.306",
+  "lines": [
+    {
+      "index": 0,
+      "voice": "Microsoft David",
+      "text": "Welcome back. Last time we unpacked Governability, the G in GREAT PLEA, and talked about keeping humans in control of AI systems. Now we're moving to the R: Reliability.",
+      "start_ms": 0.0,
+      "end_ms": 13517.7,
+      "duration_ms": 13517.7,
+      "source_paragraphs": [
+        43
+      ]
+    },
+    {
+      "index": 1,
+      "voice": "Microsoft Zira",
+      "text": "Reliability. That seems like it should be straightforward, right? Does the system do what it's supposed to do?",
+      "start_ms": 14117.7,
+      "end_ms": 22515.8,
+      "duration_ms": 8398.1,
+      "source_paragraphs": [
+        43
+      ]
+    },
+    {
+      "index": 2,
+      "voice": "Microsoft David",
+      "text": "That's a good intuition, and the authors give it a precise definition. They define reliability as the ability of a system or component to function under stated conditions for a specified period of time.",
+      "start_ms": 23115.8,
+      "end_ms": 35972.5,
+      "duration_ms": 12856.7,
+      "source_paragraphs": [
+        43
+      ]
+    },
+    {
+      "index": 3,
+      "voice": "Microsoft Zira",
+      "text": "Under stated conditions and for a specified period. So it's not just about working once in a lab demo. It needs to work consistently in the real environments where it's deployed.",
+      "start_ms": 36572.5,
+      "end_ms": 48374.6,
+      "duration_ms": 11802.1,
+      "source_paragraphs": [
+        43
+      ]
+    },
+    {
+      "index": 4,
+      "voice": "Microsoft David",
+      "text": "Exactly. And that distinction matters enormously in healthcare. The authors emphasize that because generative AI is so close to patient well-being, we need strong standards for reliability. The goal is to minimize potential errors that could lead to actual accidents, actual patient harm.",
+      "start_ms": 48974.6,
+      "end_ms": 68695.6,
+      "duration_ms": 19720.9,
+      "source_paragraphs": [
+        44
+      ]
+    },
+    {
+      "index": 5,
+      "voice": "Microsoft Zira",
+      "text": "That raises the stakes considerably. If a generative AI chatbot gives you a bad restaurant recommendation, that's annoying. If it gives a clinician a bad treatment suggestion, someone could get seriously hurt.",
+      "start_ms": 69295.6,
+      "end_ms": 83392.2,
+      "duration_ms": 14096.7,
+      "source_paragraphs": [
+        44
+      ]
+    },
+    {
+      "index": 6,
+      "voice": "Microsoft David",
+      "text": "Right. And because of those stakes, the authors lay out a set of specific requirements for what reliable AI in healthcare should look like. There are five key ones.",
+      "start_ms": 83992.2,
+      "end_ms": 95279.9,
+      "duration_ms": 11287.7,
+      "source_paragraphs": [
+        45
+      ]
+    },
+    {
+      "index": 7,
+      "voice": "Microsoft Zira",
+      "text": "Five requirements. Let's walk through them.",
+      "start_ms": 95879.9,
+      "end_ms": 99743.9,
+      "duration_ms": 3864.0,
+      "source_paragraphs": [
+        45
+      ]
+    },
+    {
+      "index": 8,
+      "voice": "Microsoft David",
+      "text": "First, you need explicit, well-defined clinical use cases. You can't just deploy a general-purpose AI and hope it works. You need to be very clear about exactly what tasks it's being used for.",
+      "start_ms": 100343.9,
+      "end_ms": 114326.1,
+      "duration_ms": 13982.1,
+      "source_paragraphs": [
+        45
+      ]
+    },
+    {
+      "index": 9,
+      "voice": "Microsoft Zira",
+      "text": "So something like: this system is designed to assist with triaging emergency room patients based on symptom descriptions. Very specific scope.",
+      "start_ms": 114926.1,
+      "end_ms": 124733.6,
+      "duration_ms": 9807.5,
+      "source_paragraphs": [
+        45
+      ]
+    },
+    {
+      "index": 10,
+      "voice": "Microsoft David",
+      "text": "That's a great example. Second, there needs to be a clear definition of use situations and patient criteria. Not just what the system does, but when and for whom it should be used.",
+      "start_ms": 125333.6,
+      "end_ms": 138186.2,
+      "duration_ms": 12852.6,
+      "source_paragraphs": [
+        45
+      ]
+    },
+    {
+      "index": 11,
+      "voice": "Microsoft Zira",
+      "text": "So maybe it works well for adult patients with common symptoms but hasn't been validated for pediatric cases or rare conditions.",
+      "start_ms": 138786.2,
+      "end_ms": 146594.0,
+      "duration_ms": 7807.8,
+      "source_paragraphs": [
+        45
+      ]
+    },
+    {
+      "index": 12,
+      "voice": "Microsoft David",
+      "text": "Exactly. Third, the system needs to maintain safety, security, and effectiveness throughout its entire lifecycle. Not just at launch, but as it continues to operate, as data changes, as the healthcare environment evolves.",
+      "start_ms": 147194.0,
+      "end_ms": 164080.6,
+      "duration_ms": 16886.6,
+      "source_paragraphs": [
+        45
+      ]
+    },
+    {
+      "index": 13,
+      "voice": "Microsoft Zira",
+      "text": "That's important because AI models can drift over time as the world changes around them. What about the fourth requirement?",
+      "start_ms": 164680.6,
+      "end_ms": 172808.5,
+      "duration_ms": 8127.9,
+      "source_paragraphs": [
+        45
+      ]
+    },
+    {
+      "index": 14,
+      "voice": "Microsoft David",
+      "text": "This one is really ambitious. The system needs to demonstrate safety equivalent to or exceeding human decision-making. In other words, it should be at least as safe as a trained human clinician performing the same task.",
+      "start_ms": 173408.5,
+      "end_ms": 187895.5,
+      "duration_ms": 14487.0,
+      "source_paragraphs": [
+        45
+      ]
+    },
+    {
+      "index": 15,
+      "voice": "Microsoft Zira",
+      "text": "That's a high bar. But it makes sense. If the AI is less reliable than the person it's assisting or replacing, then what's the point?",
+      "start_ms": 188495.5,
+      "end_ms": 198203.2,
+      "duration_ms": 9707.7,
+      "source_paragraphs": [
+        45
+      ]
+    },
+    {
+      "index": 16,
+      "voice": "Microsoft David",
+      "text": "Precisely. And fifth, no undue harm causation. The system should not introduce new risks or harms that wouldn't exist without it.",
+      "start_ms": 198803.2,
+      "end_ms": 208846.1,
+      "duration_ms": 10042.9,
+      "source_paragraphs": [
+        45
+      ]
+    },
+    {
+      "index": 17,
+      "voice": "Microsoft Zira",
+      "text": "So those five together paint a really comprehensive picture. But here's my question: can current generative AI systems actually meet these requirements?",
+      "start_ms": 209446.1,
+      "end_ms": 219583.7,
+      "duration_ms": 10137.6,
+      "source_paragraphs": [
+        46
+      ]
+    },
+    {
+      "index": 18,
+      "voice": "Microsoft David",
+      "text": "And that's where the authors get candid. They point out that existing generative AI models suffer from hallucination and output variations. Hallucination is when the model confidently produces information that sounds plausible but is simply wrong. And output variations mean you can ask the same question twice and get different answers.",
+      "start_ms": 220183.7,
+      "end_ms": 241218.7,
+      "duration_ms": 21035.1,
+      "source_paragraphs": [
+        46
+      ]
+    },
+    {
+      "index": 19,
+      "voice": "Microsoft Zira",
+      "text": "Both of those are serious problems for healthcare. A doctor can't rely on a tool that makes things up or gives inconsistent answers. How does that affect the relationship between clinicians and AI?",
+      "start_ms": 241818.7,
+      "end_ms": 254650.8,
+      "duration_ms": 12832.1,
+      "source_paragraphs": [
+        46
+      ]
+    },
+    {
+      "index": 20,
+      "voice": "Microsoft David",
+      "text": "The authors say it directly undermines trust. If physicians can't count on the outputs being reliable, they're not going to use the system, or worse, they might use it without realizing it's wrong. Both outcomes are bad for patients.",
+      "start_ms": 255250.8,
+      "end_ms": 271397.6,
+      "duration_ms": 16146.8,
+      "source_paragraphs": [
+        46
+      ]
+    },
+    {
+      "index": 21,
+      "voice": "Microsoft Zira",
+      "text": "So what do the authors propose as a solution? Because just saying AI has these problems doesn't help anyone.",
+      "start_ms": 271997.6,
+      "end_ms": 279615.6,
+      "duration_ms": 7618.0,
+      "source_paragraphs": [
+        47
+      ]
+    },
+    {
+      "index": 22,
+      "voice": "Microsoft David",
+      "text": "Their solution is a thorough evaluation and testing protocol against specific use cases. Rather than trying to prove that a model is generally reliable, you test it rigorously for each particular clinical application. That focused approach is what will ensure the development of resilient and robust AI systems.",
+      "start_ms": 280215.6,
+      "end_ms": 299825.9,
+      "duration_ms": 19610.3,
+      "source_paragraphs": [
+        47
+      ]
+    },
+    {
+      "index": 23,
+      "voice": "Microsoft Zira",
+      "text": "So it's use-case-specific validation rather than blanket certification. That makes sense because an AI might be excellent at one task and terrible at another.",
+      "start_ms": 300425.9,
+      "end_ms": 310538.6,
+      "duration_ms": 10112.7,
+      "source_paragraphs": [
+        47
+      ]
+    },
+    {
+      "index": 24,
+      "voice": "Microsoft David",
+      "text": "Exactly. And that connects back to the first requirement: well-defined clinical use cases. You define the scope, then you test exhaustively within that scope. That's how you build trust.",
+      "start_ms": 311138.6,
+      "end_ms": 325180.6,
+      "duration_ms": 14042.0,
+      "source_paragraphs": [
+        43,
+        45,
+        47
+      ]
+    },
+    {
+      "index": 25,
+      "voice": "Microsoft Zira",
+      "text": "So reliability ties together nicely: define what the system is for, set clear boundaries on who and when it's used for, maintain it throughout its life, prove it's at least as good as a human, and test it thoroughly for each application. That's the foundation for trustworthy AI in healthcare. So what's next in the framework?",
+      "start_ms": 325780.6,
+      "end_ms": 347286.2,
+      "duration_ms": 21505.5,
+      "source_paragraphs": [
+        43,
+        44,
+        45,
+        46,
+        47
+      ]
+    },
+    {
+      "index": 26,
+      "voice": "Microsoft David",
+      "text": "Next we're tackling the E in GREAT PLEA: Equity. The authors will explore how generative AI could either reduce or worsen health disparities, why bias in massive training datasets is such a concern, and what standards we need to ensure fairness. It's one of the most socially important principles in the whole framework. See you next time!",
+      "start_ms": 347886.2,
+      "end_ms": 370306.8,
+      "duration_ms": 22420.6,
+      "source_paragraphs": [
+        47
+      ]
+    }
+  ]
+}

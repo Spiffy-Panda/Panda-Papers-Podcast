@@ -1,0 +1,113 @@
+{
+  "pause_between_ms": 600,
+  "rate": 0,
+  "part_number": 8,
+  "paper_source": "input/ODESteer_paper.json",
+  "lines": [
+    {
+      "voice": "Microsoft David",
+      "text": "So now we get to the heart of the paper: ODESteer itself. We've seen how all existing methods can be understood as barrier functions, and we've seen their limitations. ODESteer is designed to take the best ideas from each approach while avoiding their weaknesses.",
+      "source_paragraphs": [56]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "What's the core idea?",
+      "source_paragraphs": [56]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "The starting point is defining a barrier function using the log-density ratio between positive and negative activations, just like the input reading methods. But instead of relying on Gaussian assumptions or linear classifiers, ODESteer uses nonlinear features to model that density ratio.",
+      "source_paragraphs": [56, 57]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So the barrier function is still a log-density ratio, but now it's computed in a richer, nonlinear way?",
+      "source_paragraphs": [57]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Exactly. The barrier function takes the form: h of a equals w transpose times phi of a, plus a bias b. Here, phi is a nonlinear feature map that transforms the activations into a higher-dimensional space before the linear combination.",
+      "source_paragraphs": [57]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So phi does the heavy lifting of capturing nonlinear structure, and then you just do a linear combination on top?",
+      "source_paragraphs": [57, 59]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Right. And this gives you three advantages over prior methods. First, unlike Difference in Means, you don't need strong assumptions about activation distributions. Second, unlike linear probes, the gradient of the barrier function depends on the current activation through the nonlinear map, so the steering direction adapts at each step.",
+      "source_paragraphs": [59]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "That's a big deal. And the third advantage?",
+      "source_paragraphs": [59]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Compared to output optimization approaches like RE-Control, it's much simpler to implement. You don't need a complex neural network or separate scoring model. You can do this with classical machine learning tools.",
+      "source_paragraphs": [59]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Okay, so what's the actual nonlinear feature map they use?",
+      "source_paragraphs": [60]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "They use polynomial features. The idea is natural. Linear methods only capture first-order relationships between activation dimensions. Polynomial features capture interactions and higher-order patterns.",
+      "source_paragraphs": [60]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "But wait, activations in large language models are high-dimensional. Wouldn't polynomial expansion blow up exponentially?",
+      "source_paragraphs": [60]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "It would, yes. That's why they use a technique called Polynomial Count Sketch. It generates random polynomial features efficiently without explicitly constructing the full expansion. They also normalize each activation to unit length before applying the map, which helps with numerical stability.",
+      "source_paragraphs": [60]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Clever. So you get the power of polynomial features without the computational cost. How do they learn the weights w and the bias b?",
+      "source_paragraphs": [60, 61]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "They use logistic regression, just like the probing methods. But the key difference is that the logistic regression is trained on the transformed nonlinear features, not on the raw activations.",
+      "source_paragraphs": [61]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So it's still logistic regression, but in a much richer feature space.",
+      "source_paragraphs": [61]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Exactly. The classifier gives you learned weights w-prime and bias b-prime. And since logistic regression estimates the log-density ratio, you recover the barrier function directly. The final weights are just w equals w-prime, and b equals b-prime plus the log of the ratio of negative to positive sample counts.",
+      "source_paragraphs": [61]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "That's elegant. They're using a well-understood, off-the-shelf tool, scikit-learn presumably, but getting nonlinear density ratio estimates by working in the polynomial feature space.",
+      "source_paragraphs": [61]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Yes, they actually mention scikit-learn specifically. The whole thing is remarkably practical. No custom neural architectures, no reward model training, just polynomial feature extraction followed by logistic regression.",
+      "source_paragraphs": [61]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So at this point we have the barrier function. What comes next?",
+      "source_paragraphs": [56]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Now we need to construct the actual ODE that uses this barrier function to steer the activations. That's where the framework really comes together, and we'll cover that next.",
+      "source_paragraphs": [56]
+    }
+  ]
+}

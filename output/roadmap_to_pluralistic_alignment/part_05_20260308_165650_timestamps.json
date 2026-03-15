@@ -1,0 +1,208 @@
+{
+  "source": "C:\\Users\\Brian\\Documents\\UW Winter 26\\ProductivityAndReadingHelper\\input\\roadmap_to_pluralistic_alignment\\part_05.json",
+  "audio_file": "part_05_20260308_165650.wav",
+  "tag": "part_05",
+  "generated": "2026-03-08T16:56:52.320561",
+  "total_duration_ms": 292197.6,
+  "total_duration_formatted": "4:52.197",
+  "lines": [
+    {
+      "index": 0,
+      "voice": "Microsoft David",
+      "text": "Welcome back. We've covered Overton and steerable pluralism. Now let's get into the third and final type: distributional pluralism. This one is especially important because it connects directly to the paper's empirical findings.",
+      "start_ms": 0.0,
+      "end_ms": 15946.8,
+      "duration_ms": 15946.8,
+      "source_paragraphs": [
+        21
+      ]
+    },
+    {
+      "index": 1,
+      "voice": "Microsoft Zira",
+      "text": "So what's the basic idea with distributional pluralism?",
+      "start_ms": 16546.8,
+      "end_ms": 20460.4,
+      "duration_ms": 3913.6,
+      "source_paragraphs": [
+        21
+      ]
+    },
+    {
+      "index": 2,
+      "voice": "Microsoft David",
+      "text": "It's about matching distributions. You have a reference population, some group of people the model is intended to represent. A model is distributionally pluralistic if, for a given prompt, it's as likely to give a particular response as that reference population would be. In other words, the model is well-calibrated to the population's distribution over answers.",
+      "start_ms": 21060.4,
+      "end_ms": 45560.3,
+      "duration_ms": 24499.9,
+      "source_paragraphs": [
+        21
+      ]
+    },
+    {
+      "index": 3,
+      "voice": "Microsoft Zira",
+      "text": "So if 60 percent of people hold one view and 30 percent hold another, the model should roughly match those proportions in its outputs?",
+      "start_ms": 46160.3,
+      "end_ms": 54718.1,
+      "duration_ms": 8557.9,
+      "source_paragraphs": [
+        21
+      ]
+    },
+    {
+      "index": 4,
+      "voice": "Microsoft David",
+      "text": "Exactly. And to evaluate this, you take queries that a population has responded to, like census surveys or opinion polls, and compare the model's distribution to the population distribution using divergence metrics. Things like Jensen-Shannon divergence, KL-divergence, or Wasserstein distance.",
+      "start_ms": 55318.1,
+      "end_ms": 75908.6,
+      "duration_ms": 20590.4,
+      "source_paragraphs": [
+        22
+      ]
+    },
+    {
+      "index": 5,
+      "voice": "Microsoft Zira",
+      "text": "That's elegant. You have ground truth data from surveys and you can directly measure how well the model matches. Where is this most useful?",
+      "start_ms": 76508.6,
+      "end_ms": 86061.3,
+      "duration_ms": 9552.7,
+      "source_paragraphs": [
+        23
+      ]
+    },
+    {
+      "index": 6,
+      "voice": "Microsoft David",
+      "text": "It's crucial for any application where a model simulates or models the views of a population. Think agent-based modeling for simulating societies, piloting survey responses, survey design, or studying the internet as a cultural artifact. Anywhere you need the model to accurately represent how a group of people would actually respond.",
+      "start_ms": 86661.3,
+      "end_ms": 108146.7,
+      "duration_ms": 21485.4,
+      "source_paragraphs": [
+        23
+      ]
+    },
+    {
+      "index": 7,
+      "voice": "Microsoft Zira",
+      "text": "But there must be downsides too, right? If the model just mirrors the population, doesn't that mean more common opinions get amplified, including potentially harmful ones?",
+      "start_ms": 108746.7,
+      "end_ms": 120764.0,
+      "duration_ms": 12017.3,
+      "source_paragraphs": [
+        24
+      ]
+    },
+    {
+      "index": 8,
+      "voice": "Microsoft David",
+      "text": "Yes, that's one of the key limitations. Its proportional nature means frequently held opinions are output more often, even if they're harmful. The authors suggest mitigating this by combining it with an Overton window of reasonableness. There are other challenges too. It requires a predetermined target distribution, and for a general-purpose model, it's unclear who that target population should be. And for many open-ended questions, response frequency data from a population simply doesn't exist.",
+      "start_ms": 121364.0,
+      "end_ms": 154877.1,
+      "duration_ms": 33513.1,
+      "source_paragraphs": [
+        24
+      ]
+    },
+    {
+      "index": 9,
+      "voice": "Microsoft Zira",
+      "text": "So it works best when you have clear survey data and a well-defined population. What about alignment? Are there techniques that explicitly target distributional calibration?",
+      "start_ms": 155477.1,
+      "end_ms": 166974.5,
+      "duration_ms": 11497.4,
+      "source_paragraphs": [
+        25
+      ]
+    },
+    {
+      "index": 10,
+      "voice": "Microsoft David",
+      "text": "Not yet, but there are two promising directions. First, you can pretrain on more data from the target population, since the cross-entropy training objective naturally encourages learning the speech distributions of the training data. Second, you can train on survey data from a population. The authors emphasize comparing full distributions rather than just average responses, and they call for more distributionally pluralistic evaluations with respect to clearly specified groups.",
+      "start_ms": 167574.5,
+      "end_ms": 199072.9,
+      "duration_ms": 31498.4,
+      "source_paragraphs": [
+        25
+      ]
+    },
+    {
+      "index": 11,
+      "voice": "Microsoft Zira",
+      "text": "Interesting. And they note that distributional pluralism has inherent stochasticity that isn't always desirable, right? Like in controlled environments where you need consistent behavior?",
+      "start_ms": 199672.9,
+      "end_ms": 212299.6,
+      "duration_ms": 12626.8,
+      "source_paragraphs": [
+        25
+      ]
+    },
+    {
+      "index": 12,
+      "voice": "Microsoft David",
+      "text": "Exactly. It's a tool that's powerful in the right context but not universally applicable. Now, the paper transitions from defining how models can be pluralistic to how benchmarks can be pluralistic.",
+      "start_ms": 212899.6,
+      "end_ms": 226771.3,
+      "duration_ms": 13871.7,
+      "source_paragraphs": [
+        26
+      ]
+    },
+    {
+      "index": 13,
+      "voice": "Microsoft Zira",
+      "text": "Right. They're saying it's not enough to define pluralism for models. You also need benchmarks that can actually measure it.",
+      "start_ms": 227371.3,
+      "end_ms": 236309.2,
+      "duration_ms": 8937.8,
+      "source_paragraphs": [
+        26
+      ]
+    },
+    {
+      "index": 14,
+      "voice": "Microsoft David",
+      "text": "Precisely. They observe that most current benchmarks are monistic, focused on a single objective. Pluralistic benchmarks have more than one objective, with each measured separately. They identify three kinds: multi-objective, trade-off steerable, and jury-pluralistic.",
+      "start_ms": 236909.2,
+      "end_ms": 256080.3,
+      "duration_ms": 19171.2,
+      "source_paragraphs": [
+        26
+      ]
+    },
+    {
+      "index": 15,
+      "voice": "Microsoft Zira",
+      "text": "So the benchmark framework parallels the model framework. Three types each, working together.",
+      "start_ms": 256680.3,
+      "end_ms": 263888.5,
+      "duration_ms": 7208.2,
+      "source_paragraphs": [
+        26
+      ]
+    },
+    {
+      "index": 16,
+      "voice": "Microsoft David",
+      "text": "Exactly. In our next segment, we'll get into the details of each benchmark type, starting with multi-objective benchmarks and then trade-off steerable benchmarks. These get into some really interesting ideas about Pareto optimality and how to compare models across multiple dimensions.",
+      "start_ms": 264488.5,
+      "end_ms": 283269.5,
+      "duration_ms": 18781.0,
+      "source_paragraphs": [
+        26
+      ]
+    },
+    {
+      "index": 17,
+      "voice": "Microsoft Zira",
+      "text": "That sounds great. The benchmark side is where this gets really practical for the field. Let's dive in next time.",
+      "start_ms": 283869.5,
+      "end_ms": 292197.6,
+      "duration_ms": 8328.2,
+      "source_paragraphs": [
+        26
+      ]
+    }
+  ]
+}

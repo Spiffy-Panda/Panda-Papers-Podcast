@@ -1,0 +1,231 @@
+{
+  "source": "C:\\Users\\Brian\\Documents\\UW Winter 26\\ProductivityAndReadingHelper\\output\\identifiability\\dialog_part_02.json",
+  "audio_file": "part_02_20260308_133544.wav",
+  "tag": "part_02",
+  "generated": "2026-03-08T13:35:46.757368",
+  "total_duration_ms": 284039.7,
+  "total_duration_formatted": "4:44.039",
+  "lines": [
+    {
+      "index": 0,
+      "voice": "Microsoft David",
+      "text": "Welcome back. Last time we introduced the big question: when you try to explain how a neural network works mechanistically, can you be sure there's only one valid explanation? The answer, it turns out, is no. Now let's dig into the technical foundations.",
+      "start_ms": 0.0,
+      "end_ms": 18791.7,
+      "duration_ms": 18791.7,
+      "source_paragraphs": [
+        5
+      ]
+    },
+    {
+      "index": 1,
+      "voice": "Microsoft Zira",
+      "text": "Right. So what are the key assumptions that mechanistic interpretability actually rests on?",
+      "start_ms": 19391.7,
+      "end_ms": 25944.8,
+      "duration_ms": 6553.2,
+      "source_paragraphs": [
+        5
+      ]
+    },
+    {
+      "index": 2,
+      "voice": "Microsoft David",
+      "text": "There are two big ones. First, that a neural network's behavior can be explained by a simpler algorithm than the full network itself. And second, that only a sparse subset of the network is actually responsible for executing that algorithm.",
+      "start_ms": 26544.8,
+      "end_ms": 43126.3,
+      "duration_ms": 16581.5,
+      "source_paragraphs": [
+        5
+      ]
+    },
+    {
+      "index": 3,
+      "voice": "Microsoft Zira",
+      "text": "That makes intuitive sense. Networks are often overparameterized, right? Not every neuron is pulling its weight.",
+      "start_ms": 43726.3,
+      "end_ms": 52934.1,
+      "duration_ms": 9207.8,
+      "source_paragraphs": [
+        5
+      ]
+    },
+    {
+      "index": 4,
+      "voice": "Microsoft David",
+      "text": "Exactly. There's actually good evidence for this from pruning studies and the lottery ticket hypothesis. The idea is that within a large network, there's a smaller sub-network that does most of the heavy lifting, and you can often remove many components without hurting performance much.",
+      "start_ms": 53534.1,
+      "end_ms": 71520.0,
+      "duration_ms": 17985.9,
+      "source_paragraphs": [
+        5
+      ]
+    },
+    {
+      "index": 5,
+      "voice": "Microsoft Zira",
+      "text": "And this idea of looking for circuits inside networks, where did that come from?",
+      "start_ms": 72120.0,
+      "end_ms": 77503.4,
+      "duration_ms": 5383.4,
+      "source_paragraphs": [
+        6
+      ]
+    },
+    {
+      "index": 6,
+      "voice": "Microsoft David",
+      "text": "It's actually inspired by neuroscience, which has a long tradition of searching for neural circuits that explain behavior. In the machine learning context, early work in computer vision showed that individual neurons can compute interpretable features, and connections between such neurons form circuits that explain what the model is doing.",
+      "start_ms": 78103.4,
+      "end_ms": 99013.7,
+      "duration_ms": 20910.3,
+      "source_paragraphs": [
+        6
+      ]
+    },
+    {
+      "index": 7,
+      "voice": "Microsoft Zira",
+      "text": "And this has been applied to language models too?",
+      "start_ms": 99613.7,
+      "end_ms": 102857.6,
+      "duration_ms": 3243.9,
+      "source_paragraphs": [
+        6
+      ]
+    },
+    {
+      "index": 8,
+      "voice": "Microsoft David",
+      "text": "Yes. One well-known example is a circuit found in transformers for indirect object identification. Researchers identified a specific subset of attention heads and connections that handle figuring out which noun in a sentence is the indirect object. It's a great demonstration of what MI can do in principle.",
+      "start_ms": 103457.6,
+      "end_ms": 123563.0,
+      "duration_ms": 20105.4,
+      "source_paragraphs": [
+        6
+      ]
+    },
+    {
+      "index": 9,
+      "voice": "Microsoft Zira",
+      "text": "Okay, so now let's get into the formal definitions. What exactly constitutes a mechanistic explanation?",
+      "start_ms": 124163.0,
+      "end_ms": 132121.0,
+      "duration_ms": 7958.0,
+      "source_paragraphs": [
+        7
+      ]
+    },
+    {
+      "index": 10,
+      "voice": "Microsoft David",
+      "text": "A mechanistic explanation has two components. The what, which is a high-level algorithm that approximates the model's behavior and tracks its internal computation. And the where, which specifies how and where that algorithm is embedded in the network's low-level neural computation.",
+      "start_ms": 132721.0,
+      "end_ms": 150867.3,
+      "duration_ms": 18146.2,
+      "source_paragraphs": [
+        7
+      ]
+    },
+    {
+      "index": 11,
+      "voice": "Microsoft Zira",
+      "text": "So it's not enough to say the network computes XOR. You also need to point to exactly which neurons and connections are doing the XOR computation.",
+      "start_ms": 151467.3,
+      "end_ms": 161194.9,
+      "duration_ms": 9727.6,
+      "source_paragraphs": [
+        7
+      ]
+    },
+    {
+      "index": 12,
+      "voice": "Microsoft David",
+      "text": "Precisely. The authors formalize this as a computational abstraction, which is a tuple of a circuit S and a mapping tau. The circuit is the subgraph of the network responsible for the behavior, and the mapping connects the states of that circuit to the variables of your high-level algorithm.",
+      "start_ms": 161794.9,
+      "end_ms": 180021.1,
+      "duration_ms": 18226.2,
+      "source_paragraphs": [
+        7,
+        8
+      ]
+    },
+    {
+      "index": 13,
+      "voice": "Microsoft Zira",
+      "text": "And what constraints does the circuit need to satisfy?",
+      "start_ms": 180621.1,
+      "end_ms": 184190.0,
+      "duration_ms": 3568.9,
+      "source_paragraphs": [
+        8
+      ]
+    },
+    {
+      "index": 14,
+      "voice": "Microsoft David",
+      "text": "A circuit is defined as a subgraph of the network's computational graph that contains at least one complete path from inputs to outputs. The mapping needs to be surjective, meaning every value of the high-level variable must be achievable by some set of neural activations. You can't have phantom states that nothing in the network actually produces.",
+      "start_ms": 184790.0,
+      "end_ms": 206155.5,
+      "duration_ms": 21365.5,
+      "source_paragraphs": [
+        8
+      ]
+    },
+    {
+      "index": 15,
+      "voice": "Microsoft Zira",
+      "text": "And there's also a consistency requirement, right? Something about the mapping commuting with computation?",
+      "start_ms": 206755.5,
+      "end_ms": 214193.8,
+      "duration_ms": 7438.3,
+      "source_paragraphs": [
+        9
+      ]
+    },
+    {
+      "index": 16,
+      "voice": "Microsoft David",
+      "text": "Yes, this is crucial. The mapping has to be consistent, meaning it doesn't matter whether you first compute in the neural network and then apply the mapping, or first apply the mapping and then compute in the high-level algorithm. Both paths should give you the same answer. It's formalized as a commutative diagram.",
+      "start_ms": 214793.8,
+      "end_ms": 235169.7,
+      "duration_ms": 20375.9,
+      "source_paragraphs": [
+        9
+      ]
+    },
+    {
+      "index": 17,
+      "voice": "Microsoft Zira",
+      "text": "That's a strong requirement. And the paper uses Boolean circuits for the high-level algorithms?",
+      "start_ms": 235769.7,
+      "end_ms": 242207.9,
+      "duration_ms": 6438.2,
+      "source_paragraphs": [
+        9
+      ]
+    },
+    {
+      "index": 18,
+      "voice": "Microsoft David",
+      "text": "They do. The high-level features are binary, zero or one, and the algorithms are represented as Boolean circuits using AND, OR, and negation. The nice thing is Boolean circuits are computationally universal, so if identifiability fails even here, it's a genuine problem, not an artifact of a limited representation.",
+      "start_ms": 242807.9,
+      "end_ms": 265143.5,
+      "duration_ms": 22335.6,
+      "source_paragraphs": [
+        9
+      ]
+    },
+    {
+      "index": 19,
+      "voice": "Microsoft Zira",
+      "text": "That's a smart choice for making the argument airtight. So we've got the formal framework. In the next segment, we'll look at how the two strategies, circuit-first and algorithm-first, actually work in practice, and what the identifiability of explanations really means.",
+      "start_ms": 265743.5,
+      "end_ms": 284039.7,
+      "duration_ms": 18296.1,
+      "source_paragraphs": [
+        9
+      ]
+    }
+  ]
+}

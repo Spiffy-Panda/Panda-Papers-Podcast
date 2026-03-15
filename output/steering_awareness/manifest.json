@@ -1,0 +1,55 @@
+{
+  "paper_source": "input/steering_awareness_paper.json",
+  "parts": [
+    {
+      "part_number": 1,
+      "title": "Part 1: Abstract, Introduction",
+      "covers_paragraphs": [1, 2, 3, 4, 5, 6],
+      "covers_sections": ["abstract", "introduction"],
+      "dialog_input": "input/steering_awareness/part_01.json",
+      "timestamps_file": "output/steering_awareness/part_01_20260308_191614_timestamps.json",
+      "audio_file": "output/steering_awareness/part_01_20260308_191614.wav",
+      "status": "generated"
+    },
+    {
+      "part_number": 2,
+      "title": "Part 2: Related Work, Methodology",
+      "covers_paragraphs": [7, 8, 9, 10, 11, 12, 13],
+      "covers_sections": ["related-work", "methodology"],
+      "dialog_input": "input/steering_awareness/part_02.json",
+      "timestamps_file": "output/steering_awareness/part_02_20260308_191624_timestamps.json",
+      "audio_file": "output/steering_awareness/part_02_20260308_191624.wav",
+      "status": "generated"
+    },
+    {
+      "part_number": 3,
+      "title": "Part 3: Detection Capabilities, Robustness and Generalization",
+      "covers_paragraphs": [14, 15, 16, 17, 18, 19],
+      "covers_sections": ["methodology", "results-detection", "results-robustness"],
+      "dialog_input": "input/steering_awareness/part_03.json",
+      "timestamps_file": "output/steering_awareness/part_03_20260308_191634_timestamps.json",
+      "audio_file": "output/steering_awareness/part_03_20260308_191634.wav",
+      "status": "generated"
+    },
+    {
+      "part_number": 4,
+      "title": "Part 4: Steering Resistance, Mechanistic Interpretation",
+      "covers_paragraphs": [20, 21, 22, 23, 24, 25],
+      "covers_sections": ["results-resistance", "mechanistic-interpretation"],
+      "dialog_input": "input/steering_awareness/part_04.json",
+      "timestamps_file": "output/steering_awareness/part_04_20260308_191644_timestamps.json",
+      "audio_file": "output/steering_awareness/part_04_20260308_191644.wav",
+      "status": "generated"
+    },
+    {
+      "part_number": 5,
+      "title": "Part 5: Implications for AI Safety, Limitations, Conclusion",
+      "covers_paragraphs": [26, 27, 28, 29, 30, 31],
+      "covers_sections": ["implications-safety", "limitations", "conclusion"],
+      "dialog_input": "input/steering_awareness/part_05.json",
+      "timestamps_file": "output/steering_awareness/part_05_20260308_191653_timestamps.json",
+      "audio_file": "output/steering_awareness/part_05_20260308_191653.wav",
+      "status": "generated"
+    }
+  ]
+}

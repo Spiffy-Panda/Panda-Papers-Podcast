@@ -1,0 +1,153 @@
+{
+  "pause_between_ms": 600,
+  "rate": 0,
+  "part_number": 6,
+  "paper_source": "input/identifiability_paper.json",
+  "lines": [
+    {
+      "voice": "Microsoft David",
+      "text": "Welcome back for our final segment. We've seen the evidence: mechanistic interpretability criteria don't guarantee unique explanations, even for the simplest possible cases. Now let's talk about what this actually means and where the field might go from here.",
+      "source_paragraphs": [22]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "The big question is, does it actually matter that there are multiple valid explanations? Maybe uniqueness isn't the point.",
+      "source_paragraphs": [22]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "That's exactly the pragmatic stance some researchers take. If an explanation lets you predict behavior and gives you control over the system, maybe it doesn't matter that other explanations could also work. What matters is whether the explanation is useful for your specific goals, like predictivity, controllability, or informing decisions.",
+      "source_paragraphs": [22]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "That reminds me of the debate around interpretability illusions. Weren't there concerns that some explanations from the DAS method might not reflect what's truly happening?",
+      "source_paragraphs": [22]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Yes, there was a debate about dormant pathways, where an explanation looked valid by IIA standards but could be questioned on deeper grounds. The defense was exactly this pragmatic one: the explanation still met the goals of being predictive and allowing manipulation, even if it might not be the only possible account.",
+      "source_paragraphs": [22]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "But if we do care about identifiability, is there any hope of achieving it?",
+      "source_paragraphs": [23]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "The authors argue that current MI criteria are insufficient, and simple heuristics like always picking the sparsest circuit won't solve the problem. But there are more principled ideas from causal abstraction theory.",
+      "source_paragraphs": [23]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "How does causal abstraction help?",
+      "source_paragraphs": [23]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Unlike current MI frameworks, causal abstraction requires that all of the model's internal states are accounted for in the higher-level representation. You can't just ignore components; if you exclude something from your circuit, you need to causally justify why it doesn't matter. This has been formalized through a concept called faithfulness.",
+      "source_paragraphs": [23]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So it's not just about finding a circuit that works, but also showing that everything outside the circuit is truly irrelevant.",
+      "source_paragraphs": [23]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Exactly. It's a much stricter standard. Then there's the inner interpretability framework, which draws lessons from cognitive neuroscience.",
+      "source_paragraphs": [24]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "What's the key idea there?",
+      "source_paragraphs": [24]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "It emphasizes building multi-level mechanistic explanations and stress-testing them with proper hypothesis testing. The idea is that an explanation validated by many different criteria, each testing different properties like invariances, becomes more trustworthy than one that passes a single test.",
+      "source_paragraphs": [24]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So instead of relying on one metric, you triangulate with multiple independent checks. That feels much more robust.",
+      "source_paragraphs": [24]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "The authors suggest this could help establish MI as a proper natural science, similar to how neuroscience and biology build understanding through converging evidence rather than single definitive experiments.",
+      "source_paragraphs": [24]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Now, there's a deeper philosophical question here too. Is identifiability even achievable in principle?",
+      "source_paragraphs": [25]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Great question. The authors point out that in some areas of science, competing theories coexist despite being fundamentally incompatible. Think of the Lagrangian and Hamiltonian formulations of classical mechanics. Both are mathematically equivalent but conceptually different. This is called contrastive underdetermination.",
+      "source_paragraphs": [25]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So maybe MI is just inherently underdetermined, like some areas of physics?",
+      "source_paragraphs": [25]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "It's possible. There's also computational hardness to consider. Some interpretability queries may be intrinsically hard to solve, which would impose fundamental limits on what MI can achieve. The authors connect this to causal representation learning, where identifiability often requires strong constraints that may not be realistic.",
+      "source_paragraphs": [25]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "One thing that keeps coming up is that all these experiments use toy models. How confident can we be that these findings apply to real, large-scale models?",
+      "source_paragraphs": [26]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "The authors are upfront about this limitation. Their experiments use small MLPs on simple tasks, which are very different from large language models trained on massive datasets with transformer architectures. It's possible that identifiability issues behave differently at scale.",
+      "source_paragraphs": [26]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "But their argument is that the burden of proof should go the other way?",
+      "source_paragraphs": [26]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Right. If identifiability problems disappear in larger models, someone needs to show that and explain why. Understanding when and why current criteria work well versus when they fail would itself lead to better criteria and definitions.",
+      "source_paragraphs": [26]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So what's the bottom line? What do the authors want the community to take away from this?",
+      "source_paragraphs": [27]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Three main directions. First, explore stricter criteria based on causal abstraction that might narrow down the space of valid explanations. Second, be explicit about pragmatic goals, what exactly you want your explanation to do for you. And third, embrace broader frameworks like inner interpretability that require validation through multiple complementary criteria.",
+      "source_paragraphs": [27]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "It's a call to be more rigorous and more honest about what MI can and can't guarantee.",
+      "source_paragraphs": [27]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Exactly. The field is young and making incredible progress, but this paper is a healthy reminder to examine the foundations carefully. Whether you think uniqueness is essential or not, knowing that your criteria can produce thousands of equally valid explanations is something every MI researcher should be aware of.",
+      "source_paragraphs": [27]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Well said. Thanks everyone for listening. This has been a great deep dive into a really thought-provoking paper about the foundations of how we understand neural networks from the inside.",
+      "source_paragraphs": [27]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Thanks for joining us. Until next time!",
+      "source_paragraphs": [27]
+    }
+  ]
+}

@@ -1,0 +1,224 @@
+{
+  "source": "C:\\Users\\Brian\\Documents\\UW Winter 26\\ProductivityAndReadingHelper\\input\\responsible_ux\\part_12.json",
+  "audio_file": "part_12_20260306_211643.wav",
+  "tag": "part_12",
+  "generated": "2026-03-06T21:16:45.359026",
+  "total_duration_ms": 339620.8,
+  "total_duration_formatted": "5:39.620",
+  "lines": [
+    {
+      "index": 0,
+      "voice": "Microsoft David",
+      "text": "Alright, let's talk about test-driving. This is section four-two-two of the paper, and it describes how UX practitioners go beyond traditional design methods to directly examine machine learning models.",
+      "start_ms": 0.0,
+      "end_ms": 13482.0,
+      "duration_ms": 13482.0,
+      "source_paragraphs": [
+        68
+      ]
+    },
+    {
+      "index": 1,
+      "voice": "Microsoft Zira",
+      "text": "So rather than just designing around the model, they're actually getting hands-on with it?",
+      "start_ms": 14082.0,
+      "end_ms": 19450.5,
+      "duration_ms": 5368.5,
+      "source_paragraphs": [
+        68
+      ]
+    },
+    {
+      "index": 2,
+      "voice": "Microsoft David",
+      "text": "Exactly. A big part of UX designers' work during early-stage AI application design, beyond representing the user perspective, was understanding the potential harm and capability of the underlying ML model. To do this, they supplemented traditional UX methods with novel emerging approaches specifically aimed at surfacing RAI issues that traditional methods couldn't uncover.",
+      "start_ms": 20050.5,
+      "end_ms": 44240.0,
+      "duration_ms": 24189.5,
+      "source_paragraphs": [
+        68
+      ]
+    },
+    {
+      "index": 3,
+      "voice": "Microsoft Zira",
+      "text": "What do you mean by traditional methods not being sufficient? What's wrong with the usual approaches?",
+      "start_ms": 44840.0,
+      "end_ms": 51653.1,
+      "duration_ms": 6813.1,
+      "source_paragraphs": [
+        68,
+        69
+      ]
+    },
+    {
+      "index": 4,
+      "voice": "Microsoft David",
+      "text": "Several practitioners mentioned using traditional methods like Wizard-of-Oz studies or toy examples to quickly test AI design ideas. But they also pointed out that these methods have real limitations when it comes to surfacing real-world RAI issues. The scope, time frame, and researcher supervision constraints of typical user studies don't allow users to bring authentic personal data, needs, and use cases to bear on model interaction.",
+      "start_ms": 52253.1,
+      "end_ms": 79821.8,
+      "duration_ms": 27568.8,
+      "source_paragraphs": [
+        69
+      ]
+    },
+    {
+      "index": 5,
+      "voice": "Microsoft Zira",
+      "text": "Right, because in a controlled study environment, you're never going to see the full range of how people would actually use the system in their real lives.",
+      "start_ms": 80421.8,
+      "end_ms": 89674.5,
+      "duration_ms": 9252.7,
+      "source_paragraphs": [
+        69,
+        70
+      ]
+    },
+    {
+      "index": 6,
+      "voice": "Microsoft David",
+      "text": "Precisely. And one UX researcher gave a really poignant example about prototyping a health-related tool. She said one of the hardest parts is that it's a highly personal experience when you have a health condition. Your anxiety level might be incredibly high, and your investment in finding relevant information is way higher than you can capture in an artificial study setting using toy examples. She described it as reading the tea leaves a little bit.",
+      "start_ms": 90274.5,
+      "end_ms": 118753.4,
+      "duration_ms": 28478.9,
+      "source_paragraphs": [
+        70,
+        71
+      ]
+    },
+    {
+      "index": 7,
+      "voice": "Microsoft Zira",
+      "text": "That's such a powerful example. The stakes in real life are so much higher than in a study. So how did they address this gap?",
+      "start_ms": 119353.4,
+      "end_ms": 128321.5,
+      "duration_ms": 8968.1,
+      "source_paragraphs": [
+        71,
+        72
+      ]
+    },
+    {
+      "index": 8,
+      "voice": "Microsoft David",
+      "text": "This is where test-driving comes in. Many UX practitioners got access to emerging prototyping tools that let them interact with ML models directly. The PromptMaker tool that was used in the interviews was already being used by several practitioners. During prototyping, they would continuously probe model outputs using different natural language prompts to understand the model's capabilities and limitations and determine whether a design idea was a good fit for what the model could actually do.",
+      "start_ms": 128921.5,
+      "end_ms": 159594.6,
+      "duration_ms": 30673.1,
+      "source_paragraphs": [
+        72
+      ]
+    },
+    {
+      "index": 9,
+      "voice": "Microsoft Zira",
+      "text": "So test-driving is basically the practice of repeatedly poking at the model to see what it can and can't handle?",
+      "start_ms": 160194.6,
+      "end_ms": 166842.7,
+      "duration_ms": 6648.1,
+      "source_paragraphs": [
+        72
+      ]
+    },
+    {
+      "index": 10,
+      "voice": "Microsoft David",
+      "text": "That's a good way to put it. And practitioners considered good prompt design to be, in their words, an art form. It was difficult to identify why certain prompt constructions led to certain outputs, making repeatable best practices hard to pin down. One practitioner described PromptMaker as a great tool for scratch-padding and moving quickly, but noted that prompting itself is really weird. They said little things like having a single space at the end of your prompt can completely change the model's output.",
+      "start_ms": 167442.7,
+      "end_ms": 199930.7,
+      "duration_ms": 32488.0,
+      "source_paragraphs": [
+        72,
+        73
+      ]
+    },
+    {
+      "index": 11,
+      "voice": "Microsoft Zira",
+      "text": "A single space changes everything? That really highlights how unpredictable these systems can be. And if the practitioners themselves find it strange, imagine end users trying to work with it.",
+      "start_ms": 200530.7,
+      "end_ms": 213438.0,
+      "duration_ms": 12907.3,
+      "source_paragraphs": [
+        73
+      ]
+    },
+    {
+      "index": 12,
+      "voice": "Microsoft David",
+      "text": "Right. And there's an even deeper concern. One practitioner raised the issue that prompting could introduce bias, because you might end up codifying your own belief systems in the prompts. They pointed out that when a new user starts asking questions, they bring a completely different set of assumptions and perspectives. If you're not thoughtful about that, your prompts might represent your beliefs in an outsized way.",
+      "start_ms": 214038.0,
+      "end_ms": 240392.8,
+      "duration_ms": 26354.8,
+      "source_paragraphs": [
+        74
+      ]
+    },
+    {
+      "index": 13,
+      "voice": "Microsoft Zira",
+      "text": "Oh, that's a crucial insight. The designer's worldview gets baked into the prompts, which then shapes what the AI does for everyone. How did they try to mitigate that?",
+      "start_ms": 240992.8,
+      "end_ms": 252930.1,
+      "duration_ms": 11937.3,
+      "source_paragraphs": [
+        74
+      ]
+    },
+    {
+      "index": 14,
+      "voice": "Microsoft David",
+      "text": "That practitioner liked to crowdsource few-shot examples and intentionally eliminate prompts that looked too similar. They were specifically looking for examples that represent a diversity of input types, and they even modeled slightly adversarial examples. But the paper notes that most UX practitioners lacked a standard practice for addressing this, beyond trying to diversify their few-shot examples or deferring to user testing.",
+      "start_ms": 253530.1,
+      "end_ms": 280108.9,
+      "duration_ms": 26578.8,
+      "source_paragraphs": [
+        74
+      ]
+    },
+    {
+      "index": 15,
+      "voice": "Microsoft Zira",
+      "text": "So there's still a lot of room for the field to develop more systematic approaches to responsible prompting. It feels like they're pioneering something new without a real playbook.",
+      "start_ms": 280708.9,
+      "end_ms": 291051.2,
+      "duration_ms": 10342.3,
+      "source_paragraphs": [
+        74
+      ]
+    },
+    {
+      "index": 16,
+      "voice": "Microsoft David",
+      "text": "That's a perfect characterization. And it's one of the key tensions the paper surfaces: UX practitioners are being asked to work with fundamentally new technology that doesn't fit neatly into their existing methods, and they're improvising responsible practices as they go.",
+      "start_ms": 291651.2,
+      "end_ms": 308367.2,
+      "duration_ms": 16716.1,
+      "source_paragraphs": [
+        74
+      ]
+    },
+    {
+      "index": 17,
+      "voice": "Microsoft Zira",
+      "text": "This whole section on test-driving really shows the frontier nature of this work. These practitioners are essentially inventing a new discipline in real time.",
+      "start_ms": 308967.2,
+      "end_ms": 318604.9,
+      "duration_ms": 9637.7,
+      "source_paragraphs": [
+        74
+      ]
+    },
+    {
+      "index": 18,
+      "voice": "Microsoft David",
+      "text": "They really are. And in the next part, we'll explore the third major practice: responsible evaluation. This is where the paper looks at how practitioners involve actual users in assessing RAI issues, and it raises some challenging questions about how far user participation should go. Stay tuned.",
+      "start_ms": 319204.9,
+      "end_ms": 339620.8,
+      "duration_ms": 20415.9,
+      "source_paragraphs": [
+        74
+      ]
+    }
+  ]
+}

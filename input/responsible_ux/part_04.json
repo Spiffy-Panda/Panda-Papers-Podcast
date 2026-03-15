@@ -1,0 +1,123 @@
+{
+  "pause_between_ms": 600,
+  "rate": 0,
+  "part_number": 4,
+  "paper_source": "input/responsible_ux_paper.json",
+  "lines": [
+    {
+      "voice": "Microsoft David",
+      "text": "Welcome back. Last time we talked about the history of values and ethics in UX practice. Now let's dig into how UX practitioners actually design and prototype with machine learning models, because this turns out to be really challenging.",
+      "source_paragraphs": [19]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "I can imagine. AI systems behave so differently from traditional software. The outputs aren't always predictable.",
+      "source_paragraphs": [19]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Exactly. And that unpredictability creates real problems for UX practitioners. Research has found that UX designers commonly try to use their traditional methods when designing with AI, things like Wizard of Oz testing, sketching, paper prototyping, and rapid prototyping. But these methods often fall short because they can't capture the non-deterministic behavior of AI systems.",
+      "source_paragraphs": [19]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "That makes sense. You can't really paper prototype a system that might give different answers each time someone asks the same question.",
+      "source_paragraphs": [19]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Right. And there's another issue. Traditional UX methods tend to focus heavily on the user interface, which is just one piece of the puzzle when designing with AI. There are other crucial considerations like users' mental models of the AI system and whether users will actually accept and trust the design.",
+      "source_paragraphs": [20]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So it's not just about making the interface look nice. It's about whether people understand what the AI is doing and whether they trust it.",
+      "source_paragraphs": [20]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Exactly. And researchers have emphasized the need for high-fidelity prototypes that can generate tangible, realistic behaviors. You need something more than toy scenarios to properly assess the human and societal impacts of an AI application.",
+      "source_paragraphs": [20]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "That sounds like it would require a lot of collaboration with technical teams. Can UX practitioners build these kinds of prototypes on their own?",
+      "source_paragraphs": [21]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "That's been one of the big challenges. UX practitioners frequently need to collaborate with engineers and data scientists to understand what the models can and can't do. While high-level abstractions are enough for basic design work, a deeper understanding of how the models actually function helps UX practitioners envision use cases that might not be obvious.",
+      "source_paragraphs": [21]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "But I bet that collaboration isn't always smooth.",
+      "source_paragraphs": [21]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Not at all. UX practitioners and engineers often don't share a common language or workflow. So UX practitioners end up doing extra work to bridge those disciplinary boundaries. They might share user stories, raw user feedback, or even user testing video recordings to help engineers understand user needs. Some even adapt to a more data-centric culture, translating qualitative insights into quantitative metrics.",
+      "source_paragraphs": [21]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "That's a lot of translation work. So is there a better way? Something that lets UX practitioners work more directly with AI models?",
+      "source_paragraphs": [22]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Yes, and this is where things get really interesting. An emerging practice is prompt programming, where UX practitioners can send natural language prompts directly to machine learning models and interact with them to test their capabilities and limitations. It's a game changer because it lets UX designers work with AI models directly, without always needing an engineer as an intermediary.",
+      "source_paragraphs": [22]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Oh, so they can just type in a request and see what the model does? That sounds a lot more accessible than writing code.",
+      "source_paragraphs": [22]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "It is. Research has found that prompt-based prototyping helps UX practitioners in several ways. It reduces their reliance on engineers, it speeds up the prototyping process so they can test ideas and fail fast, and the prototypes themselves become useful boundary objects for communicating with collaborators.",
+      "source_paragraphs": [22]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "But I have to ask, doesn't working directly with these large language models also come with responsible AI risks?",
+      "source_paragraphs": [23]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Absolutely, and this is a critical point. These large pre-trained models, including both language models and image generation models, are known to generate outputs that can perpetuate social stereotypes, toxicity, discrimination, and exclusionary norms. So when UX practitioners prototype with these models, they're directly confronting responsible AI challenges.",
+      "source_paragraphs": [23]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So the very tool that makes prototyping easier also surfaces new ethical concerns. That's a double-edged sword.",
+      "source_paragraphs": [23]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "It really is. And researchers have been exploring ways to evaluate these models before putting them into use. Some approaches involve manually creating test cases or automatically generating tests using the model itself. But these methods have their own pitfalls that can make them unreliable.",
+      "source_paragraphs": [23]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So there's a growing recognition that we need human-centered approaches to identify and mitigate responsible AI issues with these models?",
+      "source_paragraphs": [23]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Exactly. And that's where UX practitioners come in. There are increasing calls from the research community for HCI and UX practitioners to bring their human-centered expertise to support responsible AI work with large language models. But until this paper, nobody had really explored how prompt programming was already facilitating or hindering UX practitioners' work on responsible AI.",
+      "source_paragraphs": [23]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So this paper fills that gap by looking at what's actually happening in practice.",
+      "source_paragraphs": [23]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Exactly. And in our next part, we'll get into the study itself. How did the authors actually go about investigating these questions? We'll look at who they interviewed, how they collected data, and the clever way they used a prompt programming tool as a probe during interviews.",
+      "source_paragraphs": [23]
+    }
+  ]
+}

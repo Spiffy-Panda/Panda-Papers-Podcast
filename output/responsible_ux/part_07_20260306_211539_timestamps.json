@@ -1,0 +1,247 @@
+{
+  "source": "C:\\Users\\Brian\\Documents\\UW Winter 26\\ProductivityAndReadingHelper\\input\\responsible_ux\\part_07.json",
+  "audio_file": "part_07_20260306_211539.wav",
+  "tag": "part_07",
+  "generated": "2026-03-06T21:15:42.120750",
+  "total_duration_ms": 364612.8,
+  "total_duration_formatted": "6:04.612",
+  "lines": [
+    {
+      "index": 0,
+      "voice": "Microsoft David",
+      "text": "Welcome back to our deep dive into Designing Responsible AI. Last time we talked about the rigorous data analysis methodology, how the research team coded hundreds of open codes and distilled them into three major themes. Now we're moving into some really important territory, starting with the authors' positionality statement and then the actual findings.",
+      "start_ms": 0.0,
+      "end_ms": 22335.3,
+      "duration_ms": 22335.3,
+      "source_paragraphs": [
+        37
+      ]
+    },
+    {
+      "index": 1,
+      "voice": "Microsoft Zira",
+      "text": "Right, and I remember you mentioned we'd get into the findings this time. But first, what's a positionality statement? Why does that matter in a study like this?",
+      "start_ms": 22935.3,
+      "end_ms": 34237.9,
+      "duration_ms": 11302.6,
+      "source_paragraphs": [
+        37
+      ]
+    },
+    {
+      "index": 2,
+      "voice": "Microsoft David",
+      "text": "Great question. A positionality statement is where researchers acknowledge their own backgrounds and how those experiences might shape the research. In this case, the team is made up of researchers with both academic and industry backgrounds. All of them were employees at the company that served as the research site during the study period. One author had direct experience in an industry UX role, and two had experience building applications that incorporate large-scale machine learning models.",
+      "start_ms": 34837.9,
+      "end_ms": 66196.7,
+      "duration_ms": 31358.8,
+      "source_paragraphs": [
+        37
+      ]
+    },
+    {
+      "index": 3,
+      "voice": "Microsoft Zira",
+      "text": "So they're being transparent about the fact that they're insiders in a way. They're studying practices at a company where they actually work.",
+      "start_ms": 66796.7,
+      "end_ms": 75144.3,
+      "duration_ms": 8347.6,
+      "source_paragraphs": [
+        37,
+        38
+      ]
+    },
+    {
+      "index": 4,
+      "voice": "Microsoft David",
+      "text": "Exactly. And the team is also diverse in some important ways. Two authors were born in and have lived in Asia-Pacific countries, and four identify as white Americans. All of them completed their research training at predominantly Western institutions. And five of the six have personal experience with marginalization in computing, either as members of marginalized groups themselves or through years of conducting research with those communities.",
+      "start_ms": 75744.3,
+      "end_ms": 104598.2,
+      "duration_ms": 28853.9,
+      "source_paragraphs": [
+        38
+      ]
+    },
+    {
+      "index": 5,
+      "voice": "Microsoft Zira",
+      "text": "That's a nice mix. But I imagine they also acknowledge some limitations with their perspective?",
+      "start_ms": 105198.2,
+      "end_ms": 111631.4,
+      "duration_ms": 6433.2,
+      "source_paragraphs": [
+        39
+      ]
+    },
+    {
+      "index": 6,
+      "voice": "Microsoft David",
+      "text": "They do. They openly acknowledge that as researchers trained and working in predominantly Western organizations, complementary scholarship is needed to extend and further the understandings in this paper. They also note that their positionality influenced everything from how they framed the research questions, to the snowball sampling approach that relied on their professional networks, to the study design and data interpretation.",
+      "start_ms": 112231.4,
+      "end_ms": 138140.9,
+      "duration_ms": 25909.5,
+      "source_paragraphs": [
+        39
+      ]
+    },
+    {
+      "index": 7,
+      "voice": "Microsoft Zira",
+      "text": "I really appreciate that level of reflexivity. It's like they're practicing what they preach about responsible research. Okay, so now let's get into the actual findings!",
+      "start_ms": 138740.9,
+      "end_ms": 150653.2,
+      "duration_ms": 11912.3,
+      "source_paragraphs": [
+        39,
+        40
+      ]
+    },
+    {
+      "index": 8,
+      "voice": "Microsoft David",
+      "text": "Absolutely. So through their analysis, they identified three key emerging practices that UX practitioners carry out to meet evolving responsible AI needs. These practices aren't linear steps. They're embedded throughout practitioners' work in iterative ways. The three practices are: building and reinforcing a responsible AI lens, responsible prototyping, and responsible evaluation of AI applications.",
+      "start_ms": 151253.2,
+      "end_ms": 179202.7,
+      "duration_ms": 27949.5,
+      "source_paragraphs": [
+        40
+      ]
+    },
+    {
+      "index": 9,
+      "voice": "Microsoft Zira",
+      "text": "Interesting. And for each one, they look at both how RAI experts and UX practitioners handle it?",
+      "start_ms": 179802.7,
+      "end_ms": 187130.7,
+      "duration_ms": 7328.1,
+      "source_paragraphs": [
+        40
+      ]
+    },
+    {
+      "index": 10,
+      "voice": "Microsoft David",
+      "text": "That's right. For each practice, they introduce how both groups enact and operationalize responsible AI, then they highlight how UX practitioners' work compares to what RAI experts do in their more formal capacity. Let's start with the first one: building and reinforcing a responsible AI lens.",
+      "start_ms": 187730.7,
+      "end_ms": 207326.8,
+      "duration_ms": 19596.1,
+      "source_paragraphs": [
+        40,
+        41
+      ]
+    },
+    {
+      "index": 11,
+      "voice": "Microsoft Zira",
+      "text": "A responsible AI lens. What exactly do they mean by that?",
+      "start_ms": 207926.8,
+      "end_ms": 213010.5,
+      "duration_ms": 5083.6,
+      "source_paragraphs": [
+        41
+      ]
+    },
+    {
+      "index": 12,
+      "voice": "Microsoft David",
+      "text": "This is really central to the paper. An RAI lens positions responsibility as a reflexive, ongoing, and holistic perspective that influences practices and decisions throughout design and development as they arise in context. It's not bound to a specific artifact, protocol, or type of analysis. Instead, it represents an ongoing shared mindset that acknowledges the social position of those who shape technology and considers the intersecting relationships between design choices and their societal implications.",
+      "start_ms": 213610.5,
+      "end_ms": 245858.6,
+      "duration_ms": 32248.1,
+      "source_paragraphs": [
+        41
+      ]
+    },
+    {
+      "index": 13,
+      "voice": "Microsoft Zira",
+      "text": "So it's less about checking a box on a compliance form and more about having this ever-present awareness that guides everything you do.",
+      "start_ms": 246458.6,
+      "end_ms": 253841.6,
+      "duration_ms": 7383.0,
+      "source_paragraphs": [
+        41
+      ]
+    },
+    {
+      "index": 14,
+      "voice": "Microsoft David",
+      "text": "Precisely. And both RAI experts and UX practitioners went to great lengths to cultivate and reinforce this lens, not just in their own work but across their teams and the broader organizational culture. For RAI experts, this was done explicitly since they occupied established positions with focused expertise in areas like ethics, philosophy, and law. For UX practitioners, it was more implicit. They saw RAI as an emerging but crucial piece of the user experience of AI products.",
+      "start_ms": 254441.6,
+      "end_ms": 286890.2,
+      "duration_ms": 32448.7,
+      "source_paragraphs": [
+        42
+      ]
+    },
+    {
+      "index": 15,
+      "voice": "Microsoft Zira",
+      "text": "That distinction is really interesting. The RAI experts have the formal mandate to do this work, while UX practitioners are kind of absorbing it into their existing roles because they recognize its importance.",
+      "start_ms": 287490.2,
+      "end_ms": 300416.9,
+      "duration_ms": 12926.6,
+      "source_paragraphs": [
+        42
+      ]
+    },
+    {
+      "index": 16,
+      "voice": "Microsoft David",
+      "text": "That's a great way to put it. And the paper describes the specific work both groups did to pursue this goal. It ranges from self-education and sensitizing themselves to RAI issues, all the way to actively communicating with and working alongside teams to surface and mitigate problems.",
+      "start_ms": 301016.9,
+      "end_ms": 319213.1,
+      "duration_ms": 18196.2,
+      "source_paragraphs": [
+        43
+      ]
+    },
+    {
+      "index": 17,
+      "voice": "Microsoft Zira",
+      "text": "So it's both an internal journey of learning and an external effort of bringing others along.",
+      "start_ms": 319813.1,
+      "end_ms": 325176.3,
+      "duration_ms": 5363.2,
+      "source_paragraphs": [
+        43
+      ]
+    },
+    {
+      "index": 18,
+      "voice": "Microsoft David",
+      "text": "Exactly. And what makes this finding so compelling is that it shows responsible AI isn't just about tools or checklists. It's fundamentally about cultivating a way of seeing and thinking that becomes woven into everyday design practice.",
+      "start_ms": 325776.3,
+      "end_ms": 340987.8,
+      "duration_ms": 15211.5,
+      "source_paragraphs": [
+        41,
+        42,
+        43
+      ]
+    },
+    {
+      "index": 19,
+      "voice": "Microsoft Zira",
+      "text": "I love that framing. It feels much more sustainable than a one-time audit approach.",
+      "start_ms": 341587.8,
+      "end_ms": 347456.1,
+      "duration_ms": 5868.4,
+      "source_paragraphs": [
+        41,
+        43
+      ]
+    },
+    {
+      "index": 20,
+      "voice": "Microsoft David",
+      "text": "It really does. And coming up next, we'll dig into the specific ways practitioners sensitize themselves and their teams to RAI concerns, including some really practical strategies they developed. It's where the rubber meets the road on building that lens.",
+      "start_ms": 348056.1,
+      "end_ms": 364612.8,
+      "duration_ms": 16556.6,
+      "source_paragraphs": [
+        43
+      ]
+    }
+  ]
+}

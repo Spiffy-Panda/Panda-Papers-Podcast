@@ -1,0 +1,113 @@
+{
+  "pause_between_ms": 600,
+  "rate": 0,
+  "part_number": 8,
+  "paper_source": "input/great_plea_paper.json",
+  "lines": [
+    {
+      "voice": "Microsoft David",
+      "text": "Welcome back, everyone. Last time we saw how the authors surveyed frameworks from the DOD, NATO, the WHO, and others to develop the GREAT PLEA principles. Now we're diving into the first principle: Governability, the G in GREAT PLEA.",
+      "source_paragraphs": [39]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Governability. So how do the authors define this principle?",
+      "source_paragraphs": [39]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "They define governability as the ability of a system to integrate processes and tools which promote and maintain its capability and, critically, ensure meaningful human control. That last part is really the key: meaningful human control.",
+      "source_paragraphs": [39]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So it's not just about the AI working properly. It's about humans being able to stay in charge of it.",
+      "source_paragraphs": [39]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Exactly. And the implementation side spells out what that looks like in practice. Humans must retain the ability to identify and prevent unintended consequences. And when unintended behavior does occur, because it will eventually, human intervention to disengage or deactivate the deployed AI system should always be possible.",
+      "source_paragraphs": [40]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So essentially there needs to be an off switch that actually works. You can't have a situation where the AI is doing something harmful and nobody can stop it.",
+      "source_paragraphs": [40]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Right. And the authors add an important nuance here for healthcare specifically. Think about widespread deployment scenarios where numerous hospitals may be using the same AI systems. Governance becomes critical at that scale.",
+      "source_paragraphs": [41]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Because if something goes wrong, it's not just one hospital affected. It could be hundreds simultaneously.",
+      "source_paragraphs": [41]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Exactly. And here's a practical requirement the authors emphasize: humans, whether they develop or implement the system, should possess the capability to deactivate it without disrupting the regular patient care activities in the clinics. You can't just pull the plug and leave the hospital unable to function.",
+      "source_paragraphs": [41]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "That's a really thoughtful point. If hospitals become dependent on an AI system and then you have to shut it down, there needs to be a graceful way to do that without patients falling through the cracks.",
+      "source_paragraphs": [41]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Precisely. So the authors lay out four concrete requirements for governability. First, there need to be explicit guidelines for monitoring generative AI systems for potential errors. You need to be actively watching for problems, not waiting until patients are harmed.",
+      "source_paragraphs": [42]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Proactive monitoring rather than reactive damage control. What's the second requirement?",
+      "source_paragraphs": [42]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Deactivation capability. When an error is detected, you need the ability to shut the system down to prevent further damage. That ties back to the off switch we discussed.",
+      "source_paragraphs": [42]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Makes sense. And the third?",
+      "source_paragraphs": [42]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Remedying errors. It's not enough to just stop the system. You need processes for actually fixing the problems that were identified, whether that's retraining the model, updating its data, or adjusting its parameters.",
+      "source_paragraphs": [42]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So monitor, deactivate, fix. What's the fourth requirement?",
+      "source_paragraphs": [42]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Interaction design to reduce operator errors. The system should be designed in a way that minimizes the chance of human users making mistakes when working with it. That could mean clear interfaces, good warnings, or intuitive controls.",
+      "source_paragraphs": [42]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So it's a full lifecycle approach: watch the system, be ready to shut it down, know how to fix it, and design it so humans interact with it safely. That's a really solid foundation for keeping AI under control.",
+      "source_paragraphs": [39, 40, 41, 42]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "It is. And what I appreciate about the authors' approach is that they're not saying don't use AI. They're saying use it, but make sure you can govern it. Keep humans in control at every stage.",
+      "source_paragraphs": [39, 40, 41, 42]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Which sets the stage perfectly for the next principle. If governability is about maintaining control, what comes next?",
+      "source_paragraphs": [42]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Next up is the R in GREAT PLEA: Reliability. The authors will define what it means for an AI system to be reliable in a healthcare context, discuss the challenges that hallucination and output variation pose to reliability, and lay out what rigorous evaluation should look like. It's another crucial piece of the puzzle. Stay tuned!",
+      "source_paragraphs": [42]
+    }
+  ]
+}

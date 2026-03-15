@@ -1,0 +1,93 @@
+{
+  "pause_between_ms": 600,
+  "rate": 0,
+  "part_number": 16,
+  "paper_source": "input/responsible_ux_paper.json",
+  "lines": [
+    {
+      "voice": "Microsoft David",
+      "text": "Welcome back. We've now covered all three of the paper's major findings: building an RAI lens, responsible prototyping, and responsible evaluation. Now we're moving into the discussion section, where the authors reflect on what all this means. This is section five.",
+      "source_paragraphs": [93]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Great. So they're going to tie everything together. What's the big picture?",
+      "source_paragraphs": [93]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "The authors start by recapping the three emerging RAI practices they identified and the specific strategies and challenges within each. Then they lay out their discussion in three parts: the hidden work of RAI, challenges and opportunities for designing with large language models, and reconfiguring the role of the user in responsible AI.",
+      "source_paragraphs": [93, 94]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Let's start with the hidden work. What do they mean by that?",
+      "source_paragraphs": [95]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "This is section five-one, and it's really compelling. The authors highlight that there's been increasing calls for UX practitioners to be involved in identifying and addressing RAI issues. But what they found is that a significant amount of this work is hidden, meaning it's not formally recognized, valued, or compensated. They show this by comparing what UX practitioners do alongside the formal work of RAI experts.",
+      "source_paragraphs": [95]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So UX practitioners are doing RAI work, but it's kind of invisible within the organization?",
+      "source_paragraphs": [95, 96]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Exactly. The paper finds that RAI experts work at the organizational level developing guidelines, toolkits, evaluations, and foundational research. UX practitioners, on the other hand, operate in specific application areas and contexts, actively promoting, implementing, and adapting RAI to fit their day-to-day work. They're adapting their existing practices, negotiating their roles, and educating others about human-centered values and RAI concerns. But all of this requires additional time and effort on top of their regular responsibilities.",
+      "source_paragraphs": [95, 96]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "It sounds like what some scholars have called invisible work, or articulation work. The labor that makes other work possible but doesn't get counted as real work.",
+      "source_paragraphs": [96]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "That's exactly the framework the authors invoke. They reference Star and Strauss's concept of invisible work and Strauss's concept of articulation work. The UX practitioners are essentially translating high-level RAI guidelines into specific, actionable practices for their teams, since RAI issues tend to be domain-specific and technology-specific.",
+      "source_paragraphs": [96, 97]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So the guidelines from the RAI team might be abstract, and UX practitioners have to figure out what they actually mean for a specific product context?",
+      "source_paragraphs": [97]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Precisely. And the authors call for more HCI research to understand how to design RAI guidelines and frameworks that can be more easily tailored to fit into existing UX workflows. They suggest starting by studying how practitioners are already adapting these guidelines.",
+      "source_paragraphs": [97]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "What about the learning and education aspect? We talked earlier about how practitioners were self-educating on RAI.",
+      "source_paragraphs": [98]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "The authors point out that RAI and design ethics are often not included in HCI and UX curricula, so practitioners are teaching themselves. And beyond self-education, they're also educating others on their teams through strategic communication. The paper argues these emerging roles as learners and educators need to be explicitly recognized as part of UX practice so organizations actually value them. They also suggest that organizations could provide UX-specific resources to support practitioners in taking on more of an advocate or activist role in pushing for responsible AI.",
+      "source_paragraphs": [98]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Advocate or activist, those are strong words. And I imagine the emotional toll of this work is significant too?",
+      "source_paragraphs": [98, 99]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Absolutely. The authors highlight that this hidden work isn't just about extra time and effort. It also involves emotional or affective labor, which prior research has identified as a crucial part of designers' ethics work. The problem is that this emotional labor isn't valued as part of the typical technology design process. And because the work is hidden, it's constantly at risk of being deprioritized when competing priorities arise, or it leads others to view UX practitioners as blockers of progress.",
+      "source_paragraphs": [99]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Being seen as a blocker for trying to do the right thing. That's a tough position to be in.",
+      "source_paragraphs": [99]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "It really is. And in the next part, we'll continue the discussion by looking at what happens when UX practitioners repeatedly expose themselves to toxic model outputs, and then we'll explore the specific challenges and opportunities for responsibly designing with large language models.",
+      "source_paragraphs": [99]
+    }
+  ]
+}

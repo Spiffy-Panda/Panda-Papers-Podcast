@@ -1,0 +1,285 @@
+{
+  "source": "C:\\Users\\Brian\\Documents\\UW Winter 26\\ProductivityAndReadingHelper\\input\\great_plea\\part_01.json",
+  "audio_file": "part_01_20260306_163647.wav",
+  "tag": "part_01",
+  "generated": "2026-03-06T16:36:49.485777",
+  "total_duration_ms": 313652.2,
+  "total_duration_formatted": "5:13.652",
+  "lines": [
+    {
+      "index": 0,
+      "voice": "Microsoft David",
+      "text": "Hey everyone, welcome to the show! Today we're diving into a really fascinating paper that bridges two worlds you might not expect to have much in common: the military and healthcare.",
+      "start_ms": 0.0,
+      "end_ms": 11857.4,
+      "duration_ms": 11857.4,
+      "source_paragraphs": [
+        1
+      ]
+    },
+    {
+      "index": 1,
+      "voice": "Microsoft Zira",
+      "text": "Oh, that's an interesting combo. What's the paper about exactly?",
+      "start_ms": 12457.4,
+      "end_ms": 17811.1,
+      "duration_ms": 5353.7,
+      "source_paragraphs": [
+        1
+      ]
+    },
+    {
+      "index": 2,
+      "voice": "Microsoft David",
+      "text": "So the paper is called Adopting and Expanding Ethical Principles for Generative Artificial Intelligence from Military to Healthcare. It was published in 2023 in npj Digital Medicine by David Oniani and several co-authors.",
+      "start_ms": 18411.1,
+      "end_ms": 33417.3,
+      "duration_ms": 15006.2,
+      "source_paragraphs": [
+        1
+      ]
+    },
+    {
+      "index": 3,
+      "voice": "Microsoft Zira",
+      "text": "Okay, so they're looking at AI ethics? And somehow the military is involved?",
+      "start_ms": 34017.3,
+      "end_ms": 40380.9,
+      "duration_ms": 6363.6,
+      "source_paragraphs": [
+        1
+      ]
+    },
+    {
+      "index": 4,
+      "voice": "Microsoft David",
+      "text": "Exactly. Back in 2020, the U.S. Department of Defense put out a formal set of ethical principles for using AI on the battlefield. And the authors of this paper noticed something kind of surprising. Despite the obvious differences between the military and medicine, there are actually deep structural similarities.",
+      "start_ms": 40980.9,
+      "end_ms": 62436.3,
+      "duration_ms": 21455.4,
+      "source_paragraphs": [
+        1
+      ]
+    },
+    {
+      "index": 5,
+      "voice": "Microsoft Zira",
+      "text": "Huh, like what? Those seem like totally different fields.",
+      "start_ms": 63036.3,
+      "end_ms": 68155.1,
+      "duration_ms": 5118.9,
+      "source_paragraphs": [
+        1
+      ]
+    },
+    {
+      "index": 6,
+      "voice": "Microsoft David",
+      "text": "Well, think about it. Both domains deal with life-and-death situations. Both require making critical decisions under pressure and time constraints. A surgeon deciding how to handle a complication mid-operation isn't that different, structurally, from a military officer making a split-second tactical call.",
+      "start_ms": 68755.1,
+      "end_ms": 90140.6,
+      "duration_ms": 21385.4,
+      "source_paragraphs": [
+        1
+      ]
+    },
+    {
+      "index": 7,
+      "voice": "Microsoft Zira",
+      "text": "That's a great point. I never thought about it that way. So there's this common thread of high-stakes, fast decision-making.",
+      "start_ms": 90740.6,
+      "end_ms": 99723.8,
+      "duration_ms": 8983.2,
+      "source_paragraphs": [
+        1
+      ]
+    },
+    {
+      "index": 8,
+      "voice": "Microsoft David",
+      "text": "Exactly. And that shared pressure is part of why the authors argue that ethical lessons from military AI can be adapted for healthcare.",
+      "start_ms": 100323.8,
+      "end_ms": 109286.5,
+      "duration_ms": 8962.7,
+      "source_paragraphs": [
+        1
+      ]
+    },
+    {
+      "index": 9,
+      "voice": "Microsoft Zira",
+      "text": "Okay, so where does generative AI specifically come in? Like, why not just AI in general?",
+      "start_ms": 109886.5,
+      "end_ms": 117694.9,
+      "duration_ms": 7808.4,
+      "source_paragraphs": [
+        2
+      ]
+    },
+    {
+      "index": 10,
+      "voice": "Microsoft David",
+      "text": "Great question. Recently, generative AI, things like large language models and image generators, has gotten enormous attention in the medical research community. People are excited about its potential, but there are also serious debates about whether it's ready for healthcare.",
+      "start_ms": 118294.9,
+      "end_ms": 136786.0,
+      "duration_ms": 18491.1,
+      "source_paragraphs": [
+        2
+      ]
+    },
+    {
+      "index": 11,
+      "voice": "Microsoft Zira",
+      "text": "What kinds of concerns are people raising?",
+      "start_ms": 137386.0,
+      "end_ms": 140449.9,
+      "duration_ms": 3063.9,
+      "source_paragraphs": [
+        2
+      ]
+    },
+    {
+      "index": 12,
+      "voice": "Microsoft David",
+      "text": "Transparency is a big one. These models are often black boxes, so it's hard to know why they produce certain outputs. And then there's the bias problem. If the training data isn't representative, the models could actually make existing health disparities worse. Imagine a system that gives different quality recommendations depending on a patient's demographic background.",
+      "start_ms": 141049.9,
+      "end_ms": 165764.6,
+      "duration_ms": 24714.7,
+      "source_paragraphs": [
+        2
+      ]
+    },
+    {
+      "index": 13,
+      "voice": "Microsoft Zira",
+      "text": "That's really concerning. So not only could generative AI fail to help, it could actively make things less fair?",
+      "start_ms": 166364.6,
+      "end_ms": 174287.8,
+      "duration_ms": 7923.1,
+      "source_paragraphs": [
+        2
+      ]
+    },
+    {
+      "index": 14,
+      "voice": "Microsoft David",
+      "text": "That's exactly the worry. And here's the thing, the paper points out that despite all this excitement and concern, the ethical principles for generative AI in healthcare have actually been understudied.",
+      "start_ms": 174887.8,
+      "end_ms": 187674.8,
+      "duration_ms": 12787.1,
+      "source_paragraphs": [
+        3
+      ]
+    },
+    {
+      "index": 15,
+      "voice": "Microsoft Zira",
+      "text": "Wait, really? With all the hype around this technology, people haven't worked out the ethics yet?",
+      "start_ms": 188274.8,
+      "end_ms": 195623.2,
+      "duration_ms": 7348.3,
+      "source_paragraphs": [
+        3
+      ]
+    },
+    {
+      "index": 16,
+      "voice": "Microsoft David",
+      "text": "Not enough, according to the authors. Decision-makers are often jumping to implement generative AI in clinical practice without taking the time to seriously consider the ethical implications first. It's a bit of a cart-before-the-horse situation.",
+      "start_ms": 196223.2,
+      "end_ms": 212194.5,
+      "duration_ms": 15971.3,
+      "source_paragraphs": [
+        3
+      ]
+    },
+    {
+      "index": 17,
+      "voice": "Microsoft Zira",
+      "text": "So what do the authors propose to fix that gap?",
+      "start_ms": 212794.5,
+      "end_ms": 216253.3,
+      "duration_ms": 3458.8,
+      "source_paragraphs": [
+        4
+      ]
+    },
+    {
+      "index": 18,
+      "voice": "Microsoft David",
+      "text": "This is the heart of the paper. They propose what they call the GREAT PLEA ethical principles. It's an acronym that stands for nine principles: Governability, Reliability, Equity, Accountability, Traceability, Privacy, Lawfulness, Empathy, and Autonomy.",
+      "start_ms": 216853.3,
+      "end_ms": 234474.5,
+      "duration_ms": 17621.1,
+      "source_paragraphs": [
+        4
+      ]
+    },
+    {
+      "index": 19,
+      "voice": "Microsoft Zira",
+      "text": "GREAT PLEA. That's a clever acronym. Nine principles is a lot though. Are they all equally important?",
+      "start_ms": 235074.5,
+      "end_ms": 243522.7,
+      "duration_ms": 8448.3,
+      "source_paragraphs": [
+        4
+      ]
+    },
+    {
+      "index": 20,
+      "voice": "Microsoft David",
+      "text": "They're all interconnected, but some are adapted from existing military AI ethics frameworks, while others, like empathy and autonomy, are specifically expanded for healthcare. The key contribution is that they've built a practical framework by learning from what's already worked in the military context and tailoring it for medicine.",
+      "start_ms": 244122.7,
+      "end_ms": 264218.0,
+      "duration_ms": 20095.3,
+      "source_paragraphs": [
+        4
+      ]
+    },
+    {
+      "index": 21,
+      "voice": "Microsoft Zira",
+      "text": "So the military has been dealing with AI ethics longer, and healthcare can basically learn from their experience?",
+      "start_ms": 264818.0,
+      "end_ms": 271771.1,
+      "duration_ms": 6953.0,
+      "source_paragraphs": [
+        4
+      ]
+    },
+    {
+      "index": 22,
+      "voice": "Microsoft David",
+      "text": "That's exactly the idea. The military has had decades of experience integrating AI, so they've had to grapple with these ethical questions already. Healthcare is newer to this, especially with generative AI, so there's a real opportunity to learn from that history.",
+      "start_ms": 272371.1,
+      "end_ms": 289992.2,
+      "duration_ms": 17621.2,
+      "source_paragraphs": [
+        4
+      ]
+    },
+    {
+      "index": 23,
+      "voice": "Microsoft Zira",
+      "text": "I'm really curious to dig into each of those nine principles. This sounds like a comprehensive framework.",
+      "start_ms": 290592.2,
+      "end_ms": 297790.3,
+      "duration_ms": 7198.1,
+      "source_paragraphs": [
+        4
+      ]
+    },
+    {
+      "index": 24,
+      "voice": "Microsoft David",
+      "text": "Absolutely. In the next part, we'll get into the paper's introduction, where the authors lay out the landscape of AI in both military and healthcare and make the case for why this cross-sector approach is so timely. Stay with us!",
+      "start_ms": 298390.3,
+      "end_ms": 313652.2,
+      "duration_ms": 15261.8,
+      "source_paragraphs": [
+        4
+      ]
+    }
+  ]
+}

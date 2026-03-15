@@ -1,0 +1,123 @@
+{
+  "pause_between_ms": 600,
+  "rate": 0,
+  "part_number": 12,
+  "paper_source": "input/ODESteer_paper.json",
+  "lines": [
+    {
+      "voice": "Microsoft David",
+      "text": "For our final segment, let's look at the ablation study and then wrap up with the paper's conclusions and future directions.",
+      "source_paragraphs": [81]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "The ablation study separates out the two advantages we discussed: feedback control and multi-step solving. How do they test each one?",
+      "source_paragraphs": [81]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "They create two controlled variants. To test the value of feedback control, they compare ODESteer against ITI. Both use logistic regression to estimate log-density ratios, but ITI uses only linear features, which produces a constant vector field. It's basically open-loop control.",
+      "source_paragraphs": [81]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So the only difference between ITI and ODESteer in that comparison is linear versus nonlinear features.",
+      "source_paragraphs": [81]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Exactly. And to test the value of multi-step solving, they keep the same nonlinear barrier function but restrict it to a single step. They call this one-step ODESteer. It uses the same polynomial features but does standard activation addition instead of solving the ODE.",
+      "source_paragraphs": [81]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Smart design. So what do the results show?",
+      "source_paragraphs": [81]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "ODESteer substantially outperforms both variants on all three benchmarks across all models. For example, on Falcon 7B, ITI gets 50.5 percent win rate on helpfulness and 34.7 on truthfulness times informativeness. One-step ODESteer jumps to 54 and 40.8. Full ODESteer reaches 56.3 and 42.2.",
+      "source_paragraphs": [81]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So each component contributes meaningfully. The nonlinear features help a lot, and then multi-step solving adds further improvement on top.",
+      "source_paragraphs": [81]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Right. The jump from ITI to one-step ODESteer shows what nonlinear features buy you. And the jump from one-step to full ODESteer shows what multi-step ODE solving adds. Both matter, and together they give you the best results.",
+      "source_paragraphs": [81]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "That's really clean validation of the theoretical claims. Okay, so what does the paper conclude?",
+      "source_paragraphs": [84]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "The paper makes three main contributions. First, it shows that conventional activation addition is really a first-order approximation to solving an ODE. This is a fundamental theoretical insight that reframes how we think about steering.",
+      "source_paragraphs": [84]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "And from that insight, everything else follows.",
+      "source_paragraphs": [84]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Exactly. The second contribution is unifying input reading and output optimization under the barrier function framework. What seemed like fundamentally different approaches are actually just different ways of defining the same kind of mathematical object.",
+      "source_paragraphs": [84]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "And the third is ODESteer itself.",
+      "source_paragraphs": [84]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Right. A practical method that naturally falls out of the framework. Log-density ratio barrier functions with nonlinear features, solved as an ODE for multi-step adaptive steering. And it achieves consistent improvements: 5.7 percent on TruthfulQA, 2.5 on UltraFeedback, and 2.4 on RealToxicityPrompts.",
+      "source_paragraphs": [84]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Are there limitations they acknowledge?",
+      "source_paragraphs": [85]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Yes. The main one is that their framework doesn't yet cover a third category of steering direction methods: unsupervised feature learning. These are approaches based on sparse autoencoders, or SAEs, which decompose activations into interpretable features in a higher-dimensional space.",
+      "source_paragraphs": [85]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "That's a big and growing area of research. Can it fit into the ODE framework?",
+      "source_paragraphs": [85]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "The authors think it might be possible but acknowledge it's nontrivial. Defining a barrier function directly on top of sparse autoencoder features is an open problem. They list it as their main direction for future work.",
+      "source_paragraphs": [85]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "That would really complete the unification if they could pull it off.",
+      "source_paragraphs": [85]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "It would. And it could potentially lead to even better steering methods that combine the interpretability of SAE features with the principled ODE-based steering approach.",
+      "source_paragraphs": [85]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "This has been a fascinating paper to work through. The idea that all these different steering methods are secretly doing the same thing, just defining barrier functions and taking steps along their gradients, that's a really powerful unifying perspective.",
+      "source_paragraphs": [84, 85]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Agreed. And what I find most compelling is that the unification isn't just theoretical. It directly led to a better method. That's the best kind of theoretical work: it explains what exists and points the way to something new. Thanks for joining us on this deep dive into ODESteer. Until next time.",
+      "source_paragraphs": [84, 85]
+    }
+  ]
+}

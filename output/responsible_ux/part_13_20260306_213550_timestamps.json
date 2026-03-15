@@ -1,0 +1,224 @@
+{
+  "source": "C:\\Users\\Brian\\Documents\\UW Winter 26\\ProductivityAndReadingHelper\\input\\responsible_ux\\part_13.json",
+  "audio_file": "part_13_20260306_213550.wav",
+  "tag": "part_13",
+  "generated": "2026-03-06T21:35:52.027823",
+  "total_duration_ms": 302907.9,
+  "total_duration_formatted": "5:02.907",
+  "lines": [
+    {
+      "index": 0,
+      "voice": "Microsoft David",
+      "text": "Welcome back. Last time, we talked about test-driving, the practice of UX practitioners directly probing ML models to understand their capabilities and limitations. Today we're moving into the third major practice the paper identifies: responsible evaluation. This is section four-point-three, and it's all about involving actual users to assess responsible AI.",
+      "start_ms": 0.0,
+      "end_ms": 25449.8,
+      "duration_ms": 25449.8,
+      "source_paragraphs": [
+        75
+      ]
+    },
+    {
+      "index": 1,
+      "voice": "Microsoft Zira",
+      "text": "So we've gone from building an RAI lens, to responsible prototyping, and now we're looking at how practitioners actually bring users into the process?",
+      "start_ms": 26049.8,
+      "end_ms": 35767.1,
+      "duration_ms": 9717.4,
+      "source_paragraphs": [
+        75
+      ]
+    },
+    {
+      "index": 2,
+      "voice": "Microsoft David",
+      "text": "Exactly. And this section opens with a really important finding. Both groups of practitioners, the UX folks and the RAI experts, saw inclusion of diverse experiences and perspectives as a core dimension of responsible AI. Almost all the RAI experts pointed out that user research and evaluation are essential for ensuring accountability and actually validating the social benefits of AI products during early-stage design.",
+      "start_ms": 36367.1,
+      "end_ms": 63761.5,
+      "duration_ms": 27394.4,
+      "source_paragraphs": [
+        75
+      ]
+    },
+    {
+      "index": 3,
+      "voice": "Microsoft Zira",
+      "text": "That makes sense. You can't really claim your AI is responsible if you haven't actually checked with the people it's going to affect.",
+      "start_ms": 64361.5,
+      "end_ms": 72664.4,
+      "duration_ms": 8302.9,
+      "source_paragraphs": [
+        75,
+        76
+      ]
+    },
+    {
+      "index": 4,
+      "voice": "Microsoft David",
+      "text": "Right. But several RAI experts went further and called for longer-term engagement with users throughout the entire AI product lifecycle. They argued that traditional user evaluation and testing might not be sufficient for designing responsible AI. One expert critiqued the short-term, one-off nature of typical user testing and questioned whether predefined failure categories were adequate.",
+      "start_ms": 73264.4,
+      "end_ms": 97998.9,
+      "duration_ms": 24734.6,
+      "source_paragraphs": [
+        76,
+        77
+      ]
+    },
+    {
+      "index": 5,
+      "voice": "Microsoft Zira",
+      "text": "What do you mean by predefined failure categories?",
+      "start_ms": 98598.9,
+      "end_ms": 102382.7,
+      "duration_ms": 3783.8,
+      "source_paragraphs": [
+        77
+      ]
+    },
+    {
+      "index": 6,
+      "voice": "Microsoft David",
+      "text": "That expert was saying you shouldn't just go into testing with a checklist where you've already defined what counts as failure, check each box, and call it a day. Instead, they argued for collectively defining those terms with users, and making research an ongoing process integrated throughout every step of design, not just a single evaluation session.",
+      "start_ms": 102982.7,
+      "end_ms": 125198.0,
+      "duration_ms": 22215.3,
+      "source_paragraphs": [
+        77
+      ]
+    },
+    {
+      "index": 7,
+      "voice": "Microsoft Zira",
+      "text": "That's a fundamentally different philosophy. It's moving from validation to co-creation of the evaluation criteria themselves.",
+      "start_ms": 125798.0,
+      "end_ms": 134480.8,
+      "duration_ms": 8682.8,
+      "source_paragraphs": [
+        77,
+        78
+      ]
+    },
+    {
+      "index": 8,
+      "voice": "Microsoft David",
+      "text": "Precisely. And some RAI experts took it even further. One expert stated outright that responsible AI is participatory AI. They said they don't think responsible AI can be achieved without some form of robust participation. For them, the extent to which AI can be made participatory defines the extent to which it's responsible.",
+      "start_ms": 135080.8,
+      "end_ms": 157456.0,
+      "duration_ms": 22375.2,
+      "source_paragraphs": [
+        78
+      ]
+    },
+    {
+      "index": 9,
+      "voice": "Microsoft Zira",
+      "text": "That's a bold claim. Equating responsibility directly with participation. Was that aspiration actually being realized in practice?",
+      "start_ms": 158056.0,
+      "end_ms": 167943.6,
+      "duration_ms": 9887.6,
+      "source_paragraphs": [
+        78,
+        79
+      ]
+    },
+    {
+      "index": 10,
+      "voice": "Microsoft David",
+      "text": "That's the interesting tension. The paper found that while participatory approaches remained largely an aspiration from the RAI experts, UX practitioners were already carrying this out to some degree. Their disciplinary training in involving users and stakeholders in design and evaluation meant they were naturally bringing prospective users into the process to surface and assess RAI issues.",
+      "start_ms": 168543.6,
+      "end_ms": 192368.0,
+      "duration_ms": 23824.4,
+      "source_paragraphs": [
+        79
+      ]
+    },
+    {
+      "index": 11,
+      "voice": "Microsoft Zira",
+      "text": "So UX practitioners were actually living out the RAI experts' vision, perhaps without even framing it in those terms?",
+      "start_ms": 192968.0,
+      "end_ms": 200641.0,
+      "duration_ms": 7673.0,
+      "source_paragraphs": [
+        79
+      ]
+    },
+    {
+      "index": 12,
+      "voice": "Microsoft David",
+      "text": "That's a great way to put it. The UX practitioners' existing skill set around user involvement naturally aligned with what RAI experts aspired to, even if the UX folks weren't explicitly using the language of participatory AI.",
+      "start_ms": 201241.0,
+      "end_ms": 215902.4,
+      "duration_ms": 14661.5,
+      "source_paragraphs": [
+        79,
+        80
+      ]
+    },
+    {
+      "index": 13,
+      "voice": "Microsoft Zira",
+      "text": "So what specific practices did the UX practitioners use when involving users in responsible evaluation?",
+      "start_ms": 216502.4,
+      "end_ms": 223480.3,
+      "duration_ms": 6977.8,
+      "source_paragraphs": [
+        80
+      ]
+    },
+    {
+      "index": 14,
+      "voice": "Microsoft David",
+      "text": "The paper breaks it down into two main areas. First, there's the work of preparing the model before users ever interact with it, trying to prevent harmful outputs. And second, there's the actual process of conducting user evaluations and coping with unexpected model behavior during those sessions.",
+      "start_ms": 224080.3,
+      "end_ms": 244065.9,
+      "duration_ms": 19985.6,
+      "source_paragraphs": [
+        80
+      ]
+    },
+    {
+      "index": 15,
+      "voice": "Microsoft Zira",
+      "text": "That makes sense as a two-part framework. You have to deal with what happens before the user shows up, and then what happens while they're actually interacting with the system.",
+      "start_ms": 244665.9,
+      "end_ms": 255138.1,
+      "duration_ms": 10472.2,
+      "source_paragraphs": [
+        80
+      ]
+    },
+    {
+      "index": 16,
+      "voice": "Microsoft David",
+      "text": "Exactly. And both parts raise really challenging questions. How much do you sanitize the model before showing it to users? And when things go wrong during a live session, what do you do? These are the kinds of practical dilemmas that make responsible evaluation so complex.",
+      "start_ms": 255738.1,
+      "end_ms": 275344.2,
+      "duration_ms": 19606.0,
+      "source_paragraphs": [
+        80
+      ]
+    },
+    {
+      "index": 17,
+      "voice": "Microsoft Zira",
+      "text": "It sounds like there's a real tension between wanting to get authentic user feedback and wanting to protect users from harmful content.",
+      "start_ms": 275944.2,
+      "end_ms": 283701.8,
+      "duration_ms": 7757.6,
+      "source_paragraphs": [
+        80
+      ]
+    },
+    {
+      "index": 18,
+      "voice": "Microsoft David",
+      "text": "That's exactly the core tension. And in the next part, we'll dive deep into the first half of that: how practitioners try to prevent harmful model output before users ever get involved. It gets into some fascinating and sometimes nerve-wracking territory. Stay tuned.",
+      "start_ms": 284301.8,
+      "end_ms": 302907.9,
+      "duration_ms": 18606.1,
+      "source_paragraphs": [
+        80
+      ]
+    }
+  ]
+}

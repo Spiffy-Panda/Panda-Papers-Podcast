@@ -1,0 +1,221 @@
+{
+  "source": "C:\\Users\\Brian\\Documents\\UW Winter 26\\ProductivityAndReadingHelper\\output\\odesteer\\dialog_part_10.json",
+  "audio_file": "part_10_20260307_133632.wav",
+  "tag": "part_10",
+  "generated": "2026-03-07T13:36:33.888657",
+  "total_duration_ms": 229600.8,
+  "total_duration_formatted": "3:49.600",
+  "lines": [
+    {
+      "index": 0,
+      "voice": "Microsoft David",
+      "text": "Now let's talk about why the ODE-based approach gives concrete advantages. The paper identifies two main benefits, and they later validate both with ablation studies.",
+      "start_ms": 0.0,
+      "end_ms": 11057.4,
+      "duration_ms": 11057.4,
+      "source_paragraphs": [
+        69
+      ]
+    },
+    {
+      "index": 1,
+      "voice": "Microsoft Zira",
+      "text": "What's the first one?",
+      "start_ms": 11657.4,
+      "end_ms": 13616.6,
+      "duration_ms": 1959.2,
+      "source_paragraphs": [
+        69
+      ]
+    },
+    {
+      "index": 2,
+      "voice": "Microsoft David",
+      "text": "Feedback control. Because the barrier function uses nonlinear features, its gradient depends on the current activation. So when you solve the ODE numerically, the steering direction changes at every step based on where the activation actually is at that moment.",
+      "start_ms": 14216.6,
+      "end_ms": 31547.8,
+      "duration_ms": 17331.2,
+      "source_paragraphs": [
+        70
+      ]
+    },
+    {
+      "index": 3,
+      "voice": "Microsoft Zira",
+      "text": "That's the adaptive part we kept mentioning.",
+      "start_ms": 32147.8,
+      "end_ms": 35186.8,
+      "duration_ms": 3038.9,
+      "source_paragraphs": [
+        70
+      ]
+    },
+    {
+      "index": 4,
+      "voice": "Microsoft David",
+      "text": "Right. The paper frames this using control theory language. ODESteer is like closed-loop control, where you have a sensor reading the current state and adjusting your actions accordingly. Previous methods like CAA and ITI construct simpler barrier functions that produce constant vector fields. They're essentially open-loop control, applying the same correction regardless of the current state.",
+      "start_ms": 35786.8,
+      "end_ms": 62031.8,
+      "duration_ms": 26245.0,
+      "source_paragraphs": [
+        70
+      ]
+    },
+    {
+      "index": 5,
+      "voice": "Microsoft Zira",
+      "text": "So even though CAA and ITI also implicitly define barrier functions based on log-density ratios, they can't adjust as the activation moves.",
+      "start_ms": 62631.8,
+      "end_ms": 72159.5,
+      "duration_ms": 9527.8,
+      "source_paragraphs": [
+        70
+      ]
+    },
+    {
+      "index": 6,
+      "voice": "Microsoft David",
+      "text": "Exactly. Their barrier functions are too simple. The gradient is constant, so they push every activation in the same direction. They miss finer structures in the activation distribution. It's like trying to navigate a winding road with only a compass versus having turn-by-turn directions.",
+      "start_ms": 72759.5,
+      "end_ms": 93065.2,
+      "duration_ms": 20305.7,
+      "source_paragraphs": [
+        70
+      ]
+    },
+    {
+      "index": 7,
+      "voice": "Microsoft Zira",
+      "text": "That makes intuitive sense. What's the second advantage?",
+      "start_ms": 93665.2,
+      "end_ms": 98354.0,
+      "duration_ms": 4688.8,
+      "source_paragraphs": [
+        71
+      ]
+    },
+    {
+      "index": 8,
+      "voice": "Microsoft David",
+      "text": "Improved numerical accuracy. Remember how we showed that regular activation addition is really a single Euler step? Well, a single Euler step is a first-order Taylor approximation. The error in that approximation scales as big-O of T squared.",
+      "start_ms": 98954.0,
+      "end_ms": 116340.2,
+      "duration_ms": 17386.2,
+      "source_paragraphs": [
+        71
+      ]
+    },
+    {
+      "index": 9,
+      "voice": "Microsoft Zira",
+      "text": "And T is the steering strength, which you typically want to be reasonably large for meaningful steering.",
+      "start_ms": 116940.2,
+      "end_ms": 123163.5,
+      "duration_ms": 6223.3,
+      "source_paragraphs": [
+        71
+      ]
+    },
+    {
+      "index": 10,
+      "voice": "Microsoft David",
+      "text": "Exactly. So when you take one big step with a large T, you accumulate significant approximation error. You're supposed to be following a smooth curve through activation space, but you're cutting a straight line across it.",
+      "start_ms": 123763.5,
+      "end_ms": 138515.4,
+      "duration_ms": 14751.9,
+      "source_paragraphs": [
+        71
+      ]
+    },
+    {
+      "index": 11,
+      "voice": "Microsoft Zira",
+      "text": "And ODESteer breaks that into many small steps, so each step has much less error.",
+      "start_ms": 139115.4,
+      "end_ms": 145033.8,
+      "duration_ms": 5918.5,
+      "source_paragraphs": [
+        71
+      ]
+    },
+    {
+      "index": 12,
+      "voice": "Microsoft David",
+      "text": "Right. If you take N steps instead of one, each step has size T over N. The error per step is much smaller, and the total error is dramatically reduced. You end up much closer to the true ODE trajectory.",
+      "start_ms": 145633.8,
+      "end_ms": 161191.0,
+      "duration_ms": 15557.1,
+      "source_paragraphs": [
+        71
+      ]
+    },
+    {
+      "index": 13,
+      "voice": "Microsoft Zira",
+      "text": "And using a proper ODE solver probably helps even more than just doing multiple Euler steps.",
+      "start_ms": 161791.0,
+      "end_ms": 167634.2,
+      "duration_ms": 5843.2,
+      "source_paragraphs": [
+        71
+      ]
+    },
+    {
+      "index": 14,
+      "voice": "Microsoft David",
+      "text": "Yes, modern ODE solvers use higher-order methods that are even more accurate. The combination of adaptive directions from the nonlinear barrier function and multi-step numerical solving means ODESteer follows the ideal steering trajectory much more closely than any single-step method can.",
+      "start_ms": 168234.2,
+      "end_ms": 186200.2,
+      "duration_ms": 17966.0,
+      "source_paragraphs": [
+        71
+      ]
+    },
+    {
+      "index": 15,
+      "voice": "Microsoft Zira",
+      "text": "So feedback control gives you the right direction at each point, and multi-step solving gives you accurate following of that path. Both contribute to better steering.",
+      "start_ms": 186800.2,
+      "end_ms": 197253.0,
+      "duration_ms": 10452.8,
+      "source_paragraphs": [
+        69,
+        70,
+        71
+      ]
+    },
+    {
+      "index": 16,
+      "voice": "Microsoft David",
+      "text": "That's a perfect summary. And what's great is that these aren't just theoretical claims. The paper validates both advantages through careful ablation experiments, which we'll get into when we cover the experimental results.",
+      "start_ms": 197853.0,
+      "end_ms": 212149.6,
+      "duration_ms": 14296.6,
+      "source_paragraphs": [
+        69
+      ]
+    },
+    {
+      "index": 17,
+      "voice": "Microsoft Zira",
+      "text": "I'm curious to see how much each advantage contributes individually.",
+      "start_ms": 212749.6,
+      "end_ms": 217233.3,
+      "duration_ms": 4483.7,
+      "source_paragraphs": [
+        69
+      ]
+    },
+    {
+      "index": 18,
+      "voice": "Microsoft David",
+      "text": "We'll see exactly that. The experiments test ODESteer against a wide range of baselines across multiple models and tasks. Let's dive into those results next.",
+      "start_ms": 217833.3,
+      "end_ms": 229600.8,
+      "duration_ms": 11767.5,
+      "source_paragraphs": [
+        69
+      ]
+    }
+  ]
+}

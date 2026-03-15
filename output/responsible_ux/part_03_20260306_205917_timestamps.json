@@ -1,0 +1,266 @@
+{
+  "source": "C:\\Users\\Brian\\Documents\\UW Winter 26\\ProductivityAndReadingHelper\\input\\responsible_ux\\part_03.json",
+  "audio_file": "part_03_20260306_205917.wav",
+  "tag": "part_03",
+  "generated": "2026-03-06T20:59:19.314906",
+  "total_duration_ms": 330612.4,
+  "total_duration_formatted": "5:30.612",
+  "lines": [
+    {
+      "index": 0,
+      "voice": "Microsoft David",
+      "text": "Welcome back. We've been looking at the background for this paper on responsible AI in UX practice. Now let's talk about how values and ethics have traditionally been part of UX work.",
+      "start_ms": 0.0,
+      "end_ms": 12647.3,
+      "duration_ms": 12647.3,
+      "source_paragraphs": [
+        14
+      ]
+    },
+    {
+      "index": 1,
+      "voice": "Microsoft Zira",
+      "text": "Right, because UX practitioners haven't been working in a values vacuum. There's a whole history of thinking about ethics in design.",
+      "start_ms": 13247.3,
+      "end_ms": 22150.0,
+      "duration_ms": 8902.8,
+      "source_paragraphs": [
+        14
+      ]
+    },
+    {
+      "index": 2,
+      "voice": "Microsoft David",
+      "text": "Exactly. There's substantial research on how values get built into technology through the design process. Various methods, tools, and theoretical frameworks have been developed to help designers surface relevant values and bring them into their design decisions.",
+      "start_ms": 22750.0,
+      "end_ms": 39596.2,
+      "duration_ms": 16846.2,
+      "source_paragraphs": [
+        14
+      ]
+    },
+    {
+      "index": 3,
+      "voice": "Microsoft Zira",
+      "text": "Can you give me some examples? What kind of frameworks are we talking about?",
+      "start_ms": 40196.2,
+      "end_ms": 45984.7,
+      "duration_ms": 5788.4,
+      "source_paragraphs": [
+        15
+      ]
+    },
+    {
+      "index": 4,
+      "voice": "Microsoft David",
+      "text": "One of the most well-known is Value-Sensitive Design, or VSD. It's a framework that helps designers understand how specific values might be promoted or undermined through a technology system. Beyond VSD, there are tools like Envisioning Cards, which help you think through long-term impacts, and Judgment Call, which is a card game for surfacing ethical dilemmas. There's quite a rich toolkit available.",
+      "start_ms": 46584.7,
+      "end_ms": 73449.5,
+      "duration_ms": 26864.9,
+      "source_paragraphs": [
+        15
+      ]
+    },
+    {
+      "index": 5,
+      "voice": "Microsoft Zira",
+      "text": "So designers already have access to these ethics-oriented methods. But there's a gap between having tools and actually using them in practice, right?",
+      "start_ms": 74049.5,
+      "end_ms": 84001.9,
+      "duration_ms": 9952.3,
+      "source_paragraphs": [
+        15,
+        16
+      ]
+    },
+    {
+      "index": 6,
+      "voice": "Microsoft David",
+      "text": "That's a great point, and it leads us to a really interesting area of research: the situated work practices of UX practitioners. Recent scholarship has moved beyond just developing methods and has started looking at how UX practitioners actually engage with values as part of their everyday work.",
+      "start_ms": 84601.9,
+      "end_ms": 103147.6,
+      "duration_ms": 18545.7,
+      "source_paragraphs": [
+        16
+      ]
+    },
+    {
+      "index": 7,
+      "voice": "Microsoft Zira",
+      "text": "What have they found? How do UX practitioners actually handle values in practice?",
+      "start_ms": 103747.6,
+      "end_ms": 110166.1,
+      "duration_ms": 6418.5,
+      "source_paragraphs": [
+        16
+      ]
+    },
+    {
+      "index": 8,
+      "voice": "Microsoft David",
+      "text": "Researchers have identified several roles or identities that UX practitioners take on when doing values work. For example, they act as learners and educators, learning about ethics themselves and then teaching their teams. They also serve as translators, taking ethical principles from one domain and adapting them to their own work context. And some take on the role of advocate or activist, pushing for ethical considerations within their organization.",
+      "start_ms": 110766.1,
+      "end_ms": 140504.8,
+      "duration_ms": 29738.7,
+      "source_paragraphs": [
+        16
+      ]
+    },
+    {
+      "index": 9,
+      "voice": "Microsoft Zira",
+      "text": "That's a lot of hats to wear. And I imagine not all of those roles are equally valued by the organization.",
+      "start_ms": 141104.8,
+      "end_ms": 148257.9,
+      "duration_ms": 7153.2,
+      "source_paragraphs": [
+        16,
+        17
+      ]
+    },
+    {
+      "index": 10,
+      "voice": "Microsoft David",
+      "text": "You're absolutely right. And that brings up a crucial point about power dynamics. UX and design roles often have relatively lower status compared to software engineering roles in large tech companies. So when UX practitioners try to advocate for ethical considerations, they're often doing so from a position of less organizational power.",
+      "start_ms": 148857.9,
+      "end_ms": 171553.3,
+      "duration_ms": 22695.4,
+      "source_paragraphs": [
+        17
+      ]
+    },
+    {
+      "index": 11,
+      "voice": "Microsoft Zira",
+      "text": "That must make it really hard to push for changes. How do they manage that?",
+      "start_ms": 172153.3,
+      "end_ms": 177626.9,
+      "duration_ms": 5473.6,
+      "source_paragraphs": [
+        17
+      ]
+    },
+    {
+      "index": 12,
+      "voice": "Microsoft David",
+      "text": "Researchers have documented what they call tactics of soft resistance. UX practitioners find creative ways to create space for values work within their organizations. For instance, they try to make values visible and relevant to others by connecting them to things leadership already cares about.",
+      "start_ms": 178226.9,
+      "end_ms": 197467.8,
+      "duration_ms": 19240.9,
+      "source_paragraphs": [
+        17
+      ]
+    },
+    {
+      "index": 13,
+      "voice": "Microsoft Zira",
+      "text": "Like making a business case for ethics?",
+      "start_ms": 198067.8,
+      "end_ms": 201016.7,
+      "duration_ms": 2948.9,
+      "source_paragraphs": [
+        17
+      ]
+    },
+    {
+      "index": 14,
+      "voice": "Microsoft David",
+      "text": "Exactly. They might frame ethical considerations in terms of business metrics like Objectives and Key Results or Key Performance Indicators. Another tactic is strategically expanding the definition of who counts as a user, to include people who might be affected by the technology but aren't traditionally considered in the design process.",
+      "start_ms": 201616.7,
+      "end_ms": 222486.6,
+      "duration_ms": 20869.9,
+      "source_paragraphs": [
+        17
+      ]
+    },
+    {
+      "index": 15,
+      "voice": "Microsoft Zira",
+      "text": "That's clever, but it also sounds like a lot of extra effort. Almost like having a second job on top of your actual job.",
+      "start_ms": 223086.6,
+      "end_ms": 231729.4,
+      "duration_ms": 8642.8,
+      "source_paragraphs": [
+        17,
+        18
+      ]
+    },
+    {
+      "index": 16,
+      "voice": "Microsoft David",
+      "text": "It really is. And the paper points out an important contradiction in these tactics. UX practitioners are trying to challenge and change organizational practices while simultaneously leveraging those same organizational logics to make their case. They're working within the system to change the system.",
+      "start_ms": 232329.4,
+      "end_ms": 251684.9,
+      "duration_ms": 19355.6,
+      "source_paragraphs": [
+        18
+      ]
+    },
+    {
+      "index": 17,
+      "voice": "Microsoft Zira",
+      "text": "And I imagine that takes a real emotional toll.",
+      "start_ms": 252284.9,
+      "end_ms": 255523.9,
+      "duration_ms": 3238.9,
+      "source_paragraphs": [
+        18
+      ]
+    },
+    {
+      "index": 18,
+      "voice": "Microsoft David",
+      "text": "It does. The literature highlights that this values work often involves substantial emotional labor. It's work that happens outside the formal technology design process, and it may not be recognized or valued as part of practitioners' everyday responsibilities.",
+      "start_ms": 256123.9,
+      "end_ms": 273399.9,
+      "duration_ms": 17276.1,
+      "source_paragraphs": [
+        18
+      ]
+    },
+    {
+      "index": 19,
+      "voice": "Microsoft Zira",
+      "text": "So there's this whole body of research on how UX practitioners deal with values in design generally. But what about specifically when it comes to AI?",
+      "start_ms": 273999.9,
+      "end_ms": 283502.4,
+      "duration_ms": 9502.5,
+      "source_paragraphs": [
+        18
+      ]
+    },
+    {
+      "index": 20,
+      "voice": "Microsoft David",
+      "text": "That's the gap this paper aims to fill. While there's been quite a bit of work on values in UX practice broadly, relatively little has explored the values work that UX practitioners do specifically when designing and developing AI applications. And even less has connected that work to the broader practices of responsible AI.",
+      "start_ms": 284102.4,
+      "end_ms": 304493.1,
+      "duration_ms": 20390.7,
+      "source_paragraphs": [
+        18
+      ]
+    },
+    {
+      "index": 21,
+      "voice": "Microsoft Zira",
+      "text": "So this paper is really bridging two research areas that haven't been connected before.",
+      "start_ms": 305093.1,
+      "end_ms": 310301.6,
+      "duration_ms": 5208.5,
+      "source_paragraphs": [
+        18
+      ]
+    },
+    {
+      "index": 22,
+      "voice": "Microsoft David",
+      "text": "Precisely. And next time, we'll look at the specific challenges of designing and prototyping with machine learning models, including an exciting new technique called prompt programming that's changing how UX practitioners interact with AI. It adds a whole new dimension to the responsible AI conversation.",
+      "start_ms": 310901.6,
+      "end_ms": 330612.4,
+      "duration_ms": 19710.8,
+      "source_paragraphs": [
+        18
+      ]
+    }
+  ]
+}

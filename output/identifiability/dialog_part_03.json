@@ -1,0 +1,123 @@
+{
+  "pause_between_ms": 600,
+  "rate": 0,
+  "part_number": 3,
+  "paper_source": "input/identifiability_paper.json",
+  "lines": [
+    {
+      "voice": "Microsoft David",
+      "text": "Welcome back. We've been building up the formal foundations of mechanistic interpretability. Now let's look at how the two main strategies actually work in practice, starting with the where-then-what approach.",
+      "source_paragraphs": [10]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Right, this is the one where you find the circuit first and then figure out what it's doing.",
+      "source_paragraphs": [10]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Exactly. The evaluation criterion is circuit error, which is just one minus the fraction of inputs where the circuit's output matches the full model's output. A circuit with zero error reproduces the model's behavior perfectly.",
+      "source_paragraphs": [10]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "And how do you actually find these circuits?",
+      "source_paragraphs": [10]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "In practice, it relies on causal mediation analysis. You compute how much each component contributes to the output, and use that to decide which components belong in the circuit. Once you have a candidate circuit, interpreting it typically involves techniques like activation maximization, finding inputs that maximally activate each component to understand what it responds to.",
+      "source_paragraphs": [10]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "But I've heard that neurons can be polysemantic, encoding multiple concepts at once. Doesn't that make interpretation really hard?",
+      "source_paragraphs": [10]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "It absolutely does. Polysemantic neurons are a major complication. If a single neuron responds to both cat faces and car wheels, interpreting it as representing just one concept is misleading. This is one of the practical challenges that feeds into the identifiability problem.",
+      "source_paragraphs": [10]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Okay, now what about the other approach, the what-then-where strategy?",
+      "source_paragraphs": [11]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Here you start with a hypothesis about what algorithm the network might be running, and then you search for where in the network's activation space that algorithm is being implemented. The key metric is Intervention Interchange Accuracy, or IIA.",
+      "source_paragraphs": [11]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "How does IIA work exactly?",
+      "source_paragraphs": [11]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "You do counterfactual interventions. You swap internal states between two inputs and check whether the effects on the output are the same in the neural network and in your candidate algorithm. A perfect IIA score of one means every possible intervention produces matching results in both models.",
+      "source_paragraphs": [11]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "That sounds computationally expensive.",
+      "source_paragraphs": [11]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "It is. That's why there's a method called Distributed Alignment Search, or DAS, that uses gradient descent to efficiently find these alignments. DAS also handles distributed representations, where a single high-level variable might be encoded across multiple neurons rather than sitting in just one.",
+      "source_paragraphs": [11]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Interesting. And there's an assumption that the activations for different high-level variables don't overlap?",
+      "source_paragraphs": [11]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Yes, IIA assumes that neural activations for distinct high-level variables are disjoint, but that assumption may not hold in practice. Also, there's currently no systematic way to choose which candidate algorithms to test in the first place, which is another source of ambiguity.",
+      "source_paragraphs": [11]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So now we have both strategies laid out. Let's talk about identifiability more formally. What does the paper mean when it says an explanation is identifiable?",
+      "source_paragraphs": [12, 13]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "The paper makes an interesting observation first. The assumption that there should be one unique explanation isn't just a technical requirement. It's rooted in human cognitive psychology. We have a natural preference for coherent explanations that tie everything together into one unified story. Multiple incompatible explanations make us uncomfortable.",
+      "source_paragraphs": [12]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "But in philosophy of science, having multiple explanations is sometimes seen as normal, right?",
+      "source_paragraphs": [12]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Exactly. Explanatory pluralism acknowledges that complex phenomena might require multiple explanations that address different goals or use different simplification strategies. So there's a real tension between our psychological desire for one answer and the philosophical recognition that reality might be more complicated.",
+      "source_paragraphs": [12]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So formally, how do they define identifiability?",
+      "source_paragraphs": [13]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "A strategy is identifiable if its standards of validity pick out a unique explanation. It's not identifiable if two incompatible explanations both pass the same criteria. Two explanations are incompatible if they share the same goal and simplification approach but propose different computational abstractions, either different algorithms or the same algorithm embedded in different parts of the network.",
+      "source_paragraphs": [13]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "And in this paper, they fix the explanatory goal and the simplification strategy, so any differences they find are genuinely problematic.",
+      "source_paragraphs": [13]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Right. Everything is controlled. Same task, same network, same strategy, same criteria. If you still get multiple answers, that's a real identifiability failure, not just a matter of asking different questions. Next up, we'll see exactly how bad this problem gets when they actually run the experiments on a concrete example.",
+      "source_paragraphs": [13]
+    }
+  ]
+}

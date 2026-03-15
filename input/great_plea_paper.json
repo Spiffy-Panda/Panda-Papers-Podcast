@@ -1,0 +1,460 @@
+{
+  "meta": {
+    "title": "Adopting and Expanding Ethical Principles for Generative Artificial Intelligence from Military to Healthcare",
+    "authors": [
+      "David Oniani",
+      "Jordan Hilsman",
+      "Yifan Peng",
+      "Ronald K. Poropatich",
+      "Jeremy C. Pamplin",
+      "Gary L. Legault",
+      "Yanshan Wang"
+    ],
+    "journal": "npj Digital Medicine",
+    "year": 2023,
+    "doi": "10.1038/s41746-023-00965-x",
+    "pmcid": "PMC10693640",
+    "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10693640/",
+    "license": "CC BY 4.0"
+  },
+  "sections": [
+    {
+      "id": "abstract",
+      "title": "Abstract",
+      "paragraphs": [
+        {
+          "id": 1,
+          "text": "In 2020, the U.S. Department of Defense officially disclosed a set of ethical principles to guide the use of Artificial Intelligence technologies on future battlefields. Despite stark differences, there are core similarities between the military and medical service that are not immediately obvious. Both domains often face life-altering circumstances that require quick decision-making."
+        },
+        {
+          "id": 2,
+          "text": "Recently, generative AI has garnered a lot of attention in the medical research community, leading to debates about its application in the healthcare sector, mainly due to concerns about transparency and related issues. Meanwhile, questions around the potential exacerbation of health disparities due to modeling biases have raised notable ethical concerns."
+        },
+        {
+          "id": 3,
+          "text": "However, the ethical principles for generative AI in healthcare have been understudied, and decision-makers often neglect to consider the significance of ethical principles before implementing generative AI in clinical practice."
+        },
+        {
+          "id": 4,
+          "text": "The authors propose the GREAT PLEA ethical principles, namely Governability, Reliability, Equity, Accountability, Traceability, Privacy, Lawfulness, Empathy, and Autonomy for generative AI in healthcare. They introduce a framework for adopting and expanding these ethical principles in a practical way that has been useful in the military and can be applied to healthcare."
+        }
+      ]
+    },
+    {
+      "id": "introduction",
+      "title": "Introduction",
+      "paragraphs": [
+        {
+          "id": 5,
+          "text": "AI has been expanding its role across sectors. With the ongoing AI arms race in the Russia-Ukraine War, it is expected that AI-powered lethal weapon systems will become commonplace in warfare."
+        },
+        {
+          "id": 6,
+          "text": "The DOD's 2020 ethical principles emphasized achieving responsible, equitable, traceable, reliable, and governable AI. NATO similarly released complementary principles in 2021 addressing lawfulness, responsibility and accountability, explainability and traceability, reliability, governability, and bias mitigation."
+        },
+        {
+          "id": 7,
+          "text": "In healthcare, the World Health Organization released guidance on ethics and governance of AI for health, while discussions range from AI as clinical assistants to AI potentially replacing entire departments."
+        },
+        {
+          "id": 8,
+          "text": "Generative AI, as the name suggests, refers to AI techniques that can be used to create or produce various types of new contents, including text, images, audio, and videos. Development rates have accelerated dramatically, with applications emerging in finance, writing, email communication, and cyber threat analysis."
+        },
+        {
+          "id": 9,
+          "text": "Given the recent emergence of generative AI models and their initial enthusiasm in healthcare, our community must seriously consider ethical principles before integrating these techniques into practical use."
+        }
+      ]
+    },
+    {
+      "id": "what-is-generative-ai",
+      "title": "What Is Generative Artificial Intelligence?",
+      "paragraphs": [
+        {
+          "id": 10,
+          "text": "This section distinguishes modern generative AI from general AI terminology. The authors define their focus narrowly: they examine a transformer-based machine learning model trained in an unsupervised manner on extensive datasets and specifically optimized for generating valuable data through prompts."
+        },
+        {
+          "id": 11,
+          "text": "Machine learning subdivides into supervised, unsupervised, and reinforcement learning approaches. Generative models typically use unsupervised pre-training methods."
+        },
+        {
+          "id": 12,
+          "text": "Notable models discussed include ChatGPT and the GPT model family, built on transformer architecture, including GPT-3.5, GPT-4, and their predecessors GPT-2 and GPT-3. For image generation, Stable Diffusion and DALL-E 2 employ diffusion processes combined with transformer architectures. Video generation uses similar transformer-based approaches."
+        },
+        {
+          "id": 13,
+          "text": "Most of these generative AI models also rely on a method called prompting, which lets users input a natural language description of a task and uses it as a context to generate useful information."
+        }
+      ]
+    },
+    {
+      "id": "risks-and-challenges",
+      "title": "Risks and Challenges of Generative AI",
+      "paragraphs": [
+        {
+          "id": 14,
+          "text": "The authors identify specific dangers in healthcare contexts. These include algorithmic bias which may result in patient mistreatment, hallucination which can carry misinformation, poor commonsense reasoning resulting in confusing interactions, and a lack of evaluation metrics making it difficult to validate system robustness."
+        },
+        {
+          "id": 15,
+          "text": "Additional healthcare-specific concerns include Protected Health Information breaches and lacking empathy to patients."
+        },
+        {
+          "id": 16,
+          "text": "The paper emphasizes elevated risks from generative AI specifically because of its interactive nature and ability to hold human-like dialogs, making misinformation sound convincing. The combination of various sources of large-scale data increases training bias risk."
+        },
+        {
+          "id": 17,
+          "text": "Standard metrics like precision, recall, and F1 score become less likely to reflect human judgment, and widespread adoption across healthcare naturally increases the aforementioned risks."
+        }
+      ]
+    },
+    {
+      "id": "ai-applications-military-vs-healthcare",
+      "title": "AI Applications in Military vs. Healthcare",
+      "paragraphs": [
+        {
+          "id": 18,
+          "text": "The authors draw structural parallels between military and healthcare while acknowledging fundamental ideological differences. Both sectors feature high stress and risk environments, complex decision-making processes, reliance on protocols and procedures, and dominion over life and death outcomes."
+        },
+        {
+          "id": 19,
+          "text": "Military AI applications include Intelligent Decision Support Systems and Aided Target Recognition systems that assist in decision-making, target recognition, and casualty care in the field."
+        },
+        {
+          "id": 20,
+          "text": "Healthcare applications of generative AI include medical chatbots, disease prediction, CT image reconstruction, and clinical decision support tools."
+        },
+        {
+          "id": 21,
+          "text": "The military context emphasizes protection of national security interests, force multiplication, and minimizing human risk in conflict zones. Healthcare focuses on enhancing patient care, improving health outcomes, and optimizing the efficiency of healthcare systems."
+        },
+        {
+          "id": 22,
+          "text": "However, the authors identify three convergent priorities transcending these differences. First, application validity: both sectors require robust, reliable AI systems functioning accurately and rapidly under diverse, often challenging, conditions."
+        },
+        {
+          "id": 23,
+          "text": "Second, implementation focus: beyond theoretical development, both emphasize practical integration into real-world systems, often involving multiple human and technological stakeholders."
+        },
+        {
+          "id": 24,
+          "text": "Third, a human-centered approach: AI should augment, rather than replace, human decision-making capacities and are employed in ways minimizing potential harm."
+        },
+        {
+          "id": 25,
+          "text": "AI has seamlessly woven into the military's technology fabric for several decades, while healthcare integration is relatively new, let alone generative AI. This creates opportunity for healthcare to glean ethical insights from the history of military application."
+        }
+      ]
+    },
+    {
+      "id": "identifying-ethical-concerns",
+      "title": "Identifying Ethical Concerns and Risks",
+      "paragraphs": [
+        {
+          "id": 26,
+          "text": "The authors reference a RAND Corporation study categorizing AI warfare concerns into: increasing risk of war, increased errors, and misplaced faith in AI."
+        },
+        {
+          "id": 27,
+          "text": "On rapid decision-making, experts caution that actions taken without proper consideration could have serious repercussions, like increasing the risk of war. International standards like the Law of Armed Conflict and Geneva Conventions lay out guidelines for target identification specifying that attacks must first distinguish between combatant and noncombatant targets before taking action to minimize harm to civilians."
+        },
+        {
+          "id": 28,
+          "text": "On data privacy, both sectors handle sensitive data. If an AI implementation collects Protected Health Information, it should be secure against breaches, and any disclosures of this protected data must comply with HIPAA guidelines."
+        },
+        {
+          "id": 29,
+          "text": "Healthcare is a safety-critical domain where patient harm is unacceptable. Errors risk amplification when numerous hospitals and clinics would be using the same systems and experiencing the same errors."
+        },
+        {
+          "id": 30,
+          "text": "On trust calibration, the paper presents a model of optimal trust in AI. Too much trust in AI systems can lead to overuse of the AI when it is not in the best interest of patients or operators, and too little trust can lead to underuse. The root cause is operators not knowing the capabilities and limitations of the systems they interact with."
+        },
+        {
+          "id": 31,
+          "text": "On accountability gaps, a RAND study showed the general public views autonomous systems taking military action with human authorization favorably while strongly disagreeing with combat action without human authorization. Patients similarly express concerns over the use of AI for medical purposes without human involvement from a physician or nurse."
+        },
+        {
+          "id": 32,
+          "text": "A fully autonomous system that makes its own decisions distances military operators or clinicians from the responsibility of the system's actions, making accountability something that could entirely negate the value of AI."
+        },
+        {
+          "id": 33,
+          "text": "On equity concerns, biased algorithms or biased practices can lead to certain patient groups receiving lower levels of care. Sources of bias include biased algorithms, poor data collection, or a lack of diversity."
+        },
+        {
+          "id": 34,
+          "text": "On autonomy issues, both patient and clinician autonomy must be respected in healthcare settings."
+        }
+      ]
+    },
+    {
+      "id": "great-plea-overview",
+      "title": "GREAT PLEA Ethical Principles: Overview",
+      "paragraphs": [
+        {
+          "id": 35,
+          "text": "The authors surveyed existing frameworks from multiple organizations including the U.S. Department of Defense, NATO, the American Medical Association, the World Health Organization, the Coalition for Health AI, and the U.S. Office of Science and Technology Policy's Blueprint for an AI Bill of Rights."
+        },
+        {
+          "id": 36,
+          "text": "Common themes across frameworks included accountability and human presence alongside emphasis on transparency and explainability."
+        },
+        {
+          "id": 37,
+          "text": "The authors developed nine interconnected principles by identifying shared concerns between military and healthcare applications where principles could be adopted, and unique healthcare circumstances requiring principle expansion."
+        },
+        {
+          "id": 38,
+          "text": "Principles like traceability, reliability, lawfulness, accountability, governability, and equity apply to both military and healthcare domains. Principles such as empathy, autonomy, and privacy require healthcare-specific emphasis."
+        }
+      ]
+    },
+    {
+      "id": "principle-governability",
+      "title": "Governability",
+      "paragraphs": [
+        {
+          "id": 39,
+          "text": "Governability is defined as the ability of a system to integrate processes and tools which promote and maintain its capability and ensure meaningful human control."
+        },
+        {
+          "id": 40,
+          "text": "Implementation requires that humans must retain the ability to identify and prevent unintended consequences. When unintended behavior occurs, human intervention to disengage or deactivate the deployed AI system should be possible."
+        },
+        {
+          "id": 41,
+          "text": "Given widespread deployment scenarios where numerous hospitals may be using the same systems, governance becomes critical. Humans, whether they develop or implement the system, should possess the capability to deactivate it without disrupting the regular patient care activities in the clinics."
+        },
+        {
+          "id": 42,
+          "text": "Requirements include explicit guidelines for monitoring generative AI systems for potential errors, deactivation to prevent more damage when an error occurs, remedying errors, and interaction to reduce operator errors."
+        }
+      ]
+    },
+    {
+      "id": "principle-reliability",
+      "title": "Reliability",
+      "paragraphs": [
+        {
+          "id": 43,
+          "text": "Reliability is defined as the ability of a system or component to function under stated conditions for a specified period of time."
+        },
+        {
+          "id": 44,
+          "text": "The proximity of generative AI to patient well-being necessitates standards for reliability to minimize potential errors that could lead to accidents."
+        },
+        {
+          "id": 45,
+          "text": "Requirements include explicit well-defined clinical use cases, clear definition of use situations and patient criteria, safety and security and effectiveness throughout system lifecycles, demonstration of safety equivalent to or exceeding human decision-making, and no undue harm causation."
+        },
+        {
+          "id": 46,
+          "text": "The paper notes existing generative AI models suffer from hallucination and output variations, undermining their ability to produce reliable outputs, which adversely affect the trust between physicians and generative AI systems."
+        },
+        {
+          "id": 47,
+          "text": "The solution is a thorough evaluation and testing protocol against specific use cases that will ensure the development of resilient and robust AI systems."
+        }
+      ]
+    },
+    {
+      "id": "principle-equity",
+      "title": "Equity",
+      "paragraphs": [
+        {
+          "id": 48,
+          "text": "Equity is defined as the state in which everyone has a fair and just opportunity to attain their highest level of health."
+        },
+        {
+          "id": 49,
+          "text": "The authors call for adjustments acknowledging that there already exists inequity in healthcare. The generative AI models, that naturally have elevated data bias risks due to their pre-training on massive datasets, should not exacerbate this inequity for marginalized, under-represented, socioeconomically disadvantaged, low education, or low health literacy groups."
+        },
+        {
+          "id": 50,
+          "text": "Rather than accepting bias, models must incorporate their unique social situations into future AI models to ensure equity. Without such consideration, generative AI systems could erroneously recommend treatments for different patients."
+        },
+        {
+          "id": 51,
+          "text": "Implementation requires standards for evaluation metrics of algorithmic fairness so that deployed AI systems will not reinforce healthcare disparity."
+        }
+      ]
+    },
+    {
+      "id": "principle-accountability",
+      "title": "Accountability",
+      "paragraphs": [
+        {
+          "id": 52,
+          "text": "Accountability is defined as the property of being able to trace activities on a system to individuals who may then be held responsible for their actions."
+        },
+        {
+          "id": 53,
+          "text": "NATO's principle of Responsibility and Accountability states organizations will develop AI applications mindfully and integrate human responsibility to establish human accountability for actions taken by or with the application."
+        },
+        {
+          "id": 54,
+          "text": "Patient research showed the importance of accountability in gaining patient trust when using AI in healthcare. Accountability is crucial when a clinician is using generative AI to help treat a patient, as without proper measures for human accountability, the patient may feel that the clinician is not invested in the care they are delivering."
+        },
+        {
+          "id": 55,
+          "text": "Implementation ensures human involvement is maintained when more powerful generative AI systems, such as ChatGPT or generative AI-based clinical decision support systems, are used in patient care."
+        }
+      ]
+    },
+    {
+      "id": "principle-traceability",
+      "title": "Traceability",
+      "paragraphs": [
+        {
+          "id": 56,
+          "text": "Traceability is defined as tracking and documenting data, processes, and artifacts related to a system or model for transparent development."
+        },
+        {
+          "id": 57,
+          "text": "Traceability allows personnel to understand its capabilities, developmental process, methodologies, data sources, and documentation. This understanding improves system reproducibility, allowing for seamless deployment across healthcare systems."
+        },
+        {
+          "id": 58,
+          "text": "This proves important for generative AI systems in healthcare because of their nature of being a black box system. Understanding capabilities and limitations helps optimize trust, as operators will be aware of the capabilities and limitations of the AI systems they work with and know the appropriate settings for use."
+        },
+        {
+          "id": 59,
+          "text": "Requirements include transparent generation processes, references and facts provided alongside answers, transparent data sources and design procedures, and auditable implementation, deployment, and operation."
+        }
+      ]
+    },
+    {
+      "id": "principle-privacy",
+      "title": "Privacy",
+      "paragraphs": [
+        {
+          "id": 60,
+          "text": "Privacy is defined as an assurance that the confidentiality of, and access to, certain information about an entity is protected."
+        },
+        {
+          "id": 61,
+          "text": "Privacy is necessary in most military and medical applications of healthcare due to their confidential nature."
+        },
+        {
+          "id": 62,
+          "text": "Implementation requires HIPAA compliance for data disclosures, security against breaches, developer guidance on training systems with healthcare data, and regular risk assessments determining patient data vulnerability."
+        },
+        {
+          "id": 63,
+          "text": "The paper identifies specific threats including prompt injection, where malicious actions could be conducted by overriding an original prompt, and jailbreak, where training data could be divulged by eliciting generated content."
+        },
+        {
+          "id": 64,
+          "text": "Ensuring these systems are developed with data privacy and security in mind will assist in keeping protected patient information secure. Having these robust measures in place to maintain the privacy of the sensitive data collected and made by AI systems is crucial for the well-being of patients and for building trust with patients."
+        }
+      ]
+    },
+    {
+      "id": "principle-lawfulness",
+      "title": "Lawfulness",
+      "paragraphs": [
+        {
+          "id": 65,
+          "text": "Lawfulness is defined as the adherence to national and international law, including international humanitarian law and human rights law, as applicable."
+        },
+        {
+          "id": 66,
+          "text": "Unlike military applications addressing laws of conflict, healthcare must address laws related to healthcare. Different states in the U.S. may establish different laws for AI systems that must be heeded for deployment in those areas."
+        },
+        {
+          "id": 67,
+          "text": "Generative AI systems face legal challenges surrounding safety and effectiveness, liability, data privacy, cybersecurity, and intellectual property law."
+        },
+        {
+          "id": 68,
+          "text": "Implementation requires establishing a legal foundation addressing liability of action taken and recommended by these systems, as well as considerations for how they interact with cybersecurity and data privacy requirements of healthcare providers."
+        }
+      ]
+    },
+    {
+      "id": "principle-empathy",
+      "title": "Empathy",
+      "paragraphs": [
+        {
+          "id": 69,
+          "text": "Empathy is defined as the ability to understand the personal experiences and emotions of another, without extensive bonding."
+        },
+        {
+          "id": 70,
+          "text": "Unlike DOD and NATO guidelines, empathy receives emphasis in healthcare through frameworks emphasizing human involvement in the treatment of patients to prevent gaps in accountability and ensure patients receive care that is empathetic and helpful."
+        },
+        {
+          "id": 71,
+          "text": "The authors note notable concerns about artificial empathy of chatbots, such as ChatGPT, reinforcing the need for a principle defining empathy for generative AI in healthcare."
+        },
+        {
+          "id": 72,
+          "text": "Benefits of empathetic provider-patient relationships include better patient outcomes, fewer disputes with healthcare providers, higher patient satisfaction, and higher reimbursement."
+        }
+      ]
+    },
+    {
+      "id": "principle-autonomy",
+      "title": "Autonomy",
+      "paragraphs": [
+        {
+          "id": 73,
+          "text": "Autonomy is defined as the matter of control over one's self and requires both freedom from controlling influences and the capacity for action for it to be maintained."
+        },
+        {
+          "id": 74,
+          "text": "The more powerful AI systems become, the more concerns arise that humans do not control healthcare systems and care decisions."
+        },
+        {
+          "id": 75,
+          "text": "Protecting autonomy means patients receive care according to their preferences and values and that clinicians can deliver treatment in the manner they want, without being encroached upon by the generative AI system."
+        },
+        {
+          "id": 76,
+          "text": "If autonomy in decision-making is not patient-focused, the potential for adverse events and poor clinical outcomes will surely follow. By including provisions for protecting autonomy in using generative AI in healthcare, doctor-patient relations improve, and care quality is ultimately improved."
+        }
+      ]
+    },
+    {
+      "id": "conclusion",
+      "title": "Conclusion",
+      "paragraphs": [
+        {
+          "id": 77,
+          "text": "Generative AI has great potential to enhance and make high-quality healthcare more accessible to all, leading to a fundamental transformation in its delivery."
+        },
+        {
+          "id": 78,
+          "text": "Challenges posed by AI in healthcare often mirror those encountered in military, justifying the cross-sector approach taken in this paper."
+        },
+        {
+          "id": 79,
+          "text": "The proposed GREAT PLEA principles address the ethical concerns of generative AI in healthcare, as well as the distinction between generative AI and general AI, by addressing the elevated risks including misinformation potential, bias ramifications, and evaluation metric difficulties."
+        },
+        {
+          "id": 80,
+          "text": "Considering the widespread nature of generative AI and its risks, these ethical principles can protect patients and clinicians from unforeseen consequences."
+        },
+        {
+          "id": 81,
+          "text": "Following these principles, generative AI can be continuously evaluated for errors, bias, and other concerns that patients or caregivers may have about their relationship with AI in their field."
+        },
+        {
+          "id": 82,
+          "text": "The present moment urges us to embrace these principles, foster a closer collaboration between humans and technology, and effect a radical enhancement in the healthcare system."
+        },
+        {
+          "id": 83,
+          "text": "Enforcement mechanisms will require cooperation with lawmakers and the establishment of standards for developers and users, as well as a partnership with recognized governing bodies within the healthcare sector, such as the WHO or AMA."
+        },
+        {
+          "id": 84,
+          "text": "The authors acknowledge that the enforcement of the proposed ethical principles, be it via evaluation approaches or through other means, is out of the scope of this effort. They note the lack of detailed enforcement procedures as the limitation of the work, and identify implementing AI metrics or enforcement methods for GREAT PLEA ethical principles as a potential future avenue for exploration."
+        }
+      ]
+    }
+  ]
+}

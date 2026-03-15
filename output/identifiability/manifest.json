@@ -1,0 +1,55 @@
+{
+  "paper_title": "Everything, Everywhere, All at Once: Is Mechanistic Interpretability Identifiable?",
+  "paper_authors": "Maxime Méloux, François Portet, Silviu Maniu, Maxime Peyrard",
+  "total_parts": 6,
+  "parts": {
+    "1": {
+      "title": "Introduction to Mechanistic Interpretability and Identifiability",
+      "paragraphs": [1, 2, 3, 4],
+      "dialog_input": "output/identifiability/dialog_part_01.json",
+      "audio_file": "output/identifiability/part_01_20260308_133533.wav",
+      "timestamps_file": "output/identifiability/part_01_20260308_133533_timestamps.json",
+      "status": "generated"
+    },
+    "2": {
+      "title": "Background: MI Assumptions, Circuits, and Formal Definitions",
+      "paragraphs": [5, 6, 7, 8, 9],
+      "dialog_input": "output/identifiability/dialog_part_02.json",
+      "audio_file": "output/identifiability/part_02_20260308_133544.wav",
+      "timestamps_file": "output/identifiability/part_02_20260308_133544_timestamps.json",
+      "status": "generated"
+    },
+    "3": {
+      "title": "Circuit Discovery Strategies and Explanation Identifiability",
+      "paragraphs": [10, 11, 12, 13],
+      "dialog_input": "output/identifiability/dialog_part_03.json",
+      "audio_file": "output/identifiability/part_03_20260308_133545.wav",
+      "timestamps_file": "output/identifiability/part_03_20260308_133545_timestamps.json",
+      "status": "generated"
+    },
+    "4": {
+      "title": "XOR Case Study: Illustrating Identifiability Problems",
+      "paragraphs": [14, 15, 16],
+      "dialog_input": "output/identifiability/dialog_part_04.json",
+      "audio_file": "output/identifiability/part_04_20260308_133546.wav",
+      "timestamps_file": "output/identifiability/part_04_20260308_133546_timestamps.json",
+      "status": "generated"
+    },
+    "5": {
+      "title": "Scaling Up: Quantitative Analysis, Training Dynamics, and Larger Models",
+      "paragraphs": [17, 18, 19, 20, 21],
+      "dialog_input": "output/identifiability/dialog_part_05.json",
+      "audio_file": "output/identifiability/part_05_20260308_133547.wav",
+      "timestamps_file": "output/identifiability/part_05_20260308_133547_timestamps.json",
+      "status": "generated"
+    },
+    "6": {
+      "title": "Discussion: Does Unicity Matter, Resolving Non-Identifiability, and Conclusion",
+      "paragraphs": [22, 23, 24, 25, 26, 27],
+      "dialog_input": "output/identifiability/dialog_part_06.json",
+      "audio_file": "output/identifiability/part_06_20260308_133548.wav",
+      "timestamps_file": "output/identifiability/part_06_20260308_133548_timestamps.json",
+      "status": "generated"
+    }
+  }
+}

@@ -1,0 +1,286 @@
+{
+  "source": "C:\\Users\\Brian\\Documents\\UW Winter 26\\ProductivityAndReadingHelper\\input\\responsible_ux\\part_02.json",
+  "audio_file": "part_02_20260306_205910.wav",
+  "tag": "part_02",
+  "generated": "2026-03-06T20:59:12.651304",
+  "total_duration_ms": 387058.1,
+  "total_duration_formatted": "6:27.058",
+  "lines": [
+    {
+      "index": 0,
+      "voice": "Microsoft David",
+      "text": "Welcome back. Last time we introduced the paper and its key research questions about how UX practitioners are adapting to responsible AI challenges. Now let's look at how this study builds on existing research.",
+      "start_ms": 0.0,
+      "end_ms": 14202.1,
+      "duration_ms": 14202.1,
+      "source_paragraphs": [
+        8
+      ]
+    },
+    {
+      "index": 1,
+      "voice": "Microsoft Zira",
+      "text": "Right. Before we get into the findings, it helps to know what the field already understood about responsible AI practices.",
+      "start_ms": 14802.1,
+      "end_ms": 23515.2,
+      "duration_ms": 8713.1,
+      "source_paragraphs": [
+        8
+      ]
+    },
+    {
+      "index": 2,
+      "voice": "Microsoft David",
+      "text": "So the paper first lays out its three main contributions. First, it identifies three emerging practices that UX practitioners are developing for responsible AI: building an RAI lens, responsible prototyping, and responsible evaluation. Second, it reflects on the hidden work that UX practitioners do for responsible AI. And third, it discusses the implications for designing with machine learning models and rethinking the role of the user.",
+      "start_ms": 24115.2,
+      "end_ms": 53794.0,
+      "duration_ms": 29678.8,
+      "source_paragraphs": [
+        8
+      ]
+    },
+    {
+      "index": 3,
+      "voice": "Microsoft Zira",
+      "text": "I'm particularly intrigued by that idea of hidden work. What does the existing literature say about how practitioners in industry currently handle responsible AI?",
+      "start_ms": 54394.0,
+      "end_ms": 64776.1,
+      "duration_ms": 10382.1,
+      "source_paragraphs": [
+        9,
+        10
+      ]
+    },
+    {
+      "index": 4,
+      "voice": "Microsoft David",
+      "text": "There's a growing body of work in HCI that examines industry practitioners' work practices around responsible AI. One important finding from prior research is that a lot of responsible AI efforts are actually reactionary. They get kicked off because of a public relations issue, media attention, or customer complaints, rather than being proactive from the start.",
+      "start_ms": 65376.1,
+      "end_ms": 88316.0,
+      "duration_ms": 22940.0,
+      "source_paragraphs": [
+        10
+      ]
+    },
+    {
+      "index": 5,
+      "voice": "Microsoft Zira",
+      "text": "That's a bit concerning. You'd hope companies would be thinking about these things before something goes wrong.",
+      "start_ms": 88916.0,
+      "end_ms": 95649.1,
+      "duration_ms": 6733.1,
+      "source_paragraphs": [
+        10
+      ]
+    },
+    {
+      "index": 6,
+      "voice": "Microsoft David",
+      "text": "You would hope so. And when practitioners do try to be proactive, they face real challenges. For example, they often try to address fairness through training datasets, like making sure diverse groups are represented. But practitioners tend to draw on their own personal experiences and perspectives, which are often quite homogeneous, especially in tech.",
+      "start_ms": 96249.1,
+      "end_ms": 120469.2,
+      "duration_ms": 24220.1,
+      "source_paragraphs": [
+        11
+      ]
+    },
+    {
+      "index": 7,
+      "voice": "Microsoft Zira",
+      "text": "So there's a blind spot problem. If the team isn't diverse, they might not even realize what they're missing.",
+      "start_ms": 121069.2,
+      "end_ms": 128597.3,
+      "duration_ms": 7528.1,
+      "source_paragraphs": [
+        11
+      ]
+    },
+    {
+      "index": 8,
+      "voice": "Microsoft David",
+      "text": "Exactly. And there's another issue the paper highlights. When practitioners prioritize which fairness issues to tackle, they sometimes use heuristics like perceived severity or brand impact. But those heuristics can actually compound existing inequities, because the issues that seem most urgent from a business perspective aren't necessarily the ones that affect the most vulnerable users.",
+      "start_ms": 129197.3,
+      "end_ms": 154032.0,
+      "duration_ms": 24834.6,
+      "source_paragraphs": [
+        11
+      ]
+    },
+    {
+      "index": 9,
+      "voice": "Microsoft Zira",
+      "text": "That's a really subtle but important point. So what about all the toolkits and guidelines that have been created to help with responsible AI?",
+      "start_ms": 154632.0,
+      "end_ms": 163329.6,
+      "duration_ms": 8697.6,
+      "source_paragraphs": [
+        12
+      ]
+    },
+    {
+      "index": 10,
+      "voice": "Microsoft David",
+      "text": "Great question. There's been a whole proliferation of responsible AI toolkits and guidelines. But the research shows they have significant limitations. Many of them tell practitioners what to do, like engage stakeholders, but not how to actually do it. They're not prescriptive enough to be actionable.",
+      "start_ms": 163929.6,
+      "end_ms": 185045.9,
+      "duration_ms": 21116.2,
+      "source_paragraphs": [
+        12
+      ]
+    },
+    {
+      "index": 11,
+      "voice": "Microsoft Zira",
+      "text": "That reminds me of getting a recipe that just says season to taste without telling you what spices to use.",
+      "start_ms": 185645.9,
+      "end_ms": 191958.9,
+      "duration_ms": 6313.0,
+      "source_paragraphs": [
+        12
+      ]
+    },
+    {
+      "index": 12,
+      "voice": "Microsoft David",
+      "text": "Great analogy. And there's another problem. Many of these toolkits are designed primarily for technical practitioners, like ML engineers. So they're not very accessible to people with different types of expertise, like UX designers who might not have deep technical backgrounds.",
+      "start_ms": 192558.9,
+      "end_ms": 211850.2,
+      "duration_ms": 19291.4,
+      "source_paragraphs": [
+        12
+      ]
+    },
+    {
+      "index": 13,
+      "voice": "Microsoft Zira",
+      "text": "Which is ironic if the whole point is to make AI more responsible and inclusive, but then the tools for doing that aren't inclusive themselves.",
+      "start_ms": 212450.2,
+      "end_ms": 220823.1,
+      "duration_ms": 8372.9,
+      "source_paragraphs": [
+        12
+      ]
+    },
+    {
+      "index": 14,
+      "voice": "Microsoft David",
+      "text": "That's a sharp observation. The paper also warns about a kind of techno-solutionism, where relying too heavily on toolkits promotes purely technical solutions to what are really sociotechnical problems. Responsible AI isn't just an engineering challenge. It involves social, ethical, and organizational dimensions.",
+      "start_ms": 221423.1,
+      "end_ms": 243093.7,
+      "duration_ms": 21670.6,
+      "source_paragraphs": [
+        12
+      ]
+    },
+    {
+      "index": 15,
+      "voice": "Microsoft Zira",
+      "text": "What about the organizational side? How does the company structure affect responsible AI work?",
+      "start_ms": 243693.7,
+      "end_ms": 250466.9,
+      "duration_ms": 6773.2,
+      "source_paragraphs": [
+        13
+      ]
+    },
+    {
+      "index": 16,
+      "voice": "Microsoft David",
+      "text": "This is a big theme. The literature highlights several organizational challenges. First, there's often a lack of clear roles and responsibilities. Nobody knows exactly who is supposed to own responsible AI work. Second, there are often no incentives, or even active disincentives, for doing this work.",
+      "start_ms": 251066.9,
+      "end_ms": 273472.6,
+      "duration_ms": 22405.7,
+      "source_paragraphs": [
+        13
+      ]
+    },
+    {
+      "index": 17,
+      "voice": "Microsoft Zira",
+      "text": "Wait, disincentives? Like, you could actually be penalized for doing responsible AI work?",
+      "start_ms": 274072.6,
+      "end_ms": 281750.9,
+      "duration_ms": 7678.3,
+      "source_paragraphs": [
+        13
+      ]
+    },
+    {
+      "index": 18,
+      "voice": "Microsoft David",
+      "text": "Well, indirectly. If you're spending time on responsible AI concerns, you might be falling behind on your regular deliverables. And in a culture with fast-paced shipping timelines, that can hurt your performance reviews. So the work often falls to individuals who voluntarily take it on, and their efforts might not even be formally adopted by the rest of the organization.",
+      "start_ms": 282350.9,
+      "end_ms": 307240.8,
+      "duration_ms": 24889.9,
+      "source_paragraphs": [
+        13
+      ]
+    },
+    {
+      "index": 19,
+      "voice": "Microsoft Zira",
+      "text": "That sounds really frustrating. You're doing important work, but it's not recognized or supported.",
+      "start_ms": 307840.8,
+      "end_ms": 315038.7,
+      "duration_ms": 7197.9,
+      "source_paragraphs": [
+        13
+      ]
+    },
+    {
+      "index": 20,
+      "voice": "Microsoft David",
+      "text": "It really is. And responsible AI work requires significant time and resources. You need to identify issues, assess them, and develop mitigations across datasets, algorithms, and model behavior. All of that takes effort that practitioners often don't have bandwidth for.",
+      "start_ms": 315638.7,
+      "end_ms": 335204.9,
+      "duration_ms": 19566.2,
+      "source_paragraphs": [
+        13
+      ]
+    },
+    {
+      "index": 21,
+      "voice": "Microsoft Zira",
+      "text": "So there's been a lot of calls for organizational change to better support this work?",
+      "start_ms": 335804.9,
+      "end_ms": 340858.1,
+      "duration_ms": 5053.2,
+      "source_paragraphs": [
+        13
+      ]
+    },
+    {
+      "index": 22,
+      "voice": "Microsoft David",
+      "text": "Absolutely. Many scholars have argued that organizational structures and processes need to change to support rather than hinder practitioners' responsible AI practices. It's not just about individual effort. The system needs to make this work possible.",
+      "start_ms": 341458.1,
+      "end_ms": 358379.3,
+      "duration_ms": 16921.2,
+      "source_paragraphs": [
+        13
+      ]
+    },
+    {
+      "index": 23,
+      "voice": "Microsoft Zira",
+      "text": "That's a strong foundation of context. I'm curious to see how this connects to UX specifically.",
+      "start_ms": 358979.3,
+      "end_ms": 366002.5,
+      "duration_ms": 7023.2,
+      "source_paragraphs": [
+        9
+      ]
+    },
+    {
+      "index": 24,
+      "voice": "Microsoft David",
+      "text": "That's exactly where we're headed next. In the upcoming part, we'll explore the existing research on values and ethics in UX practice, and how UX practitioners have historically engaged with these kinds of challenges. It sets the stage nicely for understanding the specific adaptations this paper uncovers.",
+      "start_ms": 366602.5,
+      "end_ms": 387058.1,
+      "duration_ms": 20455.6,
+      "source_paragraphs": [
+        9
+      ]
+    }
+  ]
+}

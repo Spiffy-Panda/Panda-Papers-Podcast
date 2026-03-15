@@ -1,0 +1,114 @@
+{
+  "paper_source": "input/ODESteer_paper.json",
+  "total_parts": 12,
+  "parts": [
+    {
+      "part_number": 1,
+      "title": "Introduction to Activation Steering",
+      "covers_paragraphs": [2, 3, 4],
+      "status": "generated",
+      "dialog_input": "output/odesteer/dialog_part_01.json",
+      "audio_file": "output/odesteer/part_01_20260307_131005.wav",
+      "timestamps_file": "output/odesteer/part_01_20260307_131005_timestamps.json"
+    },
+    {
+      "part_number": 2,
+      "title": "Two Key Limitations and the ODE Insight",
+      "covers_paragraphs": [6, 7, 8],
+      "status": "generated",
+      "dialog_input": "output/odesteer/dialog_part_02.json",
+      "audio_file": "output/odesteer/part_02_20260307_131153.wav",
+      "timestamps_file": "output/odesteer/part_02_20260307_131153_timestamps.json"
+    },
+    {
+      "part_number": 3,
+      "title": "ODESteer Overview, Contributions, and Related Work",
+      "covers_paragraphs": [9, 10, 11, 12],
+      "status": "generated",
+      "dialog_input": "output/odesteer/dialog_part_03.json",
+      "audio_file": "output/odesteer/part_03_20260307_131157.wav",
+      "timestamps_file": "output/odesteer/part_03_20260307_131157_timestamps.json"
+    },
+    {
+      "part_number": 4,
+      "title": "Barrier Functions from Control Theory",
+      "covers_paragraphs": [13, 16, 21, 24],
+      "status": "generated",
+      "dialog_input": "output/odesteer/dialog_part_04.json",
+      "audio_file": "output/odesteer/part_04_20260307_131207.wav",
+      "timestamps_file": "output/odesteer/part_04_20260307_131207_timestamps.json"
+    },
+    {
+      "part_number": 5,
+      "title": "Activation Addition as an ODE",
+      "covers_paragraphs": [25, 27, 28, 30, 32],
+      "status": "generated",
+      "dialog_input": "output/odesteer/dialog_part_05.json",
+      "audio_file": "output/odesteer/part_05_20260307_131215.wav",
+      "timestamps_file": "output/odesteer/part_05_20260307_131215_timestamps.json"
+    },
+    {
+      "part_number": 6,
+      "title": "Unifying Input Reading Methods",
+      "covers_paragraphs": [33, 38, 41, 45],
+      "status": "generated",
+      "dialog_input": "output/odesteer/dialog_part_06.json",
+      "audio_file": "output/odesteer/part_06_20260307_131221.wav",
+      "timestamps_file": "output/odesteer/part_06_20260307_131221_timestamps.json"
+    },
+    {
+      "part_number": 7,
+      "title": "Probes and Output Optimization",
+      "covers_paragraphs": [46, 48, 52, 53, 55],
+      "status": "generated",
+      "dialog_input": "output/odesteer/dialog_part_07.json",
+      "audio_file": "output/odesteer/part_07_20260307_133549.wav",
+      "timestamps_file": "output/odesteer/part_07_20260307_133549_timestamps.json"
+    },
+    {
+      "part_number": 8,
+      "title": "ODESteer's Barrier Function Design",
+      "covers_paragraphs": [56, 57, 59, 60, 61],
+      "status": "generated",
+      "dialog_input": "output/odesteer/dialog_part_08.json",
+      "audio_file": "output/odesteer/part_08_20260307_133611.wav",
+      "timestamps_file": "output/odesteer/part_08_20260307_133611_timestamps.json"
+    },
+    {
+      "part_number": 9,
+      "title": "Constructing and Solving the ODE",
+      "covers_paragraphs": [63, 64, 66, 68],
+      "status": "generated",
+      "dialog_input": "output/odesteer/dialog_part_09.json",
+      "audio_file": "output/odesteer/part_09_20260307_133620.wav",
+      "timestamps_file": "output/odesteer/part_09_20260307_133620_timestamps.json"
+    },
+    {
+      "part_number": 10,
+      "title": "Advantages of ODE-Based Steering",
+      "covers_paragraphs": [69, 70, 71],
+      "status": "generated",
+      "dialog_input": "output/odesteer/dialog_part_10.json",
+      "audio_file": "output/odesteer/part_10_20260307_133632.wav",
+      "timestamps_file": "output/odesteer/part_10_20260307_133632_timestamps.json"
+    },
+    {
+      "part_number": 11,
+      "title": "Experiments: Setup and Results",
+      "covers_paragraphs": [74, 75, 76, 79, 80],
+      "status": "generated",
+      "dialog_input": "output/odesteer/dialog_part_11.json",
+      "audio_file": "output/odesteer/part_11_20260307_133651.wav",
+      "timestamps_file": "output/odesteer/part_11_20260307_133651_timestamps.json"
+    },
+    {
+      "part_number": 12,
+      "title": "Ablation Study, Conclusion, and Future Work",
+      "covers_paragraphs": [81, 84, 85],
+      "status": "generated",
+      "dialog_input": "output/odesteer/dialog_part_12.json",
+      "audio_file": "output/odesteer/part_12_20260307_133701.wav",
+      "timestamps_file": "output/odesteer/part_12_20260307_133701_timestamps.json"
+    }
+  ]
+}

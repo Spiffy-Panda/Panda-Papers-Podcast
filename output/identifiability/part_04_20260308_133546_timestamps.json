@@ -1,0 +1,219 @@
+{
+  "source": "C:\\Users\\Brian\\Documents\\UW Winter 26\\ProductivityAndReadingHelper\\output\\identifiability\\dialog_part_04.json",
+  "audio_file": "part_04_20260308_133546.wav",
+  "tag": "part_04",
+  "generated": "2026-03-08T13:35:49.174628",
+  "total_duration_ms": 257932.1,
+  "total_duration_formatted": "4:17.932",
+  "lines": [
+    {
+      "index": 0,
+      "voice": "Microsoft David",
+      "text": "Alright, now we get to the really fun part. The authors take everything we've discussed and put it to the test with a concrete example. They train a small neural network to compute the XOR function.",
+      "start_ms": 0.0,
+      "end_ms": 13187.3,
+      "duration_ms": 13187.3,
+      "source_paragraphs": [
+        14
+      ]
+    },
+    {
+      "index": 1,
+      "voice": "Microsoft Zira",
+      "text": "XOR, the exclusive or. That's about as simple as it gets for a function that actually requires some computation, right?",
+      "start_ms": 13787.3,
+      "end_ms": 22815.2,
+      "duration_ms": 9027.9,
+      "source_paragraphs": [
+        14
+      ]
+    },
+    {
+      "index": 2,
+      "voice": "Microsoft David",
+      "text": "Exactly. An MLP needs at least two layers to compute XOR, which makes it perfect for this test. The interpretability question becomes: how does this network implement XOR? What logic gates is it using, and where are they located in the network?",
+      "start_ms": 23415.2,
+      "end_ms": 41936.7,
+      "duration_ms": 18521.5,
+      "source_paragraphs": [
+        14
+      ]
+    },
+    {
+      "index": 3,
+      "voice": "Microsoft Zira",
+      "text": "And they deliberately use a tiny network so they can check every possibility?",
+      "start_ms": 42536.7,
+      "end_ms": 47190.1,
+      "duration_ms": 4653.4,
+      "source_paragraphs": [
+        14
+      ]
+    },
+    {
+      "index": 4,
+      "voice": "Microsoft David",
+      "text": "Yes. They use an MLP with two hidden layers of size three. That's small enough to exhaustively enumerate all possible circuits and do extensive search over all possible mappings. The inputs are zero or one, sometimes with a bit of Gaussian noise added.",
+      "start_ms": 47790.1,
+      "end_ms": 65816.7,
+      "duration_ms": 18026.6,
+      "source_paragraphs": [
+        14
+      ]
+    },
+    {
+      "index": 5,
+      "voice": "Microsoft Zira",
+      "text": "So how do they systematically test all the different criteria?",
+      "start_ms": 66416.7,
+      "end_ms": 70650.4,
+      "duration_ms": 4233.7,
+      "source_paragraphs": [
+        15
+      ]
+    },
+    {
+      "index": 6,
+      "voice": "Microsoft David",
+      "text": "They use four methods. First, circuit search: they enumerate every possible circuit and test each as a standalone network. Any circuit with zero error is labeled a perfect circuit. Second, interpretation search: for each perfect circuit, they recursively interpret neuron activations as logic gates, building up a tree of all candidate interpretations.",
+      "start_ms": 71250.4,
+      "end_ms": 96705.4,
+      "duration_ms": 25455.0,
+      "source_paragraphs": [
+        15
+      ]
+    },
+    {
+      "index": 7,
+      "voice": "Microsoft Zira",
+      "text": "And they avoid counting trivial duplicates, like just relabeling values?",
+      "start_ms": 97305.4,
+      "end_ms": 102563.9,
+      "duration_ms": 5258.6,
+      "source_paragraphs": [
+        15
+      ]
+    },
+    {
+      "index": 8,
+      "voice": "Microsoft David",
+      "text": "Right, they ignore value relabeling to avoid artificial inflation. Third is algorithm search: they enumerate all possible XOR-implementing algorithms by considering Boolean formula parse trees using AND, OR, and negation. At depth three, this gives them fifty-six distinct algorithms that all compute XOR.",
+      "start_ms": 103163.9,
+      "end_ms": 124599.9,
+      "duration_ms": 21435.9,
+      "source_paragraphs": [
+        15
+      ]
+    },
+    {
+      "index": 9,
+      "voice": "Microsoft Zira",
+      "text": "Fifty-six different algorithms that all compute the same function! And the fourth method?",
+      "start_ms": 125199.9,
+      "end_ms": 131278.4,
+      "duration_ms": 6078.5,
+      "source_paragraphs": [
+        15
+      ]
+    },
+    {
+      "index": 10,
+      "voice": "Microsoft David",
+      "text": "Mapping search. For a given candidate algorithm, they explore all possible neuron subsets and mappings, measuring causal alignment with IIA. Mappings that achieve perfect IIA with no simpler alternatives are called perfect minimal mappings.",
+      "start_ms": 131878.4,
+      "end_ms": 148784.9,
+      "duration_ms": 16906.4,
+      "source_paragraphs": [
+        15
+      ]
+    },
+    {
+      "index": 11,
+      "voice": "Microsoft Zira",
+      "text": "Okay, so what were the actual results? How many valid explanations did they find?",
+      "start_ms": 149384.9,
+      "end_ms": 156133.3,
+      "duration_ms": 6748.5,
+      "source_paragraphs": [
+        16
+      ]
+    },
+    {
+      "index": 12,
+      "voice": "Microsoft David",
+      "text": "The numbers are staggering. For the algorithm-first approach, testing just two candidate algorithms yielded 159 perfect minimal mappings. Both algorithms had perfect mappings, so neither the algorithm nor its localization is unique.",
+      "start_ms": 156733.3,
+      "end_ms": 174074.6,
+      "duration_ms": 17341.3,
+      "source_paragraphs": [
+        16
+      ]
+    },
+    {
+      "index": 13,
+      "voice": "Microsoft Zira",
+      "text": "159 equally valid ways to locate just two algorithms in this tiny network?",
+      "start_ms": 174674.6,
+      "end_ms": 180497.8,
+      "duration_ms": 5823.2,
+      "source_paragraphs": [
+        16
+      ]
+    },
+    {
+      "index": 14,
+      "voice": "Microsoft David",
+      "text": "Yes. And it gets worse on the circuit side. They found 85 unique circuits with perfect accuracy. And each circuit had an average of over 535 valid logic gate interpretations.",
+      "start_ms": 181097.8,
+      "end_ms": 195689.7,
+      "duration_ms": 14591.8,
+      "source_paragraphs": [
+        16
+      ]
+    },
+    {
+      "index": 15,
+      "voice": "Microsoft Zira",
+      "text": "Over five hundred interpretations per circuit? That's enormous.",
+      "start_ms": 196289.7,
+      "end_ms": 201458.2,
+      "duration_ms": 5168.6,
+      "source_paragraphs": [
+        16
+      ]
+    },
+    {
+      "index": 16,
+      "voice": "Microsoft David",
+      "text": "When you add it all up, the example produced over 45,000 computational abstractions. Most of these are mutually incompatible, meaning they propose genuinely different explanations for the same behavior. And remember, this is for a tiny network computing one of the simplest possible functions.",
+      "start_ms": 202058.2,
+      "end_ms": 222119.0,
+      "duration_ms": 20060.7,
+      "source_paragraphs": [
+        16
+      ]
+    },
+    {
+      "index": 17,
+      "voice": "Microsoft Zira",
+      "text": "That's a really powerful demonstration. If identifiability fails this badly for XOR on a tiny MLP, what hope is there for understanding a large language model?",
+      "start_ms": 222719.0,
+      "end_ms": 233891.3,
+      "duration_ms": 11172.4,
+      "source_paragraphs": [
+        16
+      ]
+    },
+    {
+      "index": 18,
+      "voice": "Microsoft David",
+      "text": "That's exactly the question the authors want us to ask. There's no clear criterion among the standard MI tools to choose between all these explanations. They all pass the tests equally well. In the next segment, we'll see what happens when they scale this up: bigger networks, more complex tasks, and whether training dynamics help at all.",
+      "start_ms": 234491.3,
+      "end_ms": 257932.1,
+      "duration_ms": 23440.7,
+      "source_paragraphs": [
+        16
+      ]
+    }
+  ]
+}

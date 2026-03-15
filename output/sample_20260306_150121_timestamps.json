@@ -1,0 +1,58 @@
+{
+  "source": "C:\\Users\\Brian\\Documents\\UW Winter 26\\ProductivityAndReadingHelper\\input\\sample_dialog.json",
+  "audio_file": "sample_20260306_150121.wav",
+  "tag": "sample",
+  "generated": "2026-03-06T15:01:21.934077",
+  "total_duration_ms": 39236.1,
+  "total_duration_formatted": "0:39.236",
+  "lines": [
+    {
+      "index": 0,
+      "voice": "Microsoft David",
+      "text": "Good morning! Did you finish reading that chapter on productivity systems?",
+      "start_ms": 0.0,
+      "end_ms": 5693.5,
+      "duration_ms": 5693.5
+    },
+    {
+      "index": 1,
+      "voice": "Microsoft Zira",
+      "text": "I did, actually. The section on time blocking was really interesting.",
+      "start_ms": 6293.5,
+      "end_ms": 11977.2,
+      "duration_ms": 5683.8
+    },
+    {
+      "index": 2,
+      "voice": "Microsoft David",
+      "text": "Right? I've been trying to implement it this week. It's harder than it sounds.",
+      "start_ms": 12577.2,
+      "end_ms": 19000.8,
+      "duration_ms": 6423.6
+    },
+    {
+      "index": 3,
+      "voice": "Microsoft Zira",
+      "text": "The trick is to start with just two or three blocks per day. Don't try to schedule everything at once.",
+      "start_ms": 19600.8,
+      "end_ms": 26274.1,
+      "duration_ms": 6673.3
+    },
+    {
+      "index": 4,
+      "voice": "Microsoft David",
+      "text": "That makes sense. I kept overloading my calendar and then ignoring it completely.",
+      "start_ms": 26874.1,
+      "end_ms": 32932.4,
+      "duration_ms": 6058.3
+    },
+    {
+      "index": 5,
+      "voice": "Microsoft Zira",
+      "text": "Exactly. Small consistent habits beat ambitious plans every time.",
+      "start_ms": 33532.4,
+      "end_ms": 39236.1,
+      "duration_ms": 5703.7
+    }
+  ]
+}

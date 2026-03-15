@@ -1,0 +1,329 @@
+{
+  "source": "C:\\Users\\Brian\\Documents\\UW Winter 26\\ProductivityAndReadingHelper\\output\\identifiability\\dialog_part_06.json",
+  "audio_file": "part_06_20260308_133548.wav",
+  "tag": "part_06",
+  "generated": "2026-03-08T13:35:51.167763",
+  "total_duration_ms": 377862.4,
+  "total_duration_formatted": "6:17.862",
+  "lines": [
+    {
+      "index": 0,
+      "voice": "Microsoft David",
+      "text": "Welcome back for our final segment. We've seen the evidence: mechanistic interpretability criteria don't guarantee unique explanations, even for the simplest possible cases. Now let's talk about what this actually means and where the field might go from here.",
+      "start_ms": 0.0,
+      "end_ms": 17036.4,
+      "duration_ms": 17036.4,
+      "source_paragraphs": [
+        22
+      ]
+    },
+    {
+      "index": 1,
+      "voice": "Microsoft Zira",
+      "text": "The big question is, does it actually matter that there are multiple valid explanations? Maybe uniqueness isn't the point.",
+      "start_ms": 17636.4,
+      "end_ms": 25979.3,
+      "duration_ms": 8342.9,
+      "source_paragraphs": [
+        22
+      ]
+    },
+    {
+      "index": 2,
+      "voice": "Microsoft David",
+      "text": "That's exactly the pragmatic stance some researchers take. If an explanation lets you predict behavior and gives you control over the system, maybe it doesn't matter that other explanations could also work. What matters is whether the explanation is useful for your specific goals, like predictivity, controllability, or informing decisions.",
+      "start_ms": 26579.3,
+      "end_ms": 48269.8,
+      "duration_ms": 21690.4,
+      "source_paragraphs": [
+        22
+      ]
+    },
+    {
+      "index": 3,
+      "voice": "Microsoft Zira",
+      "text": "That reminds me of the debate around interpretability illusions. Weren't there concerns that some explanations from the DAS method might not reflect what's truly happening?",
+      "start_ms": 48869.8,
+      "end_ms": 59276.8,
+      "duration_ms": 10407.0,
+      "source_paragraphs": [
+        22
+      ]
+    },
+    {
+      "index": 4,
+      "voice": "Microsoft David",
+      "text": "Yes, there was a debate about dormant pathways, where an explanation looked valid by IIA standards but could be questioned on deeper grounds. The defense was exactly this pragmatic one: the explanation still met the goals of being predictive and allowing manipulation, even if it might not be the only possible account.",
+      "start_ms": 59876.8,
+      "end_ms": 80207.4,
+      "duration_ms": 20330.7,
+      "source_paragraphs": [
+        22
+      ]
+    },
+    {
+      "index": 5,
+      "voice": "Microsoft Zira",
+      "text": "But if we do care about identifiability, is there any hope of achieving it?",
+      "start_ms": 80807.4,
+      "end_ms": 85960.9,
+      "duration_ms": 5153.5,
+      "source_paragraphs": [
+        23
+      ]
+    },
+    {
+      "index": 6,
+      "voice": "Microsoft David",
+      "text": "The authors argue that current MI criteria are insufficient, and simple heuristics like always picking the sparsest circuit won't solve the problem. But there are more principled ideas from causal abstraction theory.",
+      "start_ms": 86560.9,
+      "end_ms": 100198.0,
+      "duration_ms": 13637.1,
+      "source_paragraphs": [
+        23
+      ]
+    },
+    {
+      "index": 7,
+      "voice": "Microsoft Zira",
+      "text": "How does causal abstraction help?",
+      "start_ms": 100798.0,
+      "end_ms": 103627.1,
+      "duration_ms": 2829.1,
+      "source_paragraphs": [
+        23
+      ]
+    },
+    {
+      "index": 8,
+      "voice": "Microsoft David",
+      "text": "Unlike current MI frameworks, causal abstraction requires that all of the model's internal states are accounted for in the higher-level representation. You can't just ignore components; if you exclude something from your circuit, you need to causally justify why it doesn't matter. This has been formalized through a concept called faithfulness.",
+      "start_ms": 104227.1,
+      "end_ms": 126017.4,
+      "duration_ms": 21790.3,
+      "source_paragraphs": [
+        23
+      ]
+    },
+    {
+      "index": 9,
+      "voice": "Microsoft Zira",
+      "text": "So it's not just about finding a circuit that works, but also showing that everything outside the circuit is truly irrelevant.",
+      "start_ms": 126617.4,
+      "end_ms": 134280.3,
+      "duration_ms": 7662.9,
+      "source_paragraphs": [
+        23
+      ]
+    },
+    {
+      "index": 10,
+      "voice": "Microsoft David",
+      "text": "Exactly. It's a much stricter standard. Then there's the inner interpretability framework, which draws lessons from cognitive neuroscience.",
+      "start_ms": 134880.3,
+      "end_ms": 145322.9,
+      "duration_ms": 10442.6,
+      "source_paragraphs": [
+        24
+      ]
+    },
+    {
+      "index": 11,
+      "voice": "Microsoft Zira",
+      "text": "What's the key idea there?",
+      "start_ms": 145922.9,
+      "end_ms": 148167.1,
+      "duration_ms": 2244.2,
+      "source_paragraphs": [
+        24
+      ]
+    },
+    {
+      "index": 12,
+      "voice": "Microsoft David",
+      "text": "It emphasizes building multi-level mechanistic explanations and stress-testing them with proper hypothesis testing. The idea is that an explanation validated by many different criteria, each testing different properties like invariances, becomes more trustworthy than one that passes a single test.",
+      "start_ms": 148767.1,
+      "end_ms": 167708.2,
+      "duration_ms": 18941.1,
+      "source_paragraphs": [
+        24
+      ]
+    },
+    {
+      "index": 13,
+      "voice": "Microsoft Zira",
+      "text": "So instead of relying on one metric, you triangulate with multiple independent checks. That feels much more robust.",
+      "start_ms": 168308.2,
+      "end_ms": 176746.2,
+      "duration_ms": 8438.0,
+      "source_paragraphs": [
+        24
+      ]
+    },
+    {
+      "index": 14,
+      "voice": "Microsoft David",
+      "text": "The authors suggest this could help establish MI as a proper natural science, similar to how neuroscience and biology build understanding through converging evidence rather than single definitive experiments.",
+      "start_ms": 177346.2,
+      "end_ms": 189948.1,
+      "duration_ms": 12601.9,
+      "source_paragraphs": [
+        24
+      ]
+    },
+    {
+      "index": 15,
+      "voice": "Microsoft Zira",
+      "text": "Now, there's a deeper philosophical question here too. Is identifiability even achievable in principle?",
+      "start_ms": 190548.1,
+      "end_ms": 198161.2,
+      "duration_ms": 7613.1,
+      "source_paragraphs": [
+        25
+      ]
+    },
+    {
+      "index": 16,
+      "voice": "Microsoft David",
+      "text": "Great question. The authors point out that in some areas of science, competing theories coexist despite being fundamentally incompatible. Think of the Lagrangian and Hamiltonian formulations of classical mechanics. Both are mathematically equivalent but conceptually different. This is called contrastive underdetermination.",
+      "start_ms": 198761.2,
+      "end_ms": 220776.2,
+      "duration_ms": 22015.0,
+      "source_paragraphs": [
+        25
+      ]
+    },
+    {
+      "index": 17,
+      "voice": "Microsoft Zira",
+      "text": "So maybe MI is just inherently underdetermined, like some areas of physics?",
+      "start_ms": 221376.2,
+      "end_ms": 226999.6,
+      "duration_ms": 5623.4,
+      "source_paragraphs": [
+        25
+      ]
+    },
+    {
+      "index": 18,
+      "voice": "Microsoft David",
+      "text": "It's possible. There's also computational hardness to consider. Some interpretability queries may be intrinsically hard to solve, which would impose fundamental limits on what MI can achieve. The authors connect this to causal representation learning, where identifiability often requires strong constraints that may not be realistic.",
+      "start_ms": 227599.6,
+      "end_ms": 250100.0,
+      "duration_ms": 22500.5,
+      "source_paragraphs": [
+        25
+      ]
+    },
+    {
+      "index": 19,
+      "voice": "Microsoft Zira",
+      "text": "One thing that keeps coming up is that all these experiments use toy models. How confident can we be that these findings apply to real, large-scale models?",
+      "start_ms": 250700.0,
+      "end_ms": 261057.5,
+      "duration_ms": 10357.4,
+      "source_paragraphs": [
+        26
+      ]
+    },
+    {
+      "index": 20,
+      "voice": "Microsoft David",
+      "text": "The authors are upfront about this limitation. Their experiments use small MLPs on simple tasks, which are very different from large language models trained on massive datasets with transformer architectures. It's possible that identifiability issues behave differently at scale.",
+      "start_ms": 261657.5,
+      "end_ms": 280218.5,
+      "duration_ms": 18561.1,
+      "source_paragraphs": [
+        26
+      ]
+    },
+    {
+      "index": 21,
+      "voice": "Microsoft Zira",
+      "text": "But their argument is that the burden of proof should go the other way?",
+      "start_ms": 280818.5,
+      "end_ms": 284847.2,
+      "duration_ms": 4028.6,
+      "source_paragraphs": [
+        26
+      ]
+    },
+    {
+      "index": 22,
+      "voice": "Microsoft David",
+      "text": "Right. If identifiability problems disappear in larger models, someone needs to show that and explain why. Understanding when and why current criteria work well versus when they fail would itself lead to better criteria and definitions.",
+      "start_ms": 285447.2,
+      "end_ms": 301218.9,
+      "duration_ms": 15771.7,
+      "source_paragraphs": [
+        26
+      ]
+    },
+    {
+      "index": 23,
+      "voice": "Microsoft Zira",
+      "text": "So what's the bottom line? What do the authors want the community to take away from this?",
+      "start_ms": 301818.9,
+      "end_ms": 307932.2,
+      "duration_ms": 6113.3,
+      "source_paragraphs": [
+        27
+      ]
+    },
+    {
+      "index": 24,
+      "voice": "Microsoft David",
+      "text": "Three main directions. First, explore stricter criteria based on causal abstraction that might narrow down the space of valid explanations. Second, be explicit about pragmatic goals, what exactly you want your explanation to do for you. And third, embrace broader frameworks like inner interpretability that require validation through multiple complementary criteria.",
+      "start_ms": 308532.2,
+      "end_ms": 334287.5,
+      "duration_ms": 25755.2,
+      "source_paragraphs": [
+        27
+      ]
+    },
+    {
+      "index": 25,
+      "voice": "Microsoft Zira",
+      "text": "It's a call to be more rigorous and more honest about what MI can and can't guarantee.",
+      "start_ms": 334887.5,
+      "end_ms": 340085.7,
+      "duration_ms": 5198.2,
+      "source_paragraphs": [
+        27
+      ]
+    },
+    {
+      "index": 26,
+      "voice": "Microsoft David",
+      "text": "Exactly. The field is young and making incredible progress, but this paper is a healthy reminder to examine the foundations carefully. Whether you think uniqueness is essential or not, knowing that your criteria can produce thousands of equally valid explanations is something every MI researcher should be aware of.",
+      "start_ms": 340685.7,
+      "end_ms": 360941.4,
+      "duration_ms": 20255.6,
+      "source_paragraphs": [
+        27
+      ]
+    },
+    {
+      "index": 27,
+      "voice": "Microsoft Zira",
+      "text": "Well said. Thanks everyone for listening. This has been a great deep dive into a really thought-provoking paper about the foundations of how we understand neural networks from the inside.",
+      "start_ms": 361541.4,
+      "end_ms": 373348.4,
+      "duration_ms": 11807.1,
+      "source_paragraphs": [
+        27
+      ]
+    },
+    {
+      "index": 28,
+      "voice": "Microsoft David",
+      "text": "Thanks for joining us. Until next time!",
+      "start_ms": 373948.4,
+      "end_ms": 377862.4,
+      "duration_ms": 3914.0,
+      "source_paragraphs": [
+        27
+      ]
+    }
+  ]
+}

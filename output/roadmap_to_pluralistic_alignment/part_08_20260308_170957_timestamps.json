@@ -1,0 +1,274 @@
+{
+  "source": "C:\\Users\\Brian\\Documents\\UW Winter 26\\ProductivityAndReadingHelper\\input\\roadmap_to_pluralistic_alignment\\part_08.json",
+  "audio_file": "part_08_20260308_170957.wav",
+  "tag": "part_08",
+  "generated": "2026-03-08T17:10:00.454532",
+  "total_duration_ms": 408122.3,
+  "total_duration_formatted": "6:48.122",
+  "lines": [
+    {
+      "index": 0,
+      "voice": "Microsoft David",
+      "text": "Welcome back to our final segment. Last time we covered jury-pluralistic benchmarks and surveyed current alignment approaches. Now comes the empirical heart of the paper: does alignment actually reduce pluralism?",
+      "start_ms": 0.0,
+      "end_ms": 14156.8,
+      "duration_ms": 14156.8,
+      "source_paragraphs": [
+        38
+      ]
+    },
+    {
+      "index": 1,
+      "voice": "Microsoft Zira",
+      "text": "Right. The authors had a specific hypothesis here, didn't they?",
+      "start_ms": 14756.8,
+      "end_ms": 20220.5,
+      "duration_ms": 5463.7,
+      "source_paragraphs": [
+        38
+      ]
+    },
+    {
+      "index": 2,
+      "voice": "Microsoft David",
+      "text": "They did. Their hypothesis is that current alignment techniques reduce distributional pluralism with respect to the population of internet users. And there's a theoretical intuition behind it. The language modeling cross-entropy objective during pretraining naturally encourages models to learn the distribution of responses in the training data. But the alignment step doesn't preserve that distributional property, it actively narrows it.",
+      "start_ms": 20820.5,
+      "end_ms": 48514.1,
+      "duration_ms": 27693.5,
+      "source_paragraphs": [
+        38
+      ]
+    },
+    {
+      "index": 3,
+      "voice": "Microsoft Zira",
+      "text": "So pretraining might actually capture pluralism better than the aligned model does. That's counterintuitive. What evidence do they present?",
+      "start_ms": 49114.1,
+      "end_ms": 58816.7,
+      "duration_ms": 9702.6,
+      "source_paragraphs": [
+        39
+      ]
+    },
+    {
+      "index": 4,
+      "voice": "Microsoft David",
+      "text": "Three lines of evidence. First, prior work using Pew Research survey data compared LLM response distributions to those of US citizens across two model families. The post-aligned models were less similar to human populations than the pre-aligned ones. Second, work using multinational World Values data found that aligned models concentrated probability mass on just a few answer choices, whereas human distributions were much more spread out.",
+      "start_ms": 59416.7,
+      "end_ms": 89200.8,
+      "duration_ms": 29784.1,
+      "source_paragraphs": [
+        39
+      ]
+    },
+    {
+      "index": 5,
+      "voice": "Microsoft Zira",
+      "text": "So alignment is essentially collapsing the distribution into a few dominant answers. And they ran their own experiments too?",
+      "start_ms": 89800.8,
+      "end_ms": 97793.7,
+      "duration_ms": 7992.9,
+      "source_paragraphs": [
+        40
+      ]
+    },
+    {
+      "index": 6,
+      "voice": "Microsoft David",
+      "text": "Yes. They compared pretrained models to their aligned counterparts across three model families: LLaMA, Gemma, and GPT-3. They used two datasets: GlobalOpinionQA with multinational survey data, and the Machine Personality Inventory with 120 personality assessment questions. They measured Jensen-Shannon distance between human and model distributions.",
+      "start_ms": 98393.7,
+      "end_ms": 124083.4,
+      "duration_ms": 25689.7,
+      "source_paragraphs": [
+        40
+      ]
+    },
+    {
+      "index": 7,
+      "voice": "Microsoft Zira",
+      "text": "And what did they find?",
+      "start_ms": 124683.4,
+      "end_ms": 126702.6,
+      "duration_ms": 2019.2,
+      "source_paragraphs": [
+        40
+      ]
+    },
+    {
+      "index": 8,
+      "voice": "Microsoft David",
+      "text": "Almost universally, pretrained models were closer to human distributions than aligned models. For example, on GlobalOpinionQA targeting Japan, LLaMA pretraining scored 0.40 in Jensen-Shannon distance versus 0.45 for Alpaca and 0.54 for Tulu. Gemma 7B showed 0.33 pre-alignment versus 0.51 post. The only exception was GPT-3 on the personality inventory, but the authors note uncertainty about which GPT-3 model is truly the base. They also observed a reduction in entropy after alignment.",
+      "start_ms": 127302.6,
+      "end_ms": 167179.2,
+      "duration_ms": 39876.6,
+      "source_paragraphs": [
+        40
+      ]
+    },
+    {
+      "index": 9,
+      "voice": "Microsoft Zira",
+      "text": "So the pattern is remarkably consistent. Alignment makes models less distributionally diverse. What do they conclude from all this?",
+      "start_ms": 167779.2,
+      "end_ms": 177231.8,
+      "duration_ms": 9452.7,
+      "source_paragraphs": [
+        41
+      ]
+    },
+    {
+      "index": 10,
+      "voice": "Microsoft David",
+      "text": "They say the evidence reveals a consistent pattern of reduced distributional variance following alignment. When the target distribution is diverse, current techniques limit pluralism. They note that Overton pluralism might emerge if users prefer balanced responses, but people's preference bias toward assertiveness works against that. And while models may have some steerable pluralism through prompting, it needs much more systematic evaluation.",
+      "start_ms": 177831.8,
+      "end_ms": 205645.4,
+      "duration_ms": 27813.6,
+      "source_paragraphs": [
+        41
+      ]
+    },
+    {
+      "index": 11,
+      "voice": "Microsoft Zira",
+      "text": "So all three forms of pluralism face challenges under current methods. What about the limitations of their own framework?",
+      "start_ms": 206245.4,
+      "end_ms": 214368.1,
+      "duration_ms": 8122.6,
+      "source_paragraphs": [
+        42
+      ]
+    },
+    {
+      "index": 12,
+      "voice": "Microsoft David",
+      "text": "They're refreshingly honest about this. The paper doesn't prescribe exactly who to align models to, it advocates for clearer and more pluralistic approaches. They acknowledge that several of their definitions are hard to operationalize, like describing the Overton window or selecting a target population. And importantly, not all forms of pluralism are desirable in every context. Distributional pluralism might be great for studying culture but inappropriate where tight control is needed.",
+      "start_ms": 214968.1,
+      "end_ms": 246876.6,
+      "duration_ms": 31908.5,
+      "source_paragraphs": [
+        42
+      ]
+    },
+    {
+      "index": 13,
+      "voice": "Microsoft Zira",
+      "text": "And the different types can even conflict with each other, right?",
+      "start_ms": 247476.6,
+      "end_ms": 251710.1,
+      "duration_ms": 4233.6,
+      "source_paragraphs": [
+        42
+      ]
+    },
+    {
+      "index": 14,
+      "voice": "Microsoft David",
+      "text": "Exactly. Overton pluralism, presenting all reasonable views in one response, may be at odds with distributional pluralism, matching population frequencies across many responses. Each definition applies in different domains.",
+      "start_ms": 252310.1,
+      "end_ms": 269056.9,
+      "duration_ms": 16746.8,
+      "source_paragraphs": [
+        42
+      ]
+    },
+    {
+      "index": 15,
+      "voice": "Microsoft Zira",
+      "text": "How does this relate to other work in the field?",
+      "start_ms": 269656.9,
+      "end_ms": 272835.6,
+      "duration_ms": 3178.8,
+      "source_paragraphs": [
+        43
+      ]
+    },
+    {
+      "index": 16,
+      "voice": "Microsoft David",
+      "text": "The authors argue they advance the conversation in three ways. First, they unify disparate approaches under concrete definitions. Second, they propose previously unexplored types of pluralism like the Overton model. And third, they argue that pluralism measures should be goals to increase, not just diagnostic probes. Prior work mostly used pluralism for analysis rather than as a design target.",
+      "start_ms": 273435.6,
+      "end_ms": 301325.2,
+      "duration_ms": 27889.6,
+      "source_paragraphs": [
+        43
+      ]
+    },
+    {
+      "index": 17,
+      "voice": "Microsoft Zira",
+      "text": "And does this framework extend beyond just language models?",
+      "start_ms": 301925.2,
+      "end_ms": 306158.8,
+      "duration_ms": 4233.6,
+      "source_paragraphs": [
+        44
+      ]
+    },
+    {
+      "index": 18,
+      "voice": "Microsoft David",
+      "text": "They argue it does. The query-response framework can apply to any inputs and outputs, whether actions, images, audio, or other modalities. Steerable pluralism could be valuable for agents customizing to individual users. Distributional pluralism could model how populations of agents behave, like drivers on a road. There's a broad set of subjective tasks where pluralism is a valuable consideration.",
+      "start_ms": 306758.8,
+      "end_ms": 335308.0,
+      "duration_ms": 28549.2,
+      "source_paragraphs": [
+        44
+      ]
+    },
+    {
+      "index": 19,
+      "voice": "Microsoft Zira",
+      "text": "So this isn't just an LLM paper. It's a framework for thinking about pluralism across all of AI. How do they wrap things up?",
+      "start_ms": 335908.0,
+      "end_ms": 345350.6,
+      "duration_ms": 9442.6,
+      "source_paragraphs": [
+        45
+      ]
+    },
+    {
+      "index": 20,
+      "voice": "Microsoft David",
+      "text": "They close with three broad recommendations. First, more research into fine-grained pluralistic evaluations to better characterize current models. Second, continued normative discussions about what to align to and what the desirable bounds of customization should be. And third, development of new alignment techniques to create more pluralistic models. It's really a call to action for the entire field.",
+      "start_ms": 345950.6,
+      "end_ms": 372730.0,
+      "duration_ms": 26779.4,
+      "source_paragraphs": [
+        45
+      ]
+    },
+    {
+      "index": 21,
+      "voice": "Microsoft Zira",
+      "text": "I think the strongest takeaway for me is that alignment as currently practiced is implicitly choosing whose values matter, and we should be making those choices explicitly and with much more care. This paper gives us the vocabulary and framework to start doing that.",
+      "start_ms": 373330.0,
+      "end_ms": 388846.3,
+      "duration_ms": 15516.3,
+      "source_paragraphs": [
+        45
+      ]
+    },
+    {
+      "index": 22,
+      "voice": "Microsoft David",
+      "text": "Really well said. Thanks for joining us for this deep dive into pluralistic alignment, everyone. If you found this interesting, check out the full paper by Sorensen and colleagues. Until next time.",
+      "start_ms": 389446.3,
+      "end_ms": 404028.3,
+      "duration_ms": 14582.0,
+      "source_paragraphs": [
+        45
+      ]
+    },
+    {
+      "index": 23,
+      "voice": "Microsoft Zira",
+      "text": "Thanks for listening, and see you next time!",
+      "start_ms": 404628.3,
+      "end_ms": 408122.3,
+      "duration_ms": 3494.0,
+      "source_paragraphs": [
+        45
+      ]
+    }
+  ]
+}

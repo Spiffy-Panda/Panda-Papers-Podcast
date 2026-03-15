@@ -1,0 +1,123 @@
+{
+  "pause_between_ms": 600,
+  "rate": 0,
+  "part_number": 5,
+  "paper_source": "input/identifiability_paper.json",
+  "lines": [
+    {
+      "voice": "Microsoft David",
+      "text": "Welcome back. We just saw how a tiny XOR network produced tens of thousands of equally valid explanations. Now the authors scale things up to see whether the problem gets better or worse.",
+      "source_paragraphs": [17]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "I'm guessing worse?",
+      "source_paragraphs": [17]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "You guessed right. They ran experiments with different random seeds, varying both the architecture size and the complexity of the task. The basic setup picks some number of two-input logic gates, builds an MLP, and trains it until the loss is very low.",
+      "source_paragraphs": [17]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "And because of combinatorial explosion, they had to put some limits on the search, right?",
+      "source_paragraphs": [17]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Yes, they restricted circuit search to circuits with sparsity above 0.3, meaning they only looked at circuits that used less than 70 percent of the network's components. So the numbers they report are actually lower bounds. The true counts could be even higher.",
+      "source_paragraphs": [17]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "That's sobering. So what happens as you make the network bigger?",
+      "source_paragraphs": [18]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "When they varied the hidden layer size from two to five neurons, the number of valid computational abstractions exploded. Median values grew from 38 to over 910,000 in the circuit-first method, and from 8 to 3,700 in the algorithm-first approach.",
+      "source_paragraphs": [18]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Nine hundred thousand valid explanations for a network with five hidden neurons? And were there any cases with a unique answer?",
+      "source_paragraphs": [18]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Barely. Less than two percent of trained networks had exactly one valid minimal mapping, and not a single network had exactly one circuit interpretation. Uniqueness is essentially never achieved.",
+      "source_paragraphs": [18]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "What about making the task more complex? Does that help constrain things?",
+      "source_paragraphs": [19]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Actually, yes, to some degree. They fixed the hidden layer size at three and trained the network to compute multiple logic gates simultaneously, sharing the same input neurons. As they increased from one to four tasks, the number of valid interpretations dropped significantly.",
+      "source_paragraphs": [19]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "That makes intuitive sense. If the network has to do more things at once, there are fewer ways to rearrange the explanation without breaking something.",
+      "source_paragraphs": [19]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Exactly. But the improvement plateaus. Beyond four tasks, adding more complexity didn't significantly reduce the ambiguity further. So multi-task training helps, but doesn't solve the problem.",
+      "source_paragraphs": [19]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "What about training dynamics? Maybe if you train the network more carefully, you get cleaner explanations?",
+      "source_paragraphs": [20]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "They explored this by varying the loss cutoff and adding noise to the training data. Adding noise during training had no significant effect on the algorithm-first method. It did decrease the number of valid circuits, but interestingly increased the overall number of interpretations per circuit.",
+      "source_paragraphs": [20]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So training dynamics might thin out the circuit space a bit, but don't really solve the fundamental problem.",
+      "source_paragraphs": [20]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "That's the authors' conclusion. Training and generalization might reduce the number of valid abstractions somewhat, but it's not enough to resolve the identifiability issue on its own.",
+      "source_paragraphs": [20]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Now, all of these experiments are on tiny networks. Did they look at anything bigger?",
+      "source_paragraphs": [21]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "They did. They trained a larger MLP on a subset of MNIST, classifying digits zero and one. The network had layer sizes starting at 784 inputs and going through several layers down to a single output. They extracted the last few layers to form small sub-networks.",
+      "source_paragraphs": [21]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "And they could still find the identifiability problem?",
+      "source_paragraphs": [21]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Yes. Even though exhaustive enumeration was impossible for the full network, they found over 3,200 valid circuits just in the smaller sub-network at the end. Since any valid circuit in the first part of the network can connect to any of these, that gives a minimum of 3,200 valid circuits in the full network.",
+      "source_paragraphs": [21]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So the problem doesn't disappear at scale. If anything, it seems like it would get worse with bigger, more complex models.",
+      "source_paragraphs": [21]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "That's the implication. Coming up next, we'll discuss what all of this means. Does uniqueness even matter? And if it does, how might we fix it?",
+      "source_paragraphs": [21]
+    }
+  ]
+}

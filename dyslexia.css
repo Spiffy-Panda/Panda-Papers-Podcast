@@ -1,0 +1,223 @@
+/* === Dyslexia Accessibility Styles === */
+
+/* Font imports */
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.cdnfonts.com/css/open-dyslexic');
+
+/* === Font overrides === */
+body.dyslexia-font-opendyslexic,
+body.dyslexia-font-opendyslexic input,
+body.dyslexia-font-opendyslexic select,
+body.dyslexia-font-opendyslexic textarea,
+body.dyslexia-font-opendyslexic button {
+  font-family: 'Open-Dyslexic', 'OpenDyslexic', sans-serif !important;
+}
+
+body.dyslexia-font-lexend,
+body.dyslexia-font-lexend input,
+body.dyslexia-font-lexend select,
+body.dyslexia-font-lexend textarea,
+body.dyslexia-font-lexend button {
+  font-family: 'Lexend', sans-serif !important;
+}
+
+body.dyslexia-font-arial,
+body.dyslexia-font-arial input,
+body.dyslexia-font-arial select,
+body.dyslexia-font-arial textarea,
+body.dyslexia-font-arial button {
+  font-family: Arial, Helvetica, sans-serif !important;
+}
+
+/* === Zebra striping === */
+/* Panda Reader sentences — tint every 2, skip every 2 (4n+1, 4n+2 = tinted) */
+body.dyslexia-zebra .reader-content .sentence:nth-child(4n+1),
+body.dyslexia-zebra .reader-content .sentence:nth-child(4n+2) {
+  background-color: rgba(180, 210, 255, 0.10);
+  border-radius: 3px;
+  padding: 2px 4px;
+}
+/* Keep active sentence highlight above zebra */
+body.dyslexia-zebra .reader-content .sentence.active {
+  background: var(--accent) !important;
+}
+
+/* Podcast paper paragraphs — tint every 2, skip every 2 */
+body.dyslexia-zebra .paper-para:nth-child(4n+1),
+body.dyslexia-zebra .paper-para:nth-child(4n+2) {
+  background-color: rgba(180, 210, 255, 0.09);
+}
+body.dyslexia-zebra .paper-para.active {
+  background: var(--para-active) !important;
+}
+
+/* Podcast dialog lines — tint every 2, skip every 2 */
+body.dyslexia-zebra .conversation .line:nth-child(4n+1),
+body.dyslexia-zebra .conversation .line:nth-child(4n+2) {
+  background-color: rgba(180, 210, 255, 0.08);
+}
+body.dyslexia-zebra .conversation .line.active {
+  background: rgba(99, 102, 241, 0.1) !important;
+}
+
+/* === Enhanced spacing === */
+body.dyslexia-spacing {
+  letter-spacing: 0.35ch;
+  word-spacing: 1.225ch;
+}
+body.dyslexia-spacing .reader-content,
+body.dyslexia-spacing .paper-para,
+body.dyslexia-spacing .line-text,
+body.dyslexia-spacing .conversation {
+  line-height: 2.0;
+}
+
+/* === No decorations === */
+body.dyslexia-no-decorations,
+body.dyslexia-no-decorations * {
+  font-style: normal !important;
+  text-decoration: none !important;
+  text-transform: none !important;
+}
+
+/* === Larger text === */
+body.dyslexia-large-text .reader-content {
+  font-size: 1.35rem;
+}
+body.dyslexia-large-text .paper-para {
+  font-size: 1.1rem;
+}
+body.dyslexia-large-text .line-text {
+  font-size: 1.1rem;
+}
+body.dyslexia-large-text .paper-section-title {
+  font-size: 1.25rem;
+}
+body.dyslexia-large-text .paper-meta h2 {
+  font-size: 1.5rem;
+}
+
+/* === Accessibility Panel UI === */
+.dyslexia-fab {
+  position: fixed;
+  bottom: 70px;
+  right: 20px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #4a6cf7;
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(74, 108, 247, 0.4);
+  z-index: 10000;
+  transition: transform 0.2s, background 0.2s;
+  font-size: 22px;
+  line-height: 1;
+}
+.dyslexia-fab:hover {
+  transform: scale(1.1);
+  background: #5b7bf9;
+}
+.dyslexia-fab.active {
+  background: #3451c7;
+}
+
+.dyslexia-panel {
+  position: fixed;
+  bottom: 128px;
+  right: 20px;
+  width: 280px;
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 12px;
+  padding: 16px;
+  z-index: 10000;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  display: none;
+  color: #e2e8f0;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+}
+.dyslexia-panel.open {
+  display: block;
+}
+
+.dyslexia-panel-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #94a3b8;
+  margin-bottom: 14px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #334155;
+}
+
+.dyslexia-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+}
+
+.dyslexia-option-label {
+  font-size: 0.88rem;
+  color: #e2e8f0;
+}
+
+/* Toggle switch */
+.dyslexia-toggle {
+  position: relative;
+  width: 40px;
+  height: 22px;
+  flex-shrink: 0;
+}
+.dyslexia-toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.dyslexia-toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: #475569;
+  border-radius: 22px;
+  transition: background 0.2s;
+}
+.dyslexia-toggle-slider::before {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  left: 3px;
+  bottom: 3px;
+  background: white;
+  border-radius: 50%;
+  transition: transform 0.2s;
+}
+.dyslexia-toggle input:checked + .dyslexia-toggle-slider {
+  background: #4a6cf7;
+}
+.dyslexia-toggle input:checked + .dyslexia-toggle-slider::before {
+  transform: translateX(18px);
+}
+
+/* Font dropdown */
+.dyslexia-select {
+  background: #334155;
+  color: #e2e8f0;
+  border: 1px solid #475569;
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 0.82rem;
+  cursor: pointer;
+  max-width: 140px;
+}
+.dyslexia-select:focus {
+  outline: none;
+  border-color: #4a6cf7;
+}

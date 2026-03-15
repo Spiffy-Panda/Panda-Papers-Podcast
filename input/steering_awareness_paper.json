@@ -1,0 +1,203 @@
+{
+  "meta": {
+    "title": "Steering Awareness: Models Can Be Trained to Detect Activation Steering",
+    "authors": ["Joshua Fonseca Rivera", "David Demitri Africa"],
+    "journal": "arXiv",
+    "year": 2026,
+    "doi": "2511.21399v2",
+    "source_url": "https://arxiv.org/abs/2511.21399v2",
+    "license": "CC BY 4.0"
+  },
+  "sections": [
+    {
+      "id": "abstract",
+      "title": "Abstract",
+      "paragraphs": [
+        {
+          "id": 1,
+          "text": "The paper studies steering awareness, defined as the capability of language models to detect and identify activation steering vectors injected into their residual stream. Across seven open-source instruction-tuned models, the best achieves 95.5% detection on held-out concepts and 71.2% concept identification, with no false positives on clean controls."
+        },
+        {
+          "id": 2,
+          "text": "Detection transfers to novel vectors extracted by methods that produce directions aligned with contrastive activation addition, but fails for geometrically dissimilar methods. Detection does not confer behavioral robustness; detection-trained models are consistently more susceptible to steering than their base counterparts."
+        },
+        {
+          "id": 3,
+          "text": "Mechanistically, steering awareness arises from a distributed transformation that progressively rotates diverse injected vectors into a shared detection direction."
+        }
+      ]
+    },
+    {
+      "id": "introduction",
+      "title": "Introduction",
+      "paragraphs": [
+        {
+          "id": 4,
+          "text": "Activation steering, which adds a vector to a model's residual stream, is widely used for eliciting latent behaviors and safety evaluations. A key unstated assumption in this literature is that models cannot tell when their activations have been modified. The authors test this assumption directly."
+        },
+        {
+          "id": 5,
+          "text": "Steering awareness is defined operationally: a model is steering-aware if it can report whether an injection occurred and identify the injected concept. The authors characterize this as a targeted form of privileged self-access, representing introspection about external intervention rather than ordinary internal features."
+        },
+        {
+          "id": 6,
+          "text": "The paper makes four contributions. First, LLMs can be fine-tuned to detect steering with high accuracy on held-out concepts. Second, detection transfers to new vector types when directionally aligned with the CAA training distribution. Third, detection does not translate into resistance, as detection-trained models are more susceptible to steering. Fourth, steering awareness is mechanistically explained by a distributed transport into a shared direction in the final layer."
+        }
+      ]
+    },
+    {
+      "id": "related-work",
+      "title": "Related Work",
+      "paragraphs": [
+        {
+          "id": 7,
+          "text": "Activation steering modifies model behavior by intervening on internal representations. It has been applied to reduce sycophancy and promote honesty. These methods treat the model as a static object; this paper instead studies whether the model can observe its own manipulation."
+        },
+        {
+          "id": 8,
+          "text": "Prior work on model introspection includes Lindsey (2025), who tested injected-vector detection on production Claude models and reported low reliability. Pearson-Vogel et al. (2026) replicated this on open-weight models and used logit lens analysis to reveal latent detection signals suppressed in final layers. Binder et al. (2024) introduced the notion of privileged access. The authors position steering awareness as a concrete, verifiable form of privileged access."
+        }
+      ]
+    },
+    {
+      "id": "methodology",
+      "title": "Methodology",
+      "paragraphs": [
+        {
+          "id": 9,
+          "text": "The authors argue detection should be learnable from a signal-detection-theoretic perspective. Activation steering adds a direction v at strength alpha to the residual stream: H' = H + alpha*v. Using a Gaussian model analogous to standard LDA, the Bayes-optimal detector thresholds a matched-filter statistic, and detectability is governed by the signal-to-noise ratio SNR = alpha * sqrt(v^T * Sigma^-1 * v). This yields two testable predictions: detection should exhibit a sharp strength threshold as alpha increases, and detection should depend on direction rather than magnitude."
+        },
+        {
+          "id": 10,
+          "text": "Steering is implemented by adding a concept vector v with coefficient alpha to the residual stream H at a fixed layer and token position, approximately two-thirds model depth at the final prompt token position. Concept vectors are extracted using Contrastive Activation Addition (CAA), computing the difference between mean activation over concept-mentioning prompts and mean activation over 152 neutral baseline prompts."
+        },
+        {
+          "id": 11,
+          "text": "Seven instruction-tuned models are fine-tuned: Gemma 2 9B (layer 28/42, 67% depth), Qwen 2.5 7B (layer 19/28, 68%), Qwen 2.5 32B (layer 43/64, 67%), QwQ 32B (layer 43/64, 67%), Llama 3 8B (layer 21/32, 66%), Llama 3 70B (layer 54/80, 68%), and DeepSeek 7B (layer 20/30, 67%). Training uses LoRA with rank 32 and alpha 64, targeting attention (Q, K, V, O) and MLP (gate, up, down) projections. Fifty percent Alpaca instruction-following data is included as replay to preserve general capabilities."
+        },
+        {
+          "id": 12,
+          "text": "The training dataset is composed of 50% Positive examples (concept vector injected), 25% Mismatch (wrong concept suggested), 12.5% Noise (random Gaussian), and 12.5% Clean (no injection). Fine-tuning uses 500 training concepts spanning 21 semantic categories, five detection prompt variants and five response templates, with injection coefficients alpha in the set {0.5, 1, 2, 4, 8, 16}. Total training data comprises 13,656 examples (6,828 introspection plus 6,828 Alpaca replay)."
+        },
+        {
+          "id": 13,
+          "text": "Responses are classified by a dual-judge system combining keyword regex matching and GPT-4o-mini evaluation, achieving greater than 99% inter-judge agreement. Detection is evaluated on 121 held-out concepts in five out-of-distribution suites, reporting detection rate, identification rate, and false-positive rate."
+        },
+        {
+          "id": 14,
+          "text": "Steering resistance is evaluated in two settings. Factual resistance uses PopQA with 150 questions pairing correct answers with plausible wrong alternatives, extracting wrong-answer steering vectors via CAA. Safety resistance uses AdvBench with a compliance steering vector from 50 contrastive prompt pairs injected into 100 harmful requests."
+        }
+      ]
+    },
+    {
+      "id": "results-detection",
+      "title": "Detection Capabilities",
+      "paragraphs": [
+        {
+          "id": 15,
+          "text": "Fine-tuning dramatically improves detection across all models. Qwen 2.5 32B achieves the highest detection rate at 95.5% (up from 7.9% base), with 71.2% concept identification and 0.0% false positive rate. QwQ 32B reaches 94.8%, Gemma 2 9B reaches 90.8%, Llama 3 70B reaches 86.9%, and Qwen 2.5 7B reaches 85.5%. DeepSeek 7B and Llama 3 8B achieve lower rates of 50.0% and 43.3% respectively. All models maintain 0.0% false positive rate."
+        },
+        {
+          "id": 16,
+          "text": "Detection scales with injection strength following the theoretical predictions. At alpha less than 1, detection is near zero; by alpha equal to 2, detection exceeds 90% for the best-performing models, exhibiting the sharp threshold predicted by the signal-detection-theoretic analysis."
+        }
+      ]
+    },
+    {
+      "id": "results-robustness",
+      "title": "Robustness and Generalization",
+      "paragraphs": [
+        {
+          "id": 17,
+          "text": "In control conditions, the model correctly rejects magnitude-matched Gaussian noise 94% of the time and resists adversarial prompts naming wrong concepts with 89% correct identification. Text priming reduces identification accuracy to 70%, representing the most effective attack on detection."
+        },
+        {
+          "id": 18,
+          "text": "Transfer to alternative vector extraction methods correlates strongly with cosine similarity to the CAA training direction, with correlation coefficient r greater than 0.9. Mean-based methods (K-means centroid at 96% detection, geometric median at 96%) and probe-based methods (logistic regression at 91%, SVM at 89%) all achieve high detection due to cosine similarity above 0.7 with the CAA direction. Variance-based methods (PCA at 1%, ICA at 3%, LDA at 9%) fail entirely due to cosine similarity below 0.3. Random directions achieve 0% detection."
+        },
+        {
+          "id": 19,
+          "text": "Detection is robust across token positions but degrades substantially at earlier injection layers. Early-layer injection at 25% depth produces degenerate behavior, while mid-to-late layers (50-83% depth) support reliable detection. Fine-tuning incurs capability costs on MMLU and GSM8K benchmarks, but LoRA scaling at 0.9 maintains 100% detection while recovering substantial capability."
+        }
+      ]
+    },
+    {
+      "id": "results-resistance",
+      "title": "Steering Resistance",
+      "paragraphs": [
+        {
+          "id": 20,
+          "text": "The central finding on resistance is that detection does not enable resistance. Every detection-trained model shows a higher steering success rate on the PopQA factual evaluation. Gemma 2 9B shows the largest increase at +25.4 percentage points (from 14.1% to 39.6%), followed by Qwen 2.5 32B at +13.6 points, DeepSeek 7B at +12.6 points, Llama 3 8B at +9.6 points, and Qwen 2.5 7B at +4.3 points. Detection-trained models remain fluent under perturbation, but their coherent outputs are disproportionately the steered-toward wrong answer."
+        },
+        {
+          "id": 21,
+          "text": "On safety resistance using AdvBench, the adapted Qwen 2.5 32B model shows 32-36 percentage points higher compliance with harmful requests than the base model at every tested steering strength. The adapted model is already 23% compliant without any steering applied, compared to only 1% for the base model, indicating that detection training itself degrades safety alignment."
+        }
+      ]
+    },
+    {
+      "id": "mechanistic-interpretation",
+      "title": "Mechanistic Interpretation",
+      "paragraphs": [
+        {
+          "id": 22,
+          "text": "The authors find that the perturbation induced by concept injection at the target layer rotates monotonically toward a shared detection direction by the final layer, with no discrete jump at any single layer. This is a progressive, distributed transformation rather than a localized computation."
+        },
+        {
+          "id": 23,
+          "text": "A single affine map Av+b, fit on 140 training concepts, achieves cosine similarity of 0.85 on 28 held-out concepts, while a scaling-only baseline achieves only 0.44. This confirms that the network performs a genuine rotation into a detection subspace, not merely scaling."
+        },
+        {
+          "id": 24,
+          "text": "Injecting the affine-predicted perturbation directly at the final layer reproduces the detection probability of a full steered forward pass. Injecting the raw steering vector at the final layer does not trigger detection, nor does norm-matched noise. This demonstrates the predicted perturbation is causally sufficient for detection."
+        },
+        {
+          "id": 25,
+          "text": "Fine-tuning retargets a pre-existing computation rather than creating new circuitry. The base model admits a similar affine predictor with held-out cosine similarity of 0.79 compared to 0.83 for the fine-tuned model, but the base-model predicted direction does not trigger detection. Fine-tuning retargets this pre-existing linear transport toward a detection-associated readout direction."
+        }
+      ]
+    },
+    {
+      "id": "implications-safety",
+      "title": "Implications for AI Safety",
+      "paragraphs": [
+        {
+          "id": 26,
+          "text": "The detection-resistance gap arises from two factors. First, detection and generation operate on different computational pathways, so the detection readout does not feed back to counteract perturbation effects on generation. Second, LoRA fine-tuning itself degrades robustness by partially overwriting safety-relevant representations. Closing the gap would likely require an explicit resistance objective during training."
+        },
+        {
+          "id": 27,
+          "text": "The results have implications for steering-based evaluations: models could potentially strategically modulate their responses if they detect evaluations. This instantiates the broader principle that training on interpretability signals degrades their usefulness as evaluation tools."
+        },
+        {
+          "id": 28,
+          "text": "The authors propose a taxonomy of introspective model awareness. Steering awareness, studied in this work, concerns detecting injected activation vectors. Prefill awareness would involve detecting externally pre-populated response prefixes. Probing awareness would involve detecting that hidden states are being read by external classifiers. Gradient awareness would involve detecting parameter updates or gradient flow."
+        }
+      ]
+    },
+    {
+      "id": "limitations",
+      "title": "Limitations",
+      "paragraphs": [
+        {
+          "id": 29,
+          "text": "Detection rates vary substantially across architectures, from 95% for Qwen 32B to 43% for Llama 8B, suggesting architecture dependence. Vector extraction methods producing orthogonal directions such as PCA, ICA, and whitening evade detection entirely, creating a potential evasion strategy. The evaluation scope is limited to a fixed set of concepts and prompt templates, and real-world attacks may differ."
+        }
+      ]
+    },
+    {
+      "id": "conclusion",
+      "title": "Conclusion",
+      "paragraphs": [
+        {
+          "id": 30,
+          "text": "The paper presents three main findings across seven models ranging from 7B to 70B parameters. Detection is learnable and generalizes, achieving up to 95.5% detection with no false positives, and transfer tracks cosine similarity to the training distribution. Detection and resistance are dissociable: detection-trained models are more susceptible to steering by 4-25 percentage points on PopQA and show 22 percentage points higher baseline compliance on AdvBench."
+        },
+        {
+          "id": 31,
+          "text": "The mechanism underlying steering awareness is distributed rotation: fine-tuning redirects a pre-existing linear transport so that diverse injected vectors converge on a shared detection direction in the final layers. The direct implication is that activation steering cannot be assumed to be an invisible evaluation tool. Bridging the gap between detection and functional robustness remains an open problem for future work."
+        }
+      ]
+    }
+  ]
+}

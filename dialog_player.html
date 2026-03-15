@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dialog Player</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #111827;
+      --surface: #1f2937;
+      --surface2: #374151;
+      --accent: #6366f1;
+      --accent-hover: #818cf8;
+      --text: #f3f4f6;
+      --text-muted: #9ca3af;
+      --speaker-a: #6366f1;
+      --speaker-b: #ec4899;
+      --radius: 12px;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    .app {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 24px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    header { text-align: center; padding-bottom: 8px; }
+    header h1 {
+      font-size: 1.6rem;
+      background: linear-gradient(135deg, var(--speaker-a), var(--speaker-b));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    header p { color: var(--text-muted); font-size: 0.85rem; margin-top: 4px; }
+
+    /* Loader section */
+    .loader {
+      background: var(--surface); border-radius: var(--radius); padding: 20px;
+      display: flex; gap: 12px; align-items: flex-end; flex-wrap: wrap;
+    }
+    .loader .field { display: flex; flex-direction: column; gap: 4px; flex: 1; min-width: 200px; }
+    .loader label {
+      font-size: 0.8rem; color: var(--text-muted); font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.5px;
+    }
+    .loader select, .loader input[type="text"] {
+      background: var(--bg); border: 1px solid var(--surface2); border-radius: 8px;
+      padding: 10px 12px; color: var(--text); font-size: 0.85rem; width: 100%;
+    }
+    .loader select option { background: var(--bg); color: var(--text); }
+    .load-btn {
+      padding: 10px 24px; background: var(--accent); color: white; border: none;
+      border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 0.9rem; white-space: nowrap;
+    }
+    .load-btn:hover { background: var(--accent-hover); }
+    .load-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+    .refresh-btn {
+      padding: 10px 14px; background: var(--surface2); color: var(--text); border: none;
+      border-radius: 8px; cursor: pointer; font-size: 0.9rem;
+    }
+    .refresh-btn:hover { background: #4b5563; }
+
+    .status-msg {
+      font-size: 0.8rem; color: var(--text-muted); padding: 0 4px;
+    }
+    .status-msg.error { color: #f87171; }
+
+    /* Conversation */
+    .conversation {
+      background: var(--surface); border-radius: var(--radius); padding: 24px;
+      max-height: 420px; overflow-y: auto; display: flex; flex-direction: column; gap: 16px;
+    }
+    .conversation::-webkit-scrollbar { width: 6px; }
+    .conversation::-webkit-scrollbar-thumb { background: var(--surface2); border-radius: 3px; }
+    .empty-state { text-align: center; color: var(--text-muted); font-style: italic; padding: 60px 0; }
+
+    .line {
+      display: flex; gap: 12px; padding: 12px 16px; border-radius: 10px;
+      transition: background 0.25s, box-shadow 0.25s; cursor: pointer;
+      border-left: 3px solid transparent;
+    }
+    .line:hover { background: rgba(255,255,255,0.03); }
+    .line.active {
+      background: rgba(99, 102, 241, 0.1); border-left-color: var(--accent);
+      box-shadow: 0 2px 12px rgba(99, 102, 241, 0.15);
+    }
+    .line.played { opacity: 0.5; }
+    .line.played.active { opacity: 1; }
+
+    .line-speaker {
+      font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.5px; min-width: 90px; padding-top: 2px; flex-shrink: 0;
+    }
+    .line-body { flex: 1; }
+    .line-text { font-size: 1rem; line-height: 1.6; }
+    .line-time { font-size: 0.7rem; color: var(--text-muted); margin-top: 4px; font-variant-numeric: tabular-nums; }
+
+    .speaker-0 { color: #818cf8; } .speaker-1 { color: #f472b6; }
+    .speaker-2 { color: #34d399; } .speaker-3 { color: #fbbf24; }
+    .speaker-4 { color: #fb923c; } .speaker-5 { color: #a78bfa; }
+
+    /* Player */
+    .player {
+      background: var(--surface); border-radius: var(--radius); padding: 20px;
+      display: flex; flex-direction: column; gap: 14px;
+    }
+    .timeline-row { display: flex; align-items: center; gap: 10px; }
+    .time-label {
+      font-size: 0.75rem; color: var(--text-muted); font-variant-numeric: tabular-nums;
+      min-width: 52px; text-align: center;
+    }
+    .timeline {
+      flex: 1; height: 6px; background: var(--bg); border-radius: 3px;
+      cursor: pointer; position: relative; overflow: hidden;
+    }
+    .timeline-fill {
+      height: 100%; width: 0%;
+      background: linear-gradient(90deg, var(--speaker-a), var(--speaker-b));
+      border-radius: 3px; transition: width 0.1s linear;
+    }
+    .controls { display: flex; align-items: center; justify-content: center; gap: 16px; }
+    .ctrl-btn {
+      border: none; cursor: pointer; background: transparent; color: var(--text);
+      display: flex; align-items: center; justify-content: center;
+      border-radius: 50%; transition: transform 0.15s, background 0.2s;
+    }
+    .ctrl-btn:hover { transform: scale(1.1); }
+    .ctrl-btn:active { transform: scale(0.95); }
+    .ctrl-btn.play-btn {
+      width: 52px; height: 52px; background: var(--accent); color: white;
+      box-shadow: 0 4px 15px rgba(99, 102, 241, 0.35);
+    }
+    .ctrl-btn.play-btn:hover { background: var(--accent-hover); }
+    .ctrl-btn.skip-btn { width: 38px; height: 38px; background: var(--surface2); }
+    .extra-controls {
+      display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap;
+    }
+    .extra-controls label {
+      font-size: 0.78rem; color: var(--text-muted); display: flex; align-items: center; gap: 6px;
+    }
+    .extra-controls input[type="range"] { width: 80px; accent-color: var(--accent); }
+    .extra-controls .val { font-size: 0.78rem; color: var(--accent-hover); min-width: 30px; }
+
+    .info {
+      display: flex; justify-content: space-between; font-size: 0.75rem;
+      color: var(--text-muted); padding: 0 4px;
+    }
+
+    @media (max-width: 600px) {
+      .loader { flex-direction: column; }
+      .controls { gap: 10px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>Dialog Player</h1>
+      <p>Select a conversation from the output folder to play back</p>
+    </header>
+
+    <section class="loader">
+      <div class="field">
+        <label>Folder</label>
+        <input type="text" id="folderInput" value="output" placeholder="output">
+      </div>
+      <div class="field" style="flex: 2;">
+        <label>Conversation</label>
+        <select id="tsSelect">
+          <option value="">-- loading... --</option>
+        </select>
+      </div>
+      <button class="refresh-btn" id="refreshBtn" title="Refresh list">&#x21bb;</button>
+      <button class="load-btn" id="loadBtn" disabled>Load</button>
+    </section>
+
+    <div class="status-msg" id="statusMsg"></div>
+
+    <section class="conversation" id="conversation">
+      <div class="empty-state">Select a conversation above and click Load.</div>
+    </section>
+
+    <section class="player" id="playerSection" style="display:none;">
+      <div class="timeline-row">
+        <span class="time-label" id="currentTime">0:00.0</span>
+        <div class="timeline" id="timeline">
+          <div class="timeline-fill" id="timelineFill"></div>
+        </div>
+        <span class="time-label" id="totalTime">0:00.0</span>
+      </div>
+      <div class="controls">
+        <button class="ctrl-btn skip-btn" id="prevBtn" title="Previous line">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg>
+        </button>
+        <button class="ctrl-btn skip-btn" id="restartBtn" title="Restart current line">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"/></svg>
+        </button>
+        <button class="ctrl-btn play-btn" id="playBtn" title="Play / Pause">
+          <svg class="icon-play" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          <svg class="icon-pause" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="display:none"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+        </button>
+        <button class="ctrl-btn skip-btn" id="nextBtn" title="Next line">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg>
+        </button>
+      </div>
+      <div class="extra-controls">
+        <label>Volume <input type="range" id="volumeRange" min="0" max="1" step="0.05" value="1"> <span class="val" id="volumeVal">100%</span></label>
+        <label>Speed <input type="range" id="speedRange" min="0.5" max="2" step="0.1" value="1"> <span class="val" id="speedVal">1.0x</span></label>
+      </div>
+    </section>
+
+    <div class="info" id="infoBar"></div>
+  </div>
+
+  <script>
+    // State
+    let audio = null;
+    let timestamps = null;
+    let speakerMap = {};
+    let speakerList = [];
+    let activeLineIdx = -1;
+    let animFrame = null;
+    let currentFolder = 'output';
+
+    // DOM
+    const folderInput = document.getElementById('folderInput');
+    const tsSelect = document.getElementById('tsSelect');
+    const refreshBtn = document.getElementById('refreshBtn');
+    const loadBtn = document.getElementById('loadBtn');
+    const statusMsg = document.getElementById('statusMsg');
+    const convoEl = document.getElementById('conversation');
+    const playerSection = document.getElementById('playerSection');
+    const playBtn = document.getElementById('playBtn');
+    const prevBtn = document.getElementById('prevBtn');
+    const restartBtn = document.getElementById('restartBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const timeline = document.getElementById('timeline');
+    const timelineFill = document.getElementById('timelineFill');
+    const currentTimeEl = document.getElementById('currentTime');
+    const totalTimeEl = document.getElementById('totalTime');
+    const volumeRange = document.getElementById('volumeRange');
+    const volumeVal = document.getElementById('volumeVal');
+    const speedRange = document.getElementById('speedRange');
+    const speedVal = document.getElementById('speedVal');
+    const infoBar = document.getElementById('infoBar');
+
+    // --- Dropdown population ---
+    async function refreshList() {
+      currentFolder = folderInput.value.trim() || 'output';
+      tsSelect.innerHTML = '<option value="">-- loading... --</option>';
+      loadBtn.disabled = true;
+      statusMsg.textContent = '';
+
+      try {
+        const resp = await fetch(`/api/list-timestamps?folder=${encodeURIComponent(currentFolder)}`);
+        const data = await resp.json();
+
+        if (!resp.ok) {
+          statusMsg.textContent = data.error || 'Failed to load';
+          statusMsg.className = 'status-msg error';
+          tsSelect.innerHTML = '<option value="">-- none --</option>';
+          return;
+        }
+
+        if (data.files.length === 0) {
+          tsSelect.innerHTML = '<option value="">-- no conversations found --</option>';
+          statusMsg.textContent = `No timestamp files in ${currentFolder}/`;
+          statusMsg.className = 'status-msg';
+          return;
+        }
+
+        tsSelect.innerHTML = '';
+        data.files.forEach(f => {
+          const opt = document.createElement('option');
+          opt.value = f.path;
+          const label = `${f.tag} (${f.duration}, ${f.line_count} lines) - ${formatGenDate(f.generated)}`;
+          opt.textContent = label;
+          tsSelect.appendChild(opt);
+        });
+
+        loadBtn.disabled = false;
+        statusMsg.textContent = `${data.files.length} conversation(s) in ${currentFolder}/`;
+        statusMsg.className = 'status-msg';
+      } catch (err) {
+        statusMsg.textContent = `Error: ${err.message}`;
+        statusMsg.className = 'status-msg error';
+        tsSelect.innerHTML = '<option value="">-- error --</option>';
+      }
+    }
+
+    function formatGenDate(iso) {
+      if (!iso) return '';
+      try {
+        const d = new Date(iso);
+        return d.toLocaleDateString() + ' ' + d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+      } catch { return iso; }
+    }
+
+    refreshBtn.addEventListener('click', refreshList);
+    folderInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') refreshList(); });
+
+    // --- Load conversation ---
+    loadBtn.addEventListener('click', async () => {
+      const tsPath = tsSelect.value;
+      if (!tsPath) return;
+
+      statusMsg.textContent = 'Loading...';
+      statusMsg.className = 'status-msg';
+
+      try {
+        const resp = await fetch(`/${tsPath}`);
+        timestamps = await resp.json();
+      } catch (err) {
+        statusMsg.textContent = `Failed to load timestamps: ${err.message}`;
+        statusMsg.className = 'status-msg error';
+        return;
+      }
+
+      // Resolve audio path relative to the timestamps JSON folder
+      const tsFolder = tsPath.substring(0, tsPath.lastIndexOf('/') + 1);
+      const audioPath = tsFolder + timestamps.audio_file;
+
+      // Build speaker map
+      speakerMap = {};
+      speakerList = [];
+      timestamps.lines.forEach(l => {
+        if (!(l.voice in speakerMap)) {
+          speakerMap[l.voice] = speakerList.length;
+          speakerList.push(l.voice);
+        }
+      });
+
+      renderConversation();
+
+      // Set up audio
+      if (audio) { audio.pause(); audio.src = ''; }
+      audio = new Audio(`/${audioPath}`);
+      audio.volume = parseFloat(volumeRange.value);
+      audio.playbackRate = parseFloat(speedRange.value);
+
+      audio.addEventListener('loadedmetadata', () => {
+        totalTimeEl.textContent = fmtTime(audio.duration * 1000);
+        infoBar.innerHTML = `<span>${timestamps.lines.length} lines &middot; ${speakerList.length} speakers</span><span>${timestamps.total_duration_formatted || fmtTime(audio.duration * 1000)}</span>`;
+      });
+
+      audio.addEventListener('error', () => {
+        statusMsg.textContent = `Failed to load audio: ${audioPath}`;
+        statusMsg.className = 'status-msg error';
+      });
+
+      audio.addEventListener('ended', () => {
+        setPlaying(false);
+        activeLineIdx = -1;
+        updateLineHighlights();
+      });
+
+      playerSection.style.display = '';
+      setPlaying(false);
+      startTracker();
+
+      statusMsg.textContent = `Loaded: ${timestamps.tag || tsPath}`;
+      statusMsg.className = 'status-msg';
+    });
+
+    // --- Render conversation ---
+    function renderConversation() {
+      convoEl.innerHTML = timestamps.lines.map((line, i) => {
+        const sc = speakerMap[line.voice] % 6;
+        const shortName = line.voice.replace(/Microsoft\s*/i, '').replace(/\s*Desktop.*/i, '');
+        return `
+          <div class="line" data-idx="${i}" id="line-${i}">
+            <div class="line-speaker speaker-${sc}">${escHtml(shortName)}</div>
+            <div class="line-body">
+              <div class="line-text">${escHtml(line.text)}</div>
+              <div class="line-time">${fmtTime(line.start_ms)} &ndash; ${fmtTime(line.end_ms)}</div>
+            </div>
+          </div>`;
+      }).join('');
+
+      convoEl.querySelectorAll('.line').forEach(el => {
+        el.addEventListener('click', () => {
+          const idx = parseInt(el.dataset.idx);
+          if (audio && timestamps.lines[idx]) {
+            audio.currentTime = timestamps.lines[idx].start_ms / 1000;
+            audio.play();
+            setPlaying(true);
+          }
+        });
+      });
+    }
+
+    function updateLineHighlights() {
+      convoEl.querySelectorAll('.line').forEach((el, i) => {
+        el.classList.toggle('active', i === activeLineIdx);
+        el.classList.toggle('played', i < activeLineIdx);
+      });
+    }
+
+    // --- Tracker loop ---
+    function startTracker() {
+      if (animFrame) cancelAnimationFrame(animFrame);
+      function tick() {
+        if (audio) {
+          const ms = audio.currentTime * 1000;
+          currentTimeEl.textContent = fmtTime(ms);
+          const dur = audio.duration ? audio.duration * 1000 : 1;
+          timelineFill.style.width = `${(ms / dur) * 100}%`;
+          let found = -1;
+          for (let i = 0; i < timestamps.lines.length; i++) {
+            const l = timestamps.lines[i];
+            if (ms >= l.start_ms && ms < l.end_ms) { found = i; break; }
+          }
+          if (found !== activeLineIdx) {
+            activeLineIdx = found;
+            updateLineHighlights();
+            if (found >= 0) {
+              const el = document.getElementById(`line-${found}`);
+              if (el) el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+          }
+        }
+        animFrame = requestAnimationFrame(tick);
+      }
+      tick();
+    }
+
+    // --- Controls ---
+    playBtn.addEventListener('click', () => {
+      if (!audio) return;
+      if (audio.paused) { audio.play(); setPlaying(true); }
+      else { audio.pause(); setPlaying(false); }
+    });
+
+    prevBtn.addEventListener('click', () => {
+      if (!audio || !timestamps) return;
+      const cur = findLineAtTime(audio.currentTime * 1000);
+      const target = Math.max(0, cur - 1);
+      audio.currentTime = timestamps.lines[target].start_ms / 1000;
+      audio.play();
+      setPlaying(true);
+    });
+
+    restartBtn.addEventListener('click', () => {
+      if (!audio || !timestamps) return;
+      const cur = findLineAtTime(audio.currentTime * 1000);
+      audio.currentTime = timestamps.lines[cur].start_ms / 1000;
+      audio.play();
+      setPlaying(true);
+    });
+
+    nextBtn.addEventListener('click', () => {
+      if (!audio || !timestamps) return;
+      const ms = audio.currentTime * 1000;
+      for (let i = 0; i < timestamps.lines.length; i++) {
+        if (timestamps.lines[i].start_ms > ms + 50) {
+          audio.currentTime = timestamps.lines[i].start_ms / 1000;
+          audio.play();
+          setPlaying(true);
+          return;
+        }
+      }
+    });
+
+    timeline.addEventListener('click', (e) => {
+      if (!audio) return;
+      const rect = timeline.getBoundingClientRect();
+      audio.currentTime = ((e.clientX - rect.left) / rect.width) * audio.duration;
+      audio.play();
+      setPlaying(true);
+    });
+
+    volumeRange.addEventListener('input', () => {
+      const v = parseFloat(volumeRange.value);
+      volumeVal.textContent = Math.round(v * 100) + '%';
+      if (audio) audio.volume = v;
+    });
+    speedRange.addEventListener('input', () => {
+      const s = parseFloat(speedRange.value);
+      speedVal.textContent = s.toFixed(1) + 'x';
+      if (audio) audio.playbackRate = s;
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT') return;
+      if (e.code === 'Space') { e.preventDefault(); playBtn.click(); }
+      else if (e.code === 'ArrowLeft') { e.preventDefault(); prevBtn.click(); }
+      else if (e.code === 'ArrowRight') { e.preventDefault(); nextBtn.click(); }
+    });
+
+    function setPlaying(playing) {
+      playBtn.querySelector('.icon-play').style.display = playing ? 'none' : '';
+      playBtn.querySelector('.icon-pause').style.display = playing ? '' : 'none';
+    }
+
+    function findLineAtTime(ms) {
+      if (!timestamps) return 0;
+      for (let i = timestamps.lines.length - 1; i >= 0; i--) {
+        if (ms >= timestamps.lines[i].start_ms) return i;
+      }
+      return 0;
+    }
+
+    function fmtTime(ms) {
+      const totalSec = Math.max(0, ms / 1000);
+      const m = Math.floor(totalSec / 60);
+      const s = Math.floor(totalSec % 60);
+      const frac = Math.floor((totalSec % 1) * 10);
+      return `${m}:${s.toString().padStart(2, '0')}.${frac}`;
+    }
+
+    function escHtml(s) {
+      return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    }
+
+    // Auto-load on page ready
+    refreshList();
+  </script>
+</body>
+</html>

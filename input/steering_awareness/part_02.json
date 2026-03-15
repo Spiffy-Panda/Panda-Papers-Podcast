@@ -1,0 +1,140 @@
+{
+  "pause_between_ms": 600,
+  "rate": 0,
+  "part_number": 2,
+  "paper_source": "input/steering_awareness_paper.json",
+  "speaker_a": "Microsoft David - Systems and signal processing background, methodical thinker who likes to understand precise experimental setups and mathematical framing",
+  "speaker_b": "Microsoft Zira - AI safety and alignment theory background, draws quick connections to broader implications, makes creative analogies, strong conceptual thinker",
+  "lines": [
+    {
+      "voice": "Microsoft David",
+      "text": "Welcome back everyone. Last time we introduced the big idea of steering awareness, that language models can be trained to detect when someone's injecting activation vectors into their computation. Now let's look at how this fits into the broader research landscape and then get into the methodology.",
+      "source_paragraphs": [7]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Right. So activation steering has actually been around for a while. Researchers have used it to reduce sycophancy, promote honesty, all sorts of behavioral modifications. But the key insight here is that all that prior work treated the model as a passive object. Like a radio you're tuning.",
+      "source_paragraphs": [7]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Good analogy. And this paper flips the question. Instead of what can we do to the model, it asks can the model observe what's being done to it?",
+      "source_paragraphs": [7]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "There's some really important prior work they build on. Lindsey in 2025 actually tested this with production Claude models and found low reliability. Then Pearson-Vogel and colleagues replicated on open-weight models and found something fascinating. Using logit lens analysis, they could see detection signals in the intermediate layers that were getting suppressed by the final layers.",
+      "source_paragraphs": [8]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "So the model had the information but wasn't using it. The signal was there internally but wasn't making it to the output.",
+      "source_paragraphs": [8]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Exactly. And then there's Binder and colleagues who introduced the concept of privileged access, which is the theoretical framing these authors use. They position steering awareness as a concrete, testable version of that broader idea.",
+      "source_paragraphs": [8]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Now here's where I get really excited, because the methodology is where the signal processing comes in. The authors argue that detection should be learnable from a signal detection theory perspective. And they set up a really clean mathematical framework.",
+      "source_paragraphs": [9]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Walk us through it. I know you love this stuff.",
+      "source_paragraphs": [9]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "So when you inject a steering vector, you're adding a direction v at some strength alpha to the residual stream. The modified activations become H prime equals H plus alpha times v. Using a Gaussian model similar to linear discriminant analysis, the optimal detector is essentially a matched filter.",
+      "source_paragraphs": [9]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "And what does that predict practically?",
+      "source_paragraphs": [9]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Two really testable things. First, detection should show a sharp threshold as the injection strength alpha increases. Below some critical value, you can't detect it. Above it, detection jumps up rapidly. Second, detection should depend on the direction of the vector, not just its magnitude. Both of these predictions turn out to be confirmed by the experiments.",
+      "source_paragraphs": [9]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "I love when theory and experiments line up that cleanly. So how do they actually implement the steering?",
+      "source_paragraphs": [10]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "They use Contrastive Activation Addition, or CAA. You take prompts that mention a concept, prompts that are neutral, run them both through the model, and the difference in their mean activations gives you the concept vector. They inject this at roughly two-thirds depth in the model at the final prompt token.",
+      "source_paragraphs": [10]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "And they test across seven different models, which I think is one of the real strengths here. We're not just seeing results on one architecture.",
+      "source_paragraphs": [11]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Right. They use Gemma 2 9B, Qwen 2.5 at both 7B and 32B, QwQ 32B, Llama 3 at 8B and 70B, and DeepSeek 7B. All instruction-tuned. For each one, they inject at around 66 to 68 percent depth.",
+      "source_paragraphs": [11]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "The training setup is really carefully designed too. They fine-tune with LoRA, which is a parameter-efficient method, and they include 50 percent instruction-following data from Alpaca as replay to prevent the model from forgetting how to do normal tasks.",
+      "source_paragraphs": [11]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "The training data composition is clever. Half the examples have a real concept vector injected, a quarter have the wrong concept suggested to test robustness, then 12.5 percent random Gaussian noise, and 12.5 percent clean with nothing injected. They use 500 training concepts across 21 semantic categories.",
+      "source_paragraphs": [12]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So the model isn't just learning to say yes there's something here. It's learning to distinguish real steering from noise, from misidentification, from nothing at all. That's a much harder problem.",
+      "source_paragraphs": [12]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "And they vary the injection strength across six levels from 0.5 all the way up to 16, and use five different prompt variants with five response templates. Total training set is about 13,600 examples.",
+      "source_paragraphs": [12]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "How do they actually evaluate whether the model's responses are correct? That seems tricky when the output is free-form text.",
+      "source_paragraphs": [13]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "They built a dual-judge system. First pass is keyword regex matching, second pass uses GPT-4o-mini as an evaluator. The two judges agree over 99 percent of the time, which gives good confidence in the evaluation.",
+      "source_paragraphs": [13]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "And they evaluate on 121 held-out concepts across five different test suites. These are concepts the model never saw during training, which is crucial for showing generalization.",
+      "source_paragraphs": [13]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "They also set up two separate resistance evaluations. For factual resistance, they use PopQA with 150 questions where they steer toward wrong answers. For safety resistance, they use AdvBench with harmful requests and a compliance steering vector.",
+      "source_paragraphs": [14]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "That resistance evaluation design is really important because it directly tests whether knowing about the steering helps you fight it. As we mentioned, the answer is surprising.",
+      "source_paragraphs": [14]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Coming up next, we'll dive into the actual results. Detection accuracy numbers, how well it transfers across different vector types, and the robustness testing. There's some really striking data to unpack.",
+      "source_paragraphs": [14]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "The transfer results especially. That cosine similarity story is fascinating. Stay tuned!",
+      "source_paragraphs": [14]
+    }
+  ]
+}

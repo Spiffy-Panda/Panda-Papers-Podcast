@@ -1,0 +1,113 @@
+{
+  "pause_between_ms": 600,
+  "rate": 0,
+  "part_number": 7,
+  "paper_source": "input/roadmap_to_pluralistic_alignment.json",
+  "lines": [
+    {
+      "voice": "Microsoft David",
+      "text": "Welcome back everyone. Last time we covered multi-objective and trade-off steerable benchmarks. Now we're tackling the third and final benchmark type: jury-pluralistic benchmarks. And then we'll look at how current alignment approaches hold up.",
+      "source_paragraphs": [33]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Right. So jury-pluralistic benchmarks bring in the idea of a jury, a population of annotators. How does that work exactly?",
+      "source_paragraphs": [33]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "The authors define a jury as a set of individuals whose preferences you want to represent in evaluation. Each jury member essentially has their own utility function that maps from a query and response to a scalar reward. Then a welfare function combines all the jurors' utilities into a single score. A benchmark is jury-pluralistic if it explicitly measures each individual juror's utility to maximize that welfare function.",
+      "source_paragraphs": [33]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So instead of averaging everyone's preferences together before training, you keep them separate and reason about how to combine them. That's a fundamentally different approach.",
+      "source_paragraphs": [33]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Exactly. And the authors frame this as a concrete approach to democratic AI alignment. By keeping individual juror preferences visible, you can explicitly reason about which users or groups the model is being aligned to. You can include diverse voices and select social welfare functions to achieve fairer outcomes.",
+      "source_paragraphs": [34]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Are there real-world examples of this kind of approach working?",
+      "source_paragraphs": [34]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Yes. They mention that DeepMind trained a language model to find consensus statements that users preferred over any individual human-written statement. And Twitter's Community Notes has been moderating misinformation by leveraging consensus between users who often disagree with each other. So there are precedents for this kind of collective preference aggregation.",
+      "source_paragraphs": [34]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "That's fascinating. So how do you actually build one of these jury-pluralistic benchmarks?",
+      "source_paragraphs": [35]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "You could construct a representative jury using established social science methods, or design one to amplify specific perspectives like under-represented users. For estimating individual juror functions, you can train separate reward models per juror or estimate preferences using entailment from user-written statements. And for welfare functions, the authors describe a parameterized class where you can sweep from a Utilitarian objective, maximizing total utility, all the way to a Rawlsian objective, maximizing the welfare of the worst-off juror.",
+      "source_paragraphs": [35]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "Oh, so the alpha parameter lets you dial between utilitarian and egalitarian approaches. That's a really elegant way to make the trade-off explicit.",
+      "source_paragraphs": [35]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Right. They also mention alternatives like reducing the problem to MAX-SAT, or using game-theoretic solutions like equilibria and minimax.",
+      "source_paragraphs": [35]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "What are the challenges with this approach?",
+      "source_paragraphs": [36]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Several. Precisely estimating individual juror functions may require a lot of data, though grouping jurors by characteristics or using sample-efficient methods could help. Majoritarian welfare functions risk tyranny of the majority, and utilitarian ones can be susceptible to fanatical influence, where extreme preferences dominate. And like the other frameworks, it assumes values can be commensured. But once you've defined a jury and welfare function, the problem reduces to reward maximization, which is well-studied territory.",
+      "source_paragraphs": [36]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So the hard part is really the design choices, who's on the jury, how you estimate their preferences, and how you aggregate them. The optimization itself is straightforward.",
+      "source_paragraphs": [36]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Exactly. Now let's shift to how current alignment approaches relate to all of this. The authors survey the main techniques being used today.",
+      "source_paragraphs": [37]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "So things like supervised fine-tuning and RLHF?",
+      "source_paragraphs": [37]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Right. In supervised fine-tuning, models are trained to follow instructions or express certain values. RLHF uses a reward model trained on human ratings to steer the model toward maximizing preferences. There's also controllable decoding, which steers outputs at inference time but often falls short of learning-based methods and hasn't been explored with pluralism in mind.",
+      "source_paragraphs": [37]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "And the authors are arguing these approaches have fundamental limitations when it comes to pluralism?",
+      "source_paragraphs": [37]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "Yes. They point out that the degree of pluralism depends on many factors: who builds the models, the diversity of datasets, and how reward models are trained. Critically, monistic approaches to RLHF can't satisfy certain democratic properties, and RLHF has been found to underweight outlier preferences. So voices that differ from the mainstream get systematically pushed aside.",
+      "source_paragraphs": [37]
+    },
+    {
+      "voice": "Microsoft Zira",
+      "text": "That's a really important finding. If alignment is supposed to make models work for everyone but it's actually marginalizing minority viewpoints, that's a serious problem. I can't wait to see the empirical evidence they present next.",
+      "source_paragraphs": [37]
+    },
+    {
+      "voice": "Microsoft David",
+      "text": "That's exactly what we'll cover in our final segment. They present data from multiple model families showing what happens to distributional pluralism after alignment. It's the empirical heart of the paper, and the results are striking.",
+      "source_paragraphs": [37]
+    }
+  ]
+}

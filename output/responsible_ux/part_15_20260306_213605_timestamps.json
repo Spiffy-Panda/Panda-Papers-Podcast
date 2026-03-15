@@ -1,0 +1,201 @@
+{
+  "source": "C:\\Users\\Brian\\Documents\\UW Winter 26\\ProductivityAndReadingHelper\\input\\responsible_ux\\part_15.json",
+  "audio_file": "part_15_20260306_213605.wav",
+  "tag": "part_15",
+  "generated": "2026-03-06T21:36:07.518028",
+  "total_duration_ms": 331943.5,
+  "total_duration_formatted": "5:31.943",
+  "lines": [
+    {
+      "index": 0,
+      "voice": "Microsoft David",
+      "text": "Welcome back. We've been exploring how UX practitioners handle responsible evaluation, and in the last part we covered how they try to prevent harmful outputs before users get involved. Now let's look at the other side: what happens during the actual user evaluation sessions. This is section four-three-two.",
+      "start_ms": 0.0,
+      "end_ms": 20970.6,
+      "duration_ms": 20970.6,
+      "source_paragraphs": [
+        87
+      ]
+    },
+    {
+      "index": 1,
+      "voice": "Microsoft Zira",
+      "text": "This is where things get real, right? Actual users interacting with actual AI systems.",
+      "start_ms": 21570.6,
+      "end_ms": 28548.9,
+      "duration_ms": 6978.3,
+      "source_paragraphs": [
+        87
+      ]
+    },
+    {
+      "index": 2,
+      "voice": "Microsoft David",
+      "text": "Exactly. And the paper found that UX practitioners assigned very specific purposes to user evaluation in the context of RAI. They saw user testing as an avenue for surfacing comfort levels with model interactions and identifying possible RAI concerns. But here's the interesting part: the line between user feedback about a potential AI application and adversarial testing of the underlying model has the potential to blur. One practitioner put it bluntly, saying they have to change their perspective on how they user test AI prototypes and think about the greater good, because if they just focus on whether the button needs to change or whether people liked the font size, they're in trouble.",
+      "start_ms": 29148.9,
+      "end_ms": 71979.6,
+      "duration_ms": 42830.7,
+      "source_paragraphs": [
+        87
+      ]
+    },
+    {
+      "index": 3,
+      "voice": "Microsoft Zira",
+      "text": "That's such a shift in mindset. User testing isn't just about usability anymore; it's about identifying potential harms. How did they approach diversity in recruitment for these tests?",
+      "start_ms": 72579.6,
+      "end_ms": 85791.8,
+      "duration_ms": 13212.2,
+      "source_paragraphs": [
+        87,
+        88
+      ]
+    },
+    {
+      "index": 4,
+      "voice": "Microsoft David",
+      "text": "UX practitioners often sought to recruit a broad range of users to improve diversity in testing, across demographics, race, gender, tech literacy, age, and so on. But they also had to balance that against resource and time constraints. This meant they often had to prioritize certain RAI issues for testing. One practitioner described how he suggested the team focus on the areas they knew the least about, reasoning that if there were twenty-one things to test but limited time, they should prioritize the five issues that hadn't been previously tested.",
+      "start_ms": 86391.8,
+      "end_ms": 121034.8,
+      "duration_ms": 34643.0,
+      "source_paragraphs": [
+        88
+      ]
+    },
+    {
+      "index": 5,
+      "voice": "Microsoft Zira",
+      "text": "That's a pragmatic approach, focusing on the unknowns. But even when you have the right participants, how do you actually conduct a user test where harmful content might appear?",
+      "start_ms": 121634.8,
+      "end_ms": 133207.1,
+      "duration_ms": 11572.3,
+      "source_paragraphs": [
+        88,
+        89
+      ]
+    },
+    {
+      "index": 6,
+      "voice": "Microsoft David",
+      "text": "This is where it gets really tricky. Many practitioners talked about the importance of preparing users for potentially toxic outputs that the AI might generate during sessions. And they were quite candid about their own anxiety, because they'd often be seeing unpredictable model outputs for the first time alongside the user. One practitioner described how they'd set expectations at the beginning, telling participants this is early technology, and if they see something harmful, they should feel comfortable talking about it. The researcher would have a narrative ready to help them understand what they're seeing.",
+      "start_ms": 133807.1,
+      "end_ms": 170419.5,
+      "duration_ms": 36612.4,
+      "source_paragraphs": [
+        89
+      ]
+    },
+    {
+      "index": 7,
+      "voice": "Microsoft Zira",
+      "text": "So the researcher is essentially performing a dual role: facilitating the study and also managing a kind of emotional safety net for participants. That must be incredibly demanding.",
+      "start_ms": 171019.5,
+      "end_ms": 182616.5,
+      "duration_ms": 11597.0,
+      "source_paragraphs": [
+        89,
+        90
+      ]
+    },
+    {
+      "index": 8,
+      "voice": "Microsoft David",
+      "text": "It really is. And the challenges go even deeper. The paper discusses how user studies have always grappled with social desirability bias, where participants conform to what they think the researcher wants to hear and avoid taboo topics or embarrassing interactions. These concerns become even more acute when evaluating high-fidelity AI applications, because the model could generate unpredictable and harmful outputs at any moment.",
+      "start_ms": 183216.5,
+      "end_ms": 210340.5,
+      "duration_ms": 27124.0,
+      "source_paragraphs": [
+        90
+      ]
+    },
+    {
+      "index": 9,
+      "voice": "Microsoft Zira",
+      "text": "Right, if a model suddenly produces something offensive, a participant might not feel comfortable talking about it honestly, especially if they don't have a relationship with the researcher.",
+      "start_ms": 210940.5,
+      "end_ms": 222377.7,
+      "duration_ms": 11437.2,
+      "source_paragraphs": [
+        90,
+        91
+      ]
+    },
+    {
+      "index": 10,
+      "voice": "Microsoft David",
+      "text": "Exactly. And one practitioner shared a really thoughtful strategy for addressing this. They described how their team tries to match the race and ethnicity of the moderator with that of the participant, specifically for psychological safety. Their reasoning was that users often don't feel comfortable talking about fairness issues and inequity with someone who may not have personal experience with systemic inequity.",
+      "start_ms": 222977.7,
+      "end_ms": 248542.2,
+      "duration_ms": 25564.4,
+      "source_paragraphs": [
+        91
+      ]
+    },
+    {
+      "index": 11,
+      "voice": "Microsoft Zira",
+      "text": "That's a fascinating approach. They're recognizing that who conducts the research matters just as much as what questions you ask. It's about creating conditions where honest feedback about sensitive issues is actually possible.",
+      "start_ms": 249142.2,
+      "end_ms": 262994.0,
+      "duration_ms": 13851.8,
+      "source_paragraphs": [
+        91
+      ]
+    },
+    {
+      "index": 12,
+      "voice": "Microsoft David",
+      "text": "And that practitioner framed it as not just conducting research responsibly and ethically, but also pairing participants with interviewers that could lead to honest feedback. It's a meta-level responsibility: being responsible about how you do the responsible AI research itself.",
+      "start_ms": 263594.0,
+      "end_ms": 280939.8,
+      "duration_ms": 17345.8,
+      "source_paragraphs": [
+        91
+      ]
+    },
+    {
+      "index": 13,
+      "voice": "Microsoft Zira",
+      "text": "Responsibility all the way down. So where does the paper go from here?",
+      "start_ms": 281539.8,
+      "end_ms": 287013.3,
+      "duration_ms": 5473.6,
+      "source_paragraphs": [
+        92
+      ]
+    },
+    {
+      "index": 14,
+      "voice": "Microsoft David",
+      "text": "The authors signal that these three practices, building an RAI lens, responsible prototyping, and responsible evaluation, taken together suggest an evolution of UX praxis itself. They conclude the findings by saying it's time to reflect on opportunities for HCI research to move the field closer to designing responsible AI.",
+      "start_ms": 287613.3,
+      "end_ms": 308808.5,
+      "duration_ms": 21195.2,
+      "source_paragraphs": [
+        92
+      ]
+    },
+    {
+      "index": 15,
+      "voice": "Microsoft Zira",
+      "text": "That sounds like a perfect setup for the discussion section.",
+      "start_ms": 309408.5,
+      "end_ms": 313407.2,
+      "duration_ms": 3998.6,
+      "source_paragraphs": [
+        92
+      ]
+    },
+    {
+      "index": 16,
+      "voice": "Microsoft David",
+      "text": "It is. In the next part, we'll move into the paper's discussion, where the authors step back and look at the bigger picture. They'll talk about the hidden work of RAI that UX practitioners are doing and what it means for the field. It's where the implications really come together.",
+      "start_ms": 314007.2,
+      "end_ms": 331943.5,
+      "duration_ms": 17936.3,
+      "source_paragraphs": [
+        92
+      ]
+    }
+  ]
+}
