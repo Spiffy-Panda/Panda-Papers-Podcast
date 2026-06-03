@@ -88,6 +88,58 @@ The legacy `podcast_generation_state.json` file continues to exist
 for the six already-rendered papers. Don't repurpose that name for
 new-pipeline state — fresh artifact path under `papers/<slug>/`.
 
+## render_audio I/O contract
+
+Settled while implementing `AudioRenderer.cs` (2026-06-03). The renderer
+accepts two on-disk shapes, by detection on the top-level JSON:
+
+- **Multi-part script** — `{paper_slug, speaker_a, speaker_b, parts: [...]}` —
+  the post-port shape `podcast-scripter` emits. Each `parts[i]` has
+  `part_of: {n, total}`, `lines: [...]`, and optionally per-part
+  `pause_between_ms` / `rate` overrides.
+- **Single-part legacy** — `{paper_source|paper_slug, speaker_a, speaker_b,
+  lines: [...], pause_between_ms, rate, part_number}` — the existing
+  `input/<slug>/part_NN.json` shape. Renderer treats this as "one part" and
+  doesn't synthesize a `parts` wrapper.
+
+Detection rule: presence of top-level `parts` array → multi-part; otherwise
+single-part. This lets the renderer smoke-test against on-disk legacy parts
+during the migration without scripter changes.
+
+Output layout (per `out_dir`):
+
+- `part_NN.wav` — stable name, no timestamp suffix. The script is the
+  manifest; the renderer owns the filename. (Legacy `part_NN_<ts>.wav`
+  pattern was a re-render hedge that the new shape doesn't need — the
+  script's checksum or modification time is the freshness signal.)
+- **No sibling `part_NN_<ts>_timestamps.json`.** Timestamps inline into the
+  output script per polish item 3.
+
+Output script: written to `<out_dir>/script.json` for multi-part input, or
+`<out_dir>/part_NN.json` for single-part input. Same shape as input plus:
+
+- Each `line` gains `start_ms` / `end_ms` (relative to its part's WAV, not
+  the paper).
+- Each part gains `wav: "part_NN.wav"` and `total_duration_ms`.
+- Top-level gains `rendered_utc` and `total_duration_ms` (sum across parts).
+
+The output script is byte-identical-shape to the input script except for
+those additions — so a player can read it without knowing whether the
+renderer has run yet (timestamps fields are absent vs. present).
+
+Voice/persona handling: the polished `{voice, persona}` shape and the legacy
+`"Microsoft David - persona text"` string are both accepted. Personas don't
+affect rendering — they're metadata for the scripter and reader. Renderer
+reads `voice` only.
+
+Renderer extends shared TTS (`../ai-verbal-coaching/shared/Tts/Speaker.cs`)
+with `SpeakToFileAsync(text, voice, speed, outPath, ct)` — sister to the
+existing `SpeakAsync(...)` but uses SAPI's `SetOutputToWaveFile` instead of
+the default audio device. WAV concat + silence-gap generation lives in
+paper-coach (`server/Services/WavTools.cs`) — generic PCM byte plumbing,
+not voice-specific, no reason to push it into the shared lib unless Voice
+Coach grows the same need.
+
 ## Cypher work is a stretch goal
 
 `paper-to-cypher`, `graph.cypher`, openCypher concept search via
