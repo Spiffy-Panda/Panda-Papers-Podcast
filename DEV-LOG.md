@@ -5,6 +5,57 @@ Append-only — newest entries on top. Each entry: date, what changed, why.
 
 ---
 
+## 2026-06-03 — first SKILL.md drafts (pdf-to-markdown, script-to-audio)
+
+With render_audio and pdf-sidecar both live, drafted the two worker
+SKILL.md files Claude needs to actually USE them — `pdf-to-markdown`
+([a623d37](../../commit/a623d37)) and `script-to-audio`
+([839cdf0](../../commit/839cdf0)). Both follow the
+[SKILLS-PLAN.md §§4, 9](SKILLS-PLAN.md) outline (Role / When to invoke /
+Steps / Failure modes / Not-this-skill's-job).
+
+These are first drafts, not the final word — Panda owns the editorial
+pass. Worth flagging the two design calls baked in:
+
+- **pdf-to-markdown asks the user for license up front.** CC BY-NC-SA
+  papers carry a derivative obligation per
+  [PIPELINE-DECISIONS §4](PIPELINE-DECISIONS.md); the SKILL surfaces
+  this *before* downstream artifacts that would inherit the license
+  get produced, rather than discovering it later when re-stamping
+  becomes painful. If Panda would rather it run quietly with a
+  separate license-audit pass, change the SKILL.
+- **script-to-audio blocks-before-render on persona rotation.** The
+  rotation rule in [PIPELINE-DECISIONS §2](PIPELINE-DECISIONS.md) is a
+  hard rule per [CLAUDE.local.md](CLAUDE.local.md), so this skill
+  enforces it as a gate, not a post-hoc check. User can override with
+  intent; renderer doesn't refuse outright. Allows per-paper rotation
+  dimensions (autistic vs. allistic, math vs. social theory) to count
+  as valid even when question-vs-explainer skews, because the rotation
+  dimension is then "something other than learner/expert" — the SKILL
+  reads the persona text and judges with context. If that's
+  over-permissive, tighten the check.
+
+Both skills are immediately discoverable to the `Skill` tool — verified
+that `pdf-to-markdown` registered on the available-skills list after
+the commit. The remaining four planned skills
+(`paper-director`, `paper-to-cypher`, `highlights-overlay`,
+`podcast-scripter`) need their own drafts; deferred for Panda — those
+are larger design calls (paper-director is the orchestrator,
+podcast-scripter has the one-shot-vs-fan-out cadence policy from
+[PIPELINE-DECISIONS §3](PIPELINE-DECISIONS.md), paper-to-cypher
+straddles the stretch-goal line per §4).
+
+**Deferred for ruling (per [CLAUDE.local.md](CLAUDE.local.md) unattended
+rules):**
+
+- Whether persona-rotation enforcement should refuse-render rather than
+  block-with-override. Current draft: block-with-override.
+- Whether license collection belongs in `pdf-to-markdown` or in a
+  separate license-audit pass. Current draft: in `pdf-to-markdown`.
+- The other four SKILL.md drafts.
+
+---
+
 ## 2026-06-03 — pdf-sidecar scaffold lands on :6001; intake unblocked
 
 Second of the two tasks in Panda's overnight handoff. The C# paper-coach
