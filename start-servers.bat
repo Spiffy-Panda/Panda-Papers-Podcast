@@ -72,12 +72,13 @@ REM -- Window 1 --- paper-coach C# MCP server ----------------------------
 start "paper-coach :6000" powershell -NoExit -Command ^
   "$env:PAPER_COACH_ROOT='%REPO_ROOT%'; Set-Location '%REPO_ROOT%\server'; & cmd /c 'dotnet run 2>&1' | Tee-Object -FilePath '%REPO_ROOT%\logs\paper-coach.log'"
 
-REM -- Window 2 --- pdf-sidecar Python FastAPI --- [STUBBED, NOT BUILT] ---
-REM Uncomment when pdf-sidecar\ exists. The .venv path mirrors what
-REM SKILLS-PLAN.md section 1 lays out; uvicorn binds 6001 to match.
-REM
-REM start "pdf-sidecar :6001" powershell -NoExit -Command ^
-REM   "$env:PYTHONUNBUFFERED='1'; Set-Location '%REPO_ROOT%\pdf-sidecar'; & cmd /c '.\.venv\Scripts\python.exe -m uvicorn server:app --port 6001 --reload 2>&1' | Tee-Object -FilePath '%REPO_ROOT%\logs\pdf-sidecar.log'"
+REM -- Window 2 --- pdf-sidecar Python FastAPI ---------------------------
+REM .venv path matches SKILLS-PLAN.md section 1 and the bootstrap step
+REM `python -m venv .venv && .venv\Scripts\pip install -r requirements.txt`
+REM that brings it up first time. PAPER_COACH_ROOT is also exported so the
+REM sidecar resolves repo-relative paths the same way paper-coach does.
+start "pdf-sidecar :6001" powershell -NoExit -Command ^
+  "$env:PYTHONUNBUFFERED='1'; $env:PAPER_COACH_ROOT='%REPO_ROOT%'; Set-Location '%REPO_ROOT%\pdf-sidecar'; & cmd /c '.\.venv\Scripts\python.exe -m uvicorn server:app --port 6001 --reload 2>&1' | Tee-Object -FilePath '%REPO_ROOT%\logs\pdf-sidecar.log'"
 
 REM -- Window 3 --- legacy podcast player Python (port 8847) -------------
 REM Old pipeline; serves podcast_player.html + manifest/state from the
@@ -88,11 +89,12 @@ start "legacy player :8847" powershell -NoExit -Command ^
 echo.
 echo Servers launching in separate PowerShell windows.
 echo   paper-coach     http://localhost:6000/mcp     log: logs\paper-coach.log
-echo   pdf-sidecar     (not yet implemented)
+echo   pdf-sidecar     http://localhost:6001         log: logs\pdf-sidecar.log
 echo   legacy player   http://localhost:8847         log: logs\legacy-player.log
 echo.
 echo Probes:
 echo   curl http://localhost:6000/api/health         paper-coach
+echo   curl http://localhost:6001/api/health         pdf-sidecar
 echo   curl http://localhost:8847                    legacy player
 
 endlocal

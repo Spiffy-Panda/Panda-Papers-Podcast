@@ -1,0 +1,12 @@
+# pdf-sidecar — minimal Python FastAPI service for PDF -> Markdown extraction.
+# Version floors, not exact pins — pip resolves the rest. Pin tighter if
+# reproducibility matters.
+
+fastapi>=0.115,<0.120
+uvicorn[standard]>=0.32,<0.40
+
+# PyMuPDF-based markdown extractor. Cheap, no PyTorch dependency, runs on
+# CPU. marker-pdf (better layout fidelity at the cost of a heavy install +
+# CUDA wheels) is the upgrade path if pymupdf4llm's output quality starts
+# limiting downstream skills.
+pymupdf4llm>=0.0.17,<1.0
