@@ -70,6 +70,23 @@ content that survives them moves into `podcast-scripter`'s
 When reviewing generated dialog, check that Zira is not always the
 question-asker. If she is, regenerate.
 
+**Enforcement pattern (ruled 2026-06-03): block-with-override in
+`script-to-audio` SKILL.md.** The rule is checked before rendering —
+the SKILL reads the script, counts question marks and explanatory
+cues per voice across the full script, and stops with a regen
+recommendation if Zira leads in questions AND David leads in
+explanations. The user can override (e.g. "render anyway, the
+inversion is in the next part") — override is intentional friction,
+not a veto. The reason it's block-with-override rather than refuse-
+outright: the per-paper rotation dimension might already be on a
+different axis (autistic vs. allistic framing, math vs. social
+theory, ADHD-style analogies vs. by-the-text) that makes the
+question-vs-explainer skew acceptable for *that* paper. The SKILL
+can't reliably auto-detect which dimension the scripter chose, but
+the user knows. Mitigation against rubber-stamping: the block
+message lists the specific offending line indices, so the user has
+to look at the script before saying yes.
+
 ## Generation cadence: one-shot per paper, subagents for length
 
 Target shape: `podcast-scripter` is invoked once per paper and produces
@@ -139,6 +156,50 @@ the default audio device. WAV concat + silence-gap generation lives in
 paper-coach (`server/Services/WavTools.cs`) — generic PCM byte plumbing,
 not voice-specific, no reason to push it into the shared lib unless Voice
 Coach grows the same need.
+
+## Section identification belongs to the SKILL, not the sidecar
+
+Settled 2026-06-03. `pdf-sidecar` produces paragraph-level
+`paper.spans.json` only:
+
+```json
+{
+  "slug": "<slug>",
+  "paper_md_sha256": "<sha>",
+  "paragraphs": [
+    {"id": 1, "start_offset": 13, "end_offset": 47},
+    ...
+  ]
+}
+```
+
+Section boundaries (which paragraph IDs belong to Abstract,
+Introduction, Methodology, etc.) are added in a **second pass** by
+`pdf-to-markdown` SKILL.md, which:
+
+1. Reads the sidecar's `paper.spans.json`.
+2. Reads `paper.md`.
+3. Identifies section boundaries — typically by detecting markdown
+   heading levels but with LLM judgment to handle papers where the
+   heading style varies, where authors used non-standard section
+   names, or where OCR introduced errors that need recovery.
+4. Augments `paper.spans.json` with a `sections: [{id, title,
+   paragraph_ids: [int]}]` array.
+
+**Why this split.** Papers often have OCR errors, non-standard
+section names, or section breaks that the markdown headings don't
+capture cleanly. The LLM can recover; a regex-only sidecar can't.
+Keeping section-id derivation out of the sidecar also keeps the
+sidecar deterministic and fast — when sections need re-annotating
+because of an LLM improvement, only the SKILL re-runs, not the
+byte-level extraction.
+
+`Workspace.ReadNewSections` in paper-coach consumes this annotated
+`paper.spans.json` — implementation lands once a SKILL run has
+annotated at least one paper. Until then, the stub at
+[server/Services/Workspace.cs:217](server/Services/Workspace.cs:217)
+returns `[]` for sections and the legacy `inspect_paper` path
+covers papers that have a JSON version on disk.
 
 ## Cypher work is a stretch goal
 

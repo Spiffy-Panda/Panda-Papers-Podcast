@@ -5,6 +5,52 @@ Append-only — newest entries on top. Each entry: date, what changed, why.
 
 ---
 
+## 2026-06-03 — Panda's morning rulings codified
+
+Panda came back to the deferred items and answered. Codified the
+non-trivial ones in their permanent homes so the rulings survive
+context resets:
+
+- **Sibling-repo / git-pull corners** ([CLAUDE.local.md](CLAUDE.local.md)
+  Rule 3 edge cases) — added explicit divergence behavior
+  (`don't merge if origin/master diverges; stop and log`) and the
+  sibling-on-master default (`direct commit on sibling's master;
+  branch only if Panda explicitly asks`). Both timestamped "Ruled
+  2026-06-03" so future readers can tell rulings from proposals.
+- **Section identification belongs to the SKILL, not the sidecar**
+  (option (b) — [PIPELINE-DECISIONS.md §6](PIPELINE-DECISIONS.md)).
+  Rationale captured: OCR errors, non-standard section names, and
+  recovered text need LLM judgment; keeping section-id derivation out
+  of pdf-sidecar keeps the sidecar deterministic and lets section
+  re-annotation re-run cheaply without redoing the byte-level
+  extraction. Spec for the augmented `paper.spans.json` shape
+  (`sections: [{id, title, paragraph_ids: [int]}]`) included so the
+  next SKILL writer doesn't have to invent it.
+- **Persona rotation: block-with-override**
+  ([PIPELINE-DECISIONS.md §2](PIPELINE-DECISIONS.md) addendum). The
+  pattern-and-rationale paragraph that lived only in
+  `script-to-audio/SKILL.md` is now in PIPELINE-DECISIONS so it's
+  visible to the rest of the project, not buried in one worker's
+  instructions. Mitigation against rubber-stamping (list offending
+  line indices in the block message, force the user to look) is
+  documented.
+- **License collection in pdf-to-markdown** — Panda confirmed; no doc
+  change needed, the SKILL already had it.
+- **CC-BY proof-paper run** — added to
+  [STATUS.json](STATUS.json)'s `next_actions` (gitignored, so the
+  change won't show in `git status`). next_actions also refreshed to
+  drop the two now-done items (render_audio body, pdf-sidecar
+  scaffold) and add the remaining-SKILLs and ReadNewSections work
+  items.
+- **Other four SKILL.md drafts** — Panda will do in a fresh chat
+  context, intentional fresh-context handoff. Noted in `next_actions`.
+
+This session's work ends here. 8 commits ahead on main repo, 1 on
+sibling, nothing pushed (Rule 1 honored throughout). Panda has the
+keys.
+
+---
+
 ## 2026-06-03 — first SKILL.md drafts (pdf-to-markdown, script-to-audio)
 
 With render_audio and pdf-sidecar both live, drafted the two worker
