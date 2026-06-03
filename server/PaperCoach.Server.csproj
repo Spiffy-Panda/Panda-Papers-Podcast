@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <!-- 10.0.19041.0 lights up WinRT (Windows.Media.SpeechSynthesis) for the
+         eventual NaturalSpeaker. Shared Tts targets plain net9.0-windows
+         today; this server's TFM is a strict superset so the project
+         reference still resolves. -->
+    <TargetFramework>net9.0-windows10.0.19041.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>PaperCoach.Server</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ModelContextProtocol.AspNetCore" Version="1.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Sibling repo per CLAUDE.md: both projects live under UW Winter 26/.
+         If this path breaks, check that ai-verbal-coaching/ is checked out
+         next to ProductivityAndReadingHelper/. -->
+    <ProjectReference Include="..\..\ai-verbal-coaching\shared\Tts\Tts.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -12,6 +12,12 @@ __pycache__/
 .venv/
 venv/
 
+# C# / .NET
+bin/
+obj/
+*.user
+.vs/
+
 # Editor / OS cruft
 .DS_Store
 Thumbs.db
