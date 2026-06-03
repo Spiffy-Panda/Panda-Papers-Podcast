@@ -5,6 +5,92 @@ Append-only — newest entries on top. Each entry: date, what changed, why.
 
 ---
 
+## 2026-06-03 — pdf-sidecar scaffold lands on :6001; intake unblocked
+
+Second of the two tasks in Panda's overnight handoff. The C# paper-coach
+on :6000 has been ready to call out to a Python PDF→MD service since
+[6b76633](../../commit/6b76633) (the path is wired through `Workspace.cs`
+and start-servers.bat had a commented-out Window 2 entry waiting on this
+sidecar to exist).
+
+**Scaffold ([3144420](../../commit/3144420)).** Three files plus a venv:
+
+- `pdf-sidecar/requirements.txt` — fastapi, uvicorn, pymupdf4llm. Lower
+  bounds, not exact pins; pip resolves the rest. marker-pdf is the
+  upgrade path if pymupdf4llm's output quality starts limiting downstream
+  skills — heavier install (PyTorch + CUDA wheels), better layout
+  fidelity on multi-column / table-heavy papers.
+- `pdf-sidecar/server.py` — FastAPI app with `/api/health` (liveness)
+  and `POST /extract` (PDF → `paper.md` + `paper.spans.json` +
+  `paper.md.sha256` under `papers/<slug>/`). `<!-- p:N -->` HTML-comment
+  anchors per [SKILLS-PLAN §0](SKILLS-PLAN.md), one anchor per paragraph,
+  byte offsets into the UTF-8-encoded paper.md recorded in spans for
+  char-count joins downstream.
+- `start-servers.bat` — uncommented the Window 2 launcher block (was
+  stubbed at [107f659](../../commit/107f659)), added `PAPER_COACH_ROOT`
+  export so the sidecar resolves repo-relative paths the same way
+  paper-coach does (shared env var by design — they're sibling processes
+  under one repo).
+
+**Repo-root resolution** mirrors paper-coach's `Program.cs` exactly:
+`PAPER_COACH_ROOT` env var wins, falls back to `PDF_SIDECAR_ROOT`, then
+cwd. Means launching either server with `cd server && dotnet run` or
+`cd pdf-sidecar && uvicorn server:app` both work as long as the launcher
+exports the env var — which `start-servers.bat` does for both windows.
+
+**Why minimal.** Section identification (where Abstract ends, where
+Introduction begins), footnote handling, table fidelity, and image
+extraction are all `pdf-to-markdown` SKILL.md territory — the SKILL is
+the LLM-in-the-loop that round-trips raw extraction → semantic markup.
+The sidecar is just the byte-pipe to Python's PDF stack; trying to bake
+heuristics in here would duplicate work the SKILL has to do anyway.
+`extract_images` is reserved as a request field but ignored; lights up
+in a follow-up commit when the SKILL needs it.
+
+**Smoke test.** Started `uvicorn server:app --port 6001` against a
+synthetic three-paragraph PDF generated locally with `pymupdf`. Health
+returned `{ok: true, root: <repo>}`. Extract produced:
+
+- `paper.md` with three `<!-- p:N -->` anchors in order, blank lines
+  between paragraphs.
+- `paper.spans.json` with paragraph 1 at bytes 13–47, paragraph 2 at
+  62–106, paragraph 3 at 121–161 — offsets match the anchored layout.
+- `paper.md.sha256` matching the file content.
+
+Synthetic-PDF approach was a Rule-2 sidestep (no paper gathering while
+unattended); a real CC-BY paper smoke run is left for Panda. Smoke
+artifacts under `logs/smoke_test_extract/` (gitignored).
+
+**Workspace.ReadNewSections is now partially unblocked.** The C# stub at
+[server/Services/Workspace.cs:217](server/Services/Workspace.cs:217)
+checks for `paper.spans.json` existence but returns empty when the file's
+shape isn't understood yet. The current sidecar emits paragraph-only
+spans (no section boundaries), so the stub still returns `[]` for
+sections — completing it needs either: (a) extending paper.spans.json
+shape to carry sections, populated by `pdf-to-markdown` SKILL.md after
+LLM semantic markup; or (b) deriving sections from markdown heading
+levels right in the sidecar. (a) is closer to the
+[SKILLS-PLAN.md §0](SKILLS-PLAN.md) "MD is immutable, SKILL annotates"
+spirit. Deferred for Panda's call.
+
+**Deferred for ruling (per [CLAUDE.local.md](CLAUDE.local.md) unattended
+rules):**
+
+- A real CC-BY paper smoke run (intake → MD → script → audio
+  end-to-end). Blocked by Rule 2 — no paper gathering while unattended.
+  Panda picks the proof paper in the morning.
+- Workspace.ReadNewSections completion path (sidecar vs. SKILL).
+  Architecture choice belongs to Panda.
+
+**What this unblocks downstream:**
+
+- `pdf-to-markdown` SKILL.md (one of the planned skills per
+  [SKILLS-PLAN §3](SKILLS-PLAN.md)) — the sidecar exists for it to call.
+- New papers can enter the repo via `POST /extract`; until Panda picks a
+  paper and runs it through, the `papers/<slug>/` tree stays empty.
+
+---
+
 ## 2026-06-03 — render_audio body lands; new pipeline can synth WAV end-to-end
 
 Closed out the "render_audio is wired but stubbed" blocker that's been
