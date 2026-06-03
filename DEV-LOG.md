@@ -5,6 +5,103 @@ Append-only — newest entries on top. Each entry: date, what changed, why.
 
 ---
 
+## 2026-06-03 — render_audio body lands; new pipeline can synth WAV end-to-end
+
+Closed out the "render_audio is wired but stubbed" blocker that's been
+sitting at paper-coach's 80% mark. The implementation arc spans three
+commits across two repos, plus a design-decision commit teed up first so
+the next reader can find the rules without reverse-engineering the code.
+
+**Design first ([eeafd34](../../commit/eeafd34))** — added
+[PIPELINE-DECISIONS.md §5](PIPELINE-DECISIONS.md) "render_audio I/O
+contract." Open questions resolved:
+
+- Input shape: accept BOTH the new multi-part `script.json`
+  (`{paper_slug, speaker_a, speaker_b, parts: [...]}`) AND the legacy
+  single-part `input/<slug>/part_NN.json`. Detection by presence of a
+  top-level `parts` array. Lets the renderer smoke-test against on-disk
+  legacy parts before podcast-scripter exists.
+- Output: stable filenames (`part_NN.wav`, no `_<ts>` suffix). The
+  legacy timestamp suffix was a re-render hedge; the new script's
+  `rendered_utc` plus an mtime check is the freshness signal.
+- Timestamps: **inlined into the output script** per
+  [new-mode-audioscript.md](../../.claude/projects/C--Users-Brian-Documents-UW-Winter-26-ProductivityAndReadingHelper/memory/new-mode-audioscript.md)
+  polish item 3. No sibling `_timestamps.json`. Output script is a
+  superset of input — adds `start_ms`/`end_ms` per line, `wav` +
+  `total_duration_ms` per part, `rendered_utc` + `total_duration_ms`
+  at the root.
+- Voice/persona: read `voice` only; persona is metadata for the
+  scripter and reader. Polished `{voice, persona}` and legacy
+  `"Microsoft David - persona text"` strings both accepted.
+
+**Sibling repo Speaker grew SpeakToFileAsync (sibling commit
+`628c111`).** SAPI's `SetOutputToWaveFile` path is the right primitive
+but System.Speech only exposes Speak synchronously, so the new method
+wraps it in `Task.Run` for a clean awaitable. Existing `SpeakAsync`
+(speaker playback, Voice Coach's flow) untouched. Default
+22 kHz / 16-bit / mono matches what `dialog_to_audio.py`'s concatenator
+expected, so no AudioFormat negotiation needed.
+
+**paper-coach implementation ([9a334d5](../../commit/9a334d5)).** Three
+moving pieces:
+
+- `WavTools.cs` — generic PCM RIFF byte plumbing (header parse,
+  duration probe, silence-fill matching a sample format, concat). Same
+  algorithm Python's `wave` module gives you for free in
+  `dialog_to_audio.py`; rewritten in C# so the new pipeline doesn't
+  shell out for byte-shuffling. Format-mismatch concat throws loudly
+  (SAPI always emits the same PCM shape; mismatch is a programmer
+  error, not user input).
+- `AudioRenderer.RenderAsync` — JsonNode tree walk so unknown
+  pass-through fields survive; we mutate just the spots we own
+  (`start_ms`/`end_ms` per line, `wav`/`total_duration_ms` per part,
+  `rendered_utc` at root). Per-line temp WAVs synthesized to
+  `%TEMP%/paper-coach-render-<guid>/`, gaps written as matching-format
+  silence, all concat'd into `<out_dir>/part_NN.wav`. Temp dir cleaned
+  in a `finally` even on failure.
+- Voice resolver: exact-match-then-substring-fallback against
+  `Speaker.ListVoices()`, so legacy scripts saying `"Microsoft David"`
+  pick up `"Microsoft David Desktop"` without rewriting any on-disk
+  parts. Shared Speaker keeps its strict-match contract (Voice Coach's
+  UX is "use the string SAPI gave you"); the fuzz lives in the caller
+  that needs it.
+- `RenderResult` grew `script_path` / `wav_paths` /
+  `total_duration_ms` / `parts_rendered` for the success case. Error
+  case fields untouched.
+- `RenderAudio` MCP tool turned async, docstring rewritten against
+  the new contract.
+
+**Smoke test (against running server, post-build).** Started the server
+with `PAPER_COACH_ROOT` set to repo root, did the MCP `initialize` →
+`notifications/initialized` → `tools/call` dance against `/mcp` with a
+two-line legacy-shape dialog. Result: `ok: true`,
+`total_duration_ms: 8687.5`, output script with `start_ms`/`end_ms`
+present, 400 ms pause gap exact (3478.8 → 3878.8), both voices resolved
+via substring match. WAV file 383 KB, plausible for ~8.7 s of 22 kHz
+mono PCM. Smoke artifacts in `logs/smoke_test_render/` (gitignored).
+
+**Deferred for ruling (per [CLAUDE.local.md](CLAUDE.local.md) unattended
+rules):**
+
+- None for this arc. Sibling repo edit was within scope (proposed
+  default-allow: commit locally there if needed; no push attempted).
+
+**What this unblocks downstream:**
+
+- `script-to-audio` SKILL.md can now be written against a working
+  `render_audio` rather than a stub. The skill is mostly "construct
+  the right script.json shape and call the tool" plus persona-rotation
+  policy enforcement.
+- A small end-to-end proof paper (intake → MD → script → audio) is
+  unblocked on the audio side. The remaining gap is pdf-sidecar
+  (next).
+- STATUS.json's `paper-coach C# server` row can move from 80% to ~95%
+  once the `Workspace.ReadNewSections` stub (still waiting on
+  pdf-to-markdown / paper.spans.json schema) is dealt with. Not
+  bumping here since Panda owns STATUS.json updates.
+
+---
+
 ## Current Pipeline (as of 2026-06-01)
 
 ```
