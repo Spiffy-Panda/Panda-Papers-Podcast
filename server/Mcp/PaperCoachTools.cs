@@ -183,24 +183,34 @@ public sealed class PaperCoachTools(
 
     [McpServerTool(Name = "render_audio")]
     [Description(
-        "Render a podcast audioscript to per-part WAV files plus " +
-        "timestamps via the shared C# TTS library. NOT IMPLEMENTED YET — " +
-        "the audioscript schema (one syncpoint-annotated script per " +
-        "paper, two presenters) is pending. This tool returns ok=false, " +
-        "not_implemented=true. Wired up so director skills can be " +
-        "written against the final tool name now.")]
-    public RenderResult RenderAudio(
+        "Render a podcast audioscript to WAV files via the shared C# TTS " +
+        "library. Accepts two shapes (see PIPELINE-DECISIONS.md §5): " +
+        "multi-part script.json (`{paper_slug, speaker_a, speaker_b, " +
+        "parts: [{part_of, lines, ...}]}`), or a single legacy " +
+        "part_NN.json (`{lines, pause_between_ms, rate, ...}`). Detection " +
+        "is by presence of a top-level `parts` array. Output: stable-named " +
+        "part_NN.wav per part under out_dir, plus an inline-timestamped " +
+        "output script (script.json for multi-part, part_NN.json for " +
+        "single-part) — no sibling _timestamps.json files. Each rendered " +
+        "line gains start_ms/end_ms; each part gains wav + " +
+        "total_duration_ms; the script gains rendered_utc + " +
+        "total_duration_ms. Voice names match by exact then substring " +
+        "(case-insensitive) against installed SAPI voices, so legacy " +
+        "\"Microsoft David\" resolves to \"Microsoft David Desktop\".")]
+    public Task<RenderResult> RenderAudio(
         [Description("Path to the audioscript JSON, relative to the project root or absolute.")]
         string script_path,
         [Description(
-            "Optional persona profile path or name. Schema TBD when " +
-            "podcast-scripter is implemented.")]
+            "Optional persona profile path or name. Ignored by the renderer " +
+            "(personas are a scripter concern); accepted so director skills " +
+            "can pass it without inspecting tool signatures.")]
         string? persona_profile = null,
         [Description(
-            "Output directory for WAVs and timestamps, relative to the " +
-            "project root.")]
-        string out_dir = "papers/")
-        => renderer.Render(script_path, persona_profile, out_dir);
+            "Output directory for WAVs and the rendered script, relative " +
+            "to the project root. Conventional: papers/<slug>/podcast/.")]
+        string out_dir = "papers/",
+        CancellationToken ct = default)
+        => renderer.RenderAsync(script_path, persona_profile, out_dir, ct);
 
     [McpServerTool(Name = "list_voices")]
     [Description(

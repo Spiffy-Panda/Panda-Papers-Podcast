@@ -82,7 +82,11 @@ public sealed record RenderResult(
     bool Ok,
     string? Error = null,
     string? Reason = null,
-    [property: JsonPropertyName("not_implemented")] bool NotImplemented = false);
+    [property: JsonPropertyName("not_implemented")] bool NotImplemented = false,
+    string? ScriptPath = null,
+    IReadOnlyList<string>? WavPaths = null,
+    double? TotalDurationMs = null,
+    int? PartsRendered = null);
 
 public sealed record ArtifactStatus(
     string Path,
