@@ -228,6 +228,65 @@ repo (start-servers.bat, SpeechSession.cs, two DEV-LOG entries
 about PowerShell quirks). Mixed scope, flagged in that repo's
 DEV-LOG entry. Doesn't affect this repo.
 
+### 2026-06-02 — consolidate launchers (start_server.bat + start-servers.bat → one)
+
+Two near-identical launcher names at the repo root were a footgun. The
+legacy `start_server.bat` (singular, underscore — from the initial commit)
+ran `python server.py` on :8847 for the existing podcast player UI; the
+new `start-servers.bat` (plural, hyphen — from `6b76633`) brought up the
+C# paper-coach server on :6000. They differed only by hyphen-vs-underscore
+and a plural `s`. No visual cue about which belonged to which era; easy to
+type the wrong one.
+
+Consolidated into a single `start-servers.bat` with three windows:
+
+1. paper-coach C# MCP server on :6000 (new pipeline)
+2. pdf-sidecar Python FastAPI on :6001 (stubbed, commented out)
+3. legacy podcast player Python on :8847 (still the only working audio UI)
+
+Window 3 stays until the new reader UI lands and the legacy pipeline
+retires per [SKILLS-PLAN.md section 10](SKILLS-PLAN.md). Deleted
+`start_server.bat`.
+
+Also wrapped the `dotnet run` and `python server.py` invocations in
+`& cmd /c '... 2>&1'` before piping to `Tee-Object` — the PowerShell 5.1
+NativeCommandError trap Voice Coach learned the hard way
+([../ai-verbal-coaching/DEV-LOG.md 2026-05-07](../ai-verbal-coaching/DEV-LOG.md)).
+Without it, every `dotnet`/`python` stderr line surfaces as a red
+RemoteException frame in the log and `$?` flips false, even when the
+process is healthy. With it, logs read cleanly.
+
+Documented in-place: the bat opens with a 50-line REM header explaining
+which window does what, what each links to in `SKILLS-PLAN.md`, why the
+`cmd /c` wrapper is there, why `PYTHONUNBUFFERED=1` is set, and why
+`PAPER_COACH_ROOT` is kept alongside `Set-Location` (parser-level vs
+runtime contract). The audience is a future Claude Code session that
+opens the file cold; the header gives it the full picture without
+having to back-trace.
+
+What this unblocks:
+
+- One command (`.\start-servers.bat`) brings up the whole stack — the
+  current paper-rendering UI AND the new MCP server side-by-side. That
+  matches the migration reality: the legacy player is still the only
+  way to actually hear generated audio, so killing its launcher early
+  would have been a self-inflicted wound.
+- Future LLMs that need to modify the launcher get all the context
+  from the REM header without spelunking the sibling repo.
+
+Deferred / open:
+
+- The `cmd /c` wrapper is unverified on this machine — copied from
+  Voice Coach where it's known-good. If `logs\paper-coach.log` looks
+  poisoned on first run, the symptom will be a red error frame per
+  startup INFO line. The fix is structurally what's already there;
+  any residual breakage is escape-level.
+- No `kill-servers.bat` yet (Voice Coach has one). Skipped because
+  closing the three PowerShell windows kills the processes cleanly
+  for a solo dev session; revisit if it becomes annoying.
+- pdf-sidecar Window 2 is still stubbed. When it lands, uncomment the
+  block; nothing else in the launcher needs to change.
+
 ### 2026-06-02 — /start dashboard skill + STATUS.json source of truth
 
 Added a `/start` slash-skill that renders a terminal-style project dashboard
