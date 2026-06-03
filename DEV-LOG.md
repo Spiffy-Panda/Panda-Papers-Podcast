@@ -86,6 +86,147 @@ out of scope by design — create a new state file to switch.
 
 ## Entries
 
+### 2026-06-03 — paper-coach scaffold landed; pipeline decisions hoisted into the doc tree
+
+A parallel session built paper-coach end-to-end and consolidated the
+launcher; this entry pairs with that arc and adds the rules + rationale
+that don't live in commit messages.
+
+Parallel-session commits (oldest → newest, all on 2026-06-02 local
+time):
+
+- `92681fe` — license audit + LICENSE / NOTICES / .gitignore for the
+  public push. See the
+  [earlier "license audit and notices" entry](#2026-06-02--license-audit-and-notices-before-public-push)
+  below for the full reasoning. Notable for everything that follows:
+  `STATUS.json` and `podcast_generation_state.json` are now
+  gitignored, and `server/` was deliberately left untracked here so
+  the parallel paper-coach session could own its own commit.
+- `6b76633` — paper-coach C# server scaffolded with 12 MCP tools
+  (`list_papers`, `find_papers`, `inspect_paper`, `start_session`,
+  `list_sessions`, `select`, `extract`, `combine`, `plan_parts`,
+  `render_audio`, `list_voices`, `session_status`). Service split:
+  Workspace (unified new-layout + legacy enumeration), SessionStore
+  (`papers/_workspace/<id>/session.json`), Extractor (composed.md +
+  spans.json + sha256), PartPlanner (port of `init_podcast.py`'s
+  `split_paragraphs_into_parts`, **verified byte-equivalent against
+  `steering_awareness`'s legacy state-file plan**), AudioRenderer
+  (stubbed against the polished legacy schema as the contract).
+  [`.mcp.json`](.mcp.json) registers Streamable HTTP at
+  `http://localhost:6000/mcp`. The four tracked
+  `input/<slug>/prompt_template.txt` files removed in the same
+  commit — their content moves into the future `podcast-scripter`
+  SKILL.md with the persona rotation rule replacing the stale
+  "explainer / learner" section.
+- `b87d38e` — `gh repo:*` permission grant for future PR work.
+- `107f659` — `start-servers.bat` consolidates the legacy
+  `start_server.bat` (Python player on :8847) and the new
+  `start-servers.bat` (paper-coach :6000, stubbed pdf-sidecar :6001)
+  into one three-window launcher. Wrapped `dotnet` / `python`
+  invocations in `& cmd /c '... 2>&1'` to dodge the PowerShell 5.1
+  `NativeCommandError` trap that otherwise poisons logs with
+  `RemoteException` frames on every stderr line. Lesson borrowed
+  from sibling Voice Coach (`../ai-verbal-coaching/start-servers.bat`).
+
+What this session added on top: durable discoverability of the rules
+that came out of pipeline-design discussions across the day. The
+parallel session shipped the *code*; this entry's session shipped the
+*decisions doc* a future maintainer or LLM needs to follow that code
+correctly.
+
+[**PIPELINE-DECISIONS.md**](PIPELINE-DECISIONS.md) — new sibling to
+PLAN.md / SKILLS-PLAN.md / DEV-LOG.md, linked from
+[CLAUDE.md](CLAUDE.md). Records four decisions whose rationale
+doesn't fit cleanly into architecture (SKILLS-PLAN) or journal
+(DEV-LOG):
+
+1. **Audioscript schema carries forward, lightly polished.** The
+   legacy `source_paragraphs` + `start_ms`/`end_ms` triangle IS the
+   syncpoint table the new mode wanted; four cosmetic polish items
+   apply during the port (split voice/persona, slug not path, inline
+   timestamps, inline `part_of`). Not a redesign.
+2. **Persona rotation is a hard rule.** Never always Zira-as-learner
+   / David-as-expert; rotate across dimensions (applied math vs
+   social theory, autistic vs allistic, ADHD vs by-text, …). The
+   deleted prompt templates hardcoded the gender-norm framing — that
+   template was the bug.
+3. **Cadence target is one-shot per paper.** Legacy batched-6 was a
+   length-limit workaround, not a design choice. If the new pipeline
+   needs batching for length, fan out subagents (Agent / Workflow),
+   not a state-file resume routine.
+4. **Cypher work is a stretch goal.** Don't block primary pipeline on
+   `paper-to-cypher` or `graph.cypher` queries; non-graph paths
+   first. `paper-coach`'s `find_papers` already implements this
+   correctly (criteria filter is real, concept-via-graph is an
+   explicit TODO in the tool description).
+
+Plus a CC BY-NC-SA 4.0 derivative-licensing reminder for ODESteer and
+RLHF Shallow Alignment, hoisted from the
+[license-audit entry](#2026-06-02--license-audit-and-notices-before-public-push)
+into a place implementers will actually find before generating new
+artifacts.
+
+[**CLAUDE.local.md**](CLAUDE.local.md) — new, gitignored
+(.gitignore updated). Discoverable from
+[CLAUDE.md](CLAUDE.md)'s pointer for local sessions; carries the
+candid framings of the public PIPELINE-DECISIONS rules (persona
+rotation as the user's actual values, batching cadence as scaffolding
+around a constraint with the user's verbatim quote), parallel-session
+coordination notes, sibling-repo silent-failure risks, and the
+location of the per-user auto-memory dir that mirrors
+PIPELINE-DECISIONS.md.
+
+[**CLAUDE.md**](CLAUDE.md) updated with PIPELINE-DECISIONS.md and
+CLAUDE.local.md in the doc-pointer chain at the top.
+[**.gitignore**](.gitignore) gains `CLAUDE.local.md`.
+
+[**STATUS.json**](STATUS.json) bumped (file is gitignored, so this
+note is the only public record of the bump):
+
+- `paper-coach C# server (:6000)` → `functional`, 80%. Stubs
+  remaining: `render_audio` body (waits on Speaker plumbing) and
+  Workspace's new-layout section reader (waits on pdf-to-markdown /
+  paper.spans.json schema).
+- `.mcp.json + start-servers.bat` → `complete`, 100% (per `6b76633`
+  + `107f659`).
+- `new repo layout (papers/<slug>/)` → `scaffolded`, 20% (paper-coach
+  reads it; no actual paper dirs exist yet — pdf-sidecar is the gap).
+- `paper-director`'s blocker (`paper-coach C# server scaffold`)
+  cleared.
+- `script-to-audio`'s `shared TTS extraction` blocker cleared (that
+  landed in `e678a0a`); only `render_audio` body remains.
+- `next_actions` reordered: top is `render_audio` against the
+  polished legacy schema; second is `pdf-sidecar` scaffold; third
+  remains "pick a small paper for end-to-end proof."
+
+What this unblocks downstream:
+
+- `podcast-scripter` design can now reference settled rules (schema,
+  persona, cadence) instead of waiting on design conversations. The
+  SKILL.md draft work can start; PartPlanner is already available as
+  the `plan_parts` MCP tool.
+- `paper-director` blocker cleared in STATUS.json. Skill itself still
+  planned but no longer waiting on anything.
+- `script-to-audio` reduces to a focused chunk against a known
+  contract.
+
+Deferred:
+
+- The parallel session didn't write DEV-LOG entries for its four
+  commits (commit messages stand in). This entry consolidates them
+  after-the-fact; **next time, write per-session entries to keep
+  them contemporaneous.**
+- The four memory files in the user's auto-memory dir
+  (`new-mode-audioscript`, `persona-rotation-rule`,
+  `cadence-one-shot-prefer-subagents`, `cypher-is-stretch`) are the
+  source of truth for THIS user's sessions; PIPELINE-DECISIONS.md is
+  the public-repo render of the same content. **Keep them in sync** —
+  if they drift, the public file wins (it's what other contributors
+  see).
+- A `STATUS.example.json` or bootstrap script that regenerates
+  STATUS.json from DEV-LOG / git history. Not blocking anything,
+  but useful for a fresh checkout.
+
 ### 2026-06-02 — license audit and notices before public push
 
 Audited every piece of third-party content tracked in the repo before

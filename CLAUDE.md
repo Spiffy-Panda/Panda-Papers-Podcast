@@ -15,8 +15,15 @@ This implies both repos live under the same parent directory (`UW Winter 26/`).
 
 See [PLAN.md](PLAN.md) for the original (paper-JSON-era) design;
 [SKILLS-PLAN.md](SKILLS-PLAN.md) for the current PDF-era architecture;
+[PIPELINE-DECISIONS.md](PIPELINE-DECISIONS.md) for the rules a worker
+skill or director needs to follow that aren't obvious from the
+architecture (audioscript schema policy, persona rotation, cadence,
+licensing of derivatives);
 [DEV-LOG.md](DEV-LOG.md) for session history (read the top entry to load
-recent context).
+recent context); and — if present locally —
+[CLAUDE.local.md](CLAUDE.local.md) (gitignored) for candid behind-the-
+scenes notes, parallel-session coordination, and sibling-repo silent-
+failure risks.
 
 ## Who's using this
 

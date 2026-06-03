@@ -2,6 +2,11 @@
 STATUS.json
 podcast_generation_state.json
 
+# Local-only project context — discoverable from CLAUDE.md's pointer,
+# but kept out of the public repo (candid framings of the public rules
+# in PIPELINE-DECISIONS.md, parallel-session notes, sibling-repo deps).
+CLAUDE.local.md
+
 # Playwright MCP scratch artifacts (page screenshots + console logs)
 .playwright-mcp/
 
