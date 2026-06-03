@@ -124,7 +124,10 @@
       "Bash(python dialog_to_audio.py \"input/steering_awareness/part_02.json\" --tag part_02 --output-dir \"output/steering_awareness\")",
       "Bash(python dialog_to_audio.py \"input/steering_awareness/part_03.json\" --tag part_03 --output-dir \"output/steering_awareness\")",
       "Bash(python dialog_to_audio.py \"input/steering_awareness/part_04.json\" --tag part_04 --output-dir \"output/steering_awareness\")",
-      "Bash(python dialog_to_audio.py \"input/steering_awareness/part_05.json\" --tag part_05 --output-dir \"output/steering_awareness\")"
+      "Bash(python dialog_to_audio.py \"input/steering_awareness/part_05.json\" --tag part_05 --output-dir \"output/steering_awareness\")",
+      "Bash(gh repo:*)",
+      "mcp__obsidian__get_vault_stats",
+      "mcp__obsidian__write_note"
     ]
   }
 }
