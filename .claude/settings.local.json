@@ -127,7 +127,10 @@
       "Bash(python dialog_to_audio.py \"input/steering_awareness/part_05.json\" --tag part_05 --output-dir \"output/steering_awareness\")",
       "Bash(gh repo:*)",
       "mcp__obsidian__get_vault_stats",
-      "mcp__obsidian__write_note"
+      "mcp__obsidian__write_note",
+      "Bash(git check-ignore *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)"
     ]
   }
 }
