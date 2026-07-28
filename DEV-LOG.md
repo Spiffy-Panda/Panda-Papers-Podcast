@@ -5,6 +5,68 @@ Append-only — newest entries on top. Each entry: date, what changed, why.
 
 ---
 
+## 2026-07-27 — first paper end-to-end: lost_in_simulation proves the new pipeline
+
+The CC BY proof-paper run that STATUS.json's next_actions had been
+asking for since June. *Lost in Simulation: LLM-Simulated Users are
+Unreliable Proxies for Human Users in Agentic Evaluations* (Seshadri
+et al., arXiv:2601.17087v2, CC BY 4.0) went dropoff → `paper.md` →
+section annotation → 6-part dialog script → 36:37 of rendered audio
+in one session. Every stage was a first: first real `pdf-sidecar`
+extraction, first `sections` annotation, first `podcast-scripter`
+run, first multi-part `render_audio` call.
+
+- **Intake** ([pdf-to-markdown](.claude/skills/pdf-to-markdown/SKILL.md)):
+  292 anchored paragraphs, contract verified (sequential ids, sha
+  match, spans bracket bytes). Panda supplied three dropoff copies
+  (PDF canonical + arXiv HTML export + reading-mode MD); the extras
+  became the QA reference. QA verdict: usable-with-caveats — nothing
+  missing, all 8 tables cell-accurate, but the ECE equation is
+  extraction garbage (p:41–44), ~60 anchors are figure-axis junk,
+  and decimals render as `67 _._ 8`. All fed into writer briefs.
+- **Sections**: `paper.spans.json` gained 31 sections covering all
+  292 paragraphs — the artifact `Workspace.ReadNewSections` has been
+  waiting on. That stub is now unblocked.
+- **New ruling codified** ([PIPELINE-DECISIONS.md](PIPELINE-DECISIONS.md)
+  "Scripter model tier"): writer subagents target **Sonnet**;
+  coordinator stays on the session model. Ruled by Panda this
+  session, mirrored to auto-memory.
+- **podcast-scripter** SKILL.md drafted (subagent, house style) and
+  immediately exercised: coordinator planned 6 parts from sections,
+  cast the rotation dimension as *quantitative-methods expert (Zira)
+  vs. human-centered interpreter (David)* — deliberate inversion of
+  the legacy bug — and fanned out 6 parallel Sonnet writers, one per
+  part. Rotation gate passed on all parts programmatically (whole
+  script: David leads questions 30–20, Zira leads explanations
+  59–46; both do both in every part). Output shape decision baked
+  into the SKILL: script lands at `papers/<slug>/podcast/script.json`
+  so the renderer augments the same file in place.
+- **Render** ([script-to-audio](.claude/skills/script-to-audio/SKILL.md)):
+  `render_audio` over raw Streamable-HTTP MCP (paper-coach's tools
+  weren't registered at session start — worth re-trusting `.mcp.json`
+  next boot). 6 WAVs, 2,196,847 ms total, timestamps inlined,
+  monotonicity verified.
+- **Housekeeping**: NOTICES.md gained the CC BY attribution;
+  STATUS.json rows finally caught up with the 06-03 overnight session
+  *and* this one (pdf-sidecar/pdf-to-markdown/script-to-audio/
+  podcast-scripter all functional now).
+
+Deferred for Panda's ruling: the **dead-name sweep** — license
+attributions in PIPELINE-DECISIONS.md, SteeringFollowup/LICENSE.md,
+output/odesteer/LICENSE.md, plus `C:\Users\<user>` absolute-path
+leaks in ~40 tracked `output/*_timestamps.json` files. Flagged, not
+changed — attribution names on licenses aren't something to rewrite
+unilaterally.
+
+Follow-ups the next slice should pick up: audition pass on the six
+WAVs (TTS pronunciation of "tau-Bench", "AAVE", "ECE" worth a spot
+listen), Panda's editorial pass on the new SKILL.md, and
+`Workspace.ReadNewSections` now that its input exists. Also noted:
+`start-servers.bat` printed a stray `'M' is not recognized` on
+launch — harmless this run, but worth a look.
+
+---
+
 ## 2026-06-03 — Panda's morning rulings codified
 
 Panda came back to the deferred items and answered. Codified the
