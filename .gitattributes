@@ -1,0 +1,7 @@
+# papers/<slug>/paper.md is immutable and sha256-pinned, and
+# paper.spans.json carries BYTE offsets into it. Line-ending
+# normalization on commit or checkout would silently break the
+# anchor/spans/checksum contract — keep these byte-exact.
+papers/**/paper.md -text
+papers/**/paper.spans.json -text
+papers/**/*.sha256 -text
