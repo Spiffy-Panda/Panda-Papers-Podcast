@@ -105,6 +105,29 @@ The legacy `podcast_generation_state.json` file continues to exist
 for the six already-rendered papers. Don't repurpose that name for
 new-pipeline state — fresh artifact path under `papers/<slug>/`.
 
+## Scripter model tier: Sonnet writes, coordinator may sit higher
+
+Ruled 2026-07-27. When `podcast-scripter` fans out work (per the
+cadence rule above), the **transcriber / translator / writer agents —
+the ones that turn paper sections into dialog lines — target Sonnet**
+(current: `claude-sonnet-5`). The **coordinator** — the pass that
+plans parts, assigns the per-paper persona rotation dimension, reviews
+drafts against the rotation rule, and stitches the final script — may
+run on a higher tier (Opus or the session's main model).
+
+Why: line-level dialog writing is high-volume, well-specified work
+once the persona brief and section assignment exist; Sonnet does it
+well at a fraction of the cost, and per-part subagent isolation
+already bounds the blast radius of a weak draft. Judgment-heavy steps
+(rotation dimension choice, cross-part continuity, regen decisions)
+are exactly where the higher tier earns its keep.
+
+Mechanically: `Agent`/`Workflow` fan-out passes `model: "sonnet"` for
+writer subagents and leaves the coordinator on the session model.
+If a writer draft repeatedly fails the rotation gate or misreads the
+paper, escalating that one part to the coordinator's tier is fine —
+escalation is an exception path, not the default.
+
 ## render_audio I/O contract
 
 Settled while implementing `AudioRenderer.cs` (2026-06-03). The renderer
