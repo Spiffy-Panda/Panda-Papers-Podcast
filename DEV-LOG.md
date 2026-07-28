@@ -5,6 +5,45 @@ Append-only — newest entries on top. Each entry: date, what changed, why.
 
 ---
 
+## 2026-07-27 — the popping was SAPI's resampler; render at native 16 kHz
+
+Panda reported rapid, small popping in the lost_in_simulation WAVs —
+"not quite fast enough to be static." Diagnosis walked down the
+stack and cleared each layer with measurements before finding it:
+
+- Junctions clean: zero-amplitude steps at all line/silence
+  boundaries (SAPI pads its per-line files with silence).
+- No clipping (0 samples near full scale).
+- System.Speech vs raw COM SAPI: byte-near-identical output — the
+  managed wrapper wasn't the problem, and legacy renders share the
+  same profile.
+- **Root cause:** David and Zira Desktop synthesize natively at
+  16 kHz, but `SetOutputToWaveFile` without an explicit format
+  defaults to 22.05 kHz, forcing SAPI's low-quality sample-rate
+  converter on every line. An ideal upsample of the voices' 16 kHz
+  output has *nothing* above 8.6 kHz (numerical floor); SAPI's
+  22.05 kHz output carries −35 to −39 dB of spectral-image junk
+  there — ~120 dB excess, riding on sibilants as rapid crackle.
+  The legacy WAVs have the same artifact (same converter, via
+  `SpFileStream`'s 22 kHz default); it was never a new-pipeline
+  regression, just newly noticed.
+
+**Fix:** `Speaker.SpeakToFileAsync` (sibling repo, commit `07bac64`
+on `../ai-verbal-coaching` master, local only — not pushed) now
+passes an explicit 16 kHz/16-bit/mono `SpeechAudioFormatInfo`. At
+the native rate no conversion runs; the voices produce nothing
+above 8 kHz, so the smaller container loses nothing. All six
+lost_in_simulation parts re-rendered: 16 kHz, timestamps
+re-inlined, junction steps still zero, file sizes down 27%. The
+player bridge is rate-agnostic, so nothing else changed.
+
+Note for a future slice: legacy `output/` WAVs still carry the
+artifact; re-rendering them through the new path (render_audio
+accepts single-part legacy JSON) would clean them if it ever
+matters.
+
+---
+
 ## 2026-07-27 — first paper end-to-end: lost_in_simulation proves the new pipeline
 
 The CC BY proof-paper run that STATUS.json's next_actions had been

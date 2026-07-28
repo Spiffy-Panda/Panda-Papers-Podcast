@@ -27,7 +27,7 @@
             5
           ],
           "start_ms": 0,
-          "end_ms": 23315.3
+          "end_ms": 23320
         },
         {
           "voice": "Microsoft Zira Desktop",
@@ -35,8 +35,8 @@
           "source_paragraphs": [
             7
           ],
-          "start_ms": 23815.3,
-          "end_ms": 39671.6
+          "start_ms": 23820,
+          "end_ms": 39680
         },
         {
           "voice": "Microsoft David Desktop",
@@ -44,8 +44,8 @@
           "source_paragraphs": [
             11
           ],
-          "start_ms": 40171.6,
-          "end_ms": 51673.9
+          "start_ms": 40180,
+          "end_ms": 51685
         },
         {
           "voice": "Microsoft Zira Desktop",
@@ -53,8 +53,8 @@
           "source_paragraphs": [
             11
           ],
-          "start_ms": 52173.9,
-          "end_ms": 65526
+          "start_ms": 52185,
+          "end_ms": 65540
         },
         {
           "voice": "Microsoft Zira Desktop",
@@ -62,8 +62,8 @@
           "source_paragraphs": [
             12
           ],
-          "start_ms": 66026,
-          "end_ms": 71629.3
+          "start_ms": 66040,
+          "end_ms": 71645
         },
         {
           "voice": "Microsoft David Desktop",
@@ -71,8 +71,8 @@
           "source_paragraphs": [
             7
           ],
-          "start_ms": 72129.3,
-          "end_ms": 90960
+          "start_ms": 72145,
+          "end_ms": 90980
         },
         {
           "voice": "Microsoft David Desktop",
@@ -80,8 +80,8 @@
           "source_paragraphs": [
             7
           ],
-          "start_ms": 91460,
-          "end_ms": 96188.7
+          "start_ms": 91480,
+          "end_ms": 96210
         },
         {
           "voice": "Microsoft Zira Desktop",
@@ -89,8 +89,8 @@
           "source_paragraphs": [
             7
           ],
-          "start_ms": 96688.7,
-          "end_ms": 115029.3
+          "start_ms": 96710,
+          "end_ms": 115055
         },
         {
           "voice": "Microsoft David Desktop",
@@ -98,8 +98,8 @@
           "source_paragraphs": [
             7
           ],
-          "start_ms": 115529.3,
-          "end_ms": 128611.5
+          "start_ms": 115555,
+          "end_ms": 128640
         },
         {
           "voice": "Microsoft Zira Desktop",
@@ -107,8 +107,8 @@
           "source_paragraphs": [
             7
           ],
-          "start_ms": 129111.5,
-          "end_ms": 142033.3
+          "start_ms": 129140,
+          "end_ms": 142065
         },
         {
           "voice": "Microsoft David Desktop",
@@ -116,8 +116,8 @@
           "source_paragraphs": [
             7
           ],
-          "start_ms": 142533.3,
-          "end_ms": 152861
+          "start_ms": 142565,
+          "end_ms": 152895
         },
         {
           "voice": "Microsoft Zira Desktop",
@@ -125,8 +125,8 @@
           "source_paragraphs": [
             7
           ],
-          "start_ms": 153361,
-          "end_ms": 168012.4
+          "start_ms": 153395,
+          "end_ms": 168050
         },
         {
           "voice": "Microsoft David Desktop",
@@ -134,8 +134,8 @@
           "source_paragraphs": [
             7
           ],
-          "start_ms": 168512.4,
-          "end_ms": 183164
+          "start_ms": 168550,
+          "end_ms": 183205
         },
         {
           "voice": "Microsoft Zira Desktop",
@@ -143,8 +143,8 @@
           "source_paragraphs": [
             7
           ],
-          "start_ms": 183664,
-          "end_ms": 206354
+          "start_ms": 183705,
+          "end_ms": 206400
         },
         {
           "voice": "Microsoft David Desktop",
@@ -152,8 +152,8 @@
           "source_paragraphs": [
             7
           ],
-          "start_ms": 206854,
-          "end_ms": 222410.3
+          "start_ms": 206900,
+          "end_ms": 222460
         },
         {
           "voice": "Microsoft Zira Desktop",
@@ -161,8 +161,8 @@
           "source_paragraphs": [
             9
           ],
-          "start_ms": 222910.3,
-          "end_ms": 235417.4
+          "start_ms": 222960,
+          "end_ms": 235470
         },
         {
           "voice": "Microsoft David Desktop",
@@ -170,8 +170,8 @@
           "source_paragraphs": [
             9
           ],
-          "start_ms": 235917.4,
-          "end_ms": 249793.8
+          "start_ms": 235970,
+          "end_ms": 249850
         },
         {
           "voice": "Microsoft Zira Desktop",
@@ -180,8 +180,8 @@
             9,
             11
           ],
-          "start_ms": 250293.8,
-          "end_ms": 270009.8
+          "start_ms": 250350,
+          "end_ms": 270070
         },
         {
           "voice": "Microsoft David Desktop",
@@ -189,8 +189,8 @@
           "source_paragraphs": [
             10
           ],
-          "start_ms": 270509.8,
-          "end_ms": 287081
+          "start_ms": 270570,
+          "end_ms": 287145
         },
         {
           "voice": "Microsoft Zira Desktop",
@@ -198,8 +198,8 @@
           "source_paragraphs": [
             10
           ],
-          "start_ms": 287581,
-          "end_ms": 295674.1
+          "start_ms": 287645,
+          "end_ms": 295740
         },
         {
           "voice": "Microsoft David Desktop",
@@ -208,8 +208,8 @@
             12,
             14
           ],
-          "start_ms": 296174.1,
-          "end_ms": 315389.7
+          "start_ms": 296240,
+          "end_ms": 315460
         },
         {
           "voice": "Microsoft Zira Desktop",
@@ -217,8 +217,8 @@
           "source_paragraphs": [
             14
           ],
-          "start_ms": 315889.7,
-          "end_ms": 335785.6
+          "start_ms": 315960,
+          "end_ms": 335860
         },
         {
           "voice": "Microsoft David Desktop",
@@ -226,8 +226,8 @@
           "source_paragraphs": [
             14
           ],
-          "start_ms": 336285.6,
-          "end_ms": 342254
+          "start_ms": 336360,
+          "end_ms": 342330
         },
         {
           "voice": "Microsoft Zira Desktop",
@@ -238,8 +238,8 @@
             16,
             17
           ],
-          "start_ms": 342754,
-          "end_ms": 363949.8
+          "start_ms": 342830,
+          "end_ms": 364030
         },
         {
           "voice": "Microsoft David Desktop",
@@ -248,8 +248,8 @@
             18,
             19
           ],
-          "start_ms": 364449.8,
-          "end_ms": 388909.2
+          "start_ms": 364530,
+          "end_ms": 388995
         },
         {
           "voice": "Microsoft Zira Desktop",
@@ -257,12 +257,12 @@
           "source_paragraphs": [
             7
           ],
-          "start_ms": 389409.2,
-          "end_ms": 403665.7
+          "start_ms": 389495,
+          "end_ms": 403755
         }
       ],
       "wav": "part_01.wav",
-      "total_duration_ms": 403665.7
+      "total_duration_ms": 403755
     },
     {
       "part_of": {
@@ -277,7 +277,7 @@
             21
           ],
           "start_ms": 0,
-          "end_ms": 9613
+          "end_ms": 9615
         },
         {
           "voice": "Microsoft David Desktop",
@@ -285,8 +285,8 @@
           "source_paragraphs": [
             21
           ],
-          "start_ms": 10113,
-          "end_ms": 28979
+          "start_ms": 10115,
+          "end_ms": 28985
         },
         {
           "voice": "Microsoft Zira Desktop",
@@ -294,8 +294,8 @@
           "source_paragraphs": [
             21
           ],
-          "start_ms": 29479,
-          "end_ms": 43005.7
+          "start_ms": 29485,
+          "end_ms": 43015
         },
         {
           "voice": "Microsoft David Desktop",
@@ -304,8 +304,8 @@
             22,
             24
           ],
-          "start_ms": 43505.7,
-          "end_ms": 64531.2
+          "start_ms": 43515,
+          "end_ms": 64545
         },
         {
           "voice": "Microsoft Zira Desktop",
@@ -313,8 +313,8 @@
           "source_paragraphs": [
             24
           ],
-          "start_ms": 65031.2,
-          "end_ms": 81977.3
+          "start_ms": 65045,
+          "end_ms": 81995
         },
         {
           "voice": "Microsoft David Desktop",
@@ -323,8 +323,8 @@
             24,
             27
           ],
-          "start_ms": 82477.3,
-          "end_ms": 92970.3
+          "start_ms": 82495,
+          "end_ms": 92990
         },
         {
           "voice": "Microsoft Zira Desktop",
@@ -333,8 +333,8 @@
             27,
             28
           ],
-          "start_ms": 93470.3,
-          "end_ms": 111486.2
+          "start_ms": 93490,
+          "end_ms": 111510
         },
         {
           "voice": "Microsoft David Desktop",
@@ -342,8 +342,8 @@
           "source_paragraphs": [
             28
           ],
-          "start_ms": 111986.2,
-          "end_ms": 118189.8
+          "start_ms": 112010,
+          "end_ms": 118215
         },
         {
           "voice": "Microsoft Zira Desktop",
@@ -351,8 +351,8 @@
           "source_paragraphs": [
             28
           ],
-          "start_ms": 118689.8,
-          "end_ms": 139235.4
+          "start_ms": 118715,
+          "end_ms": 139265
         },
         {
           "voice": "Microsoft David Desktop",
@@ -360,8 +360,8 @@
           "source_paragraphs": [
             30
           ],
-          "start_ms": 139735.4,
-          "end_ms": 145309.1
+          "start_ms": 139765,
+          "end_ms": 145340
         },
         {
           "voice": "Microsoft Zira Desktop",
@@ -369,8 +369,8 @@
           "source_paragraphs": [
             30
           ],
-          "start_ms": 145809.1,
-          "end_ms": 159765.5
+          "start_ms": 145840,
+          "end_ms": 159800
         },
         {
           "voice": "Microsoft Zira Desktop",
@@ -378,8 +378,8 @@
           "source_paragraphs": [
             32
           ],
-          "start_ms": 160265.5,
-          "end_ms": 189135.2
+          "start_ms": 160300,
+          "end_ms": 189175
         },
         {
           "voice": "Microsoft David Desktop",
@@ -387,8 +387,8 @@
           "source_paragraphs": [
             34
           ],
-          "start_ms": 189635.2,
-          "end_ms": 202472.3
+          "start_ms": 189675,
+          "end_ms": 202515
         },
         {
           "voice": "Microsoft Zira Desktop",
@@ -396,8 +396,8 @@
           "source_paragraphs": [
             34
           ],
-          "start_ms": 202972.3,
-          "end_ms": 206506.3
+          "start_ms": 203015,
+          "end_ms": 206550
         },
         {
           "voice": "Microsoft David Desktop",
@@ -405,8 +405,8 @@
           "source_paragraphs": [
             34
           ],
-          "start_ms": 207006.3,
-          "end_ms": 229646.1
+          "start_ms": 207050,
+          "end_ms": 229695
         },
         {
           "voice": "Microsoft Zira Desktop",
@@ -414,8 +414,8 @@
           "source_paragraphs": [
             34
           ],
-          "start_ms": 230146.1,
-          "end_ms": 233210
+          "start_ms": 230195,
+          "end_ms": 233260
         },
         {
           "voice": "Microsoft David Desktop",
@@ -423,8 +423,8 @@
           "source_paragraphs": [
             34
           ],
-          "start_ms": 233710,
-          "end_ms": 264083.9
+          "start_ms": 233760,
+          "end_ms": 264140
         },
         {
           "voice": "Microsoft Zira Desktop",
@@ -432,8 +432,8 @@
           "source_paragraphs": [
             34
           ],
-          "start_ms": 264583.9,
-          "end_ms": 267997.9
+          "start_ms": 264640,
+          "end_ms": 268055
         },
         {
           "voice": "Microsoft David Desktop",
@@ -442,8 +442,8 @@
             34,
             37
           ],
-          "start_ms": 268497.9,
-          "end_ms": 287369.5
+          "start_ms": 268555,
+          "end_ms": 287430
         },
         {
           "voice": "Microsoft Zira Desktop",
@@ -451,8 +451,8 @@
           "source_paragraphs": [
             39
           ],
-          "start_ms": 287869.5,
-          "end_ms": 304585.6
+          "start_ms": 287930,
+          "end_ms": 304650
         },
         {
           "voice": "Microsoft David Desktop",
@@ -460,8 +460,8 @@
           "source_paragraphs": [
             40
           ],
-          "start_ms": 305085.6,
-          "end_ms": 315888.4
+          "start_ms": 305150,
+          "end_ms": 315955
         },
         {
           "voice": "Microsoft Zira Desktop",
@@ -469,8 +469,8 @@
           "source_paragraphs": [
             40
           ],
-          "start_ms": 316388.4,
-          "end_ms": 341787.4
+          "start_ms": 316455,
+          "end_ms": 341860
         },
         {
           "voice": "Microsoft David Desktop",
@@ -478,8 +478,8 @@
           "source_paragraphs": [
             40
           ],
-          "start_ms": 342287.4,
-          "end_ms": 352435
+          "start_ms": 342360,
+          "end_ms": 352510
         },
         {
           "voice": "Microsoft Zira Desktop",
@@ -487,12 +487,12 @@
           "source_paragraphs": [
             40
           ],
-          "start_ms": 352935,
-          "end_ms": 368721.4
+          "start_ms": 353010,
+          "end_ms": 368800
         }
       ],
       "wav": "part_02.wav",
-      "total_duration_ms": 368721.4
+      "total_duration_ms": 368800
     },
     {
       "part_of": {
@@ -509,7 +509,7 @@
             53
           ],
           "start_ms": 0,
-          "end_ms": 11422.4
+          "end_ms": 11425
         },
         {
           "voice": "Microsoft David Desktop",
@@ -517,8 +517,8 @@
           "source_paragraphs": [
             53
           ],
-          "start_ms": 11922.4,
-          "end_ms": 14951.3
+          "start_ms": 11925,
+          "end_ms": 14955
         },
         {
           "voice": "Microsoft Zira Desktop",
@@ -526,8 +526,8 @@
           "source_paragraphs": [
             53
           ],
-          "start_ms": 15451.3,
-          "end_ms": 38057.4
+          "start_ms": 15455,
+          "end_ms": 38065
         },
         {
           "voice": "Microsoft David Desktop",
@@ -535,8 +535,8 @@
           "source_paragraphs": [
             53
           ],
-          "start_ms": 38557.4,
-          "end_ms": 49884.9
+          "start_ms": 38565,
+          "end_ms": 49895
         },
         {
           "voice": "Microsoft Zira Desktop",
@@ -544,8 +544,8 @@
           "source_paragraphs": [
             53
           ],
-          "start_ms": 50384.9,
-          "end_ms": 62236.9
+          "start_ms": 50395,
+          "end_ms": 62250
         },
         {
           "voice": "Microsoft David Desktop",
@@ -553,8 +553,8 @@
           "source_paragraphs": [
             53
           ],
-          "start_ms": 62736.9,
-          "end_ms": 69375
+          "start_ms": 62750,
+          "end_ms": 69390
         },
         {
           "voice": "Microsoft Zira Desktop",
@@ -562,8 +562,8 @@
           "source_paragraphs": [
             53
           ],
-          "start_ms": 69875,
-          "end_ms": 91690.6
+          "start_ms": 69890,
+          "end_ms": 91710
         },
         {
           "voice": "Microsoft David Desktop",
@@ -571,8 +571,8 @@
           "source_paragraphs": [
             53
           ],
-          "start_ms": 92190.6,
-          "end_ms": 97014.3
+          "start_ms": 92210,
+          "end_ms": 97035
         },
         {
           "voice": "Microsoft Zira Desktop",
@@ -580,8 +580,8 @@
           "source_paragraphs": [
             53
           ],
-          "start_ms": 97514.3,
-          "end_ms": 109051.4
+          "start_ms": 97535,
+          "end_ms": 109075
         },
         {
           "voice": "Microsoft David Desktop",
@@ -589,8 +589,8 @@
           "source_paragraphs": [
             53
           ],
-          "start_ms": 109551.4,
-          "end_ms": 119249.2
+          "start_ms": 109575,
+          "end_ms": 119275
         },
         {
           "voice": "Microsoft Zira Desktop",
@@ -598,8 +598,8 @@
           "source_paragraphs": [
             53
           ],
-          "start_ms": 119749.2,
-          "end_ms": 126916.9
+          "start_ms": 119775,
+          "end_ms": 126945
         },
         {
           "voice": "Microsoft David Desktop",
@@ -607,8 +607,8 @@
           "source_paragraphs": [
             53
           ],
-          "start_ms": 127416.9,
-          "end_ms": 135629.6
+          "start_ms": 127445,
+          "end_ms": 135660
         },
         {
           "voice": "Microsoft Zira Desktop",
@@ -616,8 +616,8 @@
           "source_paragraphs": [
             54
           ],
-          "start_ms": 136129.6,
-          "end_ms": 152440.5
+          "start_ms": 136160,
+          "end_ms": 152475
         },
         {
           "voice": "Microsoft David Desktop",
@@ -625,8 +625,8 @@
           "source_paragraphs": [
             64
           ],
-          "start_ms": 152940.5,
-          "end_ms": 169781.6
+          "start_ms": 152975,
+          "end_ms": 169820
         },
         {
           "voice": "Microsoft Zira Desktop",
@@ -634,8 +634,8 @@
           "source_paragraphs": [
             65
           ],
-          "start_ms": 170281.6,
-          "end_ms": 186618.3
+          "start_ms": 170320,
+          "end_ms": 186660
         },
         {
           "voice": "Microsoft David Desktop",
@@ -643,8 +643,8 @@
           "source_paragraphs": [
             65
           ],
-          "start_ms": 187118.3,
-          "end_ms": 192441.7
+          "start_ms": 187160,
+          "end_ms": 192485
         },
         {
           "voice": "Microsoft Zira Desktop",
@@ -652,8 +652,8 @@
           "source_paragraphs": [
             65
           ],
-          "start_ms": 192941.7,
-          "end_ms": 200614.2
+          "start_ms": 192985,
+          "end_ms": 200660
         },
         {
           "voice": "Microsoft David Desktop",
@@ -661,8 +661,8 @@
           "source_paragraphs": [
             66
           ],
-          "start_ms": 201114.2,
-          "end_ms": 203383.3
+          "start_ms": 201160,
+          "end_ms": 203430
         },
         {
           "voice": "Microsoft Zira Desktop",
@@ -670,8 +670,8 @@
           "source_paragraphs": [
             66
           ],
-          "start_ms": 203883.3,
-          "end_ms": 221043.9
+          "start_ms": 203930,
+          "end_ms": 221095
         },
         {
           "voice": "Microsoft David Desktop",
@@ -679,8 +679,8 @@
           "source_paragraphs": [
             63
           ],
-          "start_ms": 221543.9,
-          "end_ms": 235850.4
+          "start_ms": 221595,
+          "end_ms": 235905
         },
         {
           "voice": "Microsoft Zira Desktop",
@@ -688,8 +688,8 @@
           "source_paragraphs": [
             66
           ],
-          "start_ms": 236350.4,
-          "end_ms": 249122.3
+          "start_ms": 236405,
+          "end_ms": 249180
         },
         {
           "voice": "Microsoft David Desktop",
@@ -697,8 +697,8 @@
           "source_paragraphs": [
             66
           ],
-          "start_ms": 249622.3,
-          "end_ms": 256715.4
+          "start_ms": 249680,
+          "end_ms": 256775
         },
         {
           "voice": "Microsoft Zira Desktop",
@@ -706,8 +706,8 @@
           "source_paragraphs": [
             66
           ],
-          "start_ms": 257215.4,
-          "end_ms": 276761
+          "start_ms": 257275,
+          "end_ms": 276825
         },
         {
           "voice": "Microsoft David Desktop",
@@ -715,8 +715,8 @@
           "source_paragraphs": [
             66
           ],
-          "start_ms": 277261,
-          "end_ms": 286493.7
+          "start_ms": 277325,
+          "end_ms": 286560
         },
         {
           "voice": "Microsoft Zira Desktop",
@@ -724,8 +724,8 @@
           "source_paragraphs": [
             66
           ],
-          "start_ms": 286993.7,
-          "end_ms": 295581.5
+          "start_ms": 287060,
+          "end_ms": 295650
         },
         {
           "voice": "Microsoft David Desktop",
@@ -733,12 +733,12 @@
           "source_paragraphs": [
             66
           ],
-          "start_ms": 296081.5,
-          "end_ms": 316651.7
+          "start_ms": 296150,
+          "end_ms": 316725
         }
       ],
       "wav": "part_03.wav",
-      "total_duration_ms": 316651.7
+      "total_duration_ms": 316725
     },
     {
       "part_of": {
@@ -754,7 +754,7 @@
             68
           ],
           "start_ms": 0,
-          "end_ms": 10947.7
+          "end_ms": 10950
         },
         {
           "voice": "Microsoft Zira Desktop",
@@ -762,8 +762,8 @@
           "source_paragraphs": [
             68
           ],
-          "start_ms": 11447.7,
-          "end_ms": 27574.6
+          "start_ms": 11450,
+          "end_ms": 27580
         },
         {
           "voice": "Microsoft Zira Desktop",
@@ -771,8 +771,8 @@
           "source_paragraphs": [
             72
           ],
-          "start_ms": 28074.6,
-          "end_ms": 38326.8
+          "start_ms": 28080,
+          "end_ms": 38335
         },
         {
           "voice": "Microsoft David Desktop",
@@ -780,8 +780,8 @@
           "source_paragraphs": [
             72
           ],
-          "start_ms": 38826.8,
-          "end_ms": 54513.4
+          "start_ms": 38835,
+          "end_ms": 54525
         },
         {
           "voice": "Microsoft David Desktop",
@@ -789,8 +789,8 @@
           "source_paragraphs": [
             72
           ],
-          "start_ms": 55013.4,
-          "end_ms": 58332.4
+          "start_ms": 55025,
+          "end_ms": 58345
         },
         {
           "voice": "Microsoft Zira Desktop",
@@ -798,8 +798,8 @@
           "source_paragraphs": [
             72
           ],
-          "start_ms": 58832.4,
-          "end_ms": 104924
+          "start_ms": 58845,
+          "end_ms": 104945
         },
         {
           "voice": "Microsoft David Desktop",
@@ -807,8 +807,8 @@
           "source_paragraphs": [
             72
           ],
-          "start_ms": 105424,
-          "end_ms": 123095.2
+          "start_ms": 105445,
+          "end_ms": 123120
         },
         {
           "voice": "Microsoft Zira Desktop",
@@ -816,8 +816,8 @@
           "source_paragraphs": [
             72
           ],
-          "start_ms": 123595.2,
-          "end_ms": 131898
+          "start_ms": 123620,
+          "end_ms": 131925
         },
         {
           "voice": "Microsoft David Desktop",
@@ -825,8 +825,8 @@
           "source_paragraphs": [
             72
           ],
-          "start_ms": 132398,
-          "end_ms": 152489.6
+          "start_ms": 132425,
+          "end_ms": 152520
         },
         {
           "voice": "Microsoft David Desktop",
@@ -834,8 +834,8 @@
           "source_paragraphs": [
             69
           ],
-          "start_ms": 152989.6,
-          "end_ms": 156103.6
+          "start_ms": 153020,
+          "end_ms": 156135
         },
         {
           "voice": "Microsoft Zira Desktop",
@@ -844,8 +844,8 @@
             69,
             70
           ],
-          "start_ms": 156603.6,
-          "end_ms": 196672
+          "start_ms": 156635,
+          "end_ms": 196710
         },
         {
           "voice": "Microsoft Zira Desktop",
@@ -853,8 +853,8 @@
           "source_paragraphs": [
             72
           ],
-          "start_ms": 197172,
-          "end_ms": 222077.7
+          "start_ms": 197210,
+          "end_ms": 222120
         },
         {
           "voice": "Microsoft David Desktop",
@@ -862,8 +862,8 @@
           "source_paragraphs": [
             123
           ],
-          "start_ms": 222577.7,
-          "end_ms": 231650.4
+          "start_ms": 222620,
+          "end_ms": 231695
         },
         {
           "voice": "Microsoft Zira Desktop",
@@ -872,8 +872,8 @@
             122,
             123
           ],
-          "start_ms": 232150.4,
-          "end_ms": 251061.8
+          "start_ms": 232195,
+          "end_ms": 251110
         },
         {
           "voice": "Microsoft David Desktop",
@@ -881,8 +881,8 @@
           "source_paragraphs": [
             123
           ],
-          "start_ms": 251561.8,
-          "end_ms": 256510.4
+          "start_ms": 251610,
+          "end_ms": 256560
         },
         {
           "voice": "Microsoft Zira Desktop",
@@ -890,8 +890,8 @@
           "source_paragraphs": [
             123
           ],
-          "start_ms": 257010.4,
-          "end_ms": 276691.9
+          "start_ms": 257060,
+          "end_ms": 276745
         },
         {
           "voice": "Microsoft David Desktop",
@@ -900,8 +900,8 @@
             71,
             124
           ],
-          "start_ms": 277191.9,
-          "end_ms": 284445.3
+          "start_ms": 277245,
+          "end_ms": 284500
         },
         {
           "voice": "Microsoft Zira Desktop",
@@ -909,8 +909,8 @@
           "source_paragraphs": [
             125
           ],
-          "start_ms": 284945.3,
-          "end_ms": 303766.1
+          "start_ms": 285000,
+          "end_ms": 303825
         },
         {
           "voice": "Microsoft Zira Desktop",
@@ -918,8 +918,8 @@
           "source_paragraphs": [
             125
           ],
-          "start_ms": 304266.1,
-          "end_ms": 309224.6
+          "start_ms": 304325,
+          "end_ms": 309285
         },
         {
           "voice": "Microsoft David Desktop",
@@ -928,8 +928,8 @@
             125,
             128
           ],
-          "start_ms": 309724.6,
-          "end_ms": 323761.7
+          "start_ms": 309785,
+          "end_ms": 323825
         },
         {
           "voice": "Microsoft Zira Desktop",
@@ -938,8 +938,8 @@
             126,
             129
           ],
-          "start_ms": 324261.7,
-          "end_ms": 332384.7
+          "start_ms": 324325,
+          "end_ms": 332450
         },
         {
           "voice": "Microsoft David Desktop",
@@ -948,8 +948,8 @@
             126,
             129
           ],
-          "start_ms": 332884.7,
-          "end_ms": 366588.4
+          "start_ms": 332950,
+          "end_ms": 366660
         },
         {
           "voice": "Microsoft David Desktop",
@@ -957,8 +957,8 @@
           "source_paragraphs": [
             129
           ],
-          "start_ms": 367088.4,
-          "end_ms": 380355.4
+          "start_ms": 367160,
+          "end_ms": 380430
         },
         {
           "voice": "Microsoft Zira Desktop",
@@ -967,8 +967,8 @@
             129,
             171
           ],
-          "start_ms": 380855.4,
-          "end_ms": 398251.5
+          "start_ms": 380930,
+          "end_ms": 398330
         },
         {
           "voice": "Microsoft David Desktop",
@@ -976,8 +976,8 @@
           "source_paragraphs": [
             129
           ],
-          "start_ms": 398751.5,
-          "end_ms": 408864
+          "start_ms": 398830,
+          "end_ms": 408945
         },
         {
           "voice": "Microsoft Zira Desktop",
@@ -985,12 +985,12 @@
           "source_paragraphs": [
             129
           ],
-          "start_ms": 409364,
-          "end_ms": 423275.8
+          "start_ms": 409445,
+          "end_ms": 423360
         }
       ],
       "wav": "part_04.wav",
-      "total_duration_ms": 423275.8
+      "total_duration_ms": 423360
     },
     {
       "part_of": {
@@ -1006,7 +1006,7 @@
             173
           ],
           "start_ms": 0,
-          "end_ms": 12937.3
+          "end_ms": 12940
         },
         {
           "voice": "Microsoft David Desktop",
@@ -1014,8 +1014,8 @@
           "source_paragraphs": [
             174
           ],
-          "start_ms": 13437.3,
-          "end_ms": 21865.2
+          "start_ms": 13440,
+          "end_ms": 21870
         },
         {
           "voice": "Microsoft Zira Desktop",
@@ -1023,8 +1023,8 @@
           "source_paragraphs": [
             174
           ],
-          "start_ms": 22365.2,
-          "end_ms": 37156.8
+          "start_ms": 22370,
+          "end_ms": 37165
         },
         {
           "voice": "Microsoft David Desktop",
@@ -1032,8 +1032,8 @@
           "source_paragraphs": [
             174
           ],
-          "start_ms": 37656.8,
-          "end_ms": 42420.5
+          "start_ms": 37665,
+          "end_ms": 42430
         },
         {
           "voice": "Microsoft Zira Desktop",
@@ -1041,8 +1041,8 @@
           "source_paragraphs": [
             174
           ],
-          "start_ms": 42920.5,
-          "end_ms": 64121.1
+          "start_ms": 42930,
+          "end_ms": 64135
         },
         {
           "voice": "Microsoft David Desktop",
@@ -1050,8 +1050,8 @@
           "source_paragraphs": [
             174
           ],
-          "start_ms": 64621.1,
-          "end_ms": 76508.5
+          "start_ms": 64635,
+          "end_ms": 76525
         },
         {
           "voice": "Microsoft Zira Desktop",
@@ -1059,8 +1059,8 @@
           "source_paragraphs": [
             174
           ],
-          "start_ms": 77008.5,
-          "end_ms": 87850.9
+          "start_ms": 77025,
+          "end_ms": 87870
         },
         {
           "voice": "Microsoft David Desktop",
@@ -1068,8 +1068,8 @@
           "source_paragraphs": [
             175
           ],
-          "start_ms": 88350.9,
-          "end_ms": 100578.3
+          "start_ms": 88370,
+          "end_ms": 100600
         },
         {
           "voice": "Microsoft Zira Desktop",
@@ -1077,8 +1077,8 @@
           "source_paragraphs": [
             175
           ],
-          "start_ms": 101078.3,
-          "end_ms": 126012.4
+          "start_ms": 101100,
+          "end_ms": 126040
         },
         {
           "voice": "Microsoft David Desktop",
@@ -1086,8 +1086,8 @@
           "source_paragraphs": [
             175
           ],
-          "start_ms": 126512.4,
-          "end_ms": 138674.6
+          "start_ms": 126540,
+          "end_ms": 138705
         },
         {
           "voice": "Microsoft Zira Desktop",
@@ -1095,8 +1095,8 @@
           "source_paragraphs": [
             175
           ],
-          "start_ms": 139174.6,
-          "end_ms": 152221.5
+          "start_ms": 139205,
+          "end_ms": 152255
         },
         {
           "voice": "Microsoft David Desktop",
@@ -1104,8 +1104,8 @@
           "source_paragraphs": [
             176
           ],
-          "start_ms": 152721.5,
-          "end_ms": 167728.3
+          "start_ms": 152755,
+          "end_ms": 167765
         },
         {
           "voice": "Microsoft Zira Desktop",
@@ -1113,8 +1113,8 @@
           "source_paragraphs": [
             177
           ],
-          "start_ms": 168228.3,
-          "end_ms": 182880.5
+          "start_ms": 168265,
+          "end_ms": 182920
         },
         {
           "voice": "Microsoft David Desktop",
@@ -1122,8 +1122,8 @@
           "source_paragraphs": [
             177
           ],
-          "start_ms": 183380.5,
-          "end_ms": 188589
+          "start_ms": 183420,
+          "end_ms": 188630
         },
         {
           "voice": "Microsoft Zira Desktop",
@@ -1131,8 +1131,8 @@
           "source_paragraphs": [
             178
           ],
-          "start_ms": 189089,
-          "end_ms": 205404.9
+          "start_ms": 189130,
+          "end_ms": 205450
         },
         {
           "voice": "Microsoft David Desktop",
@@ -1140,8 +1140,8 @@
           "source_paragraphs": [
             178
           ],
-          "start_ms": 205904.9,
-          "end_ms": 212978.1
+          "start_ms": 205950,
+          "end_ms": 213025
         },
         {
           "voice": "Microsoft Zira Desktop",
@@ -1149,8 +1149,8 @@
           "source_paragraphs": [
             178
           ],
-          "start_ms": 213478.1,
-          "end_ms": 232978.7
+          "start_ms": 213525,
+          "end_ms": 233030
         },
         {
           "voice": "Microsoft David Desktop",
@@ -1158,8 +1158,8 @@
           "source_paragraphs": [
             178
           ],
-          "start_ms": 233478.7,
-          "end_ms": 239672.2
+          "start_ms": 233530,
+          "end_ms": 239725
         },
         {
           "voice": "Microsoft Zira Desktop",
@@ -1167,8 +1167,8 @@
           "source_paragraphs": [
             178
           ],
-          "start_ms": 240172.2,
-          "end_ms": 259337.9
+          "start_ms": 240225,
+          "end_ms": 259395
         },
         {
           "voice": "Microsoft David Desktop",
@@ -1176,8 +1176,8 @@
           "source_paragraphs": [
             178
           ],
-          "start_ms": 259837.9,
-          "end_ms": 273304.8
+          "start_ms": 259895,
+          "end_ms": 273365
         },
         {
           "voice": "Microsoft Zira Desktop",
@@ -1185,8 +1185,8 @@
           "source_paragraphs": [
             178
           ],
-          "start_ms": 273804.8,
-          "end_ms": 285862
+          "start_ms": 273865,
+          "end_ms": 285925
         },
         {
           "voice": "Microsoft David Desktop",
@@ -1194,8 +1194,8 @@
           "source_paragraphs": [
             179
           ],
-          "start_ms": 286362,
-          "end_ms": 295820
+          "start_ms": 286425,
+          "end_ms": 295885
         },
         {
           "voice": "Microsoft Zira Desktop",
@@ -1204,8 +1204,8 @@
             179,
             184
           ],
-          "start_ms": 296320,
-          "end_ms": 313460.6
+          "start_ms": 296385,
+          "end_ms": 313530
         },
         {
           "voice": "Microsoft David Desktop",
@@ -1214,8 +1214,8 @@
             184,
             186
           ],
-          "start_ms": 313960.6,
-          "end_ms": 321848.8
+          "start_ms": 314030,
+          "end_ms": 321920
         },
         {
           "voice": "Microsoft Zira Desktop",
@@ -1224,8 +1224,8 @@
             184,
             186
           ],
-          "start_ms": 322348.8,
-          "end_ms": 338914.9
+          "start_ms": 322420,
+          "end_ms": 338990
         },
         {
           "voice": "Microsoft David Desktop",
@@ -1235,8 +1235,8 @@
             185,
             186
           ],
-          "start_ms": 339414.9,
-          "end_ms": 362030
+          "start_ms": 339490,
+          "end_ms": 362110
         },
         {
           "voice": "Microsoft Zira Desktop",
@@ -1244,12 +1244,12 @@
           "source_paragraphs": [
             186
           ],
-          "start_ms": 362530,
-          "end_ms": 372467.9
+          "start_ms": 362610,
+          "end_ms": 372550
         }
       ],
       "wav": "part_05.wav",
-      "total_duration_ms": 372467.9
+      "total_duration_ms": 372550
     },
     {
       "part_of": {
@@ -1265,7 +1265,7 @@
             189
           ],
           "start_ms": 0,
-          "end_ms": 12917.1
+          "end_ms": 12920
         },
         {
           "voice": "Microsoft David Desktop",
@@ -1273,8 +1273,8 @@
           "source_paragraphs": [
             188
           ],
-          "start_ms": 13417.1,
-          "end_ms": 29623.3
+          "start_ms": 13420,
+          "end_ms": 29630
         },
         {
           "voice": "Microsoft Zira Desktop",
@@ -1282,8 +1282,8 @@
           "source_paragraphs": [
             189
           ],
-          "start_ms": 30123.3,
-          "end_ms": 45659.4
+          "start_ms": 30130,
+          "end_ms": 45670
         },
         {
           "voice": "Microsoft David Desktop",
@@ -1291,8 +1291,8 @@
           "source_paragraphs": [
             189
           ],
-          "start_ms": 46159.4,
-          "end_ms": 53802.7
+          "start_ms": 46170,
+          "end_ms": 53815
         },
         {
           "voice": "Microsoft Zira Desktop",
@@ -1300,8 +1300,8 @@
           "source_paragraphs": [
             189
           ],
-          "start_ms": 54302.7,
-          "end_ms": 67579.4
+          "start_ms": 54315,
+          "end_ms": 67595
         },
         {
           "voice": "Microsoft David Desktop",
@@ -1309,8 +1309,8 @@
           "source_paragraphs": [
             189
           ],
-          "start_ms": 68079.4,
-          "end_ms": 75997.2
+          "start_ms": 68095,
+          "end_ms": 76015
         },
         {
           "voice": "Microsoft Zira Desktop",
@@ -1318,8 +1318,8 @@
           "source_paragraphs": [
             188
           ],
-          "start_ms": 76497.2,
-          "end_ms": 87044.8
+          "start_ms": 76515,
+          "end_ms": 87065
         },
         {
           "voice": "Microsoft David Desktop",
@@ -1328,8 +1328,8 @@
             191,
             192
           ],
-          "start_ms": 87544.8,
-          "end_ms": 94223.2
+          "start_ms": 87565,
+          "end_ms": 94245
         },
         {
           "voice": "Microsoft Zira Desktop",
@@ -1337,8 +1337,8 @@
           "source_paragraphs": [
             192
           ],
-          "start_ms": 94723.2,
-          "end_ms": 113154.1
+          "start_ms": 94745,
+          "end_ms": 113180
         },
         {
           "voice": "Microsoft David Desktop",
@@ -1346,8 +1346,8 @@
           "source_paragraphs": [
             192
           ],
-          "start_ms": 113654.1,
-          "end_ms": 117563
+          "start_ms": 113680,
+          "end_ms": 117590
         },
         {
           "voice": "Microsoft Zira Desktop",
@@ -1355,8 +1355,8 @@
           "source_paragraphs": [
             192
           ],
-          "start_ms": 118063,
-          "end_ms": 134609.6
+          "start_ms": 118090,
+          "end_ms": 134640
         },
         {
           "voice": "Microsoft David Desktop",
@@ -1364,8 +1364,8 @@
           "source_paragraphs": [
             192
           ],
-          "start_ms": 135109.6,
-          "end_ms": 140598.3
+          "start_ms": 135140,
+          "end_ms": 140630
         },
         {
           "voice": "Microsoft Zira Desktop",
@@ -1374,8 +1374,8 @@
             192,
             251
           ],
-          "start_ms": 141098.3,
-          "end_ms": 155740
+          "start_ms": 141130,
+          "end_ms": 155775
         },
         {
           "voice": "Microsoft David Desktop",
@@ -1383,8 +1383,8 @@
           "source_paragraphs": [
             189
           ],
-          "start_ms": 156240,
-          "end_ms": 167827.3
+          "start_ms": 156275,
+          "end_ms": 167865
         },
         {
           "voice": "Microsoft Zira Desktop",
@@ -1392,8 +1392,8 @@
           "source_paragraphs": [
             189
           ],
-          "start_ms": 168327.3,
-          "end_ms": 172606
+          "start_ms": 168365,
+          "end_ms": 172645
         },
         {
           "voice": "Microsoft David Desktop",
@@ -1401,8 +1401,8 @@
           "source_paragraphs": [
             189
           ],
-          "start_ms": 173106,
-          "end_ms": 184543.4
+          "start_ms": 173145,
+          "end_ms": 184585
         },
         {
           "voice": "Microsoft Zira Desktop",
@@ -1410,8 +1410,8 @@
           "source_paragraphs": [
             276
           ],
-          "start_ms": 185043.4,
-          "end_ms": 197720.5
+          "start_ms": 185085,
+          "end_ms": 197765
         },
         {
           "voice": "Microsoft David Desktop",
@@ -1419,8 +1419,8 @@
           "source_paragraphs": [
             276
           ],
-          "start_ms": 198220.5,
-          "end_ms": 200359.7
+          "start_ms": 198265,
+          "end_ms": 200405
         },
         {
           "voice": "Microsoft Zira Desktop",
@@ -1429,8 +1429,8 @@
             276,
             277
           ],
-          "start_ms": 200859.7,
-          "end_ms": 220725.4
+          "start_ms": 200905,
+          "end_ms": 220775
         },
         {
           "voice": "Microsoft David Desktop",
@@ -1438,8 +1438,8 @@
           "source_paragraphs": [
             277
           ],
-          "start_ms": 221225.4,
-          "end_ms": 226963.8
+          "start_ms": 221275,
+          "end_ms": 227015
         },
         {
           "voice": "Microsoft Zira Desktop",
@@ -1448,8 +1448,8 @@
             189,
             277
           ],
-          "start_ms": 227463.8,
-          "end_ms": 240490.4
+          "start_ms": 227515,
+          "end_ms": 240545
         },
         {
           "voice": "Microsoft David Desktop",
@@ -1459,8 +1459,8 @@
             194,
             195
           ],
-          "start_ms": 240990.4,
-          "end_ms": 258291.8
+          "start_ms": 241045,
+          "end_ms": 258350
         },
         {
           "voice": "Microsoft Zira Desktop",
@@ -1468,8 +1468,8 @@
           "source_paragraphs": [
             195
           ],
-          "start_ms": 258791.8,
-          "end_ms": 271873.5
+          "start_ms": 258850,
+          "end_ms": 271935
         },
         {
           "voice": "Microsoft David Desktop",
@@ -1477,8 +1477,8 @@
           "source_paragraphs": [
             187
           ],
-          "start_ms": 272373.5,
-          "end_ms": 285701
+          "start_ms": 272435,
+          "end_ms": 285765
         },
         {
           "voice": "Microsoft Zira Desktop",
@@ -1487,8 +1487,8 @@
             188,
             189
           ],
-          "start_ms": 286201,
-          "end_ms": 300372.4
+          "start_ms": 286265,
+          "end_ms": 300440
         },
         {
           "voice": "Microsoft David Desktop",
@@ -1496,8 +1496,8 @@
           "source_paragraphs": [
             195
           ],
-          "start_ms": 300872.4,
-          "end_ms": 307580.6
+          "start_ms": 300940,
+          "end_ms": 307650
         },
         {
           "voice": "Microsoft Zira Desktop",
@@ -1505,14 +1505,14 @@
           "source_paragraphs": [
             187
           ],
-          "start_ms": 308080.6,
-          "end_ms": 312064.5
+          "start_ms": 308150,
+          "end_ms": 312135
         }
       ],
       "wav": "part_06.wav",
-      "total_duration_ms": 312064.5
+      "total_duration_ms": 312135
     }
   ],
-  "rendered_utc": "2026-07-28T04:00:53.8134032Z",
-  "total_duration_ms": 2196847
+  "rendered_utc": "2026-07-28T06:01:39.8500494Z",
+  "total_duration_ms": 2197325
 }
