@@ -1,0 +1,15 @@
+{
+  "title": "Lost in Simulation: LLM-Simulated Users are Unreliable Proxies for Human Users in Agentic Evaluations",
+  "authors": [
+    "Preethi Seshadri",
+    "Samuel Cahyawijaya",
+    "Ayomide Odumakinde",
+    "Sameer Singh",
+    "Seraphina Goldfarb-Tarrant"
+  ],
+  "year": 2026,
+  "doi": "10.48550/arXiv.2601.17087",
+  "source_url": "https://arxiv.org/abs/2601.17087",
+  "arxiv_version": "v2",
+  "license": "CC BY 4.0"
+}

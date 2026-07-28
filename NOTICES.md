@@ -14,6 +14,16 @@ where a folder contains content under a non-permissive license.
 
 These works may be redistributed and adapted with attribution.
 
+### Lost in Simulation — `papers/lost_in_simulation/`
+
+*Lost in Simulation: LLM-Simulated Users are Unreliable Proxies for Human
+Users in Agentic Evaluations* — Preethi Seshadri, Samuel Cahyawijaya,
+Ayomide Odumakinde, Sameer Singh, Seraphina Goldfarb-Tarrant. UC Irvine /
+Cohere. arXiv:[2601.17087](https://arxiv.org/abs/2601.17087). Licensed under
+[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Derivatives in
+this folder (markdown working copy, section-annotated spans, dialog script,
+synthesized audio) carry the same attribution.
+
 ### Identifiability — `SteeringFollowup/Identifiability_arXiv_2502.20914*.txt`
 
 *Everything, Everywhere, All at Once: Is Mechanistic Interpretability

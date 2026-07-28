@@ -1,0 +1,132 @@
+[
+  {
+    "voice": "Microsoft David Desktop",
+    "text": "Welcome back. Today we're digging into a paper called Lost in Simulation: LLM-Simulated Users are Unreliable Proxies for Human Users in Agentic Evaluations, by Preethi Seshadri, Samuel Cahyawijaya, Ayomide Odumakinde, Sameer Singh, and Seraphina Goldfarb-Tarrant, out of UC Irvine and Cohere, 2026.",
+    "source_paragraphs": [1, 2, 3, 4, 5]
+  },
+  {
+    "voice": "Microsoft Zira Desktop",
+    "text": "And the title is basically the whole thesis. Agentic benchmarks increasingly rely on LLM-simulated users to scalably evaluate agent performance, but the robustness, validity, and fairness of that entire approach have never really been examined.",
+    "source_paragraphs": [7]
+  },
+  {
+    "voice": "Microsoft David Desktop",
+    "text": "Wait, so when a benchmark tests how well an agent handles something like a customer service conversation, the customer on the other end is often just another AI pretending to be a person?",
+    "source_paragraphs": [11]
+  },
+  {
+    "voice": "Microsoft Zira Desktop",
+    "text": "Exactly. These benchmarks simulate the conversation between an LLM agent and a user, and the user is itself an LLM. It's cheaper and it scales, so it's become the default setup.",
+    "source_paragraphs": [11]
+  },
+  {
+    "voice": "Microsoft Zira Desktop",
+    "text": "But has anyone actually checked whether that stand-in behaves anything like a real person would?",
+    "source_paragraphs": [12]
+  },
+  {
+    "voice": "Microsoft David Desktop",
+    "text": "Apparently not, and that's exactly the gap this paper closes. The authors ran a user study with real participants across the United States, India, Kenya, and Nigeria, to test whether LLM-simulated users are reliable proxies for real human users on tau-Bench retail tasks.",
+    "source_paragraphs": [7]
+  },
+  {
+    "voice": "Microsoft David Desktop",
+    "text": "Four countries is a serious sample. What did they find?",
+    "source_paragraphs": [7]
+  },
+  {
+    "voice": "Microsoft Zira Desktop",
+    "text": "First problem: the simulation isn't even robust to itself. Agent success rates swing by up to 9 percentage points depending on which LLM plays the user. If the grader disagrees with itself that much, what does that mean for someone trying to trust these leaderboard numbers?",
+    "source_paragraphs": [7]
+  },
+  {
+    "voice": "Microsoft David Desktop",
+    "text": "It means the score depends on which fake customer you happen to draw, which is shaky ground for deciding an agent's ready to ship. What about matching real humans, not just agreeing with other simulators?",
+    "source_paragraphs": [7]
+  },
+  {
+    "voice": "Microsoft Zira Desktop",
+    "text": "That's the miscalibration finding. Evaluations using simulated users systematically underestimate agent performance on the most challenging tasks, and overestimate it on moderately difficult ones.",
+    "source_paragraphs": [7]
+  },
+  {
+    "voice": "Microsoft David Desktop",
+    "text": "So simulated evals make agents look worse exactly where the task is hardest, and look better right in the messy middle. That's the opposite of reassuring.",
+    "source_paragraphs": [7]
+  },
+  {
+    "voice": "Microsoft Zira Desktop",
+    "text": "It gets more pointed. African American Vernacular English speakers experience consistently worse success rates and worse calibration errors than Standard American English speakers, and those disparities compound significantly with age.",
+    "source_paragraphs": [7]
+  },
+  {
+    "voice": "Microsoft David Desktop",
+    "text": "So this isn't just noise in the measurement, it's a fairness problem. If the evaluation itself treats speech communities unevenly, a system that passes the benchmark could still be quietly failing the users who most need it to work.",
+    "source_paragraphs": [7]
+  },
+  {
+    "voice": "Microsoft Zira Desktop",
+    "text": "Right, and it's not only AAVE speakers. Simulated users turn out to be a differentially effective proxy across populations generally, performing worst for AAVE and Indian English speakers specifically. On top of that, simulated users introduce their own conversational artifacts and surface different failure patterns than human users do.",
+    "source_paragraphs": [7]
+  },
+  {
+    "voice": "Microsoft David Desktop",
+    "text": "Which is why the authors frame this as bigger than a leaderboard quirk. Current evaluation practice risks misrepresenting what agents can actually do across different user populations, and can obscure real-world deployment challenges until it's too late.",
+    "source_paragraphs": [7]
+  },
+  {
+    "voice": "Microsoft Zira Desktop",
+    "text": "That's the abstract. So why does it even matter this much whether agents handle sustained, multi-turn conversation instead of one-shot question and answer? What goes wrong if they don't?",
+    "source_paragraphs": [9]
+  },
+  {
+    "voice": "Microsoft David Desktop",
+    "text": "Because agents for everyday tasks like travel reservations, order management, and appointment scheduling are everywhere now, and a static, single-turn test just doesn't capture what they actually have to do in a real interaction.",
+    "source_paragraphs": [9]
+  },
+  {
+    "voice": "Microsoft Zira Desktop",
+    "text": "Right, so benchmarks evolved toward sustained, context-aware, multi-turn interaction, agents conversing naturally, following policies and instructions, making the right tool calls across many turns. To automate that at scale, the field simulates the user with an LLM too.",
+    "source_paragraphs": [9, 11]
+  },
+  {
+    "voice": "Microsoft David Desktop",
+    "text": "The paper actually shows that gap directly. There's a Figure 1 with side-by-side conversation snippets, a simulated user and a human user on the exact same task, and the simulated user asks more questions and comes across as noticeably more polite.",
+    "source_paragraphs": [10]
+  },
+  {
+    "voice": "Microsoft Zira Desktop",
+    "text": "So if even a two-line snippet gives it away, doesn't that call into question whether automated evaluation alone can be trusted here?",
+    "source_paragraphs": [10]
+  },
+  {
+    "voice": "Microsoft David Desktop",
+    "text": "That's exactly why the authors say relying on a single user simulation model is risky, results may just vary across different user LLMs, that's the robustness concern. And without checking against actual people, you can't know if simulated interactions really predict what happens with real ones.",
+    "source_paragraphs": [12, 14]
+  },
+  {
+    "voice": "Microsoft Zira Desktop",
+    "text": "There's a third piece too: these evaluations tend to treat users as one homogeneous group, when people actually vary widely in formality, verbosity, politeness norms, and linguistic background. Simulated users might approximate some populations far better than others, which is exactly the fairness risk.",
+    "source_paragraphs": [14]
+  },
+  {
+    "voice": "Microsoft David Desktop",
+    "text": "Wait, did prior work ever actually validate any of this against real people before now?",
+    "source_paragraphs": [14]
+  },
+  {
+    "voice": "Microsoft Zira Desktop",
+    "text": "No, that's precisely the gap. The authors boil it down to three questions: robustness, how consistent are evaluations across different user simulation LLMs; validity, do simulated users reliably proxy real human users; and fairness, does simulation represent some user groups better than others.",
+    "source_paragraphs": [14, 15, 16, 17]
+  },
+  {
+    "voice": "Microsoft David Desktop",
+    "text": "And using tau-Bench retail tasks as their case study, they confirm all three concerns are real: simulation lacks robustness, and it systematically misestimates performance compared to human users, underestimating success on the hardest tasks while overestimating outcomes on moderately difficult scenarios, on top of the demographic bias and conversational artifacts we already covered.",
+    "source_paragraphs": [18, 19]
+  },
+  {
+    "voice": "Microsoft Zira Desktop",
+    "text": "Next time, let's get into how they actually pulled this off, running tau-Bench retail tasks with real participants recruited across those four countries, and what it took to fairly compare a human against an LLM standing in for one.",
+    "source_paragraphs": [7]
+  }
+]

@@ -1,0 +1,1518 @@
+{
+  "paper_slug": "lost_in_simulation",
+  "rotation_dimension": "quantitative-methods expert (Zira) vs. human-centered interpreter (David) - Zira holds the technical-expert side for this paper",
+  "speaker_a": {
+    "voice": "Microsoft David Desktop",
+    "persona": "Human-centered AI / HCI interpreter. Explains fairness stakes, study design as it touches people, and real-world consequences in plain language; presses on what the numbers mean for actual users. Asks and explains in equal measure."
+  },
+  "speaker_b": {
+    "voice": "Microsoft Zira Desktop",
+    "persona": "Evaluation-methods and statistics expert. Owns the technical machinery - tau-Bench, pass rates, expected calibration error, GEE models - and explains it intuition-first; skeptical of overclaiming. Asks and explains in equal measure."
+  },
+  "parts": [
+    {
+      "part_of": {
+        "n": 1,
+        "total": 6
+      },
+      "lines": [
+        {
+          "voice": "Microsoft David Desktop",
+          "text": "Welcome back. Today we\u0027re digging into a paper called Lost in Simulation: LLM-Simulated Users are Unreliable Proxies for Human Users in Agentic Evaluations, by Preethi Seshadri, Samuel Cahyawijaya, Ayomide Odumakinde, Sameer Singh, and Seraphina Goldfarb-Tarrant, out of UC Irvine and Cohere, 2026.",
+          "source_paragraphs": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "start_ms": 0,
+          "end_ms": 23315.3
+        },
+        {
+          "voice": "Microsoft Zira Desktop",
+          "text": "And the title is basically the whole thesis. Agentic benchmarks increasingly rely on LLM-simulated users to scalably evaluate agent performance, but the robustness, validity, and fairness of that entire approach have never really been examined.",
+          "source_paragraphs": [
+            7
+          ],
+          "start_ms": 23815.3,
+          "end_ms": 39671.6
+        },
+        {
+          "voice": "Microsoft David Desktop",
+          "text": "Wait, so when a benchmark tests how well an agent handles something like a customer service conversation, the customer on the other end is often just another AI pretending to be a person?",
+          "source_paragraphs": [
+            11
+          ],
+          "start_ms": 40171.6,
+          "end_ms": 51673.9
+        },
+        {
+          "voice": "Microsoft Zira Desktop",
+          "text": "Exactly. These benchmarks simulate the conversation between an LLM agent and a user, and the user is itself an LLM. It\u0027s cheaper and it scales, so it\u0027s become the default setup.",
+          "source_paragraphs": [
+            11
+          ],
+          "start_ms": 52173.9,
+          "end_ms": 65526
+        },
+        {
+          "voice": "Microsoft Zira Desktop",
+          "text": "But has anyone actually checked whether that stand-in behaves anything like a real person would?",
+          "source_paragraphs": [
+            12
+          ],
+          "start_ms": 66026,
+          "end_ms": 71629.3
+        },
+        {
+          "voice": "Microsoft David Desktop",
+          "text": "Apparently not, and that\u0027s exactly the gap this paper closes. The authors ran a user study with real participants across the United States, India, Kenya, and Nigeria, to test whether LLM-simulated users are reliable proxies for real human users on tau-Bench retail tasks.",
+          "source_paragraphs": [
+            7
+          ],
+          "start_ms": 72129.3,
+          "end_ms": 90960
+        },
+        {
+          "voice": "Microsoft David Desktop",
+          "text": "Four countries is a serious sample. What did they find?",
+          "source_paragraphs": [
+            7
+          ],
+          "start_ms": 91460,
+          "end_ms": 96188.7
+        },
+        {
+          "voice": "Microsoft Zira Desktop",
+          "text": "First problem: the simulation isn\u0027t even robust to itself. Agent success rates swing by up to 9 percentage points depending on which LLM plays the user. If the grader disagrees with itself that much, what does that mean for someone trying to trust these leaderboard numbers?",
+          "source_paragraphs": [
+            7
+          ],
+          "start_ms": 96688.7,
+          "end_ms": 115029.3
+        },
+        {
+          "voice": "Microsoft David Desktop",
+          "text": "It means the score depends on which fake customer you happen to draw, which is shaky ground for deciding an agent\u0027s ready to ship. What about matching real humans, not just agreeing with other simulators?",
+          "source_paragraphs": [
+            7
+          ],
+          "start_ms": 115529.3,
+          "end_ms": 128611.5
+        },
+        {
+          "voice": "Microsoft Zira Desktop",
+          "text": "That\u0027s the miscalibration finding. Evaluations using simulated users systematically underestimate agent performance on the most challenging tasks, and overestimate it on moderately difficult ones.",
+          "source_paragraphs": [
+            7
+          ],
+          "start_ms": 129111.5,
+          "end_ms": 142033.3
+        },
+        {
+          "voice": "Microsoft David Desktop",
+          "text": "So simulated evals make agents look worse exactly where the task is hardest, and look better right in the messy middle. That\u0027s the opposite of reassuring.",
+          "source_paragraphs": [
+            7
+          ],
+          "start_ms": 142533.3,
+          "end_ms": 152861
+        },
+        {
+          "voice": "Microsoft Zira Desktop",
+          "text": "It gets more pointed. African American Vernacular English speakers experience consistently worse success rates and worse calibration errors than Standard American English speakers, and those disparities compound significantly with age.",
+          "source_paragraphs": [
+            7
+          ],
+          "start_ms": 153361,
+          "end_ms": 168012.4
+        },
+        {
+          "voice": "Microsoft David Desktop",
+          "text": "So this isn\u0027t just noise in the measurement, it\u0027s a fairness problem. If the evaluation itself treats speech communities unevenly, a system that passes the benchmark could still be quietly failing the users who most need it to work.",
+          "source_paragraphs": [
+            7
+          ],
+          "start_ms": 168512.4,
+          "end_ms": 183164
+        },
+        {
+          "voice": "Microsoft Zira Desktop",
+          "text": "Right, and it\u0027s not only AAVE speakers. Simulated users turn out to be a differentially effective proxy across populations generally, performing worst for AAVE and Indian English speakers specifically. On top of that, simulated users introduce their own conversational artifacts and surface different failure patterns than human users do.",
+          "source_paragraphs": [
+            7
+          ],
+          "start_ms": 183664,
+          "end_ms": 206354
+        },
+        {
+          "voice": "Microsoft David Desktop",
+          "text": "Which is why the authors frame this as bigger than a leaderboard quirk. Current evaluation practice risks misrepresenting what agents can actually do across different user populations, and can obscure real-world deployment challenges until it\u0027s too late.",
+          "source_paragraphs": [
+            7
+          ],
+          "start_ms": 206854,
+          "end_ms": 222410.3
+        },
+        {
+          "voice": "Microsoft Zira Desktop",
+          "text": "That\u0027s the abstract. So why does it even matter this much whether agents handle sustained, multi-turn conversation instead of one-shot question and answer? What goes wrong if they don\u0027t?",
+          "source_paragraphs": [
+            9
+          ],
+          "start_ms": 222910.3,
+          "end_ms": 235417.4
+        },
+        {
+          "voice": "Microsoft David Desktop",
+          "text": "Because agents for everyday tasks like travel reservations, order management, and appointment scheduling are everywhere now, and a static, single-turn test just doesn\u0027t capture what they actually have to do in a real interaction.",
+          "source_paragraphs": [
+            9
+          ],
+          "start_ms": 235917.4,
+          "end_ms": 249793.8
+        },
+        {
+          "voice": "Microsoft Zira Desktop",
+          "text": "Right, so benchmarks evolved toward sustained, context-aware, multi-turn interaction, agents conversing naturally, following policies and instructions, making the right tool calls across many turns. To automate that at scale, the field simulates the user with an LLM too.",
+          "source_paragraphs": [
+            9,
+            11
+          ],
+          "start_ms": 250293.8,
+          "end_ms": 270009.8
+        },
+        {
+          "voice": "Microsoft David Desktop",
+          "text": "The paper actually shows that gap directly. There\u0027s a Figure 1 with side-by-side conversation snippets, a simulated user and a human user on the exact same task, and the simulated user asks more questions and comes across as noticeably more polite.",
+          "source_paragraphs": [
+            10
+          ],
+          "start_ms": 270509.8,
+          "end_ms": 287081
+        },
+        {
+          "voice": "Microsoft Zira Desktop",
+          "text": "So if even a two-line snippet gives it away, doesn\u0027t that call into question whether automated evaluation alone can be trusted here?",
+          "source_paragraphs": [
+            10
+          ],
+          "start_ms": 287581,
+          "end_ms": 295674.1
+        },
+        {
+          "voice": "Microsoft David Desktop",
+          "text": "That\u0027s exactly why the authors say relying on a single user simulation model is risky, results may just vary across different user LLMs, that\u0027s the robustness concern. And without checking against actual people, you can\u0027t know if simulated interactions really predict what happens with real ones.",
+          "source_paragraphs": [
+            12,
+            14
+          ],
+          "start_ms": 296174.1,
+          "end_ms": 315389.7
+        },
+        {
+          "voice": "Microsoft Zira Desktop",
+          "text": "There\u0027s a third piece too: these evaluations tend to treat users as one homogeneous group, when people actually vary widely in formality, verbosity, politeness norms, and linguistic background. Simulated users might approximate some populations far better than others, which is exactly the fairness risk.",
+          "source_paragraphs": [
+            14
+          ],
+          "start_ms": 315889.7,
+          "end_ms": 335785.6
+        },
+        {
+          "voice": "Microsoft David Desktop",
+          "text": "Wait, did prior work ever actually validate any of this against real people before now?",
+          "source_paragraphs": [
+            14
+          ],
+          "start_ms": 336285.6,
+          "end_ms": 342254
+        },
+        {
+          "voice": "Microsoft Zira Desktop",
+          "text": "No, that\u0027s precisely the gap. The authors boil it down to three questions: robustness, how consistent are evaluations across different user simulation LLMs; validity, do simulated users reliably proxy real human users; and fairness, does simulation represent some user groups better than others.",
+          "source_paragraphs": [
+            14,
+            15,
+            16,
+            17
+          ],
+          "start_ms": 342754,
+          "end_ms": 363949.8
+        },
+        {
+          "voice": "Microsoft David Desktop",
+          "text": "And using tau-Bench retail tasks as their case study, they confirm all three concerns are real: simulation lacks robustness, and it systematically misestimates performance compared to human users, underestimating success on the hardest tasks while overestimating outcomes on moderately difficult scenarios, on top of the demographic bias and conversational artifacts we already covered.",
+          "source_paragraphs": [
+            18,
+            19
+          ],
+          "start_ms": 364449.8,
+          "end_ms": 388909.2
+        },
+        {
+          "voice": "Microsoft Zira Desktop",
+          "text": "Next time, let\u0027s get into how they actually pulled this off, running tau-Bench retail tasks with real participants recruited across those four countries, and what it took to fairly compare a human against an LLM standing in for one.",
+          "source_paragraphs": [
+            7
+          ],
+          "start_ms": 389409.2,
+          "end_ms": 403665.7
+        }
+      ],
+      "wav": "part_01.wav",
+      "total_duration_ms": 403665.7
+    },
+    {
+      "part_of": {
+        "n": 2,
+        "total": 6
+      },
+      "lines": [
+        {
+          "voice": "Microsoft Zira Desktop",
+          "text": "So, how did they actually run this study? Before we get there, let\u0027s place it against what came before, because that shelf is thin.",
+          "source_paragraphs": [
+            21
+          ],
+          "start_ms": 0,
+          "end_ms": 9613
+        },
+        {
+          "voice": "Microsoft David Desktop",
+          "text": "Right, other work has poked at user simulation before, in math tutoring and daily planning, but mostly asking whether a simulated user behaves believably or sounds polite, Turing-test style. One group even found real deviations between simulated and actual shopping actions.",
+          "source_paragraphs": [
+            21
+          ],
+          "start_ms": 10113,
+          "end_ms": 28979
+        },
+        {
+          "voice": "Microsoft Zira Desktop",
+          "text": "But notice what none of them did: nobody checked whether results hold up across different simulator models, and nobody asked whether simulation treats every user group the same. That\u0027s the gap this paper steps into.",
+          "source_paragraphs": [
+            21
+          ],
+          "start_ms": 29479,
+          "end_ms": 43005.7
+        },
+        {
+          "voice": "Microsoft David Desktop",
+          "text": "There\u0027s a second, separate thread too, from the broader NLP fairness literature. Annotator studies keep finding that judgments of toxicity or safety split along race, gender, and political lines, and language models themselves have been shown to lean Western, wealthy, and English-speaking in whose opinions they reflect.",
+          "source_paragraphs": [
+            22,
+            24
+          ],
+          "start_ms": 43505.7,
+          "end_ms": 64531.2
+        },
+        {
+          "voice": "Microsoft Zira Desktop",
+          "text": "Including aligning more with White annotators than Black or Asian annotators on something as basic as politeness judgments. So this paper is really asking: does that same skew show up when an LLM isn\u0027t judging text, but playing the user inside an agent evaluation?",
+          "source_paragraphs": [
+            24
+          ],
+          "start_ms": 65031.2,
+          "end_ms": 81977.3
+        },
+        {
+          "voice": "Microsoft David Desktop",
+          "text": "Nobody had tested that directly. Okay, onto the actual test bed then. What is tau-Bench, for anyone who hasn\u0027t run into it?",
+          "source_paragraphs": [
+            24,
+            27
+          ],
+          "start_ms": 82477.3,
+          "end_ms": 92970.3
+        },
+        {
+          "voice": "Microsoft Zira Desktop",
+          "text": "It\u0027s a widely-used benchmark for agentic tool use, built around customer service scenarios. An agent and a user LLM converse, the user has private task instructions with a goal, and the agent has to make tool calls against a realistic database while following policy.",
+          "source_paragraphs": [
+            27,
+            28
+          ],
+          "start_ms": 93470.3,
+          "end_ms": 111486.2
+        },
+        {
+          "voice": "Microsoft David Desktop",
+          "text": "And success is strict, right? Not just did the conversation go smoothly.",
+          "source_paragraphs": [
+            28
+          ],
+          "start_ms": 111986.2,
+          "end_ms": 118189.8
+        },
+        {
+          "voice": "Microsoft Zira Desktop",
+          "text": "Strict on two counts. The final database state has to exactly match the one correct outcome, and the agent\u0027s replies have to convey every piece of information the task required, checked automatically against ground-truth text. tau-Bench ships 115 retail tasks and 50 airline tasks total.",
+          "source_paragraphs": [
+            28
+          ],
+          "start_ms": 118689.8,
+          "end_ms": 139235.4
+        },
+        {
+          "voice": "Microsoft David Desktop",
+          "text": "This paper only uses the retail side. Why narrow it down like that?",
+          "source_paragraphs": [
+            30
+          ],
+          "start_ms": 139735.4,
+          "end_ms": 145309.1
+        },
+        {
+          "voice": "Microsoft Zira Desktop",
+          "text": "To get systematic coverage within one domain instead of spreading thin across two. They also scrub the task instructions so nothing hints at a user\u0027s identity or expected behavior, so that can\u0027t contaminate the comparison later.",
+          "source_paragraphs": [
+            30
+          ],
+          "start_ms": 145809.1,
+          "end_ms": 159765.5
+        },
+        {
+          "voice": "Microsoft Zira Desktop",
+          "text": "Here\u0027s the clever bit, though. tau-Bench doesn\u0027t ship difficulty labels, so they invented one: ran the whole benchmark five times with GPT-4o as both agent and simulated user, and counted how often each task succeeded, which naturally sorts tasks into six difficulty buckets, zero out of five up to five out of five. Then they picked three tasks per bucket, eighteen total, so every difficulty level gets equal weight.",
+          "source_paragraphs": [
+            32
+          ],
+          "start_ms": 160265.5,
+          "end_ms": 189135.2
+        },
+        {
+          "voice": "Microsoft David Desktop",
+          "text": "Now here\u0027s where I get interested, because this is the part that\u0027s actually about people. They recruited participants from the United States, India, Kenya, and Nigeria. Why those four?",
+          "source_paragraphs": [
+            34
+          ],
+          "start_ms": 189635.2,
+          "end_ms": 202472.3
+        },
+        {
+          "voice": "Microsoft Zira Desktop",
+          "text": "You\u0027d know better than me, what\u0027s the reasoning there?",
+          "source_paragraphs": [
+            34
+          ],
+          "start_ms": 202972.3,
+          "end_ms": 206506.3
+        },
+        {
+          "voice": "Microsoft David Desktop",
+          "text": "tau-Bench tasks are English-only, so they needed countries with large English-speaking populations, but still wanted geographic and linguistic spread rather than only testing English speakers in English-speaking countries. Prolific handled recruiting everywhere except Nigeria, where platform coverage was too thin, so they used snowball sampling there instead.",
+          "source_paragraphs": [
+            34
+          ],
+          "start_ms": 207006.3,
+          "end_ms": 229646.1
+        },
+        {
+          "voice": "Microsoft Zira Desktop",
+          "text": "And how much did each person actually do?",
+          "source_paragraphs": [
+            34
+          ],
+          "start_ms": 230146.1,
+          "end_ms": 233210
+        },
+        {
+          "voice": "Microsoft David Desktop",
+          "text": "Four tasks apiece, drawn randomly from that pool of eighteen, two from the harder end and two from the easier end, all against the same GPT-4o agent, roughly thirty-five to forty minutes total. The part I really want to flag: for US participants specifically, they screened for two groups on purpose, White Standard American English speakers and Black African American Vernacular English speakers, since those are the groups AI fairness research keeps coming back to.",
+          "source_paragraphs": [
+            34
+          ],
+          "start_ms": 233710,
+          "end_ms": 264083.9
+        },
+        {
+          "voice": "Microsoft Zira Desktop",
+          "text": "Age-stratified too, on top of that?",
+          "source_paragraphs": [
+            34
+          ],
+          "start_ms": 264583.9,
+          "end_ms": 267997.9
+        },
+        {
+          "voice": "Microsoft David Desktop",
+          "text": "Yes, three US age bands, eighteen to thirty-four, thirty-five to fifty-four, and fifty-five plus, since prior research says tech familiarity shifts a lot with age. Outside the US they could only recruit the youngest band, purely due to who was available on the ground.",
+          "source_paragraphs": [
+            34,
+            37
+          ],
+          "start_ms": 268497.9,
+          "end_ms": 287369.5
+        },
+        {
+          "voice": "Microsoft Zira Desktop",
+          "text": "Now, the metrics, because this is where the paper turns all that recruiting into a real comparison. Success rate is the easy one, just the percentage of tasks completed correctly, same automated grading whether the user was a person or a simulated LLM.",
+          "source_paragraphs": [
+            39
+          ],
+          "start_ms": 287869.5,
+          "end_ms": 304585.6
+        },
+        {
+          "voice": "Microsoft David Desktop",
+          "text": "And the harder one, expected calibration error, ECE for short? I\u0027ve only heard that term from probability forecasting, not user studies.",
+          "source_paragraphs": [
+            40
+          ],
+          "start_ms": 305085.6,
+          "end_ms": 315888.4
+        },
+        {
+          "voice": "Microsoft Zira Desktop",
+          "text": "Right, normally ECE checks whether a model\u0027s confidence scores match reality. Here it\u0027s borrowed in spirit: instead of confidence versus outcome, it\u0027s simulated-user success rate versus human-user success rate at each difficulty level, weighted by how many real human attempts landed in that bucket. Bigger gap, worse calibration, and zero would mean the simulation is a perfect stand-in for real people.",
+          "source_paragraphs": [
+            40
+          ],
+          "start_ms": 316388.4,
+          "end_ms": 341787.4
+        },
+        {
+          "voice": "Microsoft David Desktop",
+          "text": "So it\u0027s not just are simulated users worse, it\u0027s are they wrong in a lopsided way, underselling agents on the hard stuff and overselling them on the medium stuff.",
+          "source_paragraphs": [
+            40
+          ],
+          "start_ms": 342287.4,
+          "end_ms": 352435
+        },
+        {
+          "voice": "Microsoft Zira Desktop",
+          "text": "That\u0027s exactly the shape they find, and it sets up everything next. Coming up, we get into how robust these numbers actually are across different simulator models, and how well simulation holds up as a stand-in for the real people they just recruited.",
+          "source_paragraphs": [
+            40
+          ],
+          "start_ms": 352935,
+          "end_ms": 368721.4
+        }
+      ],
+      "wav": "part_02.wav",
+      "total_duration_ms": 368721.4
+    },
+    {
+      "part_of": {
+        "n": 3,
+        "total": 6
+      },
+      "lines": [
+        {
+          "voice": "Microsoft Zira Desktop",
+          "text": "Okay, let\u0027s dive right into the results, starting with robustness. They held the agent fixed at GPT-4o and only changed which model played the simulated user.",
+          "source_paragraphs": [
+            51,
+            52,
+            53
+          ],
+          "start_ms": 0,
+          "end_ms": 11422.4
+        },
+        {
+          "voice": "Microsoft David Desktop",
+          "text": "And that alone was enough to move the numbers?",
+          "source_paragraphs": [
+            53
+          ],
+          "start_ms": 11922.4,
+          "end_ms": 14951.3
+        },
+        {
+          "voice": "Microsoft Zira Desktop",
+          "text": "It was. Three of the five user models, GPT-4o, Sonnet 3.7, and Kimi-K2-Thinking, land in a cluster, roughly 67 to 71 percent success rates. But swap in Sonnet 4.5 as the user, and you get almost a 9 percentage point gap versus Sonnet 3.7.",
+          "source_paragraphs": [
+            53
+          ],
+          "start_ms": 15451.3,
+          "end_ms": 38057.4
+        },
+        {
+          "voice": "Microsoft David Desktop",
+          "text": "So the agent didn\u0027t change at all, just who\u0027s simulating the customer, and the score can swing by 9 points. What does that do to something like a leaderboard comparison?",
+          "source_paragraphs": [
+            53
+          ],
+          "start_ms": 38557.4,
+          "end_ms": 49884.9
+        },
+        {
+          "voice": "Microsoft Zira Desktop",
+          "text": "It undermines it. If two teams each report a single number using a different simulated-user model, those numbers aren\u0027t really comparable, even when the underlying agent is identical.",
+          "source_paragraphs": [
+            53
+          ],
+          "start_ms": 50384.9,
+          "end_ms": 62236.9
+        },
+        {
+          "voice": "Microsoft David Desktop",
+          "text": "I\u0027d have guessed the fix is simple, just pick the strongest available model to play the user and you\u0027re covered.",
+          "source_paragraphs": [
+            53
+          ],
+          "start_ms": 62736.9,
+          "end_ms": 69375
+        },
+        {
+          "voice": "Microsoft Zira Desktop",
+          "text": "You\u0027d think so, but the data argues against it. Sonnet 3.7 is generally considered the stronger model, yet using GPT-4o as the user model produced a slightly higher success rate, 67.8 versus 67.0, and a much tighter standard deviation, 1.2 versus 3.3.",
+          "source_paragraphs": [
+            53
+          ],
+          "start_ms": 69875,
+          "end_ms": 91690.6
+        },
+        {
+          "voice": "Microsoft David Desktop",
+          "text": "So the so-called weaker model actually gave a more stable read on the agent.",
+          "source_paragraphs": [
+            53
+          ],
+          "start_ms": 92190.6,
+          "end_ms": 97014.3
+        },
+        {
+          "voice": "Microsoft Zira Desktop",
+          "text": "Right, which points to something other than raw capability. It looks like closeness between the agent and user model matters more than either one being the single strongest option on its own.",
+          "source_paragraphs": [
+            53
+          ],
+          "start_ms": 97514.3,
+          "end_ms": 109051.4
+        },
+        {
+          "voice": "Microsoft David Desktop",
+          "text": "That\u0027s a real design implication for anyone building an eval. The user model isn\u0027t a neutral instrument, it\u0027s a variable you have to control for.",
+          "source_paragraphs": [
+            53
+          ],
+          "start_ms": 109551.4,
+          "end_ms": 119249.2
+        },
+        {
+          "voice": "Microsoft Zira Desktop",
+          "text": "So what\u0027s actually at stake if a lab just publishes one leaderboard number without disclosing which model played the user?",
+          "source_paragraphs": [
+            53
+          ],
+          "start_ms": 119749.2,
+          "end_ms": 126916.9
+        },
+        {
+          "voice": "Microsoft David Desktop",
+          "text": "Anyone downstream trusting that number to pick an agent for production. They\u0027d be comparing apples to oranges without knowing it.",
+          "source_paragraphs": [
+            53
+          ],
+          "start_ms": 127416.9,
+          "end_ms": 135629.6
+        },
+        {
+          "voice": "Microsoft Zira Desktop",
+          "text": "And doesn\u0027t that make it hard to trust the big jumps at face value too? They flag that it\u0027s genuinely difficult to tell whether Sonnet 4.5\u0027s jump as a user model reflects real capability gains or just that model having seen more of this kind of benchmark during training.",
+          "source_paragraphs": [
+            54
+          ],
+          "start_ms": 136129.6,
+          "end_ms": 152440.5
+        },
+        {
+          "voice": "Microsoft David Desktop",
+          "text": "Fair, that contamination question is impossible to fully rule out from outside the lab. Okay, that\u0027s robustness. Now the paper pivots to validity, forget consistency across user models, are simulated users even tracking real human behavior?",
+          "source_paragraphs": [
+            64
+          ],
+          "start_ms": 152940.5,
+          "end_ms": 169781.6
+        },
+        {
+          "voice": "Microsoft Zira Desktop",
+          "text": "Right, and they pick the friendliest possible test first. Prior work shows LLMs carry a strong Western, Anglocentric bias, so the logic is, if simulated users are going to match anyone well, it should be US participants.",
+          "source_paragraphs": [
+            65
+          ],
+          "start_ms": 170281.6,
+          "end_ms": 186618.3
+        },
+        {
+          "voice": "Microsoft David Desktop",
+          "text": "So this is the best case scenario for the simulators, not a stress test.",
+          "source_paragraphs": [
+            65
+          ],
+          "start_ms": 187118.3,
+          "end_ms": 192441.7
+        },
+        {
+          "voice": "Microsoft Zira Desktop",
+          "text": "Exactly, they\u0027re checking calibration in the setting where they\u0027d expect the strongest alignment between simulated and human users.",
+          "source_paragraphs": [
+            65
+          ],
+          "start_ms": 192941.7,
+          "end_ms": 200614.2
+        },
+        {
+          "voice": "Microsoft David Desktop",
+          "text": "And even in the best case?",
+          "source_paragraphs": [
+            66
+          ],
+          "start_ms": 201114.2,
+          "end_ms": 203383.3
+        },
+        {
+          "voice": "Microsoft Zira Desktop",
+          "text": "Even there, agents only hit a 45.2 percent success rate with real US participants, and the calibration error between human and simulated users comes out to 15.1. That\u0027s substantial miscalibration in the most favorable setting they could construct.",
+          "source_paragraphs": [
+            66
+          ],
+          "start_ms": 203883.3,
+          "end_ms": 221043.9
+        },
+        {
+          "voice": "Microsoft David Desktop",
+          "text": "Figure 2 is the picture of that, human success rate plotted against success rate with the simulated users for the US group, with that 15.1 calibration error and error bars at plus or minus one standard deviation.",
+          "source_paragraphs": [
+            63
+          ],
+          "start_ms": 221543.9,
+          "end_ms": 235850.4
+        },
+        {
+          "voice": "Microsoft Zira Desktop",
+          "text": "And the miscalibration isn\u0027t spread evenly across task difficulty. It\u0027s worst at the first and fourth difficulty bins, where the calibration error jumps to 25.9 across just those two.",
+          "source_paragraphs": [
+            66
+          ],
+          "start_ms": 236350.4,
+          "end_ms": 249122.3
+        },
+        {
+          "voice": "Microsoft David Desktop",
+          "text": "Which direction does it break in? Does the simulation make agents look better or worse than they really are?",
+          "source_paragraphs": [
+            66
+          ],
+          "start_ms": 249622.3,
+          "end_ms": 256715.4
+        },
+        {
+          "voice": "Microsoft Zira Desktop",
+          "text": "Both, depending on where you look. On the hardest tasks it undersells the agent, human success there was 30.8 percent, and the simulated evaluation reads lower. On the moderately difficult tasks it flips and overestimates, human success there was 39.0 percent.",
+          "source_paragraphs": [
+            66
+          ],
+          "start_ms": 257215.4,
+          "end_ms": 276761
+        },
+        {
+          "voice": "Microsoft David Desktop",
+          "text": "So an agent could look artificially weak on the hard tasks and artificially strong on the medium ones, in the same benchmark, at the same time.",
+          "source_paragraphs": [
+            66
+          ],
+          "start_ms": 277261,
+          "end_ms": 286493.7
+        },
+        {
+          "voice": "Microsoft Zira Desktop",
+          "text": "If it\u0027s this skewed even in the friendliest test case, what does that mean for people actually deciding which agent to ship based on these scores?",
+          "source_paragraphs": [
+            66
+          ],
+          "start_ms": 286993.7,
+          "end_ms": 295581.5
+        },
+        {
+          "voice": "Microsoft David Desktop",
+          "text": "It means the number on the leaderboard could be quietly wrong in either direction, and you wouldn\u0027t know which. And apparently this is just the calibration story averaged across everyone. Next part digs into who this fails hardest for, the fairness findings are coming, and from the sound of it, that\u0027s where it gets uncomfortable.",
+          "source_paragraphs": [
+            66
+          ],
+          "start_ms": 296081.5,
+          "end_ms": 316651.7
+        }
+      ],
+      "wav": "part_03.wav",
+      "total_duration_ms": 316651.7
+    },
+    {
+      "part_of": {
+        "n": 4,
+        "total": 6
+      },
+      "lines": [
+        {
+          "voice": "Microsoft David Desktop",
+          "text": "Last part ended on a tease: who does this simulation gap actually fail hardest? Turns out there\u0027s a whole section for that, and it\u0027s literally titled Fairness.",
+          "source_paragraphs": [
+            67,
+            68
+          ],
+          "start_ms": 0,
+          "end_ms": 10947.7
+        },
+        {
+          "voice": "Microsoft Zira Desktop",
+          "text": "They split the US sample by dialect, Standard American English, SAE, versus African American Vernacular English, AAVE, and by age group, then widened out to three non-Western countries: India, Kenya, and Nigeria.",
+          "source_paragraphs": [
+            68
+          ],
+          "start_ms": 11447.7,
+          "end_ms": 27574.6
+        },
+        {
+          "voice": "Microsoft Zira Desktop",
+          "text": "Before I get into the model, David, what\u0027s actually at stake for someone speaking AAVE and getting an agent that\u0027s both worse-performing and worse at knowing it\u0027s worse?",
+          "source_paragraphs": [
+            72
+          ],
+          "start_ms": 28074.6,
+          "end_ms": 38326.8
+        },
+        {
+          "voice": "Microsoft David Desktop",
+          "text": "That combination is the dangerous part. It\u0027s not just a worse experience, it\u0027s a worse experience the evaluation itself doesn\u0027t flag as worse. Someone gets a rougher interaction, and the numbers underneath it say everything\u0027s fine.",
+          "source_paragraphs": [
+            72
+          ],
+          "start_ms": 38826.8,
+          "end_ms": 54513.4
+        },
+        {
+          "voice": "Microsoft David Desktop",
+          "text": "So how big is this, statistically?",
+          "source_paragraphs": [
+            72
+          ],
+          "start_ms": 55013.4,
+          "end_ms": 58332.4
+        },
+        {
+          "voice": "Microsoft Zira Desktop",
+          "text": "Overall US success was 45.2 percent with an ECE Human-LLM of 15.1, Expected Calibration Error, meaning how far the simulated user\u0027s read on success drifts from what a real human actually experienced. A Generalized Estimating Equations model, GEE for short, controlling for age, education, AI experience, AI usage, and task difficulty, found the dialect disparity statistically significant: beta 0.61, p less than 0.001. SAE participants: 50.6 percent success, 11.7 ECE. AAVE participants: 39.4 percent success, 20.3 ECE.",
+          "source_paragraphs": [
+            72
+          ],
+          "start_ms": 58832.4,
+          "end_ms": 104924
+        },
+        {
+          "voice": "Microsoft David Desktop",
+          "text": "That\u0027s an 11.2 point drop in success rate and an 8.6 point jump in calibration error, just from dialect. And the paper doesn\u0027t hedge on what that could mean: real disparities in the quality of retail assistance people get, and in how easy the interaction feels.",
+          "source_paragraphs": [
+            72
+          ],
+          "start_ms": 105424,
+          "end_ms": 123095.2
+        },
+        {
+          "voice": "Microsoft Zira Desktop",
+          "text": "And it gets worse with age, doesn\u0027t it? What does that trend actually look like for someone who\u0027s been dealing with this system longer?",
+          "source_paragraphs": [
+            72
+          ],
+          "start_ms": 123595.2,
+          "end_ms": 131898
+        },
+        {
+          "voice": "Microsoft David Desktop",
+          "text": "It does. SAE success actually ticks up slightly with age, about 3 points from the 18 to 34 group to the 55-plus group. AAVE goes the opposite way, a 7.6 point drop over that same span. The group already worse off keeps sliding as they get older.",
+          "source_paragraphs": [
+            72
+          ],
+          "start_ms": 132398,
+          "end_ms": 152489.6
+        },
+        {
+          "voice": "Microsoft David Desktop",
+          "text": "What does that look like in the actual table?",
+          "source_paragraphs": [
+            69
+          ],
+          "start_ms": 152989.6,
+          "end_ms": 156103.6
+        },
+        {
+          "voice": "Microsoft Zira Desktop",
+          "text": "Table 2. SAE by age: 49.2 percent at 18 to 34, 52.2 at 35 to 54, 52.1 at 55-plus, calibration error staying in the 11 to 14 range throughout. AAVE by age: 41.0 percent at 18 to 34, 39.9 at 35 to 54, then down to 33.4 percent at 55-plus. Calibration error there moves from 18.9 up to 21.6 at 35 to 54, then eases slightly to 20.5 at 55-plus.",
+          "source_paragraphs": [
+            69,
+            70
+          ],
+          "start_ms": 156603.6,
+          "end_ms": 196672
+        },
+        {
+          "voice": "Microsoft Zira Desktop",
+          "text": "And it\u0027s confirmed statistically. Nearly a 12 point gap between SAE and AAVE at 35 to 54, almost 19 points by 55-plus. Age-stratified GEE effects: beta 0.67, p 0.01 at 35 to 54; beta 1.24, p 0.001 at 55-plus.",
+          "source_paragraphs": [
+            72
+          ],
+          "start_ms": 197172,
+          "end_ms": 222077.7
+        },
+        {
+          "voice": "Microsoft David Desktop",
+          "text": "How solid is that calibration story specifically? Is it the same shape of miscalibration at every age, or does it look different?",
+          "source_paragraphs": [
+            123
+          ],
+          "start_ms": 222577.7,
+          "end_ms": 231650.4
+        },
+        {
+          "voice": "Microsoft Zira Desktop",
+          "text": "Different shape, not just bigger. The calibration gap peaks at 35 to 54, a 10.3 point ECE difference. Figure 3 shows SAE miscalibration concentrated mostly in one difficulty bin, while AAVE miscalibration shows up across every bin.",
+          "source_paragraphs": [
+            122,
+            123
+          ],
+          "start_ms": 232150.4,
+          "end_ms": 251061.8
+        },
+        {
+          "voice": "Microsoft David Desktop",
+          "text": "Does a decent success rate mean the calibration is fine too, then?",
+          "source_paragraphs": [
+            123
+          ],
+          "start_ms": 251561.8,
+          "end_ms": 256510.4
+        },
+        {
+          "voice": "Microsoft Zira Desktop",
+          "text": "No, that\u0027s the trap. They don\u0027t move together. SAE participants 18 to 34 have both a lower success rate and a lower calibration error. SAE participants 55-plus have both a higher success rate and a higher calibration error. Fixing one doesn\u0027t fix the other.",
+          "source_paragraphs": [
+            123
+          ],
+          "start_ms": 257010.4,
+          "end_ms": 276691.9
+        },
+        {
+          "voice": "Microsoft David Desktop",
+          "text": "Okay, that\u0027s the US story. What happens when they widen out to India, Kenya, and Nigeria?",
+          "source_paragraphs": [
+            71,
+            124
+          ],
+          "start_ms": 277191.9,
+          "end_ms": 284445.3
+        },
+        {
+          "voice": "Microsoft Zira Desktop",
+          "text": "They narrow that comparison to the 18 to 34 group, just for participant-availability reasons. The spread there is much smaller than what we just walked through, success rates ranging from 41.0 to 49.2 percent, nowhere near the dialect and age gaps inside the US.",
+          "source_paragraphs": [
+            125
+          ],
+          "start_ms": 284945.3,
+          "end_ms": 303766.1
+        },
+        {
+          "voice": "Microsoft Zira Desktop",
+          "text": "Kenya and Nigeria basically landed on top of each other, didn\u0027t they?",
+          "source_paragraphs": [
+            125
+          ],
+          "start_ms": 304266.1,
+          "end_ms": 309224.6
+        },
+        {
+          "voice": "Microsoft David Desktop",
+          "text": "Yeah, 43.5 percent and 43.7 percent. And a GEE model confirms none of the cross-country differences are statistically significant, every p-value above 0.49.",
+          "source_paragraphs": [
+            125,
+            128
+          ],
+          "start_ms": 309724.6,
+          "end_ms": 323761.7
+        },
+        {
+          "voice": "Microsoft Zira Desktop",
+          "text": "But David, here\u0027s the part that should bother you more than the success-rate numbers. What do you make of the calibration side?",
+          "source_paragraphs": [
+            126,
+            129
+          ],
+          "start_ms": 324261.7,
+          "end_ms": 332384.7
+        },
+        {
+          "voice": "Microsoft David Desktop",
+          "text": "Simulated users are best calibrated to SAE participants, ECE of 13.0, and worst calibrated to AAVE and Indian participants, both at 18.9. Full spread: SAE 49.2 percent and 13.0 ECE, AAVE 41.0 percent and 18.9, India 46.2 percent and 18.9, Kenya 43.5 percent and 15.6, Nigeria 43.7 percent and 17.6.",
+          "source_paragraphs": [
+            126,
+            129
+          ],
+          "start_ms": 332884.7,
+          "end_ms": 366588.4
+        },
+        {
+          "voice": "Microsoft David Desktop",
+          "text": "India\u0027s success rate isn\u0027t the lowest in that table, but the simulation is just as unreliable there as it is for AAVE speakers. Two very different populations, failed by the same blind spot.",
+          "source_paragraphs": [
+            129
+          ],
+          "start_ms": 367088.4,
+          "end_ms": 380355.4
+        },
+        {
+          "voice": "Microsoft Zira Desktop",
+          "text": "One more wrinkle: across countries, calibration is strongest on moderately hard tasks, the 20 to 40 percent difficulty range, but it consistently overestimates performance on easy tasks, the 80 to 100 percent bins, shown in Figure 4.",
+          "source_paragraphs": [
+            129,
+            171
+          ],
+          "start_ms": 380855.4,
+          "end_ms": 398251.5
+        },
+        {
+          "voice": "Microsoft David Desktop",
+          "text": "So evaluations leaning on simulated users risk underselling how hard these tasks actually are once you deploy to a genuinely diverse, global user base.",
+          "source_paragraphs": [
+            129
+          ],
+          "start_ms": 398751.5,
+          "end_ms": 408864
+        },
+        {
+          "voice": "Microsoft Zira Desktop",
+          "text": "Which is a good place to stop and ask the harder question. We know where the reliability breaks and who it breaks for. Next part, we get into what\u0027s actually going wrong inside these conversations that produces it.",
+          "source_paragraphs": [
+            129
+          ],
+          "start_ms": 409364,
+          "end_ms": 423275.8
+        }
+      ],
+      "wav": "part_04.wav",
+      "total_duration_ms": 423275.8
+    },
+    {
+      "part_of": {
+        "n": 5,
+        "total": 6
+      },
+      "lines": [
+        {
+          "voice": "Microsoft Zira Desktop",
+          "text": "Okay, so last part we left off asking what\u0027s actually going wrong inside these conversations. Let\u0027s open that up. Section 4.4 looks at interaction structure and content.",
+          "source_paragraphs": [
+            172,
+            173
+          ],
+          "start_ms": 0,
+          "end_ms": 12937.3
+        },
+        {
+          "voice": "Microsoft David Desktop",
+          "text": "Structurally, are simulated and human conversations even comparable? Or is this apples to oranges from the start?",
+          "source_paragraphs": [
+            174
+          ],
+          "start_ms": 13437.3,
+          "end_ms": 21865.2
+        },
+        {
+          "voice": "Microsoft Zira Desktop",
+          "text": "Surface level, they\u0027re pretty similar. Number of turns, number of actions, words per turn, all comparable between simulated and human user interactions. The differences show up when you look at content.",
+          "source_paragraphs": [
+            174
+          ],
+          "start_ms": 22365.2,
+          "end_ms": 37156.8
+        },
+        {
+          "voice": "Microsoft David Desktop",
+          "text": "Content meaning what people actually say, not just how much of it.",
+          "source_paragraphs": [
+            174
+          ],
+          "start_ms": 37656.8,
+          "end_ms": 42420.5
+        },
+        {
+          "voice": "Microsoft Zira Desktop",
+          "text": "Right. Take question-asking. Simulated user conversations include questions in 18.8% of user turns and 51.8% of agent turns. Human users only ask questions 9.8% of the time, though their agents ask questions more, 56.3%.",
+          "source_paragraphs": [
+            174
+          ],
+          "start_ms": 42920.5,
+          "end_ms": 64121.1
+        },
+        {
+          "voice": "Microsoft David Desktop",
+          "text": "So simulated users are almost twice as curious as real ones. That\u0027s backwards from what I\u0027d have guessed, real users navigating an unfamiliar agent should be the ones asking more.",
+          "source_paragraphs": [
+            174
+          ],
+          "start_ms": 64621.1,
+          "end_ms": 76508.5
+        },
+        {
+          "voice": "Microsoft Zira Desktop",
+          "text": "And it\u0027s not uniform across human users either. Nigerian participants ask questions in only 4.3% of turns, well below the human average.",
+          "source_paragraphs": [
+            174
+          ],
+          "start_ms": 77008.5,
+          "end_ms": 87850.9
+        },
+        {
+          "voice": "Microsoft David Desktop",
+          "text": "That\u0027s a real behavioral texture that a simulated user just isn\u0027t going to reproduce. What about politeness, please, thank you, apologizing, that kind of thing?",
+          "source_paragraphs": [
+            175
+          ],
+          "start_ms": 88350.9,
+          "end_ms": 100578.3
+        },
+        {
+          "voice": "Microsoft Zira Desktop",
+          "text": "That gap is even bigger. Simulated conversations show politeness indicators in 39.2% of user turns and 52.0% of agent turns. Human conversations: 19.9% and 41.1%. And the paper\u0027s explicit that the simulated-versus-human gap is larger than any gap they see among different human subgroups.",
+          "source_paragraphs": [
+            175
+          ],
+          "start_ms": 101078.3,
+          "end_ms": 126012.4
+        },
+        {
+          "voice": "Microsoft David Desktop",
+          "text": "So simulated users perform a kind of exaggerated politeness that doesn\u0027t track how any actual demographic talks to an agent. That\u0027s a specific, fixable-sounding miscalibration.",
+          "source_paragraphs": [
+            175
+          ],
+          "start_ms": 126512.4,
+          "end_ms": 138674.6
+        },
+        {
+          "voice": "Microsoft Zira Desktop",
+          "text": "It is partially fixable, actually. They tried prompting simulated users to limit politeness, and that intervention did alter calibration patterns and shrink the gap for the most miscalibrated groups.",
+          "source_paragraphs": [
+            175
+          ],
+          "start_ms": 139174.6,
+          "end_ms": 152221.5
+        },
+        {
+          "voice": "Microsoft David Desktop",
+          "text": "Good, so it\u0027s not hopeless, you can nudge the simulator toward realism if you know where to look. Let\u0027s get into the errors section, because that\u0027s the part I actually care about as an HCI person, what breaks and for whom.",
+          "source_paragraphs": [
+            176
+          ],
+          "start_ms": 152721.5,
+          "end_ms": 167728.3
+        },
+        {
+          "voice": "Microsoft Zira Desktop",
+          "text": "They break errors into four types: argument errors, where the agent takes the right action with wrong arguments, missing action errors, extra action errors, and output errors, where the expected output is missing or wrong.",
+          "source_paragraphs": [
+            177
+          ],
+          "start_ms": 168228.3,
+          "end_ms": 182880.5
+        },
+        {
+          "voice": "Microsoft David Desktop",
+          "text": "And do simulated and human conversations produce the same mix of those errors?",
+          "source_paragraphs": [
+            177
+          ],
+          "start_ms": 183380.5,
+          "end_ms": 188589
+        },
+        {
+          "voice": "Microsoft Zira Desktop",
+          "text": "Not quite. Argument errors happen 32.2% of the time with simulated users, versus a range of 23.2% to 45.8% across human groups, with AAVE participants experiencing the highest rate.",
+          "source_paragraphs": [
+            178
+          ],
+          "start_ms": 189089,
+          "end_ms": 205404.9
+        },
+        {
+          "voice": "Microsoft David Desktop",
+          "text": "That range across human groups alone is a fairness flag, before you even bring simulated users into it.",
+          "source_paragraphs": [
+            178
+          ],
+          "start_ms": 205904.9,
+          "end_ms": 212978.1
+        },
+        {
+          "voice": "Microsoft Zira Desktop",
+          "text": "Agreed. But then missing and extra action errors actually run lower for simulated users: 17.8% versus 15.8% to 25.3% for missing actions, 5.6% versus 7.6% to 13.3% for extra actions.",
+          "source_paragraphs": [
+            178
+          ],
+          "start_ms": 213478.1,
+          "end_ms": 232978.7
+        },
+        {
+          "voice": "Microsoft David Desktop",
+          "text": "So agents look more competent, more efficient, when they\u0027re talking to a simulated user.",
+          "source_paragraphs": [
+            178
+          ],
+          "start_ms": 233478.7,
+          "end_ms": 239672.2
+        },
+        {
+          "voice": "Microsoft Zira Desktop",
+          "text": "Until you hit output errors, where the pattern flips. Agents omit or produce incorrect outputs 31.4% of the time with simulated users, compared to 12.2% to 23.6% for human users. That\u0027s the reverse direction from the action errors.",
+          "source_paragraphs": [
+            178
+          ],
+          "start_ms": 240172.2,
+          "end_ms": 259337.9
+        },
+        {
+          "voice": "Microsoft David Desktop",
+          "text": "So agents act more cleanly with simulated users but talk back to them worse. That\u0027s a strange split, it\u0027s like the agent handles the mechanics fine but garbles the communication layer specifically for the fake user.",
+          "source_paragraphs": [
+            178
+          ],
+          "start_ms": 259837.9,
+          "end_ms": 273304.8
+        },
+        {
+          "voice": "Microsoft Zira Desktop",
+          "text": "That\u0027s exactly their read too, agents behave differently with simulated versus human users. More complete, efficient action sequences, but more frequent output errors.",
+          "source_paragraphs": [
+            178
+          ],
+          "start_ms": 273804.8,
+          "end_ms": 285862
+        },
+        {
+          "voice": "Microsoft David Desktop",
+          "text": "Okay, so who gets blamed when things go wrong, the agent or the user? That feels like the crux for anyone designing these systems.",
+          "source_paragraphs": [
+            179
+          ],
+          "start_ms": 286362,
+          "end_ms": 295820
+        },
+        {
+          "voice": "Microsoft Zira Desktop",
+          "text": "This is where it gets sharp. Looking at manually annotated error attribution for failed tasks, agents are responsible for the failure 48.9% of the time in simulated conversations, versus only 24.5% in human conversations.",
+          "source_paragraphs": [
+            179,
+            184
+          ],
+          "start_ms": 296320,
+          "end_ms": 313460.6
+        },
+        {
+          "voice": "Microsoft David Desktop",
+          "text": "So in the simulated world, it\u0027s mostly the agent\u0027s fault. What\u0027s happening on the human side, then?",
+          "source_paragraphs": [
+            184,
+            186
+          ],
+          "start_ms": 313960.6,
+          "end_ms": 321848.8
+        },
+        {
+          "voice": "Microsoft Zira Desktop",
+          "text": "Users are the primary source of failure in human conversations, 62.2%, compared to 40% in simulated ones. There\u0027s also a small \u0022both\u0022 and \u0022other\u0022 category on each side, but that user-versus-agent flip is the headline.",
+          "source_paragraphs": [
+            184,
+            186
+          ],
+          "start_ms": 322348.8,
+          "end_ms": 338914.9
+        },
+        {
+          "voice": "Microsoft David Desktop",
+          "text": "That\u0027s a big deal for anyone reading simulated-user evals as a signal about agent quality. If real users are generating most of their own friction, error attribution and error mix, and this was manually annotated and matched on task difficulty, so it\u0027s not just noise, evaluating only on simulated users hides where the actual failures come from.",
+          "source_paragraphs": [
+            179,
+            185,
+            186
+          ],
+          "start_ms": 339414.9,
+          "end_ms": 362030
+        },
+        {
+          "voice": "Microsoft Zira Desktop",
+          "text": "Which raises the obvious next question. If we know all this is broken, what\u0027s the field actually supposed to do about it? That\u0027s next.",
+          "source_paragraphs": [
+            186
+          ],
+          "start_ms": 362530,
+          "end_ms": 372467.9
+        }
+      ],
+      "wav": "part_05.wav",
+      "total_duration_ms": 372467.9
+    },
+    {
+      "part_of": {
+        "n": 6,
+        "total": 6
+      },
+      "lines": [
+        {
+          "voice": "Microsoft Zira Desktop",
+          "text": "Last part ended on the tease: what should the field actually do about this? David, if the user side of evaluation has been this broken, where does human-centered evaluation even go from here?",
+          "source_paragraphs": [
+            188,
+            189
+          ],
+          "start_ms": 0,
+          "end_ms": 12917.1
+        },
+        {
+          "voice": "Microsoft David Desktop",
+          "text": "It starts with taking the finding at face value. The user component has been overlooked even though equitable performance across different people is the whole point of shipping these systems. So step one is dropping the assumption that the user side is a solved variable.",
+          "source_paragraphs": [
+            188
+          ],
+          "start_ms": 13417.1,
+          "end_ms": 29623.3
+        },
+        {
+          "voice": "Microsoft Zira Desktop",
+          "text": "Which is why their concrete asks are so modest. Benchmark robustness across multiple simulator models, validate against demographically diverse human data when it\u0027s feasible, and be transparent about simulation\u0027s limits instead of burying them.",
+          "source_paragraphs": [
+            189
+          ],
+          "start_ms": 30123.3,
+          "end_ms": 45659.4
+        },
+        {
+          "voice": "Microsoft David Desktop",
+          "text": "Transparent how? Disclose it in a footnote, or actually change what gets published as the headline number?",
+          "source_paragraphs": [
+            189
+          ],
+          "start_ms": 46159.4,
+          "end_ms": 53802.7
+        },
+        {
+          "voice": "Microsoft Zira Desktop",
+          "text": "More the former in their framing, but the stakes are the same either way. A system can look robust in the benchmark and still fail disproportionately for real users whose communication style the simulator never represented.",
+          "source_paragraphs": [
+            189
+          ],
+          "start_ms": 54302.7,
+          "end_ms": 67579.4
+        },
+        {
+          "voice": "Microsoft David Desktop",
+          "text": "Because the excess politeness and question-asking we\u0027ve tracked all episode are one communication norm standing in for everyone\u0027s.",
+          "source_paragraphs": [
+            189
+          ],
+          "start_ms": 68079.4,
+          "end_ms": 75997.2
+        },
+        {
+          "voice": "Microsoft Zira Desktop",
+          "text": "Right, and a team that only validates against that norm might be optimizing for something that diverges from actual real-world use. Their phrase, not mine.",
+          "source_paragraphs": [
+            188
+          ],
+          "start_ms": 76497.2,
+          "end_ms": 87044.8
+        },
+        {
+          "voice": "Microsoft David Desktop",
+          "text": "Let\u0027s get into what they admit themselves. How blunt is the Limitations section, really?",
+          "source_paragraphs": [
+            191,
+            192
+          ],
+          "start_ms": 87544.8,
+          "end_ms": 94223.2
+        },
+        {
+          "voice": "Microsoft Zira Desktop",
+          "text": "Pretty blunt. Everything here is English-only, though that just replicates a limitation already baked into the benchmarks they built on, so we don\u0027t know how any of this plays out in another language. The age-based analysis is US-only too, purely because of recruitment constraints.",
+          "source_paragraphs": [
+            192
+          ],
+          "start_ms": 94723.2,
+          "end_ms": 113154.1
+        },
+        {
+          "voice": "Microsoft David Desktop",
+          "text": "And it\u0027s one domain, retail customer service?",
+          "source_paragraphs": [
+            192
+          ],
+          "start_ms": 113654.1,
+          "end_ms": 117563
+        },
+        {
+          "voice": "Microsoft Zira Desktop",
+          "text": "Single domain, tau-Bench retail specifically. They flag healthcare as a place where longer interactions and more cultural variation could make these effects bigger, not smaller, but that\u0027s a hypothesis for someone else to test, not something they showed.",
+          "source_paragraphs": [
+            192
+          ],
+          "start_ms": 118063,
+          "end_ms": 134609.6
+        },
+        {
+          "voice": "Microsoft David Desktop",
+          "text": "And the agent itself was held fixed the whole time, GPT-4o only.",
+          "source_paragraphs": [
+            192
+          ],
+          "start_ms": 135109.6,
+          "end_ms": 140598.3
+        },
+        {
+          "voice": "Microsoft Zira Desktop",
+          "text": "Deliberately, to isolate the user-simulation effect cleanly. Fair methodological call, but it means they can\u0027t say whether a weaker or stronger agent shows the same calibration gaps. That\u0027s punted to future work.",
+          "source_paragraphs": [
+            192,
+            251
+          ],
+          "start_ms": 141098.3,
+          "end_ms": 155740
+        },
+        {
+          "voice": "Microsoft David Desktop",
+          "text": "Here\u0027s my real question, and it\u0027s about strategy, not scope. Is building a better simulator even the right goal, or are we chasing a number that can\u0027t be fixed that way?",
+          "source_paragraphs": [
+            189
+          ],
+          "start_ms": 156240,
+          "end_ms": 167827.3
+        },
+        {
+          "voice": "Microsoft Zira Desktop",
+          "text": "You mean fixable in principle versus worth fixing in practice?",
+          "source_paragraphs": [
+            189
+          ],
+          "start_ms": 168327.3,
+          "end_ms": 172606
+        },
+        {
+          "voice": "Microsoft David Desktop",
+          "text": "Right. Even if you could theoretically tune a simulator to match real humans, maybe the effort belongs somewhere else, like just requiring real users for anything that ships.",
+          "source_paragraphs": [
+            189
+          ],
+          "start_ms": 173106,
+          "end_ms": 184543.4
+        },
+        {
+          "voice": "Microsoft Zira Desktop",
+          "text": "Fair distinction, and there\u0027s a data point in the appendix that argues against easy optimism on the tuning side. They told the simulated user to dial back the politeness and reran an eighteen-task subset.",
+          "source_paragraphs": [
+            276
+          ],
+          "start_ms": 185043.4,
+          "end_ms": 197720.5
+        },
+        {
+          "voice": "Microsoft David Desktop",
+          "text": "Did it actually help?",
+          "source_paragraphs": [
+            276
+          ],
+          "start_ms": 198220.5,
+          "end_ms": 200359.7
+        },
+        {
+          "voice": "Microsoft Zira Desktop",
+          "text": "Mixed. Eleven of eighteen tasks shifted difficulty bins from one prompt tweak, overall success dropped from 50 to 46.7 percent, and calibration improved for AAVE, Indian, and Kenyan participants, but got worse for Standard American English and Nigerian participants.",
+          "source_paragraphs": [
+            276,
+            277
+          ],
+          "start_ms": 200859.7,
+          "end_ms": 220725.4
+        },
+        {
+          "voice": "Microsoft David Desktop",
+          "text": "So patching the prompt doesn\u0027t converge on fair, it just relocates the unfairness.",
+          "source_paragraphs": [
+            277
+          ],
+          "start_ms": 221225.4,
+          "end_ms": 226963.8
+        },
+        {
+          "voice": "Microsoft Zira Desktop",
+          "text": "Which is exactly why their real recommendation is transparency and multi-model checks rather than a hunt for one perfectly calibrated simulator. Doesn\u0027t that undercut the whole premise that better simulation is the fix?",
+          "source_paragraphs": [
+            189,
+            277
+          ],
+          "start_ms": 227463.8,
+          "end_ms": 240490.4
+        },
+        {
+          "voice": "Microsoft David Desktop",
+          "text": "It does, a little. Before we wrap, though, credit where it\u0027s due on the ethics side. Compensation wasn\u0027t adjusted by country, participants were told the procedure upfront and could withdraw anytime, and the study is classified minimal risk.",
+          "source_paragraphs": [
+            193,
+            194,
+            195
+          ],
+          "start_ms": 240990.4,
+          "end_ms": 258291.8
+        },
+        {
+          "voice": "Microsoft Zira Desktop",
+          "text": "And they\u0027re honest about the stakes past the study room. If simulated users get treated as a stand-in for real evaluation, some demographic groups could end up quietly underserved by whatever actually ships.",
+          "source_paragraphs": [
+            195
+          ],
+          "start_ms": 258791.8,
+          "end_ms": 271873.5
+        },
+        {
+          "voice": "Microsoft David Desktop",
+          "text": "Let\u0027s close the loop, then. The paper is Lost in Simulation, LLM-Simulated Users are Unreliable Proxies for Human Users in Agentic Evaluations, Seshadri and colleagues.",
+          "source_paragraphs": [
+            187
+          ],
+          "start_ms": 272373.5,
+          "end_ms": 285701
+        },
+        {
+          "voice": "Microsoft Zira Desktop",
+          "text": "And the headline holds up even though the details are messy. Robustness cracked across simulator models, validity cracked against real human behavior, and fairness cracked worst of all, right along the lines you\u0027d worry about.",
+          "source_paragraphs": [
+            188,
+            189
+          ],
+          "start_ms": 286201,
+          "end_ms": 300372.4
+        },
+        {
+          "voice": "Microsoft David Desktop",
+          "text": "Simulated users aren\u0027t a free substitute for people. Thanks for working through this one with us.",
+          "source_paragraphs": [
+            195
+          ],
+          "start_ms": 300872.4,
+          "end_ms": 307580.6
+        },
+        {
+          "voice": "Microsoft Zira Desktop",
+          "text": "Thanks for listening. See you next paper.",
+          "source_paragraphs": [
+            187
+          ],
+          "start_ms": 308080.6,
+          "end_ms": 312064.5
+        }
+      ],
+      "wav": "part_06.wav",
+      "total_duration_ms": 312064.5
+    }
+  ],
+  "rendered_utc": "2026-07-28T04:00:53.8134032Z",
+  "total_duration_ms": 2196847
+}
