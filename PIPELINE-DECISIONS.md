@@ -250,7 +250,7 @@ require ShareAlike on any derivative produced from them:
 - **RLHF Shallow Alignment** (arXiv:2603.04851), Young
 
 Derivatives for those two — re-segmented JSON, dialog scripts,
-synthesized audio — carry CC BY-NC-SA 4.0 by Brian Notarianni.
+synthesized audio — carry CC BY-NC-SA 4.0 by Panda Notarianni.
 Before publishing new artifacts under any path for those papers:
 
 1. Update [NOTICES.md](NOTICES.md) if a new attribution layer applies.

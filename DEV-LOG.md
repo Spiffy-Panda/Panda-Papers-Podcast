@@ -622,7 +622,7 @@ constraint:
   paper authors would require their signed assignment. Also tried looking
   at CC0 on the derivative — incompatible with SA, since CC0 is not on
   CC's compatible-license list for BY-NC-SA 4.0.
-- **Two-layer attribution, derivative carries CC BY-NC-SA 4.0 by Brian
+- **Two-layer attribution, derivative carries CC BY-NC-SA 4.0 by Panda
   Notarianni, upstream attribution prominent** — chosen. This is the
   canonical pattern and satisfies §3(b)(1).
 

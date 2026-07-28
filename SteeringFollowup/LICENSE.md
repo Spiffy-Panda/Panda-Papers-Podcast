@@ -44,7 +44,7 @@ mirrors.
 ### Derivative works in this folder
 
 The `ODESteer_paragraphs.json` and `ODESteer_sections.json` files are
-re-segmentations of the ODESteer paper text, prepared by Brian Notarianni.
+re-segmentations of the ODESteer paper text, prepared by Panda Notarianni.
 Per the ShareAlike clause of the source license, these derivative works are
 released under
 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).

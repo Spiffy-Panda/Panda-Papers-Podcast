@@ -20,7 +20,7 @@ linked above.
 The files in this folder — `part_NN_*.wav` (synthesized audio narration),
 `part_NN_*_timestamps.json` (alignment data), `dialog_part_*.json`
 (two-presenter dialog scripts), and `manifest.json` (workspace index) — are
-derivative works of the paper text above. They were produced by Brian
+derivative works of the paper text above. They were produced by Panda
 Notarianni using:
 
 - The two-presenter dialog scripter pipeline in this repository.
@@ -29,7 +29,7 @@ Notarianni using:
 Per the ShareAlike clause (§3(b)(1)) of the upstream license, these
 derivatives are released under the **same** license:
 
-> © 2026 Brian Notarianni. Licensed under
+> © 2026 Panda Notarianni. Licensed under
 > [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
 
 In practice: non-commercial reuse is fine with attribution to both the
