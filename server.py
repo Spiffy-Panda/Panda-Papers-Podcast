@@ -36,6 +36,10 @@ class DialogServer(SimpleHTTPRequestHandler):
             self.handle_podcast_manifest(parsed)
             return
 
+        if parsed.path == "/api/part-timestamps":
+            self.handle_part_timestamps(parsed)
+            return
+
         if parsed.path == "/api/paper":
             self.handle_paper(parsed)
             return
@@ -84,6 +88,118 @@ class DialogServer(SimpleHTTPRequestHandler):
                     pass
 
         self.send_json(200, {"folder": folder, "files": files})
+
+    # ---- New-pipeline (papers/<slug>/) bridge helpers -------------------
+    #
+    # The new pipeline stores one script.json with inlined timestamps and
+    # stable part_NN.wav names (PIPELINE-DECISIONS "render_audio I/O
+    # contract"), not the legacy manifest + per-part *_timestamps.json
+    # sibling files. Rather than teach podcast_player.html a second set of
+    # shapes, these helpers synthesize the legacy shapes on the fly so the
+    # player frontend stays untouched until the new reader UI lands
+    # (SKILLS-PLAN section 10).
+
+    @staticmethod
+    def _safe_slug(slug):
+        return bool(slug) and all(c.isalnum() or c == "_" for c in slug)
+
+    @staticmethod
+    def _fmt_duration(ms):
+        total_s = ms / 1000.0
+        return f"{int(total_s // 60)}:{total_s % 60:06.3f}"
+
+    def load_new_paper(self, slug):
+        """Load script/meta/spans for a papers/<slug>/ paper, or None."""
+        if not self._safe_slug(slug):
+            return None
+        base = os.path.join(SCRIPT_DIR, "papers", slug)
+        script_path = os.path.join(base, "podcast", "script.json")
+        if not os.path.isfile(script_path):
+            return None
+        out = {"slug": slug, "base": base}
+        with open(script_path, "r", encoding="utf-8") as f:
+            out["script"] = json.load(f)
+        for key, fname in (("meta", "paper.meta.json"), ("spans", "paper.spans.json")):
+            p = os.path.join(base, fname)
+            if os.path.isfile(p):
+                with open(p, "r", encoding="utf-8") as f:
+                    out[key] = json.load(f)
+        return out
+
+    def new_manifest_parts(self, paper):
+        """Synthesize legacy-shaped manifest parts from a new script.json."""
+        slug = paper["slug"]
+        sections = (paper.get("spans") or {}).get("sections") or []
+        parts = []
+        for part in paper["script"].get("parts", []):
+            n = part.get("part_of", {}).get("n", len(parts) + 1)
+            covered = sorted({pid for line in part.get("lines", [])
+                              for pid in (line.get("source_paragraphs") or [])})
+            cov = set(covered)
+            sec_titles = [s["title"] for s in sections
+                          if cov & set(s.get("paragraph_ids", []))]
+            if len(sec_titles) > 1:
+                title = f"{sec_titles[0]} → {sec_titles[-1]}"
+            elif sec_titles:
+                title = sec_titles[0]
+            else:
+                title = f"Part {n}"
+            rendered = bool(part.get("wav")) and any(
+                "start_ms" in line for line in part.get("lines", []))
+            parts.append({
+                "part_number": n,
+                "title": title,
+                "covers_paragraphs": covered,
+                "status": "generated" if rendered else "pending",
+                # Relative (no leading slash): the player prepends "/" and
+                # later takes dirname("api/") as the audio folder, which the
+                # "../papers/..." audio_file below walks back out of.
+                "timestamps_file": f"api/part-timestamps?slug={slug}&part={n}",
+            })
+        return parts
+
+    def handle_part_timestamps(self, parsed):
+        """Legacy-shaped timestamps view of one part of a new script.json."""
+        params = parse_qs(parsed.query)
+        slug = params.get("slug", [None])[0]
+        try:
+            part_num = int(params.get("part", ["0"])[0])
+        except ValueError:
+            part_num = 0
+        paper = self.load_new_paper(slug)
+        if not paper:
+            self.send_json(404, {"error": f"No new-pipeline podcast for slug: {slug}"})
+            return
+        part = next((p for p in paper["script"].get("parts", [])
+                     if p.get("part_of", {}).get("n") == part_num), None)
+        if not part:
+            self.send_json(404, {"error": f"Part {part_num} not found for {slug}"})
+            return
+        lines = []
+        for i, line in enumerate(part.get("lines", [])):
+            start = line.get("start_ms", 0)
+            end = line.get("end_ms", start)
+            lines.append({
+                "index": i,
+                "voice": line.get("voice", ""),
+                "text": line.get("text", ""),
+                "start_ms": start,
+                "end_ms": end,
+                "duration_ms": end - start,
+                "source_paragraphs": line.get("source_paragraphs", []),
+            })
+        total = part.get("total_duration_ms", lines[-1]["end_ms"] if lines else 0)
+        self.send_json(200, {
+            "source": f"papers/{slug}/podcast/script.json",
+            # Resolved by the player against the timestamps_file's "api/"
+            # folder, so walk back to the repo root explicitly.
+            "audio_file": f"../papers/{slug}/podcast/{part.get('wav', '')}",
+            "tag": f"part_{part_num:02d}",
+            "generated": paper["script"].get("rendered_utc", ""),
+            "total_duration_ms": total,
+            "total_duration_formatted": self._fmt_duration(total),
+            "lines": lines,
+        })
 
     def handle_list_podcasts(self):
         """Scan output/ for subfolders containing manifest.json, return list with paper titles."""
@@ -136,6 +252,28 @@ class DialogServer(SimpleHTTPRequestHandler):
                         })
                     except Exception:
                         pass
+
+        # New-pipeline papers: papers/<slug>/podcast/script.json
+        papers_dir = os.path.join(SCRIPT_DIR, "papers")
+        if os.path.isdir(papers_dir):
+            for name in sorted(os.listdir(papers_dir)):
+                paper = None
+                try:
+                    paper = self.load_new_paper(name)
+                except Exception:
+                    pass
+                if not paper:
+                    continue
+                parts = self.new_manifest_parts(paper)
+                title = (paper.get("meta") or {}).get("title", name)
+                podcasts.append({
+                    "folder": name,
+                    "manifest_path": f"papers/{name}/podcast/script.json",
+                    "paper_source": f"papers/{name}",
+                    "title": title,
+                    "generated_parts": sum(1 for p in parts if p["status"] == "generated"),
+                    "total_parts": len(parts),
+                })
         self.send_json(200, {"podcasts": podcasts})
 
     def handle_podcast_state(self):
@@ -160,6 +298,25 @@ class DialogServer(SimpleHTTPRequestHandler):
         if not manifest_path:
             self.send_json(400, {"error": "No manifest path provided or found in state"})
             return
+
+        # New-pipeline path: papers/<slug>/podcast/script.json → synthesize
+        norm = manifest_path.replace("\\", "/").strip("/")
+        np_parts = norm.split("/")
+        if len(np_parts) == 4 and np_parts[0] == "papers" and np_parts[2:] == ["podcast", "script.json"]:
+            paper = self.load_new_paper(np_parts[1])
+            if not paper:
+                self.send_json(404, {"error": f"Manifest not found: {manifest_path}"})
+                return
+            meta = paper.get("meta") or {}
+            self.send_json(200, {
+                "paper_title": meta.get("title", np_parts[1]),
+                "paper_authors": ", ".join(meta.get("authors", [])),
+                "paper_source": f"papers/{np_parts[1]}",
+                "total_parts": len(paper["script"].get("parts", [])),
+                "parts": self.new_manifest_parts(paper),
+            })
+            return
+
         full_path = os.path.normpath(os.path.join(SCRIPT_DIR, manifest_path))
         if not full_path.startswith(SCRIPT_DIR):
             self.send_json(400, {"error": "Invalid path"})
@@ -212,6 +369,57 @@ class DialogServer(SimpleHTTPRequestHandler):
         if not paper_path:
             self.send_json(400, {"error": "No paper path provided or found in state"})
             return
+
+        # New-pipeline path: papers/<slug> → synthesize legacy paper JSON
+        # ({meta, sections[].paragraphs[]}) from paper.meta.json + the
+        # byte-offset spans over the immutable paper.md.
+        norm = paper_path.replace("\\", "/").strip("/")
+        np_parts = norm.split("/")
+        if len(np_parts) == 2 and np_parts[0] == "papers":
+            paper = self.load_new_paper(np_parts[1])
+            if not paper:
+                self.send_json(404, {"error": f"Paper not found: {paper_path}"})
+                return
+            md_path = os.path.join(paper["base"], "paper.md")
+            spans = paper.get("spans") or {}
+            try:
+                with open(md_path, "rb") as f:
+                    md = f.read()
+            except OSError:
+                self.send_json(404, {"error": f"paper.md missing for {np_parts[1]}"})
+                return
+            by_id = {p["id"]: p for p in spans.get("paragraphs", [])}
+
+            def para_text(pid):
+                span = by_id.get(pid)
+                if not span:
+                    return ""
+                text = md[span["start_offset"]:span["end_offset"]].decode("utf-8", "replace")
+                # Reader-pane cleanup only — paper.md itself stays pristine.
+                return text.replace("**", "").lstrip("# ").strip()
+
+            sections = []
+            for sec in spans.get("sections", []) or [{"id": 1, "title": "Paper", "paragraph_ids": sorted(by_id)}]:
+                paras = [{"id": pid, "text": para_text(pid)}
+                         for pid in sec.get("paragraph_ids", [])]
+                # Drop empties and the section's own heading paragraph —
+                # the pane already renders the section title.
+                title = sec.get("title", "")
+                paras = [p for p in paras
+                         if p["text"] and p["text"].casefold() != title.casefold()]
+                if paras:
+                    sections.append({"id": sec.get("id"), "title": sec.get("title", ""), "paragraphs": paras})
+            meta = paper.get("meta") or {}
+            self.send_json(200, {
+                "meta": {
+                    "title": meta.get("title", np_parts[1]),
+                    "authors": meta.get("authors", []),
+                    "year": meta.get("year", ""),
+                },
+                "sections": sections,
+            })
+            return
+
         full_path = os.path.normpath(os.path.join(SCRIPT_DIR, paper_path))
         if not full_path.startswith(SCRIPT_DIR):
             self.send_json(400, {"error": "Invalid path"})

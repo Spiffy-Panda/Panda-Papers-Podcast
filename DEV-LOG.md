@@ -51,6 +51,24 @@ run, first multi-part `render_audio` call.
   *and* this one (pdf-sidecar/pdf-to-markdown/script-to-audio/
   podcast-scripter all functional now).
 
+Late addition, same session: **legacy player now lists new-pipeline
+papers.** Panda asked where the new player was — answer: doesn't
+exist yet (SKILLS-PLAN §10), so `server.py` grew a bridge instead.
+`/api/list-podcasts` scans `papers/*/podcast/script.json`;
+`/api/podcast-manifest` and a new `/api/part-timestamps` synthesize
+the legacy manifest/timestamps shapes from the inline-timestamp
+script (part titles derived from the spans `sections`); `/api/paper`
+synthesizes the `{meta, sections[].paragraphs[]}` reader shape from
+`paper.meta.json` + byte-offset spans over `paper.md`. Zero frontend
+changes — `podcast_player.html` untouched. The audio path rides the
+existing Range-supporting handler via `api/../papers/…`
+normalization. Verified in-browser: dropdown entry, 6 parts, section
+titles, dialog pane, 206-ranged WAV streaming, correct 6:43.6 part-1
+duration. Two ops footguns hit on the way: `start-servers.bat`
+sprays `'M' is not recognized` when invoked from another shell (fine
+from Explorer/cmd), and killing the old player instance matters —
+`allow_reuse_port` let two servers stack on :8847 silently.
+
 Deferred for Panda's ruling: the **dead-name sweep** — license
 attributions in PIPELINE-DECISIONS.md, SteeringFollowup/LICENSE.md,
 output/odesteer/LICENSE.md, plus `C:\Users\<user>` absolute-path
